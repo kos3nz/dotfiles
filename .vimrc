@@ -13,6 +13,10 @@ set relativenumber
 " Active mouse
 set mouse=a
 
+set tabstop=2
+set shiftwidth=2
+set autoindent
+
 " In insert mode, move cursor to the start or end of the line by using Ctrl+a and Ctrl+e
 imap <C-a> <ESC>I
 imap <C-e> <ESC>A
@@ -22,9 +26,11 @@ inoremap <C-b> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+inoremap <C-f> <Right>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+cnoremap <C-f> <Right>
 
 " Insert new line above without going into insert mode
 " (uses mark o to return to the previous cursor column)
