@@ -26,19 +26,28 @@ if not status then
   return
 end
 
+-- have packer use a popup window
+packer.init({
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
+})
+
 -- add list of plugins to install
 return packer.startup(function(use)
-  -- packer can manage itself
+  -- package manager
   use("wbthomason/packer.nvim")
 
-  -- lua functions that many plugins use
-  use("nvim-lua/plenary.nvim")
+  -- many nvim plugins depends on these plugins
+  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in neovim
 
   -- preferred colorscheme
   use("bluz71/vim-nightfly-guicolors")
-
-  -- tmux & split window navigation
-  -- use("christoomey/vim-tmux-navigator")
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  use("EdenEast/nightfox.nvim")
 
   -- maximizes and restores current window
   use("szw/vim-maximizer")
@@ -60,33 +69,35 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   -- fuzzy finding w/ telescope
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use("nvim-telescope/telescope-media-files.nvim") -- preview images, pdf, video, and fonts
 
-  -- autocompletion
+  -- cmp
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
+  use("saadparwaiz1/cmp_luasnip") -- for snippet completion
+  use("hrsh7th/cmp-nvim-lsp") -- for language server completion
+  use("hrsh7th/cmp-vsnip") -- source for VScode(LSP)'s snippet
+  use("onsails/lspkind.nvim") -- vs-code like icons for cmp
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
 
-  -- managing & installing lsp servers
+  -- managing & installing lsp and null-ls servers
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
-  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
-  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
   -- treesitter configuration
   use({
@@ -104,9 +115,19 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- terminal integration
+  use("akinsho/toggleterm.nvim")
+
+  -- highlighting other uses of the word under the cursor
+  use("RRethy/vim-illuminate")
+
   -- highlight color in tailwindcss classname
   use("princejoogie/tailwind-highlight.nvim")
 
+  --------------------------------------------------------------------
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  --------------------------------------------------------------------
   if packer_bootstrap then
     require("packer").sync()
   end

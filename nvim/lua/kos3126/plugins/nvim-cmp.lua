@@ -19,12 +19,16 @@ end
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
 
-vim.opt.completeopt = "menu,menuone,noselect"
+-- this function helps super tab work better
+local check_backspace = function()
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      luasnip.lsp_expand(args.body) -- for `luasnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -32,22 +36,63 @@ cmp.setup({
     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    -- ["<C-s"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<C-l>"] = cmp.mapping.abort(), -- close completion window
-    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    ["<C-;>"] = cmp.mapping.complete(), -- show suggestion window
+    ["<C-l>"] = cmp.mapping.abort(), -- close suggestion window
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif check_backspace() then
+        fallback()
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
   }),
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = "nvim_lsp" }, -- lsp
+    { name = "vsnip" }, -- vscode snippets
     { name = "luasnip" }, -- snippets
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths
   }),
   -- configure lspkind for vs-code like icons
   formatting = {
+    fields = { "abbr", "kind", "menu" },
     format = lspkind.cmp_format({
       maxwidth = 50,
       ellipsis_char = "...",
     }),
+  },
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+  },
+  experimental = {
+    ghost_text = true,
+    native_menu = false,
   },
 })
