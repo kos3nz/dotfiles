@@ -9,7 +9,7 @@ local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- to setup format on save
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local augroup = vim.api.nvim_create_augroup("LspFormattingOnSave", {})
 
 -- configure null_ls
 null_ls.setup({
@@ -17,18 +17,35 @@ null_ls.setup({
   sources = {
     --  to disable file types use
     --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-    formatting.prettier, -- js/ts formatter
+    formatting.prettierd.with({
+      filetypes = {
+        "css",
+        "graphql",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "less",
+        "markdown",
+        "scss",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+      },
+    }), -- js/ts formatter
     formatting.stylua, -- lua formatter
     diagnostics.eslint_d.with({ -- js/ts linter
-      -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
+      -- only enable eslint if root has .eslintrc.js or .eslintrc.json
       condition = function(utils)
-        return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+        return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
       end,
     }),
   },
+
   -- configure format on save
   on_attach = function(current_client, bufnr)
     if current_client.supports_method("textDocument/formatting") then
+      -- format on save
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = augroup,
