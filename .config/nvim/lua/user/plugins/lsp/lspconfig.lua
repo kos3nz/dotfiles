@@ -205,7 +205,7 @@ lspconfig["sumneko_lua"].setup({
 })
 
 -- configure json server
-local json_setting = require("kos3126.plugins.lsp.settings.jsonls")
+local json_setting = require("user.plugins.lsp.settings.jsonls")
 
 local opts = vim.tbl_deep_extend("force", json_setting, { capabilities = capabilities, on_attach = on_attach })
 
