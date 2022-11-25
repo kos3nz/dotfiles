@@ -25,8 +25,9 @@ vim.g.maplocalleader = " "
 keymap.set("n", "<Enter>", "o<ESC>", opts) -- Insert new line below without going into insert mode
 keymap.set("n", "<S-Enter>", "O<ESC>", opts) -- Insert new line above without going into insert mode
 
--- clear search highlight
-keymap.set("n", "<leader>nh", ":nohl<CR>", opts)
+-- search
+keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlight
+keymap.set("n", "W", "*N", opts) -- search for word under cursor
 
 -- delete single character without yanking into register
 keymap.set("n", "x", '"_x', opts)
