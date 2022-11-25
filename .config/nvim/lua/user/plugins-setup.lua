@@ -56,8 +56,12 @@ return packer.startup(function(use)
   use("tpope/vim-surround") -- add, delete, change surroundings
   use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion
 
-  -- commenting with gc
-  use("numToStr/Comment.nvim")
+  -- commenting
+  use("numToStr/Comment.nvim") -- comment with 'gc' command
+  use("JoosepAlviste/nvim-ts-context-commentstring") -- setting the commentstring based on the cursor location (via treesitter)
+
+  -- hightlight and search for todo comments
+  use("folke/todo-comments.nvim")
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
@@ -71,7 +75,7 @@ return packer.startup(function(use)
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-  use("nvim-telescope/telescope-media-files.nvim") -- preview images, pdf, video, and fonts
+  -- use("nvim-telescope/telescope-media-files.nvim") -- preview images, pdf, video, and fonts
 
   -- cmp
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -107,6 +111,8 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
+  use("p00f/nvim-ts-rainbow")
+  use("nvim-treesitter/playground") -- useful for Abstruct Syntax Tree
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...

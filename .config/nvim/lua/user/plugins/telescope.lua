@@ -99,12 +99,14 @@ telescope.setup({
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {"png", "jpg", "mp4", "webp", "pdf"}
-      filetypes = { "png", "webp", "avif", "jpg", "jpeg" },
-      find_cmd = "rg", -- find command (defualts to "fd")
-    },
+
+    -- for media_files
+    -- media_files = {
+    --   -- filetypes whitelist
+    --   -- defaults to {"png", "jpg", "mp4", "webp", "pdf"}
+    --   filetypes = { "png", "webp", "avif", "jpg", "jpeg" },
+    --   find_cmd = "rg", -- find command (defualts to "fd")
+    -- },
   },
 })
 
@@ -113,7 +115,7 @@ telescope.setup({
 -----------------------
 
 telescope.load_extension("fzf")
-telescope.load_extension("media_files")
+-- telescope.load_extension("media_files")
 
 --------------------
 -- Telescope keymap
@@ -127,7 +129,7 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-keymap.set("n", "<leader>fi", "<cmd>Telescope media_files<cr>") -- list available help tags
+-- keymap.set("n", "<leader>fi", "<cmd>Telescope media_files<cr>") -- list available help tags
 
 -- git commands
 keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" stands for git commits]
