@@ -124,3 +124,26 @@ keymap.set("c", "<C-f>", "<Right>", cmd_opts)
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize the size of the window
+
+-- nvim-tree
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>tf", ":NvimTreeFindFile<CR>")
+keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>")
+
+-- telescope
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
+keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" stands for git commits]
+keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" stands for git file commits]
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" stands for git branch]
+keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" stands for git status]
+keymap.set("n", "<leader>gt", "<cmd>Telescope git_stash<cr>") -- lists stash items in current repository with ability to apply them on <cr>
+
+-- gitsings
+keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>") -- preview the diff of the line
+keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>") -- reset changes of the line
+keymap.set("n", "<leader>gl", ":Gitsigns blame_line<CR>") -- see auther, timeline, and commit message under cursor

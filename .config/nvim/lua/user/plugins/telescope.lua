@@ -18,6 +18,23 @@ telescope.setup({
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+    layout_config = {
+      prompt_position = "bottom",
+      horizontal = {
+        -- mirror = true,
+        preview_cutoff = 100,
+        preview_width = 0.6,
+      },
+      vertical = {
+        mirror = true,
+        preview_cutoff = 0.5,
+      },
+      flex = {
+        flip_columns = 110,
+      },
+      height = 0.94,
+      width = 0.86,
+    },
 
     mappings = {
       i = {
@@ -37,8 +54,8 @@ telescope.setup({
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-b>"] = actions.preview_scrolling_up,
+        ["<C-f>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -115,25 +132,3 @@ telescope.setup({
 -----------------------
 
 telescope.load_extension("fzf")
--- telescope.load_extension("media_files")
-
---------------------
--- Telescope keymap
---------------------
-
-local keymap = vim.keymap -- for conciseness
-
--- file finder
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
--- keymap.set("n", "<leader>fi", "<cmd>Telescope media_files<cr>") -- list available help tags
-
--- git commands
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" stands for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" stands for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" stands for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" stands for git status]
-keymap.set("n", "<leader>gt", "<cmd>Telescope git_stash<cr>") -- lists stash items in current repository with ability to apply them on <cr>
