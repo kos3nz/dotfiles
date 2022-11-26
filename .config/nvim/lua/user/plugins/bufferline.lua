@@ -27,7 +27,7 @@ bufferline.setup({
   -- exclude_name = { "package.json" },
 
   -- Hide inactive buffers and file extensions. Other options are `current` and `visible`
-  hide = { extensions = false, inactive = false },
+  -- hide = { extensions = false, inactive = false },
 
   -- Enable/disable icons
   -- if set to 'numbers', will show buffer index in the tabline
