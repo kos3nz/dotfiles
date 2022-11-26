@@ -3,10 +3,10 @@
 local opts = { noremap = true, silent = true }
 local cmd_opts = { noremap = true }
 
-local keymap = vim.keymap -- for conciseness
+local map = vim.api.nvim_set_keymap -- for conciseness
 
 -- Remap space as leader key (default: backslash key)
-keymap.set("", "<Space>", "<Nop>", opts)
+map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -22,128 +22,185 @@ vim.g.maplocalleader = " "
 -- Normal mode
 --------------------
 
-keymap.set("n", "<Enter>", "o<ESC>", opts) -- Insert new line below without going into insert mode
-keymap.set("n", "<S-Enter>", "O<ESC>", opts) -- Insert new line above without going into insert mode
+map("n", "<Enter>", "o<ESC>", opts) -- Insert new line below without going into insert mode
+map("n", "<S-Enter>", "O<ESC>", opts) -- Insert new line above without going into insert mode
 
 -- search
-keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlight
-keymap.set("n", "W", "*N", opts) -- search for word under cursor
+map("n", "<leader>nh", ":nohl<CR>", opts) -- clear search highlight
+map("n", "W", "*N", opts) -- search for word under cursor
 
 -- delete single character without yanking into register
-keymap.set("n", "x", '"_x', opts)
+map("n", "x", '"_x', opts)
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", opts) -- increment
-keymap.set("n", "<leader>-", "<C-x>", opts) -- decrement
+map("n", "<leader>+", "<C-a>", opts) -- increment
+map("n", "<leader>-", "<C-x>", opts) -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+map("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
+map("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
+map("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width
+map("n", "<leader>sx", ":close<CR>", opts) -- close current split window
 
-keymap.set("n", "<C-h>", "<C-w><left>", opts) -- move between panes
-keymap.set("n", "<C-l>", "<C-w><right>", opts)
-keymap.set("n", "<C-k>", "<C-w><up>", opts)
-keymap.set("n", "<C-j>", "<C-w><down>", opts)
+map("n", "<C-h>", "<C-w><left>", opts) -- move between panes
+map("n", "<C-l>", "<C-w><right>", opts)
+map("n", "<C-k>", "<C-w><up>", opts)
+map("n", "<C-j>", "<C-w><down>", opts)
 
-keymap.set("n", "<A-Up>", ":resize +2<CR>", opts) -- resize pane
-keymap.set("n", "<A-Down>", ":resize -2<CR>", opts)
-keymap.set("n", "<A-Left>", ":vertical resize +2<CR>", opts)
-keymap.set("n", "<A-Right>", ":vertical resize -2<CR>", opts)
+map("n", "<A-Up>", ":resize +2<CR>", opts) -- resize pane
+map("n", "<A-Down>", ":resize -2<CR>", opts)
+map("n", "<A-Left>", ":vertical resize +2<CR>", opts)
+map("n", "<A-Right>", ":vertical resize -2<CR>", opts)
 
 -- tab management
-keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
+map("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
+map("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
+map("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
+map("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
 
 -- move text up and down
-keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
+map("n", "<A-j>", ":m .+1<CR>==", opts)
+map("n", "<A-k>", ":m .-2<CR>==", opts)
 
 --------------------
 -- Insert mode
 --------------------
 
-keymap.set("i", "jj", "<ESC>", opts) -- go back to normal mode in insert mode
+map("i", "jj", "<ESC>", opts) -- go back to normal mode in insert mode
 
-keymap.set("i", "<C-a>", "<ESC>I", opts) -- go to the beginning of the line
-keymap.set("i", "<C-e>", "<ESC>A", opts) -- go to the end of the line
+map("i", "<C-a>", "<ESC>I", opts) -- go to the beginning of the line
+map("i", "<C-e>", "<ESC>A", opts) -- go to the end of the line
 
-keymap.set("i", "<C-b>", "<Left>", opts)
-keymap.set("i", "<C-j>", "<Down>", opts)
-keymap.set("i", "<C-n>", "<Down>", opts)
-keymap.set("i", "<C-k>", "<Up>", opts)
-keymap.set("i", "<C-p>", "<Up>", opts)
-keymap.set("i", "<C-l>", "<Right>", opts)
-keymap.set("i", "<C-f>", "<Right>", opts)
+map("i", "<C-b>", "<Left>", opts)
+map("i", "<C-j>", "<Down>", opts)
+map("i", "<C-n>", "<Down>", opts)
+map("i", "<C-k>", "<Up>", opts)
+map("i", "<C-p>", "<Up>", opts)
+map("i", "<C-l>", "<Right>", opts)
+map("i", "<C-f>", "<Right>", opts)
 
 -- move text up and down
-keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 
 --------------------
 -- Visual mode
 --------------------
 
 -- stay in indent mode
-keymap.set("v", "<", "<gv", opts)
-keymap.set("v", ">", ">gv", opts)
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
 -- move text up and down
-keymap.set("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
+map("v", "<A-j>", ":m .+1<CR>==", opts)
+map("v", "<A-k>", ":m .-2<CR>==", opts)
 
-keymap.set("v", "p", '"_dP', opts)
+map("v", "p", '"_dP', opts)
 
 --------------------
 -- Visual Block
 --------------------
 
 -- move text up and down
-keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+map("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+map("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 --------------------
 -- Command mode
 --------------------
 
-keymap.set("c", "<C-a>", "<S-Left>", cmd_opts)
-keymap.set("c", "<C-e>", "<S-Right>", cmd_opts)
+map("c", "<C-a>", "<S-Left>", cmd_opts)
+map("c", "<C-e>", "<S-Right>", cmd_opts)
 
-keymap.set("c", "<C-j>", "<Down>", cmd_opts)
-keymap.set("c", "<C-k>", "<Up>", cmd_opts)
-keymap.set("c", "<C-b>", "<Left>", cmd_opts)
-keymap.set("c", "<C-l>", "<Right>", cmd_opts)
-keymap.set("c", "<C-f>", "<Right>", cmd_opts)
+map("c", "<C-j>", "<Down>", cmd_opts)
+map("c", "<C-k>", "<Up>", cmd_opts)
+map("c", "<C-b>", "<Left>", cmd_opts)
+map("c", "<C-l>", "<Right>", cmd_opts)
+map("c", "<C-f>", "<Right>", cmd_opts)
 
 --------------------
 -- Plugin keymap
 --------------------
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize the size of the window
+map("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- maximize the size of the window
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-keymap.set("n", "<leader>tf", ":NvimTreeFindFile<CR>")
-keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>")
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>cl", ":NvimTreeCollapse<CR>", opts)
+
+-- bufferline (barbar)
+-- move to previous/next
+map("n", "<S-h>", "<Cmd>BufferPrevious<CR>", opts)
+map("n", "<S-l>", "<Cmd>BufferNext<CR>", opts)
+-- re-order to previous/next
+map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
+map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
+-- go to buffer in position...
+map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+-- Pin/unpin buffer
+map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
+-- Close buffer
+map("n", "<leader>w", "<Cmd>BufferClose<CR>", opts)
+map("n", "<A-w>", "<Cmd>BufferCloseAllButCurrentOrPinned<CR>", opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+map("n", "<leader>bp", "<Cmd>BufferPick<CR>", opts)
+-- Sort automatically by...
+map("n", "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
+map("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
+map("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
+map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts) -- find files within current working directory, respects .gitignore
+map("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", opts) -- find string in current working directory as you type
+map("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", opts) -- find string under cursor in current working directory
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts) -- list open buffers in current neovim instance
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts) -- list available help tags
 
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" stands for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" stands for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" stands for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" stands for git status]
-keymap.set("n", "<leader>gt", "<cmd>Telescope git_stash<cr>") -- lists stash items in current repository with ability to apply them on <cr>
+map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts) -- list all git commits (use <cr> to checkout) ["gc" stands for git commits]
+map("n", "<leader>gfc", "<cmd>Telescope git_bcommits<CR>", opts) -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" stands for git file commits]
+map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", opts) -- list git branches (use <cr> to checkout) ["gb" stands for git branch]
+map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts) -- list current changes per file with diff preview ["gs" stands for git status]
+map("n", "<leader>gt", "<cmd>Telescope git_stash<CR>", opts) -- lists stash items in current repository with ability to apply them on <cr>
 
 -- gitsings
-keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>") -- preview the diff of the line
-keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>") -- reset changes of the line
-keymap.set("n", "<leader>gl", ":Gitsigns blame_line<CR>") -- see auther, timeline, and commit message under cursor
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts) -- preview the diff of the line
+map("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", opts) -- reset changes of the line
+map("n", "<leader>gl", ":Gitsigns blame_line<CR>", opts) -- see auther, timeline, and commit message under cursor
+
+-- todo comments
+local todo_status, todo = pcall(require, "todo-comments")
+if not todo_status then
+  return
+end
+
+vim.keymap.set("n", "]t", function()
+  todo.jump_next()
+end, { desc = "Next todo comment" })
+vim.keymap.set("n", "[t", function()
+  todo.jump_prev()
+end, { desc = "Previous todo comment" })
+--
+-- You can also specify a list of valid jump keywords
+--
+-- map("n", "]t", function()
+--   todo.jump_next({keywords = { "ERROR", "WARNING" }})
+-- end, { desc = "Next error/warning todo comment" })

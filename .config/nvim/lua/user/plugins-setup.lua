@@ -69,6 +69,9 @@ return packer.startup(function(use)
   -- icons
   use("kyazdani42/nvim-web-devicons")
 
+  -- bufferline
+  use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
+
   -- status line
   use("nvim-lualine/lualine.nvim")
 
@@ -111,8 +114,8 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
-  use("p00f/nvim-ts-rainbow")
   use("nvim-treesitter/playground") -- useful for Abstruct Syntax Tree
+  -- use("p00f/nvim-ts-rainbow")
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...

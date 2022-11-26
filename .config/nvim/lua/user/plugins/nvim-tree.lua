@@ -51,7 +51,7 @@ nvim_tree.setup({
   },
   -- change folder arrow icons
   renderer = {
-    root_folder_modifier = ":t",
+    root_folder_label = ":t", -- display only root dirname (defaults: ":~s?$?/..")
     icons = {
       glyphs = {
         default = "",
