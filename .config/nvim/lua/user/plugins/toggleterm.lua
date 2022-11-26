@@ -41,25 +41,16 @@ toggleterm.setup({
 local Terminal = require("toggleterm.terminal").Terminal
 
 local gitui = Terminal:new({ cmd = "gitui", hidden = true })
-
-function _GITUI_TOGGLE()
+function _GITUI()
   gitui:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gu", "<cmd>lua _GITUI_TOGGLE()<CR>", { noremap = true, silent = true })
-
 local deno = Terminal:new({ cmd = "deno", hidden = true })
-
-function _DENO_TOGGLE()
+function _DENO()
   deno:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>de", "<cmd>lua _DENO_TOGGLE()<CR>", { noremap = true, silent = true })
-
 local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
-
-function _NCDU_TOGGLE()
+function _NCDU()
   ncdu:toggle()
 end
-
-vim.api.nvim_set_keymap("n", "<leader>nc", "<cmd>lua _NCDU_TOGGLE()<CR>", { noremap = true, silent = true })
