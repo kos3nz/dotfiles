@@ -2,6 +2,7 @@ require("user.plugins-setup") -- should be at the top
 require("user.core.options")
 require("user.core.keymaps")
 require("user.core.colorscheme")
+require("user.plugins.alpha")
 require("user.plugins.autopairs")
 require("user.plugins.bufferline")
 require("user.plugins.comment")

@@ -27,13 +27,13 @@ if not status then
 end
 
 -- have packer use a popup window
-packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
-    end,
-  },
-})
+-- packer.init({
+--   display = {
+--     open_fn = function()
+--       return require("packer.util").float({ border = "rounded" })
+--     end,
+--   },
+-- })
 
 -- add list of plugins to install
 return packer.startup(function(use)
@@ -48,6 +48,9 @@ return packer.startup(function(use)
   use("bluz71/vim-nightfly-guicolors")
   use({ "catppuccin/nvim", as = "catppuccin" })
   use("EdenEast/nightfox.nvim")
+
+  -- startup screen
+  use("goolord/alpha-nvim") -- fast and fully programmable greeter
 
   -- maximizes and restores current window
   use("szw/vim-maximizer")
