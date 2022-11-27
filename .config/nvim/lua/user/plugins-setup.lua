@@ -78,6 +78,9 @@ return packer.startup(function(use)
   -- status line
   use("nvim-lualine/lualine.nvim")
 
+  -- indentation
+  use("lukas-reineke/indent-blankline.nvim")
+
   -- keymaps
   use("folke/which-key.nvim")
 
