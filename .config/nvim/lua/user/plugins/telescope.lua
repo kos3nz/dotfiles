@@ -20,14 +20,14 @@ telescope.setup({
     path_display = { "smart" },
     layout_strategy = "vertical",
     layout_config = {
-      prompt_position = "bottom",
+      prompt_position = "top",
       horizontal = {
         -- mirror = true,
         preview_cutoff = 100,
         -- preview_width = 0.5,
       },
       vertical = {
-        -- mirror = true,
+        mirror = true,
         preview_cutoff = 0.5,
         preview_height = 0.7,
       },
