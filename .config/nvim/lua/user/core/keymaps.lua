@@ -144,3 +144,7 @@ end, { desc = "Previous todo comment" })
 -- map("n", "]t", function()
 --   todo.jump_next({keywords = { "ERROR", "WARNING" }})
 -- end, { desc = "Next error/warning todo comment" })
+
+-- vim-illuminate
+map("n", "<A-h>", "<cmd>lua require('illuminate').goto_prev_reference()<cr>", opts)
+map("n", "<A-l>", "<cmd>lua require('illuminate').goto_next_reference()<cr>", opts)

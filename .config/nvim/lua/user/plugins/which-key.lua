@@ -56,7 +56,7 @@ local setup = {
     align = "left", -- align columns left, center or right
   },
   ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "<cr>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   show_keys = true, -- show the currently pressed key and its label as a message in the command line
   triggers = "auto", -- automatically setup triggers
@@ -86,76 +86,112 @@ local opts = {
 }
 
 local mappings = {
+
+  ["c"] = { "<cmd>BufferClose<cr>", "Close Buffer" },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "NvimTreeToggle" },
+  ["d"] = { "<cmd>Lspsaga hover_doc<cr>", "Show Doc" },
+  ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
+  ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  ["h"] = { ":nohl<cr>", "Clear Search Highlight" },
+  ["m"] = { "<cmd>MaximizerToggle<cr>", "Maximize Window" },
+  ["w"] = { "<cmd>w<cr>", "Save" },
+  ["W"] = { "<cmd>:noa w<cr>", "Save Without Format" },
+  ["q"] = { "<cmd>q<cr>", "Quit" },
+  ["Q"] = { "<cmd>q!<cr>", "Force Quit" },
+
   b = {
     name = "Buffer",
-    p = { "<Cmd>BufferPick<CR>", "BufferPick" },
-
-    b = { "<Cmd>BufferOrderByBufferNumber<CR>", "BufferOrderByBufferNumber" },
-    d = { "<Cmd>BufferOrderByDirectory<CR>", "BufferOrderByDirectory" },
-    l = { "<Cmd>BufferOrderByLanguage<CR>", "BufferOrderByLanguage" },
-    w = { "<Cmd>BufferOrderByWindowNumber<CR>", "BufferOrderByWindowNumber" },
-  },
-
-  c = { "<Cmd>NvimTreeCollapse<CR>", "NvimTreeCollapse" },
-
-  d = {
-    e = { "<Cmd>lua _DENO()<CR>", "DENO" },
-  },
-
-  e = { "<Cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
-
-  f = {
-    name = "Find",
-    b = { "<Cmd>Telescope grep_string<CR>", "Find Text Under Cursor" },
-    c = { "<Cmd>Telescope buffers<CR>", "List Open Buffers" },
-    h = { "<Cmd>Telescope help_tags<CR>", "List of Help Tags" },
-    f = { "<Cmd>Telescope find_files<CR>", "Find Files" },
-    s = { "<Cmd>Telescope live_grep<CR>", "Find Text" },
+    p = { "<cmd>BufferPick<cr>", "BufferPick" },
+    c = { "<cmd>NvimTreeCollapse<cr>", "NvimTreeCollapse" },
+    b = { "<cmd>BufferOrderByBufferNumber<cr>", "BufferOrderByBufferNumber" },
+    d = { "<cmd>BufferOrderByDirectory<cr>", "BufferOrderByDirectory" },
+    l = { "<cmd>BufferOrderByLanguage<cr>", "BufferOrderByLanguage" },
+    w = { "<cmd>BufferOrderByWindowNumber<cr>", "BufferOrderByWindowNumber" },
   },
 
   g = {
     name = "Git",
-    b = { "<Cmd>Telescope git_branches<CR>", "List Git Branches" },
-    c = { "<Cmd>Telescope git_commits<CR>", "List Git Commits" },
-    f = { "<Cmd>Telescope git_bcommits<CR>", "List Git Commits For Current File" },
-    s = { "<Cmd>Telescope git_status<CR>", "List Changes Per File With Diff" },
-    t = { "<Cmd>Telescope git_stash<CR>", "List Stash Items" },
+    b = { "<cmd>Telescope git_branches<cr>", "Checkout Branch" },
+    c = { "<cmd>Telescope git_commits<cr>", "Checkout Commit" },
+    f = { "<cmd>Telescope git_bcommits<cr>", "Checkout Commits For Current File" },
+    s = { "<cmd>Telescope git_status<cr>", "Open Changed File" },
+    t = { "<cmd>Telescope git_stash<cr>", "List Stash Items" },
 
-    l = { "<Cmd>Gitsigns blame_lines<CR>", "Git Blame Under Cursor" },
-    r = { "<Cmd>Gitsigns reset_hunk<CR>", "Reset Changes Under Cursor" },
-    p = { "<Cmd>Gitsigns preview_hunk<CR>", "Preview Diff Under Cursor" },
+    l = { "<cmd>Gitsigns blame_lines<cr>", "Blame" },
+    r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Changes" },
+    R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
+    p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Diff" },
 
-    u = { "<Cmd>lua _GITUI()<CR>", "GITUI" },
+    u = { "<cmd>lua _GITUI()<cr>", "Gitui" },
   },
 
-  h = { ":nohl<CR>", "Clear Search Highlight" },
-
-  n = {
-    c = { "<Cmd>lua _NCDU()<CR>", "NCDU" },
+  l = {
+    name = "LSP",
+    a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+    b = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+    w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
+    d = { "<cmd>Lspsaga show_line_diagnostics<cr>" },
+    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+    i = { "<cmd>LspInfo<cr>", "Info" },
+    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+    j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
+    k = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic" },
+    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+    o = { "<cmd>LSoutlineToggle<cr>", "Outline" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+    R = { "<cmd>LspRestart<cr>", "Restart Server" },
+    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    S = {
+      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+      "Workspace Symbols",
+    },
   },
 
-  m = { "<Cmd>MaximizerToggle<CR>", "Maximize Window" },
+  p = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    S = { "<cmd>PackerStatus<cr>", "Status" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+
+  s = {
+    name = "Search",
+    b = { "<cmd>Telescope buffers<cr>", "Open Buffers" },
+    c = { "<cmd>Telescope grep_string<cr>", "Find Text Under Cursor" },
+    h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    K = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    R = { "<cmd>Telescope registers<cr>", "Registers" },
+  },
 
   t = {
     name = "Tab",
-    o = { ":tabnew<CR>", "Open New Tab" },
-    x = { ":tabclose<CR>", "Close Tab" },
-    l = { ":tabn<CR>", "Go To Next Tab" },
-    h = { ":tabp<CR>", "Go To Previous Tab" },
+    o = { ":tabnew<cr>", "Open New Tab" },
+    x = { ":tabclose<cr>", "Close Tab" },
+    l = { ":tabn<cr>", "Go To Next Tab" },
+    h = { ":tabp<cr>", "Go To Previous Tab" },
   },
 
-  w = { "<Cmd>BufferClose<CR>", "Close Buffer" },
+  x = {
+    name = "Function",
+    d = { "<cmd>lua _DENO()<cr>", "Deno" },
+    n = { "<cmd>lua _NCDU()<cr>", "NCDU" },
+  },
 
-  ["1"] = { "<Cmd>BufferGoto 1<CR>", "BufferGoto 1" },
-  ["2"] = { "<Cmd>BufferGoto 2<CR>", "BufferGoto 2" },
-  ["3"] = { "<Cmd>BufferGoto 3<CR>", "BufferGoto 3" },
-  ["4"] = { "<Cmd>BufferGoto 4<CR>", "BufferGoto 4" },
-  ["5"] = { "<Cmd>BufferGoto 5<CR>", "BufferGoto 5" },
-  ["6"] = { "<Cmd>BufferGoto 6<CR>", "BufferGoto 6" },
-  ["7"] = { "<Cmd>BufferGoto 7<CR>", "BufferGoto 7" },
-  ["8"] = { "<Cmd>BufferGoto 8<CR>", "BufferGoto 8" },
-  ["9"] = { "<Cmd>BufferGoto 9<CR>", "BufferGoto 9" },
-  ["0"] = { "<Cmd>BufferLast<CR>", "BufferLast" },
+  ["1"] = { "<cmd>BufferGoto 1<cr>", "BufferGoto 1" },
+  ["2"] = { "<cmd>BufferGoto 2<cr>", "BufferGoto 2" },
+  ["3"] = { "<cmd>BufferGoto 3<cr>", "BufferGoto 3" },
+  ["4"] = { "<cmd>BufferGoto 4<cr>", "BufferGoto 4" },
+  ["5"] = { "<cmd>BufferGoto 5<cr>", "BufferGoto 5" },
+  ["6"] = { "<cmd>BufferGoto 6<cr>", "BufferGoto 6" },
+  ["7"] = { "<cmd>BufferGoto 7<cr>", "BufferGoto 7" },
+  ["8"] = { "<cmd>BufferGoto 8<cr>", "BufferGoto 8" },
+  ["9"] = { "<cmd>BufferGoto 9<cr>", "BufferGoto 9" },
+  ["0"] = { "<cmd>BufferLast<cr>", "BufferLast" },
 
   ["+"] = { "<C-a>", "Increment Number" },
   ["-"] = { "<C-x>", "Decrement Number" },

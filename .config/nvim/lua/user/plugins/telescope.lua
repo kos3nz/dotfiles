@@ -18,16 +18,18 @@ telescope.setup({
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+    layout_strategy = "vertical",
     layout_config = {
       prompt_position = "bottom",
       horizontal = {
         -- mirror = true,
         preview_cutoff = 100,
-        preview_width = 0.6,
+        -- preview_width = 0.5,
       },
       vertical = {
-        mirror = true,
+        -- mirror = true,
         preview_cutoff = 0.5,
+        preview_height = 0.7,
       },
       flex = {
         flip_columns = 110,
@@ -91,8 +93,8 @@ telescope.setup({
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-b>"] = actions.preview_scrolling_up,
+        ["<C-f>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
