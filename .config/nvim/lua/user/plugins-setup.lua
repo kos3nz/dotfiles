@@ -61,6 +61,7 @@ return packer.startup(function(use)
 
   -- performance
   use("lewis6991/impatient.nvim") -- speed up start-up time with creating cache
+  use("nathom/filetype.nvim") -- a faster version of filetype.vim
 
   -- commenting
   use("numToStr/Comment.nvim") -- comment with 'gc' command
