@@ -56,6 +56,9 @@ return packer.startup(function(use)
   use("tpope/vim-surround") -- add, delete, change surroundings
   use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion
 
+  -- performance
+  use("lewis6991/impatient.nvim") -- speed up start-up time with creating cache
+
   -- commenting
   use("numToStr/Comment.nvim") -- comment with 'gc' command
   use("JoosepAlviste/nvim-ts-context-commentstring") -- setting the commentstring based on the cursor location (via treesitter)
