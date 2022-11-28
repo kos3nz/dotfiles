@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 local cmd_opts = { noremap = true }
 
 local map = vim.api.nvim_set_keymap -- for conciseness
+local set = vim.keymap.set
 
 -- Remap space as leader key (default: backslash key)
 map("", "<Space>", "<Nop>", opts)
@@ -126,16 +127,28 @@ map("n", "<A-w>", "<Cmd>BufferCloseAllButCurrentOrPinned<CR>", opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 
+-- vim-illuminate
+map("n", "<C-[>", "<cmd>lua require('illuminate').goto_prev_reference()<cr>", opts)
+map("n", "<C-]>", "<cmd>lua require('illuminate').goto_next_reference()<cr>", opts)
+
+-- hlslens
+map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+map("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
+map("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
+map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
+map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
+map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
+
 -- todo comments
 local todo_status, todo = pcall(require, "todo-comments")
 if not todo_status then
   return
 end
 
-vim.keymap.set("n", "]t", function()
+set("n", "]t", function()
   todo.jump_next()
 end, { desc = "Next todo comment" })
-vim.keymap.set("n", "[t", function()
+set("n", "[t", function()
   todo.jump_prev()
 end, { desc = "Previous todo comment" })
 --
@@ -145,6 +158,26 @@ end, { desc = "Previous todo comment" })
 --   todo.jump_next({keywords = { "ERROR", "WARNING" }})
 -- end, { desc = "Next error/warning todo comment" })
 
--- vim-illuminate
-map("n", "<C-[>", "<cmd>lua require('illuminate').goto_prev_reference()<cr>", opts)
-map("n", "<C-]>", "<cmd>lua require('illuminate').goto_next_reference()<cr>", opts)
+-- hop
+local hop_status, hop = pcall(require, "hop")
+if not hop_status then
+  return
+end
+
+local directions_status, directions = pcall(require, "hop.hint")
+if not directions_status then
+  return
+end
+
+set("n", "f", function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false })
+end, { remap = true })
+set("n", "F", function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false })
+end, { remap = true })
+set("n", "t", function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })
+end, { remap = true })
+set("n", "T", function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })
+end, { remap = true })

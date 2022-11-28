@@ -27,13 +27,13 @@ if not status then
 end
 
 -- have packer use a popup window
--- packer.init({
---   display = {
---     open_fn = function()
---       return require("packer.util").float({ border = "rounded" })
---     end,
---   },
--- })
+packer.init({
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
+})
 
 -- add list of plugins to install
 return packer.startup(function(use)
@@ -58,6 +58,8 @@ return packer.startup(function(use)
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings
   use("vim-scripts/ReplaceWithRegister") -- replace with register contents using motion
+  use("kevinhwang91/nvim-hlslens") -- hightlight search lens
+  use({ "phaazon/hop.nvim", branch = "v2" }) -- allows to jump around in a document
 
   -- performance
   use("lewis6991/impatient.nvim") -- speed up start-up time with creating cache
@@ -66,9 +68,7 @@ return packer.startup(function(use)
   -- commenting
   use("numToStr/Comment.nvim") -- comment with 'gc' command
   use("JoosepAlviste/nvim-ts-context-commentstring") -- setting the commentstring based on the cursor location (via treesitter)
-
-  -- hightlight and search for todo comments
-  use("folke/todo-comments.nvim")
+  use("folke/todo-comments.nvim") -- hightlight and search for todo comments
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
@@ -143,8 +143,9 @@ return packer.startup(function(use)
   -- highlighting other uses of the word under the cursor
   use("RRethy/vim-illuminate")
 
-  -- highlight color in tailwindcss classname
-  use("princejoogie/tailwind-highlight.nvim")
+  -- highlight colors
+  use("norcalli/nvim-colorizer.lua") -- color hightlighter
+  use("princejoogie/tailwind-highlight.nvim") -- for tailwindcss
 
   --------------------------------------------------------------------
   -- Automatically set up your configuration after cloning packer.nvim

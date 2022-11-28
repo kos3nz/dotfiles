@@ -92,7 +92,8 @@ local mappings = {
   ["d"] = { "<cmd>Lspsaga hover_doc<cr>", "Show Doc" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-  ["h"] = { ":nohl<cr>", "Clear Search Highlight" },
+  ["h"] = { "<cmd>nohl<cr>", "Clear Search Highlight" },
+  ["j"] = { "<cmd>HopLineStart<cr>", "HopLineStart" },
   ["m"] = { "<cmd>MaximizerToggle<cr>", "Maximize Window" },
   ["w"] = { "<cmd>w<cr>", "Save" },
   ["W"] = { "<cmd>:noa w<cr>", "Save Without Format" },
@@ -124,6 +125,14 @@ local mappings = {
 
     u = { "<cmd>lua _GITUI()<cr>", "Gitui" },
   },
+
+  -- j = {
+  --   name = "Jump",
+  --   v = { "<cmd>HopVertical<cr>", "HopVertical" },
+  --   s = { "<cmd>HopLineStart<cr>", "HopLineStart" },
+  --   w = { "<cmd>HopWord<cr>", "HopWord" },
+  --   ["/"] = { "<cmd>HopPattern<cr>", "HopPattern" },
+  -- },
 
   l = {
     name = "LSP",
