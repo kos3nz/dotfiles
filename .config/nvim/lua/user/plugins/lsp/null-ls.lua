@@ -40,6 +40,7 @@ null_ls.setup({
         return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
       end,
     }),
+    diagnostics.markdownlint, -- markdown linter
   },
 
   -- configure format on save

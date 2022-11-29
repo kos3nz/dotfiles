@@ -32,6 +32,9 @@ map("n", "W", "*N", opts) -- search for word under cursor
 -- delete single character without yanking into register
 map("n", "x", '"_x', opts)
 
+-- indentation
+map("n", "<Tab>", ">>", opts)
+
 -- window management
 map("n", "<C-h>", "<C-w><left>", opts) -- move between panes
 map("n", "<C-l>", "<C-w><right>", opts)
