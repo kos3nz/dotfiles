@@ -89,7 +89,6 @@ local mappings = {
 
   ["c"] = { "<cmd>BufferClose<cr>", "Close Buffer" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "NvimTreeToggle" },
-  ["d"] = { "<cmd>Lspsaga hover_doc<cr>", "Show Doc" },
   ["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
   ["h"] = { "<cmd>nohl<cr>", "Clear Search Highlight" },
@@ -99,6 +98,7 @@ local mappings = {
   ["W"] = { "<cmd>:noa w<cr>", "Save Without Format" },
   ["q"] = { "<cmd>q<cr>", "Quit" },
   ["Q"] = { "<cmd>q!<cr>", "Force Quit" },
+  ["X"] = { "<cmd>wq<cr>", "Save and Quit" },
 
   b = {
     name = "Buffer",
@@ -108,6 +108,15 @@ local mappings = {
     d = { "<cmd>BufferOrderByDirectory<cr>", "BufferOrderByDirectory" },
     l = { "<cmd>BufferOrderByLanguage<cr>", "BufferOrderByLanguage" },
     w = { "<cmd>BufferOrderByWindowNumber<cr>", "BufferOrderByWindowNumber" },
+  },
+
+  d = {
+    name = "Definition",
+    d = { "<cmd>Lspsaga hover_doc<cr>", "Show Doc" },
+    D = { "<cmd>lua vim.lsp.but.declaration()<cr>", "Go To Declaration" },
+    f = { "<cmd>Lspsaga lsp_finder<cr>", "Go To File Under Cursor" },
+    i = { "<cmd>lus vim.lsp.buf.implementation()<cr>", "Go To Implementation" },
+    p = { "<cmd>Lspsaga peek_definition<cr>", "See Definition And Edit" },
   },
 
   g = {
@@ -139,7 +148,7 @@ local mappings = {
     a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
     b = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
     w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
-    d = { "<cmd>Lspsaga show_line_diagnostics<cr>" },
+    d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show line Diagnostics" },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -155,6 +164,11 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+  },
+
+  o = {
+    h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Show Syntax Highlight Group" },
+    p = { "<cmd>TSPlaygroundToggle<cr>", "TSPlaygroundToggle" },
   },
 
   p = {
