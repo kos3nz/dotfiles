@@ -1,0 +1,21 @@
+[user]
+	name = kos3126
+	email = 60677527+kos3126@users.noreply.github.com
+[core]
+	editor = vim
+	autocrlf = false
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[push]
+	default = current
+[pull]
+	ff = only
+	rebase = false
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+[fetch]
+	prune = true
+[alias]
+	delete-local-merged = !git fetch && git branch --merged | egrep -v \"main|master|dev|staging\" | xargs git branch -d
