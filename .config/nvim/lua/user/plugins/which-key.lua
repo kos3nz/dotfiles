@@ -127,7 +127,7 @@ local mappings = {
     s = { "<cmd>Telescope git_status<cr>", "Open Changed File" },
     t = { "<cmd>Telescope git_stash<cr>", "List Stash Items" },
 
-    l = { "<cmd>Gitsigns blame_lines<cr>", "Blame" },
+    l = { "<cmd>Gitsigns blame_line<cr>", "Blame" },
     r = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Changes" },
     R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Buffer" },
     p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Diff" },
