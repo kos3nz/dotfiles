@@ -137,6 +137,8 @@ alias v='vim'
 alias vi='vim'
 alias nv='nvim'
 alias tm='tmux'
+alias gu='gitui'
+alias lg='lazygit'
 alias so='source'
 alias be='bundle exec'
 alias ber='bundle exec ruby'
@@ -235,7 +237,6 @@ alias gra='git remote add'
 alias grao='git remote add origin' # grao (remote repo) でリモートリポジトリ追加
 alias grsurlo='git remote set-url origin' # git remote set-url origin {new url} リモートURL変更
 alias grmrc='git rm -r --cached .' # ファイル全体キャッシュ削除
-alias gu='gitui'
 # Heroku
 alias hepush='git push heroku master'
 alias heli='heroku login'
