@@ -29,7 +29,7 @@ local options = {
   mouse = "a", -- allow the mouse to be used in neovim
 
   -- cursor
-  guicursor = "n-v-sm:block,c-i-ci-ve:ver25-blinkwait1000-blinkoff1000-blinkon1000,r-cr:hor20,o:hor50",
+  guicursor = "n-v-sm:block,c-i-ci-ve:ver25-blinkwait800-blinkoff1000-blinkon1000,r-cr:hor20,o:hor50",
   cursorline = true, -- highlight the current line
 
   -- appearance
@@ -86,4 +86,4 @@ opt.iskeyword:append("-") -- hyphenated words recognized by searches
 -- opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 -- opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
-vim.api.nvim_set_hl(0, "Cursor", { bg = "#ffffff" })
+-- vim.api.nvim_set_hl(0, "Cursor", { bg = "#ffffff" })

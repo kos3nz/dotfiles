@@ -1,4 +1,4 @@
-vim.g.indent_blankline_char = "¦"
+vim.g.indent_blankline_char = "|"
 
 -- local status_ok, indent_blankline = pcall(require, "indent_blankline")
 -- if not status_ok then
