@@ -388,6 +388,9 @@ export LESS="-SRXF"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 ### PATH
+# .config
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Heroku
 export PATH="/usr/local/opt/heroku-node/bin:$PATH"
 
