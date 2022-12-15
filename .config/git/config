@@ -18,4 +18,7 @@
 [fetch]
 	prune = true
 [alias]
+	st = status
+	co = checkout
+	br = branch
 	delete-local-merged = !git fetch && git branch --merged | egrep -v \"main|master|dev|staging\" | xargs git branch -d
