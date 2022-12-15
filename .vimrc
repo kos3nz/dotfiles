@@ -1,48 +1,28 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Make sure you use single quotes
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin'}
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-
-Plugin 'joshdick/onedark.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+" You can revert the settings after the call like so:
+"   filetype indent off   " Disable file-type-specific indentation
+"   syntax off            " Disable syntax highlighting
 
 " Enable syntax highlighting by default
 syntax on
 
 " Set theme
-colorscheme onedark
+colorscheme catppuccin_mocha
 
 " If you are having troubles with vim not detecting certain file types, add the following line
 filetype on
@@ -51,7 +31,7 @@ filetype on
 set number
 
 " Apply relative numbers to line numbers
-set relativenumber
+" set relativenumber
 
 " Active mouse
 set mouse=a
@@ -62,12 +42,15 @@ set autoindent
 set whichwrap=h,l
 
 " In insert mode, show a thin line as cursor
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 set ttimeout
 set ttimeoutlen=1
-set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 
 " In insert mode, move cursor to the start or end of the line by using Ctrl+a and Ctrl+e
