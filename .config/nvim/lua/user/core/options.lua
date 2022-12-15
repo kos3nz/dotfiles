@@ -7,7 +7,7 @@ local options = {
   -- line numbers
   number = true, -- who line numbers
   numberwidth = 2, -- set number column width to 2 (default 4)
-  relativenumber = true, -- set relative numbered lines
+  relativenumber = false, -- set relative numbered lines
 
   -- tabs & indentation
   tabstop = 2, -- insert 2 spaces for a tab

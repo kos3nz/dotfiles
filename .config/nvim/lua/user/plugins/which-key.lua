@@ -113,9 +113,9 @@ local mappings = {
   d = {
     name = "Definition",
     d = { "<cmd>Lspsaga hover_doc<cr>", "Show Doc" },
-    D = { "<cmd>lua vim.lsp.but.declaration()<cr>", "Go To Declaration" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go To Declaration" },
     f = { "<cmd>Lspsaga lsp_finder<cr>", "Go To File Under Cursor" },
-    i = { "<cmd>lus vim.lsp.buf.implementation()<cr>", "Go To Implementation" },
+    i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Go To Implementation" },
     p = { "<cmd>Lspsaga peek_definition<cr>", "See Definition And Edit" },
   },
 

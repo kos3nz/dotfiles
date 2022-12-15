@@ -34,13 +34,25 @@ null_ls.setup({
       },
     }), -- js/ts formatter
     formatting.stylua, -- lua formatter
-    diagnostics.eslint_d.with({ -- js/ts linter
-      -- only enable eslint if root has .eslintrc.js or .eslintrc.json
+    null_ls.builtins.diagnostics.eslint_d.with({
+      diagnostics_format = "[eslint] #{m}\n(#{c})",
       condition = function(utils)
-        return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+        return utils.root_has_file("package.json")
+          or utils.root_has_file(".eslintrc.json")
+          or utils.root_has_file(".eslintrc.js")
       end,
     }),
     diagnostics.markdownlint, -- markdown linter
+    -- null_ls.builtins.diagnostics.cspell.with({
+    --   diagnostics_postprocess = function(diagnostic)
+    --     -- レベルをWARNに変更（デフォルトはERROR）
+    --     diagnostic.severity = vim.diagnostic.severity["WARN"]
+    --   end,
+    --   condition = function()
+    --     -- cspellが実行できるときのみ有効
+    --     return vim.fn.executable("cspell") > 0
+    --   end,
+    -- }),
   },
 
   -- configure format on save
