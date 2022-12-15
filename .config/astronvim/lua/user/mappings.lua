@@ -101,6 +101,8 @@ return {
     ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>" },
 
     -- git
+    ["<leader>ga"] = { "<cmd>Telescope git_stash<CR>", desc = "Git stash" },
+    ["<leader>gC"] = { "<cmd>Telescope git_bcommits<CR>", desc = "Git buffer commits" },
     ["<leader>gfo"] = { "<cmd>GitConflictChooseOurs<CR>" },
     ["<leader>gft"] = { "<cmd>GitConflictChooseTheirs<CR>" },
     ["<leader>gfb"] = { "<cmd>GitConflictChooseBoth<CR>" },
