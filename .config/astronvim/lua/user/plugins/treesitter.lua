@@ -20,6 +20,7 @@ return {
     "scss",
     "markdown",
     "svelte",
+    "astro",
     "graphql",
     "rust",
     "bash",
