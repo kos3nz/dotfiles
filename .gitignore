@@ -46,6 +46,7 @@
 !/.config/**
 /.config/nvim/plugin/
 /.config/lazygit/state.yml
+/.config/karabiner/automatic_backups
 
 !/README.md
 !/LICENSE
