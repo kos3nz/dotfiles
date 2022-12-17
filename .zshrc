@@ -401,5 +401,16 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Deno
+export PATH="$HOME /.deno/bin:$PATH"
+
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
