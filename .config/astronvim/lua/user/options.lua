@@ -87,6 +87,16 @@ return {
     status_diagnostics_enabled = true, -- enable diagnostics in statusline
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+
+    -- vim-visual-multi mappings
+    VM_maps = {
+      ["Find Under"] = "<C-g>",
+      ["Find Subword Under"] = "<C-g>",
+      ["Select Cursor Down"] = "<C-n>",
+      ["Select Cursor Up"] = "<C-p>",
+      -- ["Mouse Cursor"] = "<C-LeftMouse>",
+      -- ["Mouse Word"] = "<C-RightMouse>",
+    },
   },
 }
 -- If you need more control, you can use the function()...end notation
