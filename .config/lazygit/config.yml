@@ -38,7 +38,7 @@ gui:
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: true
   showIcons: true
-  commandLogSize: 8
+  commandLogSize: 14
   splitDiff: 'auto' # one of 'auto' | 'always'
 git:
   paging:
@@ -215,3 +215,11 @@ keybinding:
     init: 'i'
     update: 'u'
     bulkMenu: 'b'
+customCommands:
+  # Add custom commands
+  # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
+  - key: 'E'
+    description: 'Add empty commit'
+    context: 'commits'
+    command: 'git commit --allow-empty -m "empty commit"'
+    loadingText: 'Committing empty commit...'
