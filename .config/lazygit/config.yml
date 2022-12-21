@@ -12,7 +12,7 @@ gui:
       - blue
       - bold
     inactiveBorderColor:
-      - white
+      - black
     optionsTextColor:
       - blue
     selectedLineBgColor:
@@ -20,9 +20,9 @@ gui:
     selectedRangeBgColor:
       - black
     cherryPickedCommitBgColor:
-      - cyan
+      - black
     cherryPickedCommitFgColor:
-      - blue
+      - white
     unstagedChangesColor:
       - red
     defaultFgColor:
@@ -43,7 +43,7 @@ gui:
 git:
   paging:
     colorArg: always
-    useConfig: false
+    pager: delta --dark --paging=never
   commit:
     signOff: false
   merging:

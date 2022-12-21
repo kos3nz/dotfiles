@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	autocrlf = false
+	pager = delta
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [push]
@@ -22,3 +23,7 @@
 	co = checkout
 	br = branch
 	delete-local-merged = !git fetch && git branch --merged | egrep -v \"main|master|dev|staging\" | xargs git branch -d
+[delta]
+	features = custom 
+[include]
+	path = ~/.config/delta/theme.gitconfig
