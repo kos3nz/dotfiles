@@ -14,7 +14,7 @@ return {
     "svelte",
     "rust_analyzer",
     "sumneko_lua",
-    "marksman",
+    -- "marksman",
     "jsonls",
     "vimls",
   },

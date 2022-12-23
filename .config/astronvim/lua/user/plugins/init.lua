@@ -140,6 +140,9 @@ return {
   --   end,
   -- },
 
+  -- treesitter --
+  -- { "nvim-treesitter/playground" },
+
   -- enhancement --
 
   ["folke/todo-comments.nvim"] = {
