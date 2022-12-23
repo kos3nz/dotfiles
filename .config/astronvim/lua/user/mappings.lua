@@ -88,9 +88,9 @@ return {
       desc = "Search words in all files",
     },
     ["<leader>ft"] = { "<cmd>TodoTelescope<cr>", desc = "Search Todos" },
-    ["<leader>fm"] = { "<cmd>Telescope vim_bookmarks current_file>", desc = "Search bookmarks in current file" },
-    ["<leader>fM"] = { "<cmd>Telescope vim_bookmarks all>", desc = "Search all bookmarks" },
-    ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols>", desc = "Search document symbols" },
+    ["<leader>fm"] = { "<cmd>Telescope vim_bookmarks current_file<cr>", desc = "Search bookmarks in current file" },
+    ["<leader>fM"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Search all bookmarks" },
+    ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search document symbols" },
 
     -- trouble
     ["<leader>xx"] = { "<cmd>TroubleToggle<cr>" },
