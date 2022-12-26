@@ -158,7 +158,8 @@ return {
     end,
   },
 
-  ["folke/trouble.nvim"] = {
+  {
+    "folke/trouble.nvim", -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup({
