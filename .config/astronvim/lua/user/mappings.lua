@@ -116,6 +116,11 @@ return {
 
     -- doge
     ["<leader>d"] = { "<cmd>DogeGenerate<cr>", desc = "Create documentaion" },
+
+    -- sniprun
+    ["<leader>rr"] = { "<cmd>SnipRun<cr>", desc = "Run" },
+    ["<leader>rs"] = { "<cmd>SnipReset<cr>", desc = "Abort" },
+    ["<leader>rc"] = { "<cmd>SnipClose<cr>", desc = "Clear Output" },
   },
 
   --------------------
@@ -156,6 +161,9 @@ return {
     ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
 
     -- ["p"] = { "_dP" },
+
+    -- sniprun
+    ["f"] = { "<cmd>SnipRun<cr>", desc = "SnipRun" },
   },
 
   --------------------

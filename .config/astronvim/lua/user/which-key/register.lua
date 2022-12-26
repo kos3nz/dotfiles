@@ -10,6 +10,7 @@ return {
       ["g"] = {
         ["f"] = { name = "Git Conflict" },
       },
+      ["r"] = { name = "SnipRun" },
       ["x"] = { name = "Trouble" },
     },
   },

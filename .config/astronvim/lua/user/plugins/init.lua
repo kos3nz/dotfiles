@@ -203,6 +203,14 @@ return {
 
   { "mg979/vim-visual-multi" },
 
+  {
+    "michaelb/sniprun", -- run lines/blocs of code (independently of the rest of the file)
+    run = "bash ./install.sh",
+    config = function()
+      require("user.plugins.sniprun")
+    end,
+  },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },
