@@ -21,22 +21,22 @@ return {
   },
 
   -- cmp --
+
   -- Add lazy loading for command line
   -- that triggers the loading of cmp
   ["hrsh7th/nvim-cmp"] = { keys = { ":", "/", "?" } },
+
   -- add more custom sources
   ["hrsh7th/cmp-cmdline"] = { after = "nvim-cmp" },
 
   { "hrsh7th/cmp-nvim-lua" },
-
-  { "hrsh7th/cmp-vsnip" },
 
   ["tzachar/cmp-tabnine"] = {
     requires = "hrsh7th/nvim-cmp",
     after = "nvim-cmp",
     run = "./install.sh",
     config = function()
-      require("cmp_tabnine.config"):setup({
+      require("cmp_tabnine.config").setup({
         max_lines = 1000,
         max_num_results = 20,
         sort = true,
@@ -47,8 +47,11 @@ return {
         },
         show_prediction_strength = false,
       })
+      require("core.utils").add_cmp_source({ name = "cmp_tabnine", priority = 1000, max_item_count = 7 })
     end,
   },
+
+  -- { "hrsh7th/cmp-vsnip" },
 
   -- lsp --
 

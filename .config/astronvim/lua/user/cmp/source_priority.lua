@@ -5,11 +5,10 @@
 -- false == disabled
 -- true == 1000
 return {
-    cmp_tabnine = 1000,
-    nvim_lsp = 900,
-    vsnip = 800,
-    nvim_lua = 700,
-    luasnip = 600,
-    buffer = 500,
-    path = 250,
+  cmp_tabnine = 1000,
+  nvim_lsp = 900,
+  nvim_lua = 700,
+  luasnip = 600,
+  buffer = 500,
+  path = 250,
 }
