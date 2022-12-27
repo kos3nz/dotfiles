@@ -27,3 +27,5 @@
 	features = custom 
 [include]
 	path = ~/.config/delta/theme.gitconfig
+[ghq]
+	root = ~/ghq
