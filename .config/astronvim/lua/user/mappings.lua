@@ -44,6 +44,12 @@ return {
     -- delete single character without yanking into register
     ["x"] = { '"_x' },
 
+    -- select all
+    ["<A-a>"] = { "GVgg" },
+
+    -- force quit
+    ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force Quit" },
+
     -- move text up and Down
     ["<A-k>"] = { ":m .-2<cr>==", desc = "Move text up" },
     ["<A-j>"] = { ":m .+1<cr>==", desc = "Move text down" },
@@ -103,13 +109,13 @@ return {
     -- git
     ["<leader>ga"] = { "<cmd>Telescope git_stash<CR>", desc = "Git stash" },
     ["<leader>gC"] = { "<cmd>Telescope git_bcommits<CR>", desc = "Git buffer commits" },
-    ["<leader>gfo"] = { "<cmd>GitConflictChooseOurs<CR>" },
-    ["<leader>gft"] = { "<cmd>GitConflictChooseTheirs<CR>" },
-    ["<leader>gfb"] = { "<cmd>GitConflictChooseBoth<CR>" },
-    ["<leader>gfn"] = { "<cmd>GitConflictChooseNone<CR>" },
-    ["<leader>gfj"] = { "<cmd>GitConflictNextConflict<CR>" },
-    ["<leader>gfk"] = { "<cmd>GitConflictPrevConflict<CR>" },
-    ["<leader>gfq"] = { "<cmd>GitConflictListQf<CR>" },
+    ["co"] = { "<cmd>GitConflictChooseOurs<CR>", desc = "Git Conflict: Choose ours" },
+    ["ct"] = { "<cmd>GitConflictChooseTheirs<CR>", desc = "Git Conflict: Choose theirs" },
+    ["cb"] = { "<cmd>GitConflictChooseBoth<CR>", desc = "Git Conflict: Choose both" },
+    ["cn"] = { "<cmd>GitConflictChooseNone<CR>", desc = "Git Conflict: Choose none" },
+    ["]x"] = { "<cmd>GitConflictPrevConflict<CR>", desc = "Git Conflict: Prev conflict" },
+    ["[x"] = { "<cmd>GitConflictNextConflict<CR>", desc = "Git Conflict: Next conflict" },
+    ["cl"] = { "<cmd>GitConflictListQf<CR>", desc = "Git Conflict: List of conflicts" },
 
     -- dashboard
     ["<leader>a"] = { "<cmd>Alpha<cr>", desc = "Alpha Dashboard" },
@@ -131,9 +137,9 @@ return {
     ["<C-s>"] = { "<Esc>:w<cr>", desc = "Save File" },
 
     -- emacs-ish key bindings
-    ["<C-k>"] = { "<Up>" },
+    -- ["<C-k>"] = { "<Up>" },
     ["<C-p>"] = { "<Up>" },
-    ["<C-j>"] = { "<Down>" },
+    -- ["<C-j>"] = { "<Down>" },
     ["<C-n>"] = { "<Down>" },
     ["<C-b>"] = { "<Left>" },
     ["<C-l>"] = { "<Right>" },
@@ -141,7 +147,7 @@ return {
     ["<C-a>"] = { "<Esc>I" },
     ["<C-e>"] = { "<Esc>A" },
     ["<C-d>"] = { "<Del>" },
-    ["<C-D>"] = { "<C-o>D" },
+    ["<C-k>"] = { "<C-o>D" },
 
     -- move text up and down
     ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
