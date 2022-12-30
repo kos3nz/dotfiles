@@ -99,6 +99,16 @@
     "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
     "description": "Iterating over property values of iterable objects"
   },
+  "function": {
+    "prefix": "fn",
+    "body": "function ${1:functionName}(${2:params}) {\n\t${3}\n}",
+    "description": "Creates a function"
+  },
+  "asyncFunction": {
+    "prefix": "afn",
+    "body": "async function ${1:functionName}(${2:params}) {\n\t${3}\n}",
+    "description": "Creates an async function"
+  },
   "anonymousFunction": {
     "prefix": "anfn",
     "body": "(${1:params}) => {\n\t${2}\n}",
