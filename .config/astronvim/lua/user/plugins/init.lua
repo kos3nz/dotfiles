@@ -211,6 +211,8 @@ return {
     end,
   },
 
+  { "zhaosheng-pan/vim-im-select" },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },
