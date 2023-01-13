@@ -1,0 +1,109 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "// CHANGED:": {
+    "prefix": "CHANGED",
+    "body": ["// CHANGED: $0"],
+    "description": "CHANGED Comment"
+  },
+  "/* CHANGED: */": {
+    "prefix": "CHANGED",
+    "body": [
+      "/* ==============================",
+      "CHANGED:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "CHANGED Comment"
+  },
+  "// FIXME:": {
+    "prefix": "FIXME",
+    "body": ["// FIXME: $0"],
+    "description": "FIXME Comment"
+  },
+  "/* FIXME: */": {
+    "prefix": "FIXME",
+    "body": [
+      "/* ==============================",
+      "FIXME:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "FIXME Comment"
+  },
+  "// NOTE:": {
+    "prefix": "NOTE",
+    "body": ["// NOTE: $0"],
+    "description": "NOTE Comment"
+  },
+  "/* NOTE: */": {
+    "prefix": "NOTE",
+    "body": [
+      "/* ==============================",
+      "NOTE:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "NOTE Comment"
+  },
+  "// REVIEW:": {
+    "prefix": "REVIEW",
+    "body": ["// REVIEW: $0"],
+    "description": "REVIEW Comment"
+  },
+  "/* REVIEW: */": {
+    "prefix": "REVIEW",
+    "body": [
+      "/* ==============================",
+      "REVIEW:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "REVIEW Comment"
+  },
+  "// TODO:": {
+    "prefix": "TODO",
+    "body": ["// TODO: $0"],
+    "description": "TODO Comment"
+  },
+  "/* TODO: */": {
+    "prefix": "TODO",
+    "body": [
+      "/* ==============================",
+      "TODO:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "TODO Comment"
+  },
+  "// WARNING:": {
+    "prefix": "WARNING",
+    "body": ["// WARNING: $0"],
+    "description": "WARNING Comment"
+  },
+  "/* WARNING: */": {
+    "prefix": "WARNING",
+    "body": [
+      "/* ==============================",
+      "WARNING:= $1",
+      "  -- $0",
+      "============================== */"
+    ],
+    "description": "WARNING Comment"
+  },
+  "light colored comment .js/ts/scss": {
+    "prefix": "comment-l",
+    "body": ["//:: =============== $0 =============== :://"],
+    "description": "Comment"
+  },
+  "dark colored comment .js/ts/scss": {
+    "prefix": "comment-d",
+    "body": ["//## =============== $0 =============== ##//"],
+    "description": "Comment"
+  }
+}

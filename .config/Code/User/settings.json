@@ -1,0 +1,1170 @@
+{
+  /* -------------------------------------------------------------------------- */
+  /*                                   Editor                                   */
+  /* -------------------------------------------------------------------------- */
+  "window.newWindowDimensions": "inherit", // ウィンドウのズームレベル
+  // "files.defaultLanguage": "typescript",
+  // "files.defaultLanguage": "javascript",
+  "files.defaultLanguage": "mdx",
+  "editor.renderWhitespace": "all",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.wordWrap": "on",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.hover.delay": 500,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.showSlider": "always",
+  "editor.quickSuggestionsDelay": 10,
+  "editor.autoClosingQuotes": "always",
+  "editor.guides.bracketPairs": true,
+  "editor.inlayHints.enabled": "on",
+  "editor.accessibilitySupport": "off",
+  "editor.suggest.showStatusBar": true,
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": false,
+  "editor.suggest.preview": true,
+  "editor.guides.indentation": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.useTabStops": false,
+  "editor.insertSpaces": false,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.codeLens": false,
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Files & Search                               */
+  /* -------------------------------------------------------------------------- */
+  "files.watcherExclude": {
+    // Default Settings
+    "**/.git/**": true,
+    // "**/.git/objects/**": true,
+    // "**/.git/subtree-cache/**": true,
+    "/node_modules": true,
+    "**/node_modules/**": true,
+    "**/.hg/store/**": true,
+    // Build Directories or files
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    // Bundle files
+    "**/bundle.*": true,
+    // Cache Directories or files
+    "**/.cache": true,
+    // Custom Setting
+    "**/GoogleDrive/**": true,
+    "**/Library/**": true,
+    "**/Pictures/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    // "**/node_modules": true,
+    "**/.next": true
+  },
+  "search.exclude": {
+    // Default Settings
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    // Build Drectories on files
+    "**/build": true,
+    "**/.next": true,
+    "**/dist": true,
+    // Bundle files
+    "**/bundle.*": true,
+    // Cache Directories or files
+    "**/.cache": true
+  },
+  "search.followSymlinks": false,
+  "search.searchOnType": false,
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Explorer                                  */
+  /* -------------------------------------------------------------------------- */
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Font                                    */
+  /* -------------------------------------------------------------------------- */
+  "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
+  "editor.fontSize": 15,
+  "editor.fontWeight": "normal",
+  "editor.letterSpacing": -0.25,
+  "editor.fontLigatures": true,
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Workbench                                 */
+  /* -------------------------------------------------------------------------- */
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.statusBar.visible": true,
+  "workbench.sideBar.location": "left",
+  "workbench.editor.showTabs": true, // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
+  "workbench.editor.wrapTabs": true,
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Completion                                 */
+  /* -------------------------------------------------------------------------- */
+  // "editor.suggest.showKeywords": false, // falseにするとkeywordだけ消す
+  "editor.suggest.showWords": false, // snippetのサジェストを最初に出す。
+  "editor.suggestSelection": "recentlyUsedByPrefix", // 入力した時にどの項目にカーソルを合わせた状態にするかみたいなやつrecentlyUsedByPrefixにした
+  "editor.suggest.snippetsPreventQuickSuggestions": false, // タブストップ中にも入力補完が有効
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Terminal                                  */
+  /* -------------------------------------------------------------------------- */
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "MesloLGS NF, Operator Mono Lig, monospace",
+  "terminal.integrated.lineHeight": 1.3,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Keyboard                                  */
+  /* -------------------------------------------------------------------------- */
+  "keyboard.dispatch": "keyCode", // US配列に固定？
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Emmet                                   */
+  /* -------------------------------------------------------------------------- */
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "mdx": "html"
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                              Language Settings                             */
+  /* -------------------------------------------------------------------------- */
+
+  /* ------------------------- Javascript & Typescript ------------------------ */
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.log": "off",
+
+  /* ---------------------------------- Deno ---------------------------------- */
+  "deno.inlayHints.enumMemberValues.enabled": true,
+  "deno.inlayHints.functionLikeReturnTypes.enabled": true,
+  "deno.inlayHints.parameterTypes.enabled": true,
+  "deno.inlayHints.propertyDeclarationTypes.enabled": true,
+  "deno.inlayHints.variableTypes.enabled": true,
+  "deno.inlayHints.parameterNames.enabled": "literals",
+
+  /* ---------------------------------- Rust ---------------------------------- */
+  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+
+  /* -------------------------------------------------------------------------- */
+  /*                             THEME Customization                            */
+  /* -------------------------------------------------------------------------- */
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "variable.defaultLibrary": "#f4f5f8c7",
+      "*.readonly": "#ff94a1e3",
+      "*.static": "#D19A66",
+      "function": "#73bdfa"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "comments": {
+      "foreground": "#8199b8d0", // #8199b8d0
+      "fontStyle": "italic"
+    },
+    "[One Dark Pro]": {
+      "textMateRules": [
+        {
+          "scope": [
+            // "constant",
+            "keyword.operator.assignment",
+            "keyword.operator.comparison",
+            "constant.character.entity",
+            // css
+            "entity.other.attribute-name.parent-selector-suffix.css",
+            // typescript
+            "entity.name.type",
+            "support.type.primitive.ts",
+            "support.type.primitive.tsx",
+            "support.type.builtin.ts",
+            "support.type.builtin.tsx",
+            "storage.modifier.ts",
+            // pug
+            "constant.name.attribute.tag.pug"
+          ], // セレクタ
+          "settings": {
+            "foreground": "#56B6C2" // #56B6C2, #31a2aa
+            // "fontStyle": "そのスコープのスタイル"
+          }
+        },
+        {
+          "scope": [
+            "variable",
+            "support.constant",
+            "constant.numeric",
+            "entity.other.attribute-name",
+            // css
+            "meta.property-value.css",
+            "variable.parameter.misc.css",
+            // scss
+            "variable.scss",
+            "meta.property-value.scss",
+            "variable.language.super.js",
+            "variable.language.super.jsx",
+            // typescript
+            "meta.definition.property.ts variable",
+            "variable.language.super.ts",
+            "variable.language.super.tsx",
+            // markdown
+            "entity.name.section.markdown",
+            "punctuation.definition.heading.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "settings": {
+            "foreground": "#D19A66" // #d17f66 #D19A66 #F28F77
+          }
+        },
+        {
+          "scope": [
+            "support.function",
+            "entity.name.function",
+            // markdown
+            "string.other.link.title.markdown",
+            // env
+            "constant.language.env"
+          ], // function
+          "settings": {
+            "foreground": "#73bdfa" // #61AFEF
+          }
+        },
+        {
+          "scope": [
+            "string",
+            // css
+            "entity.other.attribute-name.class.css",
+            "variable.parameter.url.css",
+            // scss
+            "variable.parameter.url.scss",
+            "meta.at-rule.if.scss",
+            "support.constant.mathematical-symbols.scss",
+            "meta.at-rule.include.scss",
+            // javascript
+            "string.template.js",
+            "string.template.jsx",
+            "meta.template.expression.js punctuation.definition",
+            "meta.template.expression.jsx punctuation.definition",
+            // typescript
+            "string.template.ts",
+            "string.template.tsx",
+            "meta.template.expression.ts punctuation.definition",
+            "meta.template.expression.tsx punctuation.definition",
+            // markdown
+            "markup.underline.link.markdown"
+          ],
+          "settings": {
+            "foreground": "#8bc4a5" // #8FBCBB #8bc4a5
+          }
+        },
+        {
+          "scope": [
+            "storage",
+            "storage.type",
+            "keyword.control", // ['await']
+            "keyword.operator",
+            "keyword.operator.logical",
+            "keyword.operator.new",
+            "keyword.operator.expression.keyof",
+            "punctuation.separator.key-value",
+            "attribute_value",
+            // css
+            "constant.language.pseudo.css",
+            "entity.other.attribute-name.pseudo-class.css",
+            // javascript
+            "keyword.control.default.js",
+            "keyword.control.default.jsx",
+            // typescript
+            "keyword.control.default.ts",
+            "keyword.control.default.tsx",
+            "source.ts keyword.operator",
+            // env
+            "keyword.other.template.begin.env",
+            "keyword.other.template.end.env"
+          ],
+          "settings": {
+            "foreground": "#d091e9" // #C678DD, #ca8ddd #d18ce6
+          }
+        },
+        {
+          "scope": [
+            // css
+            "constant.numeric.css",
+            "support.constant.property-value.css",
+            "meta.identifier.css"
+            // javascript
+            // typescript
+          ],
+          "settings": {
+            "foreground": "#bc99da" // 	"#E5C07B", "#bc99da"
+          }
+        },
+        {
+          "scope": [
+            "support.class",
+            "support.type",
+            "entity.name.type.class",
+            "entity.other.inherited-class",
+            /*  javascript */
+            "entity.name.type.module.js",
+            "entity.name.type.module.jsx",
+            "variable.language.this.js",
+            "variable.language.this.jsx",
+            /* typescript */
+            "entity.name.type.module.ts",
+            "entity.name.type.module.tsx",
+            "variable.language.this.ts",
+            "variable.language.this.tsx"
+          ],
+          "settings": {
+            "foreground": "#e5c97b" // 	"#E5C07B", "#bc99da"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.constant",
+            "variable.other.local",
+            "entity.name.tag",
+            "keyword.other.unit",
+            // css
+            "constant.percentage.units.css",
+            "constant.length.units.css",
+            "keyword.operator.parent.css",
+            // javascript
+            "variable.other.constant.js",
+            "variable.other.constant.jsx",
+            "variable.other.constant.object.js",
+            "variable.other.constant.object.jsx",
+            // typescript
+            "variable.other.constant.ts",
+            "variable.other.constant.tsx",
+            "variable.other.constant.object.ts",
+            "variable.other.constant.object.tsx",
+            // json
+            "support.type.property-name.json",
+            "support.type.property-name.json punctuation"
+          ],
+          "settings": {
+            "foreground": "#ff94a1e3" // "#fd7887e3"
+          }
+        },
+        {
+          "scope": [
+            "variable.other.readwrite",
+            "variable.parameter",
+            "variable.other.local",
+            "variable.other.constant.property",
+            "support.variable.property",
+            "support.constant.property",
+            "support.type.property-name",
+            // html
+            "text.html.derivative",
+            // css
+            "support.type.property-name.css",
+            "meta.property-name.scss",
+            // javascript
+            "support.variable.property.js",
+            "support.variable.property.jsx",
+            "variable.other.property.js",
+            "variable.other.property.jsx",
+            "variable.other.object.js",
+            "variable.other.object.jsx",
+            "variable.other.object.property.js",
+            "variable.other.object.property.jsx",
+            "variable.other.readwrite.js",
+            "variable.other.readwrite.jsx",
+            "variable.other.readwrite.alias.js",
+            "variable.other.readwrite.alias.jsx",
+            "meta.import.js",
+            "meta.import.jsx",
+            "meta.object-literal.key.js",
+            "meta.object-literal.key.jsx",
+            "meta.jsx.children.js",
+            "meta.export.default.js variable.other.readwrite.js",
+            "meta.export.default.js variable.other.readwrite.jsx",
+            "variable.other.constant.property.js",
+            "variable.other.constant.property.jsx",
+            "variable.other.constant.object.property.js",
+            "variable.other.constant.object.property.jsx",
+            "variable.parameter.function.js", // pug mixin
+
+            // typescript
+            "support.variable.property.ts",
+            "support.variable.property.tsx",
+            "variable.other.property.ts",
+            "variable.other.property.tsx",
+            "variable.other.object.ts",
+            "variable.other.object.tsx",
+            "variable.other.object.property.ts",
+            "variable.other.object.property.tsx",
+            "variable.other.readwrite.ts",
+            "variable.other.readwrite.alias.ts",
+            "variable.other.readwrite.alias.tsx",
+            "meta.import.ts",
+            "meta.import.tsx",
+            "meta.object-literal.key.ts",
+            "meta.object-literal.key.tsx",
+            "meta.jsx.children.tsx",
+            "meta.export.default.js variable.other.readwrite.ts",
+            "meta.export.default.js variable.other.readwrite.tsx",
+            "variable.other.constant.property.ts",
+            "variable.other.constant.property.tsx",
+            // pug
+            "text.pug",
+            // liquid
+            "punctuation.definition.tag.begin.liquid",
+            "punctuation.definition.tag.end.liquid",
+            // markdown
+            "meta.paragraph.markdown",
+            // env
+            "source.env"
+          ],
+          "settings": {
+            "foreground": "#f4f5f8c7", // #ABB2BF, #d3d3d3 #D8DEE9 #d8dcd6e8
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },
+  "workbench.colorCustomizations": {
+    "editor.background": "#1b2029",
+    "editorCursor.foreground": "#f1f1f1",
+    "editorCursor.background": "#063a7f",
+    "editorLineNumber.activeForeground": "#559BF5",
+    "scrollbarSlider.background": "#559BF55e",
+    "scrollbarSlider.hoverBackground": "#559BF51e",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.selectionBackground": "#559BF560",
+    "editor.wordHighlightStrongBackground": "#559BF546",
+    "editor.wordHighlightBorder": "#eeeeeea1",
+    "editor.wordHighlightStrongBorder": "#eeeeeea1",
+    "editor.findMatchBorder": "#559BF5",
+    "editor.findMatchBackground": "#9fced11f",
+    "editorBracketMatch.border": "#eeeeee57",
+    "editorSuggestWidget.highlightForeground": "#559BF5",
+    "editorWarning.foreground": "#fae860",
+    "editorError.foreground": "#fc7f8de3",
+    "progressBar.background": "#559BF5",
+    "focusBorder": "#559BF5",
+    "selection.background": "#559BF5",
+    "scrollbar.shadow": "#559BF5",
+    "editorSuggestWidget.border": "#559BF5",
+    "editorSuggestWidget.selectedBackground": "#559BF560",
+    "editorSuggestWidget.foreground": "#ccc",
+    "tab.activeBorder": "#559BF5",
+    "tab.activeBackground": "#559BF52a",
+    "tab.activeForeground": "#eee",
+    "tab.hoverForeground": "#ddd",
+    "tab.hoverBorder": "#eee",
+    "activityBar.background": "#242931",
+    "activityBar.activeBorder": "#559BF5",
+    "activityBarBadge.background": "#559BF5c4",
+    "sideBar.background": "#1b2029",
+    "sideBarSectionHeader.foreground": "#559BF5",
+    "sideBar.border": "#559BF5",
+    "list.hoverBackground": "#559BF534",
+    "list.hoverForeground": "#fff",
+    "list.warningForeground": "#fae860",
+    "list.errorForeground": "#fc7f8de3",
+    "list.activeSelectionForeground": "#fff",
+    "list.activeSelectionBackground": "#559BF565",
+    "tree.indentGuidesStroke": "#559BF5",
+    "statusBarItem.remoteBackground": "#035770",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "list.highlightForeground": "#559BF5",
+    "list.focusBackground": "#559BF588",
+    "list.focusForeground": "#fff",
+    "button.background": "#559BF5e7",
+    "notificationToast.border": "#559BF5",
+    "extensionButton.prominentBackground": "#559BF5d8",
+    "extensionButton.prominentHoverBackground": "#559BF581",
+    "panel.border": "#559BF5",
+    "panelTitle.activeBorder": "#559BF5",
+    "badge.background": "#559BF5c4",
+    "terminal.background": "#1b2029",
+    "terminal.foreground": "#ebebeb",
+    "terminal.ansiBlue": "#709de0",
+    "terminal.ansiBrightBlack": "#626483",
+    "terminal.ansiRed": "#e05b7c",
+    "terminal.ansiYellow": "#c7c42d",
+    "sash.hoverBorder": "#047ea2",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Lint                                    */
+  /* -------------------------------------------------------------------------- */
+  "eslint.run": "onSave",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ],
+  "eslint.packageManager": "yarn",
+  "stylelint.packageManager": "yarn",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Formatter                                 */
+  /* -------------------------------------------------------------------------- */
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": ["document"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "[dockerfile]": {
+  //   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  // },
+
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+
+  "rome.formatter.quoteStyle": "Single",
+  "rome.formatter.indentStyle": "Spaces",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Quokka                                   */
+  /* -------------------------------------------------------------------------- */
+  "quokka.colors": {
+    "covered": "#62b455",
+    "errorPath": "#ffa0a0",
+    "errorSource": "#fe536a",
+    "notCovered": "#cccccc",
+    "partiallyCovered": "#d2a032"
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Peacock                                  */
+  /* -------------------------------------------------------------------------- */
+  "peacock.affectActivityBar": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "My Fav 1",
+      "value": "#035770"
+    }
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Todo Tree                                 */
+  /* -------------------------------------------------------------------------- */
+  "todo-tree.general.tags": [
+    "CHANGED:",
+    "FIXME:",
+    "NOTE:",
+    "REVIEW:",
+    "TODO:",
+    "WARNING:"
+  ],
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "checklist",
+    "type": "text",
+    "fontWeight": "regular",
+    "iconColour": "#2C7CFF"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "CHANGED:": {
+      "foreground": "#42b883"
+    },
+    "FIXME:": {
+      "foreground": "#e05b7c"
+    },
+    "NOTE:": {
+      "foreground": "#C0C0C0" // #C0C0C0 #cbaadb
+    },
+    "REVIEW:": {
+      "foreground": "#2C7CFF"
+    },
+    "TODO:": {
+      "foreground": "#FF5F17"
+    },
+    "WARNING:": {
+      "foreground": "#fe536a"
+    }
+  },
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules/**"],
+  "todo-tree.tree.disableCompactFolders": true,
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Better Comments                              */
+  /* -------------------------------------------------------------------------- */
+  "better-comments.multilineComments": true,
+  "better-comments.tags": [
+    {
+      "tag": "CHANGED",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#42b883"
+    },
+    {
+      "tag": "FIXME",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#e05b7c"
+    },
+    {
+      "tag": "NOTE",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#C0C0C0"
+    },
+    {
+      "tag": "REVIEW",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#2C7CFF"
+    },
+    {
+      "tag": "TODO",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#FF5F17"
+    },
+    {
+      "tag": "WARNING",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#fe536a"
+    },
+    {
+      "tag": "--",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#C0C0C0"
+    },
+    {
+      "tag": "::",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#C0C0C0"
+    },
+    {
+      "tag": "##",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#709de0"
+    }
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                             Code Spell Checker                             */
+  /* -------------------------------------------------------------------------- */
+  "cSpell.enabled": true,
+  "cSpell.spellCheckDelayMs": 100,
+  "cSpell.userWords": [
+    "astro",
+    "astrojs",
+    "bootcamp",
+    "chakra",
+    "Clarifai",
+    "clearcoat",
+    "clsx",
+    "consts",
+    "contentlayer",
+    "daisyui",
+    "drei",
+    "dsphere",
+    "esbuild",
+    "fieldname",
+    "firestore",
+    "Flexbox",
+    "fontsource",
+    "frameloop",
+    "geospatial",
+    "glsl",
+    "glslify",
+    "headlessui",
+    "heroicons",
+    "Hotmail",
+    "kubectl",
+    "kubernetes",
+    "Lato",
+    "Listify",
+    "Mailgun",
+    "mantine",
+    "mapbox",
+    "mapboxgl",
+    "maxlength",
+    "MICROTASKS",
+    "middlewares",
+    "minlength",
+    "minmax",
+    "nextjs",
+    "NEXTTICK",
+    "nextui",
+    "nodebrew",
+    "noopener",
+    "noreferrer",
+    "orangered",
+    "originalname",
+    "outdent",
+    "overscroll",
+    "persistor",
+    "pnpm",
+    "popmotion",
+    "portafilter",
+    "POSTGRES",
+    "Preact",
+    "preconnect",
+    "prettierrc",
+    "psql",
+    "radash",
+    "rarr",
+    "reduxjs",
+    "rehype",
+    "roboto",
+    "semibold",
+    "SENDGRID",
+    "settimer",
+    "settimers",
+    "signin",
+    "signout",
+    "signup",
+    "skaffold",
+    "sslify",
+    "supabase",
+    "svgr",
+    "swiper",
+    "tailwindcss",
+    "Tetris",
+    "THREADPOOL",
+    "TMDB",
+    "TODOS",
+    "toolbelt",
+    "turborepo",
+    "twind",
+    "upsert",
+    "urql",
+    "Vercel",
+    "viewbox",
+    "virtuals",
+    "VITE",
+    "whichkey",
+    "womens",
+    "youtube",
+    "zustand"
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                          Tailwind CSS IntelliSense                         */
+  /* -------------------------------------------------------------------------- */
+  "css.validate": false, // CSSのチェック機能をオフ
+  "scss.validate": false, // CSSのチェック機能をオフ
+  "editor.quickSuggestions": {
+    "strings": true // JSXでもCSSクラスを補完できるように
+  },
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "javascriptreact": "javascript",
+    "html": "HTML",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
+  "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする
+  "tailwindCSS.experimental.classRegex": [
+    // "className = ['\"`]([^('\"`)]*)",
+    "tw`([^`]*)", // tw`...`
+    "tw=\"([^\"]*)", // <div tw="..." />
+    "tw={\"([^\"}]*)", // <div tw={"..."} />
+    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
+    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
+  ], // 上記の形でもVSCodeが補完してくれる
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Github Copilot                               */
+  /* -------------------------------------------------------------------------- */
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "mdx": false
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Indent Rainbow                               */
+  /* -------------------------------------------------------------------------- */
+  "indentRainbow.colors": [
+    "rgba(3, 4, 94,0.15)",
+    "rgba(2, 62, 138,0.15)",
+    "rgba(0, 119, 182, 0.15)",
+    "rgba(0, 150, 199,0.15)",
+    "rgba(0, 180, 216,0.15)",
+    "rgba(72, 202, 228,0.15)",
+    "rgba(144, 224, 239,0.15)"
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                     Git                                    */
+  /* -------------------------------------------------------------------------- */
+  "git.confirmSync": false,
+  "diffEditor.wordWrap": "off",
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Thunder Client                               */
+  /* -------------------------------------------------------------------------- */
+  "thunder-client.httpVersion": "HTTP/2",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Error Lens                                 */
+  /* -------------------------------------------------------------------------- */
+  "errorLens.delay": 500,
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Drawio                                   */
+  /* -------------------------------------------------------------------------- */
+  "hediet.vscode-drawio.codeLinkActivated": false,
+  "hediet.vscode-drawio.theme": "dark",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Svg Preview                                */
+  /* -------------------------------------------------------------------------- */
+  "svgPreview.autoOpen": false,
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Comment Divider                              */
+  /* -------------------------------------------------------------------------- */
+  "comment-divider.mainHeaderTransform": "titlecase", //先頭を大文字にする。
+  "comment-divider.subheaderTransform": "titlecase", //先頭を大文字にする。
+
+  /* -------------------------------------------------------------------------- */
+  /*                                Multicommand                                */
+  /* -------------------------------------------------------------------------- */
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.down3Lines",
+      "sequence": ["cursorDown", "cursorDown", "cursorDown"]
+    },
+    {
+      "command": "multiCommand.swapChar",
+      "interval": 30,
+      "sequence": [
+        "cursorLeftSelect",
+        "editor.action.clipboardCutAction",
+        "cursorRight",
+        "editor.action.clipboardPasteAction"
+      ]
+    }
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                     Vim                                    */
+  /* -------------------------------------------------------------------------- */
+  "vim.leader": "<space>",
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.timeout": 10000,
+  "vim.whichwrap": "h,l",
+
+  // Plugins
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.replaceWithRegister": true,
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+  "vim.argumentObjectOpeningDelimiters": ["(", "[", "{"],
+  "vim.argumentObjectClosingDelimiters": [")", "]", "}"],
+
+  // Custom key mappings
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-e>": false,
+    "<C-y>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    /* --------------------------------- Editor --------------------------------- */
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["workbench.action.toggleActivityBarVisibility"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    /* --------------------------------- Buffer --------------------------------- */
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "b", "t"],
+      "commands": ["workbench.action.files.newUntitledFile"]
+    },
+    /* --------------------------------- Search --------------------------------- */
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": [":nohl"]
+    },
+    /* ----------------------------------- Lsp ---------------------------------- */
+    {
+      "before": ["K"],
+      "after": ["g", "h"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    /* ----------------------------- Cursor & Motion ---------------------------- */
+    {
+      // search character
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s", "<char>"]
+    },
+    {
+      // move to start of line
+      "before": ["<leader>", "j"],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
+    },
+    // Camel Case Motion
+    {
+      "before": ["w"],
+      "after": ["<leader>", "w"]
+    },
+    {
+      "before": ["e"],
+      "after": ["<leader>", "e"]
+    },
+    {
+      "before": ["b"],
+      "after": ["<leader>", "b"]
+    },
+    {
+      "before": ["c", "m", "w"],
+      "after": ["c", "i", "<leader>", "w"]
+    },
+    {
+      "before": ["d", "m", "w"],
+      "after": ["d", "i", "<leader>", "w"]
+    },
+    /* ------------------------------- Change Case ------------------------------ */
+    {
+      "before": ["g", "a"],
+      "commands": ["extension.changeCase.commands"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-d>"],
+      "commands": ["deleteRight"]
+    }
+  ],
+
+  // ============================================= //
+  /* Which key */
+  "whichkey.sortOrder": "nonNumberFirst",
+  "whichkey.bindingOverrides": [
+    {
+      "keys": "c",
+      "name": "Close active editor",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor"
+    },
+    {
+      "keys": ",",
+      "name": "+Surrounding",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "y",
+          "name": "ys",
+          "command": "vim.remap",
+          "args": {
+            "after": ["y", "s"]
+          }
+        },
+        {
+          "key": "d",
+          "name": "ds",
+          "command": "vim.remap",
+          "args": {
+            "after": ["d", "s"]
+          }
+        },
+        {
+          "key": "c",
+          "name": "cs",
+          "command": "vim.remap",
+          "args": {
+            "after": ["c", "s"]
+          }
+        }
+      ]
+    },
+    {
+      "keys": "r",
+      "name": "+Resume/Repeat",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": ".",
+          "name": "Repeat recent actions",
+          "type": "command",
+          "command": "whichkey.repeatRecent"
+        },
+        {
+          "key": "b",
+          "name": "Recent buffers",
+          "type": "command",
+          "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+        },
+        {
+          "key": "s",
+          "name": "Search in project",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        }
+      ]
+    }
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Other                                   */
+  /* -------------------------------------------------------------------------- */
+  "redhat.telemetry.enabled": false
+}

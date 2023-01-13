@@ -1,0 +1,57 @@
+{
+  // Place your snippets for css here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  "minmax ()": {
+    "prefix": "minmax",
+    "body": ["minmax($1, $0)"],
+    "description": "media query"
+  },
+  "@media query (max-width)": {
+    "prefix": "mediamax",
+    "body": ["@media only screen and (max-width: $0) {", "}"],
+    "description": "media query"
+  },
+  "@media query (min-width)": {
+    "prefix": "mediamin",
+    "body": ["@media only screen and (min-width: $0) {", "}"],
+    "description": "media query"
+  },
+  "css variable": {
+    "prefix": "var",
+    "body": ["var(--$0)"],
+    "description": "css variable"
+  },
+  "css variable: color-primary": {
+    "prefix": "var-color-primary",
+    "body": ["var(--color-primary)"],
+    "description": "Primary color"
+  },
+  "css variable: color-primary-light": {
+    "prefix": "var-color-primary-light",
+    "body": ["var(--color-primary-light)"],
+    "description": "Primary color light"
+  },
+  "css variable: color-primary-dark": {
+    "prefix": "var-color-primary-dark",
+    "body": ["var(--color-primary-dark)"],
+    "description": "Primary color dark"
+  },
+  "css variable: color-grey-light": {
+    "prefix": "var-color-grey-light",
+    "body": ["var(--color-grey-light-$0)"],
+    "description": "Light grey color"
+  },
+  "css variable: color-grey-dark": {
+    "prefix": "var-color-grey-dark",
+    "body": ["var(--color-grey-dark-$0)"],
+    "description": "Dark grey color"
+  },
+  "css variable: shadow": {
+    "prefix": "var-shadow",
+    "body": ["var(--shadow-$0)"],
+    "description": "Shadow"
+  }
+}
