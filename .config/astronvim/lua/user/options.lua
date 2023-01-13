@@ -36,6 +36,7 @@ return {
     -- cursor
     guicursor = "n-v-sm:block,c-i-ci-ve:ver25-blinkwait800-blinkoff1000-blinkon1000,r-cr:hor20,o:hor50",
     cursorline = true, -- highlight the current line
+    whichwrap = "hl", -- which "horizontal" keys are allowed to travel to prev/next line
 
     -- appearance
     termguicolors = true, -- set term gui colors (most terminals supprt this)
@@ -74,10 +75,9 @@ return {
     undofile = true, -- enable persistent undo
 
     -- mapping
-    timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
-
-    -- whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
+    timeoutlen = 250, -- time to wait for a mapped sequence to complete (in milliseconds)
   },
+
   g = {
     mapleader = " ", -- sets vim.g.mapleader
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
@@ -99,6 +99,7 @@ return {
     },
   },
 }
+
 -- If you need more control, you can use the function()...end notation
 -- options = function(local_vim)
 --   local_vim.opt.relativenumber = true

@@ -28,24 +28,36 @@ return {
       noremap = true,
       silent = true,
     },
-    ["<leader>b1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", desc = "Go to Buffer 1" },
-    ["<leader>b2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", desc = "Go to Buffer 2" },
-    ["<leader>b3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", desc = "Go to Buffer 3" },
-    ["<leader>b4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", desc = "Go to Buffer 4" },
-    ["<leader>b5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", desc = "Go to Buffer 5" },
-    ["<leader>b6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", desc = "Go to Buffer 6" },
-    ["<leader>b7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", desc = "Go to Buffer 7" },
-    ["<leader>b8"] = { "<cmd>BufferLineGoToBuffer 8<cr>", desc = "Go to Buffer 8" },
-    ["<leader>b9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", desc = "Go to Buffer 9" },
+    ["<leader>1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", desc = "Go to Buffer 1" },
+    ["<leader>2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", desc = "Go to Buffer 2" },
+    ["<leader>3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", desc = "Go to Buffer 3" },
+    ["<leader>4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", desc = "Go to Buffer 4" },
+    ["<leader>5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", desc = "Go to Buffer 5" },
+    ["<leader>6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", desc = "Go to Buffer 6" },
+    ["<leader>7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", desc = "Go to Buffer 7" },
+    ["<leader>8"] = { "<cmd>BufferLineGoToBuffer 8<cr>", desc = "Go to Buffer 8" },
+    ["<leader>9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", desc = "Go to Buffer 9" },
 
     ["<Enter>"] = { "o<Esc>", desc = "Insert new line below" },
     ["<S-Enter>"] = { "O<Esc>", desc = "Insert new line above" },
 
+    -- cursor navigation
+    ["<C-a>"] = { "0" },
+    ["<C-e>"] = { "$" },
+    ["<C-s>"] = { "^" },
+    ["<C-y>"] = { "%" },
+
     -- delete single character without yanking into register
     ["x"] = { '"_x' },
 
+    ["gu"] = { "gu", desc = "To lower case" },
+    ["gU"] = { "gU", desc = "To Upper case" },
+    ["g~"] = { "g~", desc = "Switch case" },
+    ["gM"] = { "gM", desc = "Move to middle of line" },
+    ["<C-j>"] = { "gM", desc = "Move to middle of line" },
+
     -- select all
-    ["<A-a>"] = { "GVgg" },
+    ["<A-a>"] = { "ggVG" },
 
     -- force quit
     ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force Quit" },
@@ -109,12 +121,14 @@ return {
     -- git
     ["<leader>ga"] = { "<cmd>Telescope git_stash<CR>", desc = "Git stash" },
     ["<leader>gC"] = { "<cmd>Telescope git_bcommits<CR>", desc = "Git buffer commits" },
+    ["[g"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", desc = "Previous Git hunk" },
+    ["]g"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", desc = "Next Git hunk" },
     ["co"] = { "<cmd>GitConflictChooseOurs<CR>", desc = "Git Conflict: Choose ours" },
     ["ct"] = { "<cmd>GitConflictChooseTheirs<CR>", desc = "Git Conflict: Choose theirs" },
     ["cb"] = { "<cmd>GitConflictChooseBoth<CR>", desc = "Git Conflict: Choose both" },
     ["cn"] = { "<cmd>GitConflictChooseNone<CR>", desc = "Git Conflict: Choose none" },
-    ["]x"] = { "<cmd>GitConflictPrevConflict<CR>", desc = "Git Conflict: Prev conflict" },
-    ["[x"] = { "<cmd>GitConflictNextConflict<CR>", desc = "Git Conflict: Next conflict" },
+    ["[x"] = { "<cmd>GitConflictPrevConflict<CR>", desc = "Git Conflict: Prev conflict" },
+    ["]x"] = { "<cmd>GitConflictNextConflict<CR>", desc = "Git Conflict: Next conflict" },
     ["cl"] = { "<cmd>GitConflictListQf<CR>", desc = "Git Conflict: List of conflicts" },
 
     -- dashboard
@@ -126,17 +140,16 @@ return {
     -- sniprun
     ["<leader>rr"] = { "<cmd>SnipRun<cr>", desc = "Run" },
     ["<leader>rs"] = { "<cmd>SnipReset<cr>", desc = "Abort" },
-    ["<leader>rc"] = { "<cmd>SnipClose<cr>", desc = "Clear Output" },
+    ["<leader>rc"] = { "<cmd>SnipClose<cr>", desc = "Clear output" },
   },
 
   --------------------
   -- Insert mode
   --------------------
   i = {
-    -- quick save
-    ["<C-s>"] = { "<Esc>:w<cr>", desc = "Save File" },
+    -- ["jk"] = { "<esc>" },
 
-    -- emacs-ish key bindings
+    -- cursor navigation
     -- ["<C-k>"] = { "<Up>" },
     ["<C-p>"] = { "<Up>" },
     -- ["<C-j>"] = { "<Down>" },
@@ -146,8 +159,15 @@ return {
     ["<C-f>"] = { "<Right>" },
     ["<C-a>"] = { "<Esc>I" },
     ["<C-e>"] = { "<Esc>A" },
+    ["<C-s>"] = { "<C-o>^" },
     ["<C-d>"] = { "<Del>" },
     ["<C-k>"] = { "<C-o>D" },
+    ["<C-y>"] = { "<C-o>%" },
+
+    ["<C-j>"] = { "<Esc>gMa" }, -- move to middle of line
+
+    -- ["<C-y>"] = { "<C-o>b" },
+    -- ["<C-i>"] = { "<C-o>w" },
 
     -- move text up and down
     ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
@@ -162,6 +182,12 @@ return {
     ["<"] = { "<gv" },
     [">"] = { ">gv" },
 
+    -- cursor navigation
+    ["<C-a>"] = { "0" },
+    ["<C-e>"] = { "$" },
+    ["<C-s>"] = { "^" },
+    ["<C-y>"] = { "%" },
+
     -- move text up and down
     ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
     ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
@@ -169,13 +195,23 @@ return {
     -- ["p"] = { "_dP" },
 
     -- sniprun
-    ["f"] = { "<cmd>SnipRun<cr>", desc = "SnipRun" },
+    ["f"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
   },
 
   --------------------
   -- Visual Block mode
   --------------------
   x = {
+    -- stay in indent mode
+    ["<"] = { "<gv" },
+    [">"] = { ">gv" },
+
+    -- cursor navigation
+    ["<C-a>"] = { "0" },
+    ["<C-e>"] = { "$" },
+    ["<C-s>"] = { "^" },
+    ["<C-y>"] = { "%" },
+
     -- move text up and down
     ["<A-k>"] = { ":move '<-2<cr>gv=gv" },
     ["<A-j>"] = { ":move '>+1<cr>gv=gv" },
