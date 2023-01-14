@@ -76,7 +76,7 @@ return {
     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
     ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-    ["<C-;>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- show suggestion window
+    ["<C-v>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- show suggestion window
     ["<C-l>"] = cmp.mapping.abort(), -- close suggestion window
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
