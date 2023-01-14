@@ -12,12 +12,11 @@ alias lg='lazygit'
 alias so='source'
 alias be='bundle exec'
 alias ber='bundle exec ruby'
+alias c="code"
 alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
 alias cn='code -n' # Vscodeを新しいウィンドウで開く(usage: cn <file | dir>)
-alias c.="code ."
 alias czsh='code ~/.zshrc'
 alias szsh='source ~/.zshrc'
-alias cgconfig='code ~/.gitconfig'
 alias al='alias'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
 alias portk='kill -9' # プロセスをkill (-9 = 強制終了) -> kill -9 [PIDの数字]
@@ -25,6 +24,19 @@ alias restart='sudo fdesetup authrestart'
 alias delcache='sudo rm -rf /System/Library/Caches/* /Library/Caches/* ~/Library/Caches/*' # Macのキャッシュを削除
 # sudo du -x -m -d 5 / | awk '$1 >= 1000{print}' # 1000MB以上のファイルを抽出
 # sudo du -g -x -d 5 / | awk ‘$1 >= 5{print}’ # 5GB以上のファイルを抽出
+
+# ls
+if type "exa" > /dev/null 2>&1; then
+    alias ls='exa'
+    alias l='exa -F'
+    alias la='exa -a'
+    alias ll='exa -l'
+fi
+
+# cat
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
 
 # npm
 # alias nin='npm init'

@@ -1,4 +1,19 @@
 ### Functions ###
+#
+# BUFFER : コマンドラインとして編集している文字列が格納される変数
+#          この変数に任意の文字列を入れると、実際にコマンドラインの文字列も置き換わる
+#
+# CURSOR : カーソルの位置が格納される変数
+#          この変数に数値を入れると、実際にコマンドラインのカーソル位置が移動する
+#
+# zle redisplay : 画面のリフレッシュ
+#
+# zle -N my_edit_func : my_edit_funcをZLEウィジェットというものとして登録する
+#                       おまじない的に必ずつけるものだと思えば良い
+#
+# bindkey "^j" my_edit_func : ctrl+jにウィジェットmy_edit_funcを紐づける
+#
+
 # cp コマンドでカレントディレクトリ以下のディレクトリを絞り込んだ後に移動する
 function find_cd() {
     cd "$(find . -type d | fzf --reverse)"
@@ -76,4 +91,20 @@ function fzgrep() {
     fzf --bind "change:reload:$RG_PREFIX {q} || true" \
         --ansi --phony --query "$INITIAL_QUERY" \
         --preview 'bat `echo {} | cut -f 1 --delim ":"`'
+}
+
+# iTerm2のコマンドの真ん中に移動
+function jump_middle() {
+    CURSOR=$((${#BUFFER} / 2))
+    zle redisplay
+}
+zle -N jump_middle
+bindkey "^j" jump_middle
+
+# Node Scriptを参照
+function nsc() {
+    if [[ -f package.json ]]; then
+        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
+        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
+    fi
 }
