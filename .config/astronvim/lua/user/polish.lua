@@ -17,4 +17,9 @@ return function()
     { "BufRead", "BufNewFile" },
     { pattern = { "*.txt", "*.md", "*.tex" }, command = "setlocal spell" }
   )
+
+  vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "settings.json", "keybindings.json", "**/snippets/*.json", "tsconfig.json" },
+    command = "setlocal filetype=jsonc",
+  })
 end
