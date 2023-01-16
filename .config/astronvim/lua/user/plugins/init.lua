@@ -5,6 +5,7 @@ return {
 
   ["p00f/nvim-ts-rainbow"] = { disable = true },
   ["max397574/better-escape.nvim"] = { disable = true },
+  ["stevearc/aerial.nvim"] = { disable = true },
 
   ----- Adding plugins -----
 
@@ -170,6 +171,13 @@ return {
   },
 
   { "MattesGroeger/vim-bookmarks" },
+
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("user.plugins.symbols-outline")
+    end,
+  },
 
   -- motion & edit --
 

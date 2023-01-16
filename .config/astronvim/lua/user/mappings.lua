@@ -141,6 +141,9 @@ return {
     ["<leader>rr"] = { "<cmd>SnipRun<cr>", desc = "Run" },
     ["<leader>rs"] = { "<cmd>SnipReset<cr>", desc = "Abort" },
     ["<leader>rc"] = { "<cmd>SnipClose<cr>", desc = "Clear output" },
+
+    -- symbols-outline
+    ["<leader>lS"] = { "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
   },
 
   --------------------
