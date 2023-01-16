@@ -144,6 +144,9 @@ return {
 
     -- symbols-outline
     ["<leader>lS"] = { "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
+
+    -- twoslash-queries
+    ["<C-k>"] = { "<cmd>InspectTwoslashQueries<cr>" },
   },
 
   --------------------

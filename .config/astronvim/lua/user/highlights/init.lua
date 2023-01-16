@@ -7,6 +7,8 @@ return {
   -- WinBarNC = { fg = "#5c6370", bg = "#1e222a" },
   Cursorline = { bg = "#223137" },
 
+  Type = { fg = "#60cbd9" },
+
   --VS code cmp
   CmpItemKindConstructor = { fg = "#f28b25" },
   CmpItemKindUnit = { fg = "#D4D4D4" },
@@ -68,4 +70,7 @@ return {
   GitConflictIncoming = { bg = "#344f69" },
   GitConflictAncestorLabel = { bg = "#754a81" },
   GitConflictAncestor = { bg = "#754a81" },
+
+  -- Twoslash queries
+  TwoSlashQueries = { fg = "#777d86" },
 }

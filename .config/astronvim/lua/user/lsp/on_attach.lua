@@ -3,6 +3,11 @@ if not tw_highlight_status then
   return
 end
 
+local twoslash_queries_status, twoslash_queries = pcall(require, "twoslash-queries")
+if not twoslash_queries_status then
+  return
+end
+
 -- enable keybinds only for when lsp server available
 local function lsp_keymaps(client, bufnr)
   local set = vim.keymap.set
@@ -29,6 +34,10 @@ return function(client, bufnr)
   -- end
 
   lsp_keymaps(client, bufnr)
+
+  if client.name == "tsserver" then
+    twoslash_queries.attach(client, bufnr)
+  end
 
   if client.name == "tailwindcss" then
     tw_highlight.setup(client, bufnr, {
