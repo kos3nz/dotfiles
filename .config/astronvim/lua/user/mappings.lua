@@ -187,6 +187,17 @@ return {
     ["gaop"] = { "<cmd>lua require('textcase').operator('to_pascal_case')<cr>", desc = "to_pascal_case" },
     ["gaot"] = { "<cmd>lua require('textcase').operator('to_title_case')<cr>", desc = "to_title_case" },
     ["gaof"] = { "<cmd>lua require('textcase').operator('to_path_case')<cr>", desc = "to_path_case" },
+
+    -- CamelCaseMotion
+    ["w"] = { "<Plug>CamelCaseMotion_w" },
+    ["e"] = { "<Plug>CamelCaseMotion_e" },
+    ["b"] = { "<Plug>CamelCaseMotion_b" },
+    ["cmb"] = { "c<Plug>CamelCaseMotion_ib", desc = "Change word segment backward" },
+    ["cme"] = { "c<Plug>CamelCaseMotion_ie", desc = "Change word segment forward" },
+    ["cmw"] = { "c<Plug>CamelCaseMotion_iw", desc = "Change word segment forward" },
+    ["dmb"] = { "d<Plug>CamelCaseMotion_ib", desc = "Delete word segment backward" },
+    ["dme"] = { "d<Plug>CamelCaseMotion_ie", desc = "Delete word segment forward" },
+    ["dmw"] = { "d<Plug>CamelCaseMotion_iw", desc = "Delete word segment forward" },
   },
 
   --------------------
@@ -242,6 +253,10 @@ return {
 
     -- sniprun
     ["f"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
+
+    -- CamelCaseMotion
+    ["mw"] = { "<Plug>CamelCaseMotion_iw" },
+    ["mb"] = { "<Plug>CamelCaseMotion_ib" },
   },
 
   --------------------
@@ -261,6 +276,10 @@ return {
     -- move text up and down
     ["<A-k>"] = { ":move '<-2<cr>gv=gv" },
     ["<A-j>"] = { ":move '>+1<cr>gv=gv" },
+
+    -- CamelCaseMotion
+    ["mw"] = { "<Plug>CamelCaseMotion_iw" },
+    ["mb"] = { "<Plug>CamelCaseMotion_ib" },
   },
 
   --------------------

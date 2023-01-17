@@ -239,6 +239,8 @@ return {
     end,
   },
 
+  { "bkad/CamelCaseMotion" },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },

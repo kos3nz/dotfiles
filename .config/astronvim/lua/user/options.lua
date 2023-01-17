@@ -97,6 +97,8 @@ return {
       -- ["Mouse Cursor"] = "<C-LeftMouse>",
       -- ["Mouse Word"] = "<C-RightMouse>",
     },
+
+    camelcasemotion_key = ",",
   },
 }
 
