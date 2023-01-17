@@ -13,5 +13,9 @@ return {
       ["r"] = { name = "Snip Run" },
       ["x"] = { name = "Trouble" },
     },
+
+    ["g"] = {
+      ["a"] = { name = "Text Case" },
+    },
   },
 }

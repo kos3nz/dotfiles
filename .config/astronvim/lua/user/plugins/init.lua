@@ -232,6 +232,13 @@ return {
 
   { "zhaosheng-pan/vim-im-select" },
 
+  {
+    "johmsalas/text-case.nvim",
+    config = function()
+      require("textcase").setup({})
+    end,
+  },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },

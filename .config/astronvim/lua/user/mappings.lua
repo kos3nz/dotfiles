@@ -147,6 +147,46 @@ return {
 
     -- twoslash-queries
     ["<C-k>"] = { "<cmd>InspectTwoslashQueries<cr>" },
+
+    -- textcase
+    ["gau"] = { "<cmd>lua require('textcase').current_word('to_upper_case')<cr>", desc = "Convert to_upper_case" },
+    ["gal"] = { "<cmd>lua require('textcase').current_word('to_lower_case')<cr>", desc = "Convert to_lower_case" },
+    ["gas"] = { "<cmd>lua require('textcase').current_word('to_snake_case')<cr>", desc = "Convert to_snake_case" },
+    ["gaa"] = { "<cmd>lua require('textcase').current_word('to_dash_case')<cr>", desc = "Convert to_dash_case" },
+    ["gan"] = { "<cmd>lua require('textcase').current_word('to_constant_case')<cr>", desc = "Convert to_constant_case" },
+    ["gad"] = { "<cmd>lua require('textcase').current_word('to_dot_case')<cr>", desc = "Convert to_dot_case" },
+    ["gar"] = { "<cmd>lua require('textcase').current_word('to_phrase_case')<cr>", desc = "Convert to_phrase_case" },
+    ["gac"] = { "<cmd>lua require('textcase').current_word('to_camel_case')<cr>", desc = "Convert to_camel_case" },
+    ["gap"] = { "<cmd>lua require('textcase').current_word('to_pascal_case')<cr>", desc = "Convert to_pascal_case" },
+    ["gat"] = { "<cmd>lua require('textcase').current_word('to_title_case')<cr>", desc = "Convert to_title_case" },
+    ["gaf"] = { "<cmd>lua require('textcase').current_word('to_path_case')<cr>", desc = "Convert to_path_case" },
+
+    ["gaU"] = { "<cmd>lua require('textcase').lsp_rename('to_upper_case')<cr>", desc = "LSP rename to_upper_case" },
+    ["gaL"] = { "<cmd>lua require('textcase').lsp_rename('to_lower_case')<cr>", desc = "LSP rename to_lower_case" },
+    ["gaS"] = { "<cmd>lua require('textcase').lsp_rename('to_snake_case')<cr>", desc = "LSP rename to_snake_case" },
+    ["gaA"] = { "<cmd>lua require('textcase').lsp_rename('to_dash_case')<cr>", desc = "LSP rename to_dash_case" },
+    ["gaN"] = {
+      "<cmd>lua require('textcase').lsp_rename('to_constant_case')<cr>",
+      desc = "LSP rename to_constant_case",
+    },
+    ["gaD"] = { "<cmd>lua require('textcase').lsp_rename('to_dot_case')<cr>", desc = "LSP rename to_dot_case" },
+    ["gaR"] = { "<cmd>lua require('textcase').lsp_rename('to_phrase_case')<cr>", desc = "LSP rename to_phrase_case" },
+    ["gaC"] = { "<cmd>lua require('textcase').lsp_rename('to_camel_case')<cr>", desc = "LSP rename to_camel_case" },
+    ["gaP"] = { "<cmd>lua require('textcase').lsp_rename('to_pascal_case')<cr>", desc = "LSP rename to_pascal_case" },
+    ["gaT"] = { "<cmd>lua require('textcase').lsp_rename('to_title_case')<cr>", desc = "LSP rename to_title_case" },
+    ["gaF"] = { "<cmd>lua require('textcase').lsp_rename('to_path_case')<cr>", desc = "LSP rename to_path_case" },
+
+    ["gaou"] = { "<cmd>lua require('textcase').operator('to_upper_case')<cr>", desc = "to_upper_case" },
+    ["gaol"] = { "<cmd>lua require('textcase').operator('to_lower_case')<cr>", desc = "to_lower_case" },
+    ["gaos"] = { "<cmd>lua require('textcase').operator('to_snake_case')<cr>", desc = "to_snake_case" },
+    ["gaoa"] = { "<cmd>lua require('textcase').operator('to_dash_case')<cr>", desc = "to_dash_case" },
+    ["gaon"] = { "<cmd>lua require('textcase').operator('to_constant_case')<cr>", desc = "to_constant_case" },
+    ["gaod"] = { "<cmd>lua require('textcase').operator('to_dot_case')<cr>", desc = "to_dot_case" },
+    ["gaor"] = { "<cmd>lua require('textcase').operator('to_phrase_case')<cr>", desc = "to_phrase_case" },
+    ["gaoc"] = { "<cmd>lua require('textcase').operator('to_camel_case')<cr>", desc = "to_camel_case" },
+    ["gaop"] = { "<cmd>lua require('textcase').operator('to_pascal_case')<cr>", desc = "to_pascal_case" },
+    ["gaot"] = { "<cmd>lua require('textcase').operator('to_title_case')<cr>", desc = "to_title_case" },
+    ["gaof"] = { "<cmd>lua require('textcase').operator('to_path_case')<cr>", desc = "to_path_case" },
   },
 
   --------------------
