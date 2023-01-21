@@ -30,7 +30,7 @@ sniprun.setup({
   --# to filter only sucessful runs (or errored-out runs respectively)
   display = {
     "Classic", --# display results in the command-line  area
-    "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
+    -- "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
 
     -- "VirtualText",             --# display results as virtual text
     -- "TempFloatingWindow",      --# display results in a floating window

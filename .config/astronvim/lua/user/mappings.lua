@@ -252,7 +252,7 @@ return {
     -- ["p"] = { "_dP" },
 
     -- sniprun
-    ["f"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
+    ["r"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
 
     -- CamelCaseMotion
     ["mw"] = { "<Plug>CamelCaseMotion_iw" },
