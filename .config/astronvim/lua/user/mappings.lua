@@ -80,6 +80,14 @@ return {
     -- terminal
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
 
+    -- comments
+    ["<C-_>"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      desc = "Comment line",
+    },
+
     -- hop
     ["<leader>j"] = { "<cmd>HopLineStart<cr>", desc = "HopLineStart" },
     ["f"] = {
@@ -229,6 +237,14 @@ return {
     -- move text up and down
     ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
     ["<A-j>"] = { "<Esc>:m .+1<cr>==gi" },
+
+    -- comments
+    ["<C-_>"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      desc = "Comment line",
+    },
   },
 
   --------------------
@@ -250,6 +266,12 @@ return {
     ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
 
     -- ["p"] = { "_dP" },
+
+    -- comments
+    ["<C-_>"] = {
+      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+      desc = "Toggle comment line",
+    },
 
     -- sniprun
     ["r"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
@@ -276,6 +298,12 @@ return {
     -- move text up and down
     ["<A-k>"] = { ":move '<-2<cr>gv=gv" },
     ["<A-j>"] = { ":move '>+1<cr>gv=gv" },
+
+    -- comments
+    ["<C-_>"] = {
+      "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+      desc = "Toggle comment line",
+    },
 
     -- CamelCaseMotion
     ["mw"] = { "<Plug>CamelCaseMotion_iw" },
