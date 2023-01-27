@@ -58,12 +58,12 @@ return {
 
       -- Source
       vim_item.menu = ({
-        cmp_tabnine = "[Tabnine]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[Lua]",
         luasnip = "[LuaSnip]",
         buffer = "[Buf]",
         path = "[Path]",
+        -- cmp_tabnine = "[Tabnine]",
         -- emoji = "[Emoji]",
       })[entry.source.name]
 
