@@ -30,6 +30,7 @@ return {
     width = 32,
     mappings = {
       ["l"] = "open",
+      ["u"] = "close_node",
       -- ["<2-LeftMouse>"] = "open",
       -- ["<cr>"] = "open",
       -- ["o"] = "open",
@@ -52,6 +53,7 @@ return {
       -- ["c"] = "copy",
       -- ["m"] = "move",
       -- ["q"] = "close_window",
+      -- ["z"] = "close_all_node",
     },
   },
   nesting_rules = {},

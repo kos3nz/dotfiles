@@ -11,5 +11,12 @@ return {
     -- gd = function()
     --   require("telescope.builtin").lsp_definitions()
     -- end,
+
+    gD = {
+      function()
+        vim.lsp.buf.type_definition()
+      end,
+      desc = "Definition of current type",
+    },
   },
 }
