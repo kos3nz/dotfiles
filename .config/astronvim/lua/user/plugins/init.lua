@@ -241,6 +241,8 @@ return {
 
   { "bkad/CamelCaseMotion" },
 
+  { "wellle/targets.vim" },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },
