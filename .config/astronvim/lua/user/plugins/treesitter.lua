@@ -22,6 +22,7 @@ return {
     "svelte",
     "astro",
     "graphql",
+    "prisma",
     "rust",
     "bash",
     "lua",

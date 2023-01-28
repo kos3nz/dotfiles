@@ -11,6 +11,7 @@ return {
     "tsserver",
     "denols",
     "astro",
+    "prismals",
     "svelte",
     "rust_analyzer",
     "sumneko_lua",
