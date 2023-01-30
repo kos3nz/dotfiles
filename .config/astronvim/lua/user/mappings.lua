@@ -12,16 +12,13 @@ return {
   -- Normal mode
   --------------------
   n = {
-    -- mappings seen under group name "Buffer"
-    ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-    ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
-    ["<leader>bp"] = { "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
-    ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-    ["<leader>bw"] = { "<cmd>sil exe 'wa|%bd|e#|bd#|normal `'<cr>", desc = "Save and close other buffers" },
-    ["<leader>bq"] = { "<cmd>sil exe '%bd|e#|bd#|normal `'<cr>", desc = "Close other buffers exept unsaved" },
+    -- disable default mappings
+    ["<leader>fn"] = false, -- New File
+
+    -- buffer
     ["<leader>bc"] = { "<cmd>lua Close_all_but_current() <cr>", desc = "Close other buffers" },
     ["<leader>bC"] = { "<cmd>lua Close_all_but_current(true) <cr>", desc = "Force close other buffers" },
+    ["<leader>bd"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
     ["<leader>bg"] = {
       function()
         require("bufferline").go_to_buffer(vim.fn.input("Buf number: "), true)
@@ -30,6 +27,10 @@ return {
       noremap = true,
       silent = true,
     },
+    ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+    ["<leader>bp"] = { "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
+    ["<leader>bs"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+    ["<leader>bt"] = { "<cmd>enew<cr>", desc = "New file" },
     ["<leader>1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", desc = "Go to Buffer 1" },
     ["<leader>2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", desc = "Go to Buffer 2" },
     ["<leader>3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", desc = "Go to Buffer 3" },
