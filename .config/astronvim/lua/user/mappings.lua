@@ -20,6 +20,8 @@ return {
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
     ["<leader>bw"] = { "<cmd>sil exe 'wa|%bd|e#|bd#|normal `'<cr>", desc = "Save and close other buffers" },
     ["<leader>bq"] = { "<cmd>sil exe '%bd|e#|bd#|normal `'<cr>", desc = "Close other buffers exept unsaved" },
+    ["<leader>bc"] = { "<cmd>lua Close_all_but_current() <cr>", desc = "Close other buffers" },
+    ["<leader>bC"] = { "<cmd>lua Close_all_but_current(true) <cr>", desc = "Force close other buffers" },
     ["<leader>bg"] = {
       function()
         require("bufferline").go_to_buffer(vim.fn.input("Buf number: "), true)
