@@ -7,8 +7,11 @@ return {
       -- third key is the key to bring up next level and its displayed
       -- group name in which-key top level menu
       ["b"] = { name = "Buffer" },
-      ["r"] = { name = "Snip Run" },
-      ["x"] = { name = "Trouble" },
+      ["c"] = { name = "Git Conflict" },
+      ["j"] = { name = "Hop" },
+      ["r"] = { name = "Recent/Session" },
+      ["S"] = { name = "Snip Run" },
+      ["t"] = { name = "Trouble/ToggleTerm" },
     },
 
     ["c"] = {

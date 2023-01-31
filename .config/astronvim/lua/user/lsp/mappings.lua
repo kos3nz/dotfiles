@@ -12,11 +12,27 @@ return {
     --   require("telescope.builtin").lsp_definitions()
     -- end,
 
-    gD = {
+    gT = false,
+
+    gh = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      desc = "Hover symbol details",
+    },
+    gt = {
       function()
         vim.lsp.buf.type_definition()
       end,
       desc = "Definition of current type",
     },
+
+    K = false,
+
+    -- symbols-outline
+    ["<leader>lS"] = { "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
+
+    -- twoslash-queries
+    ["<leader>lq"] = { "<cmd>InspectTwoslashQueries<cr>" },
   },
 }
