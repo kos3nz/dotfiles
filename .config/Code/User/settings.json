@@ -23,7 +23,6 @@
   "editor.suggest.showStatusBar": true,
   "editor.tabSize": 2,
   "editor.cursorBlinking": "solid",
-  "editor.minimap.enabled": false,
   "editor.suggest.preview": true,
   "editor.guides.indentation": false,
   "editor.bracketPairColorization.enabled": true,
@@ -990,7 +989,7 @@
     "<C-y>": false
   },
   "vim.normalModeKeyBindingsNonRecursive": [
-    /* --------------------------------- Editor --------------------------------- */
+    /* -------------------------------- Essential ------------------------------- */
     {
       "before": ["u"],
       "commands": ["undo"]
@@ -1003,6 +1002,7 @@
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
     },
+    /* --------------------------------- Sidebar -------------------------------- */
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
@@ -1015,27 +1015,41 @@
       "before": ["<leader>", "o"],
       "commands": ["workbench.explorer.fileView.focus"]
     },
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
     /* --------------------------------- Buffer --------------------------------- */
     {
-      "before": ["<leader>", "b", "c"],
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "x"],
       "commands": ["workbench.action.closeOtherEditors"]
     },
     {
       "before": ["<leader>", "b", "t"],
       "commands": ["workbench.action.files.newUntitledFile"]
     },
-    /* --------------------------------- Search --------------------------------- */
+    /* ---------------------------------- File ---------------------------------- */
     {
       "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
+      "before": ["<leader>", "f", "a"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    /* --------------------------------- Search --------------------------------- */
+    {
       "before": ["<leader>", "h"],
       "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    /* ----------------------------- Recent/session ----------------------------- */
+    {
+      "before": ["<leader>", "r", "b"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
     },
     /* ----------------------------------- Lsp ---------------------------------- */
     {
@@ -1049,6 +1063,10 @@
     {
       "before": ["[", "d"],
       "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "l", "a"],
+      "commands": ["editor.action.quickFix"]
     },
     /* ----------------------------- Cursor & Motion ---------------------------- */
     {
@@ -1086,6 +1104,11 @@
     {
       "before": ["g", "a"],
       "commands": ["extension.changeCase.commands"]
+    },
+    /* ----------------------------------- Ui ----------------------------------- */
+    {
+      "before": ["<leader>", "u", "m"],
+      "commands": ["editor.action.toggleMinimap"]
     }
   ],
   "vim.insertModeKeyBindings": [
@@ -1100,71 +1123,16 @@
   "whichkey.sortOrder": "nonNumberFirst",
   "whichkey.bindingOverrides": [
     {
-      "keys": "c",
-      "name": "Close active editor",
-      "type": "command",
-      "command": "workbench.action.closeActiveEditor"
-    },
-    {
-      "keys": ",",
-      "name": "+Surrounding",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "y",
-          "name": "ys",
-          "command": "vim.remap",
-          "args": {
-            "after": ["y", "s"]
-          }
-        },
-        {
-          "key": "d",
-          "name": "ds",
-          "command": "vim.remap",
-          "args": {
-            "after": ["d", "s"]
-          }
-        },
-        {
-          "key": "c",
-          "name": "cs",
-          "command": "vim.remap",
-          "args": {
-            "after": ["c", "s"]
-          }
-        }
-      ]
-    },
-    {
       "keys": "r",
       "name": "+Resume/Repeat",
       "type": "bindings",
-      "bindings": [
-        {
-          "key": ".",
-          "name": "Repeat recent actions",
-          "type": "command",
-          "command": "whichkey.repeatRecent"
-        },
-        {
-          "key": "b",
-          "name": "Recent buffers",
-          "type": "command",
-          "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-        },
-        {
-          "key": "s",
-          "name": "Search in project",
-          "type": "command",
-          "command": "workbench.action.findInFiles"
-        }
-      ]
+      "bindings": []
     }
   ],
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "editor.minimap.enabled": false
 }

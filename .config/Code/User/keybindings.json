@@ -1,7 +1,24 @@
 // Place your key bindings in this file to override the defaults
 [
   /* --------------------------------- Editor --------------------------------- */
-
+  // New untitled file
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  // New window
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.newWindow"
+  },
+  {
+    "key": "shift+cmd+n",
+    "command": "-workbench.action.newWindow"
+  },
   // Insert line
   {
     "key": "enter",
@@ -13,7 +30,6 @@
     "command": "editor.action.insertLineBefore",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
   },
-
   // Move lines up and down
   {
     "key": "alt+j",
@@ -37,29 +53,27 @@
   // },
 
   /* ---------------------------- Window Navigation --------------------------- */
-
   // Quick window navigation
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert'"
+    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert'"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && vim.mode != 'Insert'"
+    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && vim.mode != 'Insert'"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && vim.mode != 'Insert'"
+    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && vim.mode != 'Insert'"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert'"
+    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert'"
   },
-
   // Quick Navigation for diff view
   {
     "key": "ctrl+h",
@@ -83,7 +97,6 @@
   },
 
   /* -------------------------------- Explorer -------------------------------- */
-
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -126,21 +139,67 @@
   },
 
   /* --------------------------------- Cursor --------------------------------- */
-
   {
     "key": "ctrl+s",
     "command": "cursorHome",
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+y",
+    "key": "ctrl+t",
     "command": "editor.action.jumpToBracket",
     "when": "editorTextFocus"
   },
 
+  /* --------------------------------- Search --------------------------------- */
+  // Toggle Regex in search
+  {
+    "key": "alt+r",
+    "command": "toggleSearchRegex",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "toggleFindRegex",
+    "when": "editorFocus"
+  },
+  // Toggle match whole ward in search
+  {
+    "key": "alt+w",
+    "command": "toggleFindWholeWord",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "toggleSearchWholeWord",
+    "when": "searchViewletFocus"
+  },
+  // Toggle case sensitive in search
+  {
+    "key": "alt+c",
+    "command": "toggleFindCaseSensitive",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+c",
+    "command": "toggleSearchCaseSensitive",
+    "when": "searchViewletFocus && !fileMatchOrFolderMatchFocus"
+  },
   /* --------------------------------- Buffer --------------------------------- */
 
-  /* ---------------------------------- Popup --------------------------------- */
+  /* ----------------------------------- LSP ---------------------------------- */
+
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+
+  /* ------------------------------ Notification ------------------------------ */
 
   /* ---------------------------------- Diff ---------------------------------- */
 
@@ -169,24 +228,6 @@
     "command": "liveSass.command.watchMySass"
   },
   {
-    "key": "alt+r",
-    "command": "workbench.action.tasks.build"
-  },
-  {
-    "key": "shift+cmd+b",
-    "command": "-workbench.action.tasks.build"
-  },
-  {
-    "key": "cmd+u",
-    "command": "cursorUndo",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "cmd+u",
-    "command": "-cursorUndo",
-    "when": "textInputFocus"
-  },
-  {
     "key": "cmd+backspace",
     "command": "deleteAllLeft",
     "when": "textInputFocus && !editorReadonly"
@@ -194,16 +235,6 @@
   {
     "key": "cmd+backspace",
     "command": "-deleteAllLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+[Minus]",
-    "command": "editor.action.deleteLines",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+cmd+k",
-    "command": "-editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
   },
   {
@@ -370,23 +401,6 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
-    "key": "shift+cmd+c",
-    "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "shift+cmd+[Minus]",
-    "command": "workbench.action.zoomIn"
-  },
-  {
-    "key": "cmd+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "shift+cmd+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
     "key": "shift+cmd+-",
     "command": "-workbench.action.zoomOut"
   },
@@ -455,15 +469,6 @@
     "command": "-peacock.lighten"
   },
   {
-    "key": "alt+[Minus]",
-    "command": "imagePreview.zoomOut"
-  },
-  {
-    "key": "ctrl+t",
-    "command": "-editor.action.transposeLetters",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+shift+t",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported"
@@ -472,10 +477,6 @@
     "key": "ctrl+alt+cmd+[IntlYen]",
     "command": "-workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "shift+alt+[Minus]",
-    "command": "imagePreview.zoomIn"
   },
   {
     "key": "alt+v",
@@ -498,34 +499,12 @@
     "command": "-projectManager.listProjects"
   },
   {
-    "key": "shift+alt+w",
-    "command": "projectManager.addToWorkspace#sideBar"
-  },
-  {
     "key": "shift+alt+a",
     "command": "projectManager.addToFavorites"
   },
   {
     "key": "shift+alt+v",
     "command": "workbench.view.extension.project-manager"
-  },
-  {
-    "key": "alt+q",
-    "command": "editor.togglequotes"
-  },
-  {
-    "key": "cmd+'",
-    "command": "-editor.togglequotes"
-  },
-  {
-    "key": "alt+p",
-    "command": "extension.relativePath",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+cmd+h",
-    "command": "-extension.relativePath",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+o",
@@ -605,15 +584,6 @@
     "key": "alt+cmd+down",
     "command": "-workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "shift+alt+m",
-    "command": "editor.action.toggleMinimap"
-  },
-  {
-    "key": "cmd+k cmd+c",
-    "command": "-editor.action.addCommentLine",
-    "when": "editorTextFocus && !editorReadonly"
   },
   {
     "key": "ctrl+shift+n",
