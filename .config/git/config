@@ -29,3 +29,4 @@
 	path = ~/.config/delta/theme.gitconfig
 [ghq]
 	root = ~/ghq
+	user = kos3126
