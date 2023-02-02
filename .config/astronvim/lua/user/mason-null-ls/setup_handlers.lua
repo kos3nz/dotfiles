@@ -20,7 +20,13 @@ return {
         return utils.root_has_file("package.json")
           or utils.root_has_file(".prettierrc")
           or utils.root_has_file(".prettierrc.json")
+          or utils.root_has_file(".prettierrc.json5")
+          or utils.root_has_file(".prettierrc.yaml")
+          or utils.root_has_file(".prettierrc.yml")
           or utils.root_has_file(".prettierrc.js")
+          or utils.root_has_file(".prettierrc.cjs")
+          or utils.root_has_file("prettier.config.js")
+          or utils.root_has_file("prettier.config.cjs")
       end,
     }))
   end,
@@ -28,10 +34,11 @@ return {
   eslint_d = function()
     require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file(".eslintrc")
-          or utils.root_has_file(".eslintrc.json")
+        return utils.root_has_file(".eslintrc.json")
+          or utils.root_has_file(".eslintrc.yaml")
+          or utils.root_has_file(".eslintrc.yml")
           or utils.root_has_file(".eslintrc.js")
-          or utils.root_has_file(".eslintrc.cjs")
+          or utils.root_has_file(".eslintrc.cjs") -- when running ESLint in JavaScript packages that specify "type":"module" in their package.json.
       end,
     }))
   end,
@@ -44,7 +51,13 @@ return {
           utils.root_has_file("package.json")
           or utils.root_has_file(".prettierrc")
           or utils.root_has_file(".prettierrc.json")
+          or utils.root_has_file(".prettierrc.json5")
+          or utils.root_has_file(".prettierrc.yaml")
+          or utils.root_has_file(".prettierrc.yml")
           or utils.root_has_file(".prettierrc.js")
+          or utils.root_has_file(".prettierrc.cjs")
+          or utils.root_has_file("prettier.config.js")
+          or utils.root_has_file("prettier.config.cjs")
         then
           return false
         end
