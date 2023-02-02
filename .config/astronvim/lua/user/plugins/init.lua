@@ -86,7 +86,14 @@ return {
     end,
   },
 
-  { "princejoogie/tailwind-highlight.nvim" },
+  {
+    "mrshmllow/document-color.nvim",
+    config = function()
+      require("document-color").setup({
+        mode = "single", -- "background" | "foreground" | "single"
+      })
+    end,
+  },
 
   {
     "ThePrimeagen/refactoring.nvim",

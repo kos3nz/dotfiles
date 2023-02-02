@@ -1,5 +1,5 @@
-local tw_highlight_status, tw_highlight = pcall(require, "tailwind-highlight")
-if not tw_highlight_status then
+local document_color_status, document_color = pcall(require, "document-color")
+if not document_color_status then
   return
 end
 
@@ -26,13 +26,6 @@ end
 
 -- add to the global LSP on_attach function
 return function(client, bufnr)
-  -- if vim.tbl_contains({
-  --   "tsserver",
-  --   "sumneko_lua",
-  -- }, client.name) then
-  --   client.server_capabilities.documentFormattingProvider = false
-  -- end
-
   lsp_keymaps(client, bufnr)
 
   if client.name == "tsserver" then
@@ -40,10 +33,6 @@ return function(client, bufnr)
   end
 
   if client.name == "tailwindcss" then
-    tw_highlight.setup(client, bufnr, {
-      single_column = false,
-      mode = "background",
-      debounce = 200,
-    })
+    document_color.buf_attach(bufnr)
   end
 end
