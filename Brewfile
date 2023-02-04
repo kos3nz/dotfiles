@@ -52,6 +52,7 @@ brew "shopify/shopify/themekit"
 # Apps
 cask "karabiner-elements"
 cask "maccy"
+cask "runjs"
 cask "stats"
 cask "visual-studio-code"
 # cask "bitwarden"
