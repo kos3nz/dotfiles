@@ -50,6 +50,7 @@ brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
 
 # Apps
+cask "alfred"
 cask "karabiner-elements"
 cask "maccy"
 cask "runjs"
