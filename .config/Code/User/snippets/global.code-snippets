@@ -9,101 +9,91 @@
   "// CHANGED:": {
     "prefix": "CHANGED",
     "body": ["// CHANGED: $0"],
-    "description": "CHANGED Comment"
+    "description": "CHANGED Comment (Line)"
   },
   "/* CHANGED: */": {
     "prefix": "CHANGED",
     "body": [
       "/* ==============================",
-      "CHANGED:= $1",
+      "CHANGED: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "CHANGED Comment"
+    "description": "CHANGED Comment (Block)"
   },
   "// FIXME:": {
     "prefix": "FIXME",
     "body": ["// FIXME: $0"],
-    "description": "FIXME Comment"
+    "description": "FIXME Comment (Line)"
   },
   "/* FIXME: */": {
     "prefix": "FIXME",
     "body": [
       "/* ==============================",
-      "FIXME:= $1",
+      "FIXME: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "FIXME Comment"
+    "description": "FIXME Comment (Block)"
   },
   "// NOTE:": {
     "prefix": "NOTE",
     "body": ["// NOTE: $0"],
-    "description": "NOTE Comment"
+    "description": "NOTE Comment (Line)"
   },
   "/* NOTE: */": {
     "prefix": "NOTE",
     "body": [
       "/* ==============================",
-      "NOTE:= $1",
+      "NOTE: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "NOTE Comment"
+    "description": "NOTE Comment (Block)"
   },
   "// REVIEW:": {
     "prefix": "REVIEW",
     "body": ["// REVIEW: $0"],
-    "description": "REVIEW Comment"
+    "description": "REVIEW Comment (Line)"
   },
   "/* REVIEW: */": {
     "prefix": "REVIEW",
     "body": [
       "/* ==============================",
-      "REVIEW:= $1",
+      "REVIEW: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "REVIEW Comment"
+    "description": "REVIEW Comment (Block)"
   },
   "// TODO:": {
     "prefix": "TODO",
     "body": ["// TODO: $0"],
-    "description": "TODO Comment"
+    "description": "TODO Comment (Line)"
   },
   "/* TODO: */": {
     "prefix": "TODO",
     "body": [
       "/* ==============================",
-      "TODO:= $1",
+      "TODO: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "TODO Comment"
+    "description": "TODO Comment (Block)"
   },
   "// WARNING:": {
     "prefix": "WARNING",
     "body": ["// WARNING: $0"],
-    "description": "WARNING Comment"
+    "description": "WARNING Comment (Line)"
   },
   "/* WARNING: */": {
     "prefix": "WARNING",
     "body": [
       "/* ==============================",
-      "WARNING:= $1",
+      "WARNING: $1",
       "  -- $0",
       "============================== */"
     ],
-    "description": "WARNING Comment"
-  },
-  "light colored comment .js/ts/scss": {
-    "prefix": "comment-l",
-    "body": ["//:: =============== $0 =============== :://"],
-    "description": "Comment"
-  },
-  "dark colored comment .js/ts/scss": {
-    "prefix": "comment-d",
-    "body": ["//## =============== $0 =============== ##//"],
-    "description": "Comment"
+    "description": "WARNING Comment (Block)"
   }
 }
