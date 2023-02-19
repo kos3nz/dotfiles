@@ -363,4 +363,12 @@ return {
     -- terminal
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
   },
+
+  --------------------
+  -- Operator pending mode
+  --------------------
+  o = {
+    ["w"] = { "aw" },
+    ["t"] = { "at" },
+  },
 }
