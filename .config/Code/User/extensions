@@ -12,6 +12,8 @@ bierner.color-info
 bourhaouta.tailwindshades
 bradgashler.htmltagwrap
 bradlc.vscode-tailwindcss
+BriteSnow.vscode-toggle-quotes
+chouzz.vscode-better-align
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
 chrmarti.regex
@@ -34,6 +36,7 @@ formulahendry.code-runner
 gencer.html-slim-scss-css-class-completion
 GitHub.copilot
 GitHub.remotehub
+GitHub.vscode-pull-request-github
 GraphQL.vscode-graphql
 GraphQL.vscode-graphql-syntax
 Gruntfuggly.todo-tree
@@ -74,6 +77,7 @@ ms-vscode.test-adapter-converter
 ms-vscode.vscode-typescript-next
 ms-vsliveshare.vsliveshare
 naumovs.color-highlight
+octref.vetur
 oderwat.indent-rainbow
 Orta.vscode-twoslash-queries
 paulmolluzzo.convert-css-in-js
