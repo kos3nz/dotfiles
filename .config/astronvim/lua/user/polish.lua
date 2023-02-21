@@ -19,7 +19,13 @@ return function()
   create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md", "*.tex" }, command = "setlocal spell" })
 
   create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = { "settings.json", "keybindings.json", "**/snippets/*.json", "tsconfig.json" },
+    pattern = {
+      "settings.json",
+      "keybindings.json",
+      "**/snippets/*.json",
+      "**/snippets/*.code-snippets",
+      "tsconfig.json",
+    },
     command = "setlocal filetype=jsonc",
   })
 
