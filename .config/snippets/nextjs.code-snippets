@@ -1,5 +1,5 @@
 {
-  "Next Page": {
+  "NextjsPageComponent": {
     "prefix": "next",
     "body": [
       "import type { NextPage } from 'next';",
@@ -13,10 +13,10 @@
       "",
       "export default ${TM_FILENAME_BASE/(.*)/${0:/capitalize}/}"
     ],
-    "description": "NextJS Page",
+    "description": "Creates a Nextjs page",
     "scope": "typescriptreact"
   },
-  "getStaticPaths": {
+  "getStaticPathsSnippet": {
     "prefix": ["gsp", "getStaticPaths"],
     "body": [
       "export const getStaticPaths: GetStaticPaths$1 = async (context$2) => {",
@@ -30,10 +30,10 @@
       "  }",
       "};"
     ],
-    "description": "NextJS getStaticPaths function",
+    "description": "Nextjs getStaticPaths function",
     "scope": "typescriptreact"
   },
-  "getStaticProps": {
+  "getStaticPropsSnippet": {
     "prefix": ["ssg", "getStaticProps"],
     "body": [
       "export const getStaticProps: GetStaticProps$1 = async (context$2) => {",
@@ -44,10 +44,10 @@
       "  }",
       "};"
     ],
-    "description": "NextJS getStaticProps function",
+    "description": "Nextjs getStaticProps function",
     "scope": "typescriptreact"
   },
-  "getServerSideProps": {
+  "getServerSidePropsSnippet": {
     "prefix": ["ssr", "getServerSideProps"],
     "body": [
       "export const getServerSideProps: GetServerSideProps$1 = async (context$2) => {",
@@ -58,7 +58,7 @@
       "  }",
       "};"
     ],
-    "description": "NextJS getServerSideProps function",
+    "description": "Nextjs getServerSideProps function",
     "scope": "typescriptreact"
   }
 }

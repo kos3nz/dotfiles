@@ -1,9 +1,4 @@
 {
-  /* -------------------------------------------------------------------------- */
-  /*                   ES7+ React/Redux/React-Native Snippets                   */
-  /* -------------------------------------------------------------------------- */
-
-  /* ------------------------------- Components ------------------------------- */
   "JSXFunctionComponent": {
     "prefix": "fc",
     "body": [
@@ -792,7 +787,6 @@
     "scope": "typescriptreact, javascriptreact"
   },
 
-  /* ---------------------------------- Hooks --------------------------------- */
   "useCallback": {
     "prefix": "useCallbackSnippet",
     "body": [
@@ -876,115 +870,6 @@
     "scope": "typescriptreact, javascriptreact"
   },
 
-  /* --------------------------------- Console -------------------------------- */
-  // "consoleAssert": {
-  //   "prefix": "cas",
-  //   "body": ["console.assert(${1:first}, ${2:second})"],
-  //   "description": "If the specified expression is false, the message is written to the console along with a stack trace",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleClear": {
-  //   "prefix": "ccl",
-  //   "body": ["console.clear()"],
-  //   "description": "Clears the console",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleCount": {
-  //   "prefix": "cco",
-  //   "body": ["console.count(${1:first})"],
-  //   "description": "Writes the the number of times that count() has been invoked at the same line and with the same label",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleDir": {
-  //   "prefix": "cdi",
-  //   "body": ["console.dir(${1:first})"],
-  //   "description": "Prints a JavaScript representation of the specified object",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleError": {
-  //   "prefix": "cer",
-  //   "body": ["console.error(${1:first})"],
-  //   "description": "Displays a message in the console and also includes a stack trace from where the method was called",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleGroup": {
-  //   "prefix": "cgr",
-  //   "body": ["console.group('${1:first}')"],
-  //   "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called.",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleGroupEnd": {
-  //   "prefix": "cge",
-  //   "body": ["console.groupEnd()"],
-  //   "description": "Closes out the corresponding console.group().",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleLog": {
-  //   "prefix": ["cl", "clg"],
-  //   "body": ["console.log(${1:first})"],
-  //   "description": "Displays a message in the console",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleTrace": {
-  //   "prefix": "ctr",
-  //   "body": ["console.trace(${1:first})"],
-  //   "description": "Prints a stack trace from the point where the method was called",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleLogObject": {
-  //   "prefix": "clo",
-  //   "body": ["console.log('${1:first}', ${1:first})"],
-  //   "description": "Logs property with name.",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleLogJson": {
-  //   "prefix": "clj",
-  //   "body": ["console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"],
-  //   "description": "Logs stringified JSON property with name.",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleTime": {
-  //   "prefix": "ctm",
-  //   "body": ["console.time('${1:first}')"],
-  //   "description": "Console time wrapper",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleTimeEnd": {
-  //   "prefix": "cte",
-  //   "body": ["console.timeEnd('${1:first}')"],
-  //   "description": "Console time end wrapper",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleWarn": {
-  //   "prefix": "cwa",
-  //   "body": ["console.warn(${1:first})"],
-  //   "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleInfo": {
-  //   "prefix": "cin",
-  //   "body": ["console.info(${1:first})"],
-  //   "description": "Displays a message in the console but also displays a blue information icon along with the logged message",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "consoleTable": {
-  //   "prefix": "ctl",
-  //   "body": ["console.table([${1:first}])"],
-  //   "description": "Logs table to console",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-
-  /* --------------------------------- Imports -------------------------------- */
-  // "importAs": {
-  //   "prefix": "ima",
-  //   "body": ["import { ${2:second} as ${3:third} } from '${1:first}'"],
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "importDestructing": {
-  //   "prefix": "imd",
-  //   "body": ["import { ${2:second} } from '${1:first}'"],
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
   "importBrowserRouter": {
     "prefix": "imbr",
     "body": ["import { BrowserRouter as Router } from 'react-router-dom'"],
@@ -998,16 +883,6 @@
     ],
     "scope": "typescriptreact, javascriptreact"
   },
-  // "importEverything": {
-  //   "prefix": "ime",
-  //   "body": ["import * as ${2:second} from '${1:first}'"],
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "importNoModuleName": {
-  //   "prefix": "imn",
-  //   "body": ["import '${1:first}'"],
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
   "importPropTypes": {
     "prefix": "impt",
     "body": ["import PropTypes from 'prop-types'"],
@@ -1085,13 +960,7 @@
     "body": ["import { Switch } from 'react-router-dom'"],
     "scope": "typescriptreact, javascriptreact"
   },
-  // "import": {
-  //   "prefix": "imp",
-  //   "body": ["import ${2:second} from '${1:first}'"],
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
 
-  /* -------------------------------- PropType -------------------------------- */
   "propTypeArray": {
     "prefix": "pta",
     "body": ["PropTypes.array"],
@@ -1279,7 +1148,6 @@
     "scope": "typescriptreact, javascriptreact"
   },
 
-  /* ------------------------------ React Native ------------------------------ */
   "reactNativeComponent": {
     "prefix": "rnc",
     "body": [
@@ -1459,7 +1327,6 @@
     "scope": "typescript, typescriptreact, javascript, javascriptreact"
   },
 
-  /* ---------------------------------- Redux --------------------------------- */
   "importReduxConnect": {
     "prefix": "redux",
     "body": ["import { connect } from 'react-redux'"],
@@ -1540,7 +1407,6 @@
     "scope": "typescript, typescriptreact, javascript, javascriptreact"
   },
 
-  /* --------------------------------- Testing -------------------------------- */
   "describeBlock": {
     "prefix": "desc",
     "body": ["describe('${1:first}', () => { ${2:second} })"],
@@ -1663,7 +1529,6 @@
     "scope": "typescript, typescriptreact, javascript, javascriptreact"
   },
 
-  /* --------------------------------- Exports -------------------------------- */
   "exportDefault": {
     "prefix": "exp",
     "body": ["export default ${1:first}"],
@@ -1698,89 +1563,6 @@
     "scope": "typescript, typescriptreact, javascript, javascriptreact"
   },
 
-  /* ---------------------------------- Class --------------------------------- */
-  "method": {
-    "prefix": "met",
-    "body": ["${1:first} = (${2:second}) => {${3:third}}"],
-    "description": "Creates a method inside a class",
-    "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  },
-  // "propertyGet": {
-  //   "prefix": "pge",
-  //   "body": ["get ${1:first}() {", "  return this.${2:second}", "}"],
-  //   "description": "Creates a getter property inside a class",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "propertySet": {
-  //   "prefix": "pse",
-  //   "body": ["set ${1:first}(${2:second}) {${3:third}}"],
-  //   "description": "Creates a setter property inside a class",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-
-  /* ------------------------ Builtin Functions/methods ----------------------- */
-  // "forEach": {
-  //   "prefix": "fre",
-  //   "body": ["${1:first}.forEach(${2:second} => {${3:third}})"],
-  //   "description": "Creates a forEach statement",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "forOf": {
-  //   "prefix": "fof",
-  //   "body": ["for(let ${1:first} of ${2:second}) {${3:third}}"],
-  //   "description": "Iterating over property names of iterable objects",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "forIn": {
-  //   "prefix": "fin",
-  //   "body": ["for(let ${1:first} in ${2:second}) {${3:third}}"],
-  //   "description": "Iterating over property values of iterable objects",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "anonymousFunction": {
-  //   "prefix": "anfn",
-  //   "body": ["(${1:first}) => { ${2:second} }"],
-  //   "description": "Creates an anonymous function",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "namedFunction": {
-  //   "prefix": "nfn",
-  //   "body": ["const ${1:first} = (${2:second}) => { ${3:third} }"],
-  //   "description": "Creates a named function",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "destructingObject": {
-  //   "prefix": "dob",
-  //   "body": ["const {${2:second}} = ${1:first}"],
-  //   "description": "Creates and assigns a local variable using object destructuring",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "destructingArray": {
-  //   "prefix": "dar",
-  //   "body": ["const [${2:second}] = ${1:first}"],
-  //   "description": "Creates and assigns a local variable using array destructuring",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "setInterval": {
-  //   "prefix": "sti",
-  //   "body": ["setInterval(() => { ${1:first} }, ${2:second})"],
-  //   "description": "Executes the given function at specified intervals",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "setTimeOut": {
-  //   "prefix": "sto",
-  //   "body": ["setTimeout(() => { ${1:first} }, ${2:second})"],
-  //   "description": "Executes the given function after the specified delay",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-  // "promise": {
-  //   "prefix": "prom",
-  //   "body": ["return new Promise((resolve, reject) => { ${1:first} })"],
-  //   "description": "Creates and returns a new Promise in the standard ES7 syntax",
-  //   "scope": "typescript, typescriptreact, javascript, javascriptreact"
-  // },
-
-  /* ------------------------------- React Class ------------------------------ */
   "destructProps": {
     "prefix": "cp",
     "body": ["const { ${1:first} } = this.props"],
@@ -1893,7 +1675,6 @@
     "scope": "typescriptreact, javascriptreact"
   },
 
-  /* -------------------------------- Comments -------------------------------- */
   "commentBigBlock": {
     "prefix": "cmmb",
     "body": ["/**", " * ${1:first}", " */"],

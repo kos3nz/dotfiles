@@ -1,9 +1,4 @@
 {
-  /* -------------------------------------------------------------------------- */
-  /*                       JavaScript (ES6) Code Snippets                       */
-  /* -------------------------------------------------------------------------- */
-
-  /* --------------------------------- Imports -------------------------------- */
   "import": {
     "prefix": ["imp", "import"],
     "body": "import ${2:moduleName} from '${1:module}';$0",
@@ -35,7 +30,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* --------------------------------- Require -------------------------------- */
   "require": {
     "prefix": ["rqr", "require"],
     "body": "require('${1:package}');",
@@ -49,7 +43,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* --------------------------------- Exports -------------------------------- */
   "moduleExports": {
     "prefix": ["me", "mde", "module.exports"],
     "body": "module.exports = {\n\t$0\n};\n",
@@ -116,7 +109,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* ---------------------------------- Class --------------------------------- */
   "classDefinition": {
     "prefix": ["cls"],
     "body": [
@@ -141,6 +133,12 @@
     "description": "Creates a method inside a class in ES6 syntax",
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
+  "methodArrow": {
+    "prefix": "met",
+    "body": ["${1:first} = (${2:second}) => {${3:third}}"],
+    "description": "Creates a method with arrow function inside a class",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
   "propertyGet": {
     "prefix": ["pge", "get"],
     "body": "get ${1:propertyName}() {\n\treturn this.${0};\n}",
@@ -154,7 +152,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* ---------------------------------- Array --------------------------------- */
   "forEach": {
     "prefix": ["fre", "forEach"],
     "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n});",
@@ -174,7 +171,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* -------------------------------- Function -------------------------------- */
   "function": {
     "prefix": "fn",
     "body": "function ${1:functionName}(${2:params}) {\n\t${3}\n}",
@@ -224,7 +220,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* ------------------------------ Destructuring ----------------------------- */
   "destructuringObject": {
     "prefix": "dob",
     "body": "const {${2:propertyName}} = ${1:objectToDestruct};",
@@ -238,7 +233,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* -------------------------------- Variables ------------------------------- */
   "ConstVariable": {
     "prefix": ["const", "co"],
     "body": ["const ${1:name} = $2"],
@@ -264,7 +258,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* --------------------------------- Timeout -------------------------------- */
   "setInterval": {
     "prefix": ["sti"],
     "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms});",
@@ -278,7 +271,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* --------------------------------- Promise -------------------------------- */
   "promise": {
     "prefix": ["prom", "promise"],
     "body": "return new Promise((resolve, reject) => {\n\t${1}\n});",
@@ -292,7 +284,6 @@
     "scope": "javascript, typescript, javascriptreact, typescriptreact"
   },
 
-  /* --------------------------------- Console -------------------------------- */
   "consoleAssert": {
     "prefix": ["cas", "console.assert"],
     "body": "console.assert(${1:expression}, ${2:object});",

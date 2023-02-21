@@ -1,9 +1,4 @@
 {
-  /* -------------------------------------------------------------------------- */
-  /*                                     Seo                                    */
-  /* -------------------------------------------------------------------------- */
-
-  //:: =============== SEO_HTML =============== :://
   "Add SEO tags to HTML head element": {
     "prefix": "seo:head",
     "body": [
@@ -167,6 +162,7 @@
     ],
     "description": "Add Product Schema"
   },
+
   "Add Software Application Schema": {
     "prefix": "seo:schema:softwareApp",
     "body": [
@@ -192,7 +188,7 @@
     ],
     "description": "Add Software Application Schema"
   },
-  //:: =============== SEO ROBOTS =============== :://
+
   "Add basic robots.txt markup": {
     "prefix": "seo:robots",
     "body": [
@@ -203,7 +199,7 @@
     ],
     "description": "Add basic robots.txt markup"
   },
-  //:: =============== SEO SITE MAP =============== :://
+
   "Add basic sitemap.xml markup": {
     "prefix": "seo:sitemp",
     "body": [
