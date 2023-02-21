@@ -1,0 +1,64 @@
+{
+  "Next Page": {
+    "prefix": "next",
+    "body": [
+      "import type { NextPage } from 'next';",
+      "",
+      "// Types",
+      "export type ${TM_FILENAME_BASE/(.*)/${0:/capitalize}/}PageProps = {}",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${0:/capitalize}/}: NextPage<${TM_FILENAME_BASE/(.*)/${0:/capitalize}/}PageProps> = ({}) => {",
+      "  return <${2|div,button,input,span,main,section,header,footer|}>${1:$TM_FILENAME_BASE}$3</${2|div,button,input,span,main,section,header,footer|}>",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${0:/capitalize}/}"
+    ],
+    "description": "NextJS Page",
+    "scope": "typescriptreact"
+  },
+  "getStaticPaths": {
+    "prefix": ["gsp", "getStaticPaths"],
+    "body": [
+      "export const getStaticPaths: GetStaticPaths$1 = async (context$2) => {",
+      "  $3",
+      "  ",
+      "  return {",
+      "   paths: [{",
+      "     params: {},",
+      "   }],",
+      "   fallback: false,",
+      "  }",
+      "};"
+    ],
+    "description": "NextJS getStaticPaths function",
+    "scope": "typescriptreact"
+  },
+  "getStaticProps": {
+    "prefix": ["ssg", "getStaticProps"],
+    "body": [
+      "export const getStaticProps: GetStaticProps$1 = async (context$2) => {",
+      "  $3",
+      "  ",
+      "  return {",
+      "   props: {},",
+      "  }",
+      "};"
+    ],
+    "description": "NextJS getStaticProps function",
+    "scope": "typescriptreact"
+  },
+  "getServerSideProps": {
+    "prefix": ["ssr", "getServerSideProps"],
+    "body": [
+      "export const getServerSideProps: GetServerSideProps$1 = async (context$2) => {",
+      "  $3",
+      "  ",
+      "  return {",
+      "   props: {},",
+      "  }",
+      "};"
+    ],
+    "description": "NextJS getServerSideProps function",
+    "scope": "typescriptreact"
+  }
+}

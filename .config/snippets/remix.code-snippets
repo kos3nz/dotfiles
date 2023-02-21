@@ -1,0 +1,48 @@
+{
+  "RemixMetaFunctionSnippet": {
+    "prefix": "meta",
+    "body": [
+      "export const meta: MetaFunction$1 = () => ({",
+      "  title : '$2',",
+      "  description : '$3',",
+      "  keywords : '$4',",
+      "});"
+    ],
+    "description": "Remix meta function",
+    "scope": "typescriptreact"
+  },
+  "RemixLinksFunctionSnippet": {
+    "prefix": "links",
+    "body": [
+      "export const links: LinksFunction$1 = () => [",
+      "  { rel: 'stylesheet', href: ${2:styleURL}},",
+      "];"
+    ],
+    "description": "Remix links function",
+    "scope": "typescriptreact"
+  },
+  "RemixHeadersFunctionSnippet": {
+    "prefix": "headers",
+    "body": [
+      "export const headers: HeadersFunction$1 = async ({${2:loaderHeaders,parentHeaders,actionHeaders}}) => ({$3})"
+    ],
+    "description": "Remix headers function",
+    "scope": "typescriptreact"
+  },
+  "RemixLoaderFunctionSnippet": {
+    "prefix": "loader",
+    "body": [
+      "export const loader: LoaderFunction$1 = async ({${2:request,params,context}}) => {$3}"
+    ],
+    "description": "Remix loader function",
+    "scope": "typescriptreact"
+  },
+  "RemixActionFunctionSnippet": {
+    "prefix": "action",
+    "body": [
+      "export const action: ActionFunction$1 = async ({${2:request,params,context}}) => {$3}"
+    ],
+    "description": "Remix action function",
+    "scope": "typescriptreact"
+  }
+}

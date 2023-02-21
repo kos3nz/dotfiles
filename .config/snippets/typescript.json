@@ -1,8 +1,16 @@
 {
-  //:: =============== Express =============== :://
-  "(req, res) => {}": {
+  "(req: Request, res: Response) => {}": {
     "prefix": "reqres",
-    "body": ["(req, res) => {", "  $0", "}"],
+    "body": ["(req: Request, res: Response) => {", "  $0", "}"],
+    "description": "request and response function"
+  },
+  "(req: Request, res: Response, next: NextFunction) => {}": {
+    "prefix": "reqresnex",
+    "body": [
+      "(req: Request, res: Response, next: NextFunction) => {",
+      "  $0",
+      "}"
+    ],
     "description": "request and response function"
   },
   "Success response.status().json()": {

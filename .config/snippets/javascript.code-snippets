@@ -1,0 +1,398 @@
+{
+  /* -------------------------------------------------------------------------- */
+  /*                       JavaScript (ES6) Code Snippets                       */
+  /* -------------------------------------------------------------------------- */
+
+  /* --------------------------------- Imports -------------------------------- */
+  "import": {
+    "prefix": ["imp", "import"],
+    "body": "import ${2:moduleName} from '${1:module}';$0",
+    "description": "Imports entire module statement in ES6 syntax. [prefix: imp]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact, mdx"
+  },
+  "importNoModuleName": {
+    "prefix": ["im", "imn", "importNoModuleName"],
+    "body": "import '${1:module}';$0",
+    "description": "Imports entire module in ES6 syntax without module name. [prefix: im, imn]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "importDestructuring": {
+    "prefix": ["imd", "importDestructuring"],
+    "body": "import { $2 } from '${1:module}';$0",
+    "description": "Imports only a portion of the module in ES6 syntax. [prefix: imd]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "importAll": {
+    "prefix": ["ime", "importAll"],
+    "body": "import * as ${2:alias} from '${1:module}';$0",
+    "description": "Imports everything as alias from the module in ES6 syntax. [prefix: ime]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "importAs": {
+    "prefix": ["ima", "importAs"],
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}';$0",
+    "description": "Imports a specific portion of the module by assigning a local alias in ES6 syntax. [prefix: ima]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* --------------------------------- Require -------------------------------- */
+  "require": {
+    "prefix": ["rqr", "require"],
+    "body": "require('${1:package}');",
+    "description": "Require a package. [prefix: rqr]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "requireToConst": {
+    "prefix": ["rq", "req", "requireToConst"],
+    "body": "const ${1:packageName} = require('${1:package}');$0",
+    "description": "Require a package to const. [prefix: rq, req]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* --------------------------------- Exports -------------------------------- */
+  "moduleExports": {
+    "prefix": ["me", "mde", "module.exports"],
+    "body": "module.exports = {\n\t$0\n};\n",
+    "description": "Module exports from Common JS, node syntax at ES6. [prefix: me, mde]",
+    "scope": "javascript, typescript"
+  },
+  "exportsFunction": {
+    "prefix": ["exports.fn", "exf"],
+    "body": ["exports.${1:function} = (${0:params}) => {", "", "}"],
+    "description": "Exports a function in CommonJS syntax. [prefix: exf]",
+    "scope": "javascript, typescript"
+  },
+  "exportsAsyncFunction": {
+    "prefix": ["exports.async", "exa"],
+    "body": ["exports.${1:function} = async (${0:params}) => {", "", "}"],
+    "description": "Exports an async function in CommonJS syntax. [prefix: exa]",
+    "scope": "javascript, typescript"
+  },
+  "exportObject": {
+    "prefix": ["ex", "exportObject"],
+    "body": ["export {$0}"],
+    "description": "Creates an export object"
+  },
+  "exportDestructuring": {
+    "prefix": ["exf", "exportDestructuring"],
+    "body": ["export {${2}} from '${1:module}'"],
+    "description": "Exports only a portion of the module in ES6 syntax. [prefix: exf]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportDefaultAs": {
+    "prefix": ["exd", "exportDefaultAs"],
+    "body": ["export { default as ${1:name} } from '${2:module}'"],
+    "description": "Exports a specific portion of the module by assigning a local alias in ES6 syntax. [prefix: exd]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportNamedVariable": {
+    "prefix": ["exc", "exportNamedVariable"],
+    "body": "export const ${1:exportVariable} = ${2:localVariable};\n",
+    "description": "Export named variable in ES6 syntax. [prefix: exc]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportNamedFunction": {
+    "prefix": ["efn", "exportNamedFunction"],
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n};\n",
+    "description": "Export named function in ES6 syntax. [prefix: efn]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportDefaultFunction": {
+    "prefix": ["edf", "exportDefaultFunction"],
+    "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n};\n",
+    "description": "Export default function in ES6 syntax. [prefix: edf]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportClass": {
+    "prefix": ["ecl", "exportClass"],
+    "body": "export default class ${1:className} {\n\t$0\n};\n",
+    "description": "Export default class in ES6 syntax. [prefix: ecl]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "exportClassExtends": {
+    "prefix": ["ece", "exportClassExtends"],
+    "body": "export default class ${1:className} extends ${2:baseclassName} {\n\t$0\n};\n",
+    "description": "Export default class which extends a base one in ES6 syntax. [prefix: ece]",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* ---------------------------------- Class --------------------------------- */
+  "classDefinition": {
+    "prefix": ["cls"],
+    "body": [
+      "class ${1:Class} {",
+      "  constructor(${2:params}){",
+      "    $3",
+      "  }",
+      "}"
+    ],
+    "description": "Class definition",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "constructor": {
+    "prefix": ["con", "constructor"],
+    "body": "constructor(${1:params}) {\n\t${0}\n}",
+    "description": "Add default constructor in a class in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "method": {
+    "prefix": "met",
+    "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
+    "description": "Creates a method inside a class in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "propertyGet": {
+    "prefix": ["pge", "get"],
+    "body": "get ${1:propertyName}() {\n\treturn this.${0};\n}",
+    "description": "Creates a getter property inside a class in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "propertyset": {
+    "prefix": ["pse", "set"],
+    "body": "set ${1:propertyName}(${2:value}) {\n\t${0};\n}",
+    "description": "Creates a setter property inside a class in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* ---------------------------------- Array --------------------------------- */
+  "forEach": {
+    "prefix": ["fre", "forEach"],
+    "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n});",
+    "description": "Creates a forEach statement in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "forOf": {
+    "prefix": ["fof", "forOf"],
+    "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property names of iterable objects",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "forIn": {
+    "prefix": ["fin", "forIn"],
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property values of iterable objects",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* -------------------------------- Function -------------------------------- */
+  "function": {
+    "prefix": "fn",
+    "body": "function ${1:functionName}(${2:params}) {\n\t${3}\n}",
+    "description": "Creates a function",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "asyncFunction": {
+    "prefix": "afn",
+    "body": "async function ${1:functionName}(${2:params}) {\n\t${3}\n}",
+    "description": "Creates an async function",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "arrowFunction": {
+    "prefix": "arf",
+    "body": "(${1:params}) => {${2}}",
+    "description": "Creates an anonymous arrow function in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "asyncArrowFunction": {
+    "prefix": "araf",
+    "body": "async (${1:params}) => {${2}}",
+    "description": "Creates an anonymous async arrow function in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "asyncNamedFunction": {
+    "prefix": "anfn",
+    "body": "const ${1:name} = async (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "generatorFunction": {
+    "prefix": ["gfn"],
+    "body": ["function* $1($2) {", "  $3", "}"],
+    "description": "Creates a generator function",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "arrow =>": {
+    "prefix": ["ar"],
+    "body": ["=>"],
+    "description": "Creates an arrow",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* ------------------------------ Destructuring ----------------------------- */
+  "destructuringObject": {
+    "prefix": "dob",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct};",
+    "description": "Creates and assigns a local variable using object destructuring",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "destructuringArray": {
+    "prefix": "dar",
+    "body": "const [${2:propertyName}] = ${1:arrayToDestruct};",
+    "description": "Creates and assigns a local variable using array destructuring",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* -------------------------------- Variables ------------------------------- */
+  "ConstVariable": {
+    "prefix": ["const", "co"],
+    "body": ["const ${1:name} = $2"],
+    "description": "Creates a constant variable",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "LetVariable": {
+    "prefix": ["let", "le"],
+    "body": ["let ${1:name} = $2"],
+    "description": "Creates a let variable",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "variableInTemplateLiterals": {
+    "prefix": ["$"],
+    "body": ["${$1}"],
+    "description": "Inserts a variable in template literals",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "process.env": {
+    "prefix": ["process.env", "env"],
+    "body": ["process.env.$1"],
+    "description": "Inserts an environmental variable",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* --------------------------------- Timeout -------------------------------- */
+  "setInterval": {
+    "prefix": ["sti"],
+    "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms});",
+    "description": "Executes the given function at specified intervals in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "setTimeOut": {
+    "prefix": ["sto"],
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms});",
+    "description": "Executes the given function after the specified delay in ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* --------------------------------- Promise -------------------------------- */
+  "promise": {
+    "prefix": ["prom", "promise"],
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n});",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "thenCatch": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) => {\n\t${2}\n}).catch((${3:err}) => {\n\t${4}\n});",
+    "description": "Add the .then and .catch methods to handle promises",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+
+  /* --------------------------------- Console -------------------------------- */
+  "consoleAssert": {
+    "prefix": ["cas", "console.assert"],
+    "body": "console.assert(${1:expression}, ${2:object});",
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleClear": {
+    "prefix": ["ccl", "console.clear"],
+    "body": "console.clear();",
+    "description": "Clears the console",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleCount": {
+    "prefix": ["cco", "console.count"],
+    "body": "console.count(${1:label});",
+    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleDebug": {
+    "prefix": ["cdb", "console.debug"],
+    "body": "console.debug(${1:object});",
+    "description": "Displays a message in the console. Also display a blue right arrow icon along with the logged message in Safari",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleDir": {
+    "prefix": ["cdi", "console.dir"],
+    "body": "console.dir(${1:object});",
+    "description": "Prints a JavaScript representation of the specified object",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleError": {
+    "prefix": ["cer", "console.error"],
+    "body": "console.error(${1:object});",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleGroup": {
+    "prefix": ["cgr", "console.group"],
+    "body": "console.group('${1:label}');",
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called.",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleGroupEnd": {
+    "prefix": ["cge", "console.groupEnd"],
+    "body": "console.groupEnd();",
+    "description": "Closes out the corresponding console.group().",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleLog": {
+    "prefix": ["cl", "clg", "console.log"],
+    "body": "console.log(${1:object});",
+    "description": "Displays a message in the console",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleLogObject": {
+    "prefix": ["clo", "console.log"],
+    "body": "console.log('${1:object} :>> ', ${1:object});",
+    "description": "Displays an object in the console with its name",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleLogJson": {
+    "prefix": ["clj", "console.log"],
+    "body": ["console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"],
+    "description": "Logs stringified JSON property with name.",
+    "scope": "typescript, typescriptreact, javascript, javascriptreact"
+  },
+  "consoleTrace": {
+    "prefix": ["ctr", "console.trace"],
+    "body": "console.trace(${1:object});",
+    "description": "Prints a stack trace from the point where the method was called",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleWarn": {
+    "prefix": ["cwa", "console.warn"],
+    "body": "console.warn(${1:object});",
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleInfo": {
+    "prefix": ["cin", "console.info"],
+    "body": "console.info(${1:object});",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleTable": {
+    "prefix": ["clt", "console.table"],
+    "body": "console.table(${1:object});",
+    "description": "Displays tabular data as a table.",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleTime": {
+    "prefix": ["cti", "console.time"],
+    "body": "console.time(${1:object});",
+    "description": "Sets starting point for execution time measurement",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "consoleTimeEnd": {
+    "prefix": ["cte", "console.timeEnd"],
+    "body": "console.timeEnd(${1:object});",
+    "description": "Sets end point for execution time measurement",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  }
+}

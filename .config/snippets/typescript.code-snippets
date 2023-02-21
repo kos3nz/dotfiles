@@ -1,0 +1,19 @@
+{
+  "exportType": {
+    "prefix": ["exptp", "exportType"],
+    "body": ["export type ${1:first} = {${2:second}}"],
+    "description": "Creates TypeScript Type and export. [prefix: exptp]",
+    "scope": "typescript, typescriptreact"
+  },
+  "exportInterface": {
+    "prefix": ["expint", "exportInterface"],
+    "body": ["export interface ${1:first} {${2:second}}"],
+    "description": "Creates TypeScript interface and export. [prefix: expint]",
+    "scope": "typescript, typescriptreact"
+  },
+  "typeofSnippet": {
+    "prefix": ["tof", "typeof"],
+    "body": ["typeof ${1:first}"],
+    "scope": "typescript, typescriptreact"
+  }
+}
