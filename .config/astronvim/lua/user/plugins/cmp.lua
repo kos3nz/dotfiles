@@ -78,7 +78,7 @@ return {
     ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     ["<C-v>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- show suggestion window
     ["<C-l>"] = cmp.mapping.abort(), -- close suggestion window
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
