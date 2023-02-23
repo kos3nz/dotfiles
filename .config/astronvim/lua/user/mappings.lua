@@ -221,12 +221,9 @@ return {
     ["w"] = { "<Plug>CamelCaseMotion_w" },
     ["e"] = { "<Plug>CamelCaseMotion_e" },
     ["b"] = { "<Plug>CamelCaseMotion_b" },
-    ["cmb"] = { "c<Plug>CamelCaseMotion_ib", desc = "Change word segment backward" },
-    ["cme"] = { "c<Plug>CamelCaseMotion_ie", desc = "Change word segment forward" },
-    ["cmw"] = { "c<Plug>CamelCaseMotion_iw", desc = "Change word segment forward" },
-    ["dmb"] = { "d<Plug>CamelCaseMotion_ib", desc = "Delete word segment backward" },
-    ["dme"] = { "d<Plug>CamelCaseMotion_ie", desc = "Delete word segment forward" },
-    ["dmw"] = { "d<Plug>CamelCaseMotion_iw", desc = "Delete word segment forward" },
+    ["cm"] = { "c<Plug>CamelCaseMotion_ie", desc = "Change word segment forward" },
+    ["dm"] = { "d<Plug>CamelCaseMotion_ie", desc = "Delete word segment forward" },
+
   },
 
   --------------------
@@ -300,8 +297,7 @@ return {
     ["r"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
 
     -- CamelCaseMotion
-    ["mw"] = { "<Plug>CamelCaseMotion_iw" },
-    ["mb"] = { "<Plug>CamelCaseMotion_ib" },
+    ["m"] = { "<Plug>CamelCaseMotion_ie" },
   },
 
   --------------------
@@ -329,8 +325,7 @@ return {
     },
 
     -- CamelCaseMotion
-    ["mw"] = { "<Plug>CamelCaseMotion_iw" },
-    ["mb"] = { "<Plug>CamelCaseMotion_ib" },
+    ["m"] = { "<Plug>CamelCaseMotion_ie" },
   },
 
   --------------------
@@ -368,7 +363,8 @@ return {
   -- Operator pending mode
   --------------------
   o = {
-    ["w"] = { "aw" },
-    ["t"] = { "at" },
+    ["w"] = { "iw" },
+    -- ["t"] = { "at" },
+    -- ["m"] = { "<Plug>CamelCaseMotion_ie" }, -- this operation is a bit slow thant mapping "dm" and "cm" respectively
   },
 }
