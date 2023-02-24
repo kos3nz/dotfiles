@@ -86,6 +86,12 @@
       "after": ["g", "g", "V", "G"]
     }
   },
+  // Maximize editor panel size
+  {
+    "key": "ctrl+w m",
+    "command": "workbench.action.toggleEditorWidths",
+    "when": "editorTextFocus"
+  },
   // Change editor panel size
   {
     "key": "shift+down",
@@ -185,12 +191,12 @@
   {
     "key": "ctrl+w v",
     "command": "workbench.action.splitEditor",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
   },
   {
     "key": "ctrl+w h",
     "command": "workbench.action.splitEditorOrthogonal",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
   },
   {
     "key": "ctrl+w m",
@@ -711,66 +717,66 @@
     "command": "-workbench.action.terminal.toggleTerminal"
   },
   // Switch active terminal
-  {
-    "key": "ctrl+q w",
-    "command": "workbench.action.quickOpenTerm",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+q s",
-    "command": "workbench.action.quickOpenTerm",
-    "when": "terminalFocus"
-  },
+  // {
+  //   "key": "ctrl+q w",
+  //   "command": "workbench.action.quickOpenTerm",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "ctrl+q s",
+  //   "command": "workbench.action.quickOpenTerm",
+  //   "when": "terminalFocus"
+  // },
   // Maximize terminal panel size
   {
-    "key": "ctrl+q m",
+    "key": "ctrl+w m",
     "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile || problemFocus"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile || problemFocus || problemsFilterFocus"
   },
   // Change terminal panel size
   {
     "key": "shift+down",
     "command": "workbench.action.terminal.resizePaneDown",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || problemFocus || problemsFilterFocus"
   },
   {
     "key": "shift+left",
     "command": "workbench.action.terminal.resizePaneLeft",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || problemFocus || problemsFilterFocus"
   },
   {
     "key": "shift+right",
     "command": "workbench.action.terminal.resizePaneRight",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || problemFocus || problemsFilterFocus"
   },
   {
     "key": "shift+up",
     "command": "workbench.action.terminal.resizePaneUp",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || problemFocus || problemsFilterFocus"
   },
   // Terminal split
-  {
-    "key": "ctrl+q shift+\\",
-    "command": "workbench.action.terminal.split",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
+  // {
+  //   "key": "ctrl+q shift+\\",
+  //   "command": "workbench.action.terminal.split",
+  //   "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  // },
   // Navigate between terminal panes
-  {
-    "key": "ctrl+q h",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+q l",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
+  // {
+  //   "key": "ctrl+q h",
+  //   "command": "workbench.action.terminal.focusPreviousPane",
+  //   "when": "terminalFocus && terminalProcessSupported"
+  // },
+  // {
+  //   "key": "ctrl+q l",
+  //   "command": "workbench.action.terminal.focusNextPane",
+  //   "when": "terminalFocus && terminalProcessSupported"
+  // },
   // Kill terminal instance
-  {
-    "key": "ctrl+q x",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
+  // {
+  //   "key": "ctrl+q x",
+  //   "command": "workbench.action.terminal.kill",
+  //   "when": "terminalFocus && terminalProcessSupported"
+  // },
   {
     "key": "alt+q",
     "command": "workbench.action.terminal.kill",
@@ -931,5 +937,13 @@
     "key": "ctrl+s",
     "command": "cursorHome",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Replace'"
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Disables                                  */
+  /* -------------------------------------------------------------------------- */
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
   }
 ]
