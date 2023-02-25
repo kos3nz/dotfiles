@@ -1,0 +1,22 @@
+% mac, system
+
+# Empty the trash
+osascript -e 'tell application "Finder" to empty trash'
+
+# Toggle dark mode
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+
+
+% mac, volume
+
+# Set the output volume to 50%
+sudo osascript -e 'set volume output volume 50'
+
+# Toggle volume muting
+osascript -e 'set volume output muted not (output muted of (get volume settings))'
+
+
+% mac, app
+
+# Open or switch to Safari
+osascript -e 'tell app "Safari" to activate'

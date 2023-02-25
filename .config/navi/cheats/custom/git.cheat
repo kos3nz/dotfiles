@@ -1,0 +1,22 @@
+% git
+
+# Checking the total number of commits
+git rev-list --count <branch-name>
+
+# Checking files from a differnt branch (ex: git show main:README.md)
+git show <branch-name>:<file-name>
+
+# Git tutorial on the terminal
+git help tutorial
+
+
+% git, ghq
+
+# Update all local repositories
+ghq list | ghq get --update --parallel
+
+
+% git, gh
+
+# Create a new private repository on Github, and git clone with ghq
+gh repo create <repo-name> --private && ghq get <repo-name>
