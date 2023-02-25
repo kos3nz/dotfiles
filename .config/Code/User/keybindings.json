@@ -364,6 +364,26 @@
     "when": "editorFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
+    "key": "n",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "shift+n",
+    "command": "editor.action.addSelectionToPreviousFindMatch",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "q",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && editorHasMultipleSelections"
+  },
+  {
+    "key": "shift+q",
+    "command": "editor.action.moveSelectionToPreviousFindMatch",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
     "key": "ctrl+shift+g",
     "command": "editor.action.changeAll",
     "when": "editorFocus && editorTextFocus && !editorReadonly"

@@ -1515,7 +1515,7 @@
     },
     // Search text cases
     {
-      "before": ["<leader>", "s", "c"],
+      "before": ["<leader>", "s", "a"],
       "commands": ["extension.changeCase.commands"],
       "silent": true
     },
@@ -1871,43 +1871,58 @@
     /* ------------------------------- Change Case ------------------------------ */
     {
       "before": ["g", "a", "u"],
-      "commands": ["multiCommand.changeCase.upper"]
+      "commands": ["multiCommand.changeCase.upper"],
+      "silent": true
     },
     {
       "before": ["g", "a", "a"],
-      "commands": ["multiCommand.changeCase.upperFirst"]
+      "commands": ["multiCommand.changeCase.upperFirst"],
+      "silent": true
     },
     {
       "before": ["g", "a", "l"],
-      "commands": ["multiCommand.changeCase.lower"]
+      "commands": ["multiCommand.changeCase.lower"],
+      "silent": true
     },
     {
       "before": ["g", "a", "c"],
-      "commands": ["multiCommand.changeCase.camel"]
+      "commands": ["multiCommand.changeCase.camel"],
+      "silent": true
     },
     {
       "before": ["g", "a", "n"],
-      "commands": ["multiCommand.changeCase.constant"]
+      "commands": ["multiCommand.changeCase.constant"],
+      "silent": true
     },
     {
       "before": ["g", "a", "d"],
-      "commands": ["multiCommand.changeCase.dot"]
+      "commands": ["multiCommand.changeCase.dot"],
+      "silent": true
     },
     {
       "before": ["g", "a", "f"],
-      "commands": ["multiCommand.changeCase.path"]
+      "commands": ["multiCommand.changeCase.path"],
+      "silent": true
     },
     {
       "before": ["g", "a", "p"],
-      "commands": ["multiCommand.changeCase.pascal"]
+      "commands": ["multiCommand.changeCase.pascal"],
+      "silent": true
     },
     {
       "before": ["g", "a", "s"],
-      "commands": ["multiCommand.changeCase.snake"]
+      "commands": ["multiCommand.changeCase.snake"],
+      "silent": true
     },
     {
       "before": ["g", "a", "t"],
-      "commands": ["multiCommand.changeCase.title"]
+      "commands": ["multiCommand.changeCase.title"],
+      "silent": true
+    },
+    {
+      "before": ["g", "a", "."],
+      "commands": ["extension.changeCase.commands"],
+      "silent": true
     },
 
     /* ------------------------------ Notification ------------------------------ */
@@ -2011,43 +2026,53 @@
     // Change case
     {
       "before": ["g", "a", "u"],
-      "commands": ["extension.changeCase.upper"]
+      "commands": ["extension.changeCase.upper"],
+      "silent": true
     },
     {
       "before": ["g", "a", "a"],
-      "commands": ["extension.changeCase.upperFirst"]
+      "commands": ["extension.changeCase.upperFirst"],
+      "silent": true
     },
     {
       "before": ["g", "a", "l"],
-      "commands": ["extension.changeCase.lower"]
+      "commands": ["extension.changeCase.lower"],
+      "silent": true
     },
     {
       "before": ["g", "a", "c"],
-      "commands": ["extension.changeCase.camel"]
+      "commands": ["extension.changeCase.camel"],
+      "silent": true
     },
     {
       "before": ["g", "a", "n"],
-      "commands": ["extension.changeCase.constant"]
+      "commands": ["extension.changeCase.constant"],
+      "silent": true
     },
     {
       "before": ["g", "a", "d"],
-      "commands": ["extension.changeCase.dot"]
+      "commands": ["extension.changeCase.dot"],
+      "silent": true
     },
     {
       "before": ["g", "a", "f"],
-      "commands": ["extension.changeCase.path"]
+      "commands": ["extension.changeCase.path"],
+      "silent": true
     },
     {
       "before": ["g", "a", "p"],
-      "commands": ["extension.changeCase.pascal"]
+      "commands": ["extension.changeCase.pascal"],
+      "silent": true
     },
     {
       "before": ["g", "a", "s"],
-      "commands": ["extension.changeCase.snake"]
+      "commands": ["extension.changeCase.snake"],
+      "silent": true
     },
     {
       "before": ["g", "a", "t"],
-      "commands": ["extension.changeCase.title"]
+      "commands": ["extension.changeCase.title"],
+      "silent": true
     },
     // Add cursors to selected line ends
     {
