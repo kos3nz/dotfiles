@@ -10,6 +10,7 @@ return {
     },
   },
   disabled = { -- disable formatting capabilities for the listed language servers
+    "jsonls",
     "sumneko_lua",
     "tsserver",
     -- "denols",
