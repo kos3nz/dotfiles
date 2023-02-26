@@ -13,18 +13,6 @@ return {
       ["t"] = { name = "Trouble/ToggleTerm" },
     },
 
-    ["c"] = {
-      ["a"] = { name = "Outer" },
-      ["i"] = { name = "Inner" },
-      ["m"] = { name = "Word Segment" },
-    },
-
-    ["d"] = {
-      ["a"] = { name = "Outer" },
-      ["i"] = { name = "Inner" },
-      ["m"] = { name = "Word Segment" },
-    },
-
     ["g"] = {
       ["a"] = { name = "Text Case" },
     },

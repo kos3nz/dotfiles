@@ -249,9 +249,6 @@ return {
 
     ["<C-j>"] = { "<Esc>gMa" }, -- move to middle of line
 
-    -- ["<C-y>"] = { "<C-o>b" },
-    -- ["<C-i>"] = { "<C-o>w" },
-
     -- move text up and down
     ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
     ["<A-j>"] = { "<Esc>:m .+1<cr>==gi" },
@@ -353,7 +350,7 @@ return {
     ["<C-h>"] = { "<Bs>" },
 
     -- terminal
-    ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
+    ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>" },
   },
 
   --------------------
