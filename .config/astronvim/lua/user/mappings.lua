@@ -173,6 +173,8 @@ return {
     ["<leader>r."] = { "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" },
 
     -- textcase
+    ["<leader>sa"] = { "<cmd>TextCaseOpenTelescope<cr>", desc = "Search text cases" },
+    ["ga."] = { "<cmd>TextCaseOpenTelescope<cr>", desc = "Search text cases" },
     ["gau"] = { "<cmd>lua require('textcase').current_word('to_upper_case')<cr>", desc = "Convert to_upper_case" },
     ["gal"] = { "<cmd>lua require('textcase').current_word('to_lower_case')<cr>", desc = "Convert to_lower_case" },
     ["gas"] = { "<cmd>lua require('textcase').current_word('to_snake_case')<cr>", desc = "Convert to_snake_case" },
@@ -200,17 +202,17 @@ return {
     ["gaT"] = { "<cmd>lua require('textcase').lsp_rename('to_title_case')<cr>", desc = "LSP rename to_title_case" },
     ["gaF"] = { "<cmd>lua require('textcase').lsp_rename('to_path_case')<cr>", desc = "LSP rename to_path_case" },
 
-    ["gaou"] = { "<cmd>lua require('textcase').operator('to_upper_case')<cr>", desc = "to_upper_case" },
-    ["gaol"] = { "<cmd>lua require('textcase').operator('to_lower_case')<cr>", desc = "to_lower_case" },
-    ["gaos"] = { "<cmd>lua require('textcase').operator('to_snake_case')<cr>", desc = "to_snake_case" },
-    ["gaoa"] = { "<cmd>lua require('textcase').operator('to_dash_case')<cr>", desc = "to_dash_case" },
-    ["gaon"] = { "<cmd>lua require('textcase').operator('to_constant_case')<cr>", desc = "to_constant_case" },
-    ["gaod"] = { "<cmd>lua require('textcase').operator('to_dot_case')<cr>", desc = "to_dot_case" },
-    ["gaor"] = { "<cmd>lua require('textcase').operator('to_phrase_case')<cr>", desc = "to_phrase_case" },
-    ["gaoc"] = { "<cmd>lua require('textcase').operator('to_camel_case')<cr>", desc = "to_camel_case" },
-    ["gaop"] = { "<cmd>lua require('textcase').operator('to_pascal_case')<cr>", desc = "to_pascal_case" },
-    ["gaot"] = { "<cmd>lua require('textcase').operator('to_title_case')<cr>", desc = "to_title_case" },
-    ["gaof"] = { "<cmd>lua require('textcase').operator('to_path_case')<cr>", desc = "to_path_case" },
+    ["gAu"] = { "<cmd>lua require('textcase').operator('to_upper_case')<cr>", desc = "to_upper_case" },
+    ["gAl"] = { "<cmd>lua require('textcase').operator('to_lower_case')<cr>", desc = "to_lower_case" },
+    ["gAs"] = { "<cmd>lua require('textcase').operator('to_snake_case')<cr>", desc = "to_snake_case" },
+    ["gAa"] = { "<cmd>lua require('textcase').operator('to_dash_case')<cr>", desc = "to_dash_case" },
+    ["gAn"] = { "<cmd>lua require('textcase').operator('to_constant_case')<cr>", desc = "to_constant_case" },
+    ["gAd"] = { "<cmd>lua require('textcase').operator('to_dot_case')<cr>", desc = "to_dot_case" },
+    ["gAr"] = { "<cmd>lua require('textcase').operator('to_phrase_case')<cr>", desc = "to_phrase_case" },
+    ["gAc"] = { "<cmd>lua require('textcase').operator('to_camel_case')<cr>", desc = "to_camel_case" },
+    ["gAp"] = { "<cmd>lua require('textcase').operator('to_pascal_case')<cr>", desc = "to_pascal_case" },
+    ["gAt"] = { "<cmd>lua require('textcase').operator('to_title_case')<cr>", desc = "to_title_case" },
+    ["gAf"] = { "<cmd>lua require('textcase').operator('to_path_case')<cr>", desc = "to_path_case" },
 
     -- CamelCaseMotion
     ["w"] = { "<Plug>CamelCaseMotion_w" },

@@ -15,6 +15,7 @@ return {
 
     ["g"] = {
       ["a"] = { name = "Text Case" },
+      ["A"] = { name = "Text Case Operator Mode" },
     },
   },
 }
