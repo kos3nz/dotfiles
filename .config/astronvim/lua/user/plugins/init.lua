@@ -250,6 +250,10 @@ return {
 
   { "wellle/targets.vim" },
 
+  { "vim-scripts/ReplaceWithRegister" },
+
+  { "justinmk/vim-sneak" },
+
   -- { "ggandor/lightspeed.nvim" },
 
   -- { "andymass/vim-matchup" },

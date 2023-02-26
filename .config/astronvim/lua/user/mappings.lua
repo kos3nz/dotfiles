@@ -219,6 +219,11 @@ return {
     ["cm"] = { "c<Plug>CamelCaseMotion_ie", desc = "Change word segment forward" },
     ["dm"] = { "d<Plug>CamelCaseMotion_ie", desc = "Delete word segment forward" },
 
+    -- vim-sneak
+    ["f"] = { "<Plug>Sneak_f" },
+    ["F"] = { "<Plug>Sneak_F" },
+    ["t"] = { "<Plug>Sneak_t" },
+    ["T"] = { "<Plug>Sneak_T" },
   },
 
   --------------------
@@ -358,5 +363,11 @@ return {
     ["w"] = { "iw" },
     -- ["t"] = { "at" },
     -- ["m"] = { "<Plug>CamelCaseMotion_ie" }, -- this operation is a bit slow thant mapping "dm" and "cm" respectively
+
+    -- vim-sneak
+    ["f"] = { "<Plug>Sneak_f" },
+    ["F"] = { "<Plug>Sneak_F" },
+    ["t"] = { "<Plug>Sneak_t" },
+    ["T"] = { "<Plug>Sneak_T" },
   },
 }
