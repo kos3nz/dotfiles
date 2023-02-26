@@ -12,6 +12,7 @@ return {
     "denols",
     "astro",
     "prismals",
+    "stylelint_lsp",
     "svelte",
     "rust_analyzer",
     "sumneko_lua",

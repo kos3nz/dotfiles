@@ -66,4 +66,8 @@ return {
       end,
     }))
   end,
+
+  -- stylelint_lsp = function()
+  -- require("null-ls").register(require("null-ls").builtins.diagnostics.stylelint)
+  -- end,
 }

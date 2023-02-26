@@ -9,9 +9,6 @@
   "editor.renderWhitespace": "all",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "on",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "editor.hover.delay": 500,
   "editor.minimap.showSlider": "always",
   "editor.quickSuggestionsDelay": 10,
@@ -27,7 +24,6 @@
   "editor.stickyScroll.enabled": true,
   "editor.useTabStops": false,
   "editor.insertSpaces": false,
-  "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
@@ -161,29 +157,6 @@
     // "postcss": "css",
   },
   // "emmet.showExpandedAbbreviation": "never",
-
-  /* -------------------------------------------------------------------------- */
-  /*                              Language Settings                             */
-  /* -------------------------------------------------------------------------- */
-
-  /* ------------------------- Javascript & Typescript ------------------------ */
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.tsserver.log": "off",
-
-  /* ---------------------------------- Deno ---------------------------------- */
-  "deno.inlayHints.enumMemberValues.enabled": true,
-  "deno.inlayHints.functionLikeReturnTypes.enabled": true,
-  "deno.inlayHints.parameterTypes.enabled": true,
-  "deno.inlayHints.propertyDeclarationTypes.enabled": true,
-  "deno.inlayHints.variableTypes.enabled": true,
-  "deno.inlayHints.parameterNames.enabled": "literals",
-
-  /* ---------------------------------- Rust ---------------------------------- */
-  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
 
   /* -------------------------------------------------------------------------- */
   /*                             THEME Customization                            */
@@ -536,6 +509,55 @@
   },
 
   /* -------------------------------------------------------------------------- */
+  /*                              Language Settings                             */
+  /* -------------------------------------------------------------------------- */
+  "[html]": {},
+  "[markdown]": {},
+  "[css]": {},
+  "[scss]": {},
+  "[tailwindcss]": {},
+  "[javascript]": {},
+  "[javascriptreact]": {},
+  "[typescript]": {},
+  "[typescriptreact]": {},
+  "[astro]": {},
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.tabSize": 4
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": ["document"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {},
+  // "[dockerfile]": {
+  //   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  // },
+
+  /* ------------------------- Javascript & Typescript ------------------------ */
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.log": "off",
+
+  /* ---------------------------------- Deno ---------------------------------- */
+  "deno.inlayHints.enumMemberValues.enabled": true,
+  "deno.inlayHints.functionLikeReturnTypes.enabled": true,
+  "deno.inlayHints.parameterTypes.enabled": true,
+  "deno.inlayHints.propertyDeclarationTypes.enabled": true,
+  "deno.inlayHints.variableTypes.enabled": true,
+  "deno.inlayHints.parameterNames.enabled": "literals",
+
+  /* ---------------------------------- Rust ---------------------------------- */
+  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+
+  /* -------------------------------------------------------------------------- */
   /*                                    Lint                                    */
   /* -------------------------------------------------------------------------- */
   "eslint.run": "onSave",
@@ -555,51 +577,13 @@
   /* -------------------------------------------------------------------------- */
   /*                                  Formatter                                 */
   /* -------------------------------------------------------------------------- */
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトフォーマッターとして Prettier プラグインを利用
+  "editor.formatOnSave": true, // ファイル保存時にデフォルトフォーマッターでファイルをフォーマットする
+  "editor.codeActionsOnSave": {
+    // ファイル保存時のコードアクション設定
+    "source.fixAll.eslint": true, // ESLint プラグインでフォーマットする
+    "source.fixAll.stylelint": true // Stylelint プラグインでフォーマットする
   },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.tabSize": 4
-  },
-  "[json]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // "[dockerfile]": {
-  //   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  // },
 
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
@@ -611,6 +595,45 @@
 
   "rome.formatter.quoteStyle": "Single",
   "rome.formatter.indentStyle": "Spaces",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Stylelint                                 */
+  /* -------------------------------------------------------------------------- */
+  // "stylelint.enable": true,
+  // Disable vscode built-in linters for css, less, scss
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  // "stylelint.configFile": "./.stylelintrc",
+  "stylelint.validate": ["css", "scss", "less", "tailwindcss"],
+
+  /* -------------------------------------------------------------------------- */
+  /*                          Tailwind CSS IntelliSense                         */
+  /* -------------------------------------------------------------------------- */
+  // "files.associations": {
+  //   "*.css": "tailwindcss"
+  // },
+  "editor.quickSuggestions": {
+    "strings": true // JSXでもCSSクラスを補完できるように
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "HTML",
+    "javascript": "javascript",
+    "javascriptreact": "javascript",
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
+  "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする
+  "tailwindCSS.experimental.classRegex": [
+    // "className = ['\"`]([^('\"`)]*)",
+    "tw`([^`]*)", // tw`...`
+    "tw=\"([^\"]*)", // <div tw="..." />
+    "tw={\"([^\"}]*)", // <div tw={"..."} />
+    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
+    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
+  ], // 上記の形でもVSCodeが補完してくれる
 
   /* -------------------------------------------------------------------------- */
   /*                                   Quokka                                   */
@@ -880,6 +903,7 @@
     "signup",
     "skaffold",
     "sslify",
+    "stylelint",
     "supabase",
     "svgr",
     "swiper",
@@ -899,32 +923,6 @@
     "youtube",
     "zustand"
   ],
-
-  /* -------------------------------------------------------------------------- */
-  /*                          Tailwind CSS IntelliSense                         */
-  /* -------------------------------------------------------------------------- */
-  "css.validate": false, // CSSのチェック機能をオフ
-  "scss.validate": false, // CSSのチェック機能をオフ
-  "editor.quickSuggestions": {
-    "strings": true // JSXでもCSSクラスを補完できるように
-  },
-  "tailwindCSS.includeLanguages": {
-    "javascript": "javascript",
-    "javascriptreact": "javascript",
-    "html": "HTML",
-    "typescript": "javascript",
-    "typescriptreact": "javascript"
-  },
-  "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
-  "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする
-  "tailwindCSS.experimental.classRegex": [
-    // "className = ['\"`]([^('\"`)]*)",
-    "tw`([^`]*)", // tw`...`
-    "tw=\"([^\"]*)", // <div tw="..." />
-    "tw={\"([^\"}]*)", // <div tw={"..."} />
-    "tw\\.\\w+`([^`]*)", // tw.xxx`...`
-    "tw\\(.*?\\)`([^`]*)" // tw(Component)`...`
-  ], // 上記の形でもVSCodeが補完してくれる
 
   /* -------------------------------------------------------------------------- */
   /*                               Github Copilot                               */
