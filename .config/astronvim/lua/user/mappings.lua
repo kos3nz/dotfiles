@@ -165,11 +165,6 @@ return {
     -- doge
     ["<leader>d"] = { "<cmd>DogeGenerate<cr>", desc = "Create documentaion" },
 
-    -- sniprun
-    ["<leader>Sr"] = { "<cmd>SnipRun<cr>", desc = "Run" },
-    ["<leader>Ss"] = { "<cmd>SnipReset<cr>", desc = "Abort" },
-    ["<leader>Sc"] = { "<cmd>SnipClose<cr>", desc = "Clear output" },
-
     -- session manager
     ["<leader>rl"] = { "<cmd>SessionManager! load_last_session<cr>", desc = "Load last session" },
     ["<leader>rs"] = { "<cmd>SessionManager! save_current_session<cr>", desc = "Save this session" },
@@ -292,9 +287,6 @@ return {
       "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
       desc = "Toggle comment line",
     },
-
-    -- sniprun
-    ["r"] = { "<cmd>SnipRun<cr>", desc = "Snip Run" },
 
     -- CamelCaseMotion
     ["m"] = { "<Plug>CamelCaseMotion_ie" },

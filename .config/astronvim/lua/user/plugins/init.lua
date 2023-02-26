@@ -229,13 +229,13 @@ return {
 
   { "mg979/vim-visual-multi" },
 
-  {
-    "michaelb/sniprun", -- run lines/blocs of code (independently of the rest of the file)
-    run = "bash ./install.sh",
-    config = function()
-      require("user.plugins.sniprun")
-    end,
-  },
+  -- {
+  --  "michaelb/sniprun", -- run lines/blocs of code (independently of the rest of the file)
+  --  run = "bash ./install.sh",
+  --  config = function()
+  --    require("user.plugins.sniprun")
+  --  end,
+  -- },
 
   { "zhaosheng-pan/vim-im-select" },
 
@@ -274,12 +274,12 @@ return {
 
   -- docs --
 
-  {
-    "kkoomen/vim-doge",
-    run = ":call doge#install()",
-    config = function()
-      require("user.plugins.vim-doge-conf").setup()
-    end,
-    cmd = { "DogeGenerate", "DogeCreateDocStandard" },
-  },
+  -- {
+  --  "kkoomen/vim-doge",
+  --  run = ":call doge#install()",
+  --  config = function()
+  --  require("user.plugins.vim-doge-conf").setup()
+  --  end,
+  --  cmd = { "DogeGenerate", "DogeCreateDocStandard" },
+  --},
 }

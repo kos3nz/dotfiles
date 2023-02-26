@@ -10,7 +10,6 @@ return {
       ["c"] = { name = "Git Conflict" },
       ["j"] = { name = "Hop" },
       ["r"] = { name = "Recent/Session" },
-      ["S"] = { name = "Snip Run" },
       ["t"] = { name = "Trouble/ToggleTerm" },
     },
 
