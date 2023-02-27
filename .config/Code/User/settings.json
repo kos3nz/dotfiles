@@ -75,6 +75,7 @@
   },
   "search.followSymlinks": false,
   "search.searchOnType": true,
+  "search.useIgnoreFiles": true,
 
   /* -------------------------------------------------------------------------- */
   /*                                  Explorer                                  */
