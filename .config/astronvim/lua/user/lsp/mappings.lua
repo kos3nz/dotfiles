@@ -34,5 +34,20 @@ return {
 
     -- twoslash-queries
     ["<leader>lq"] = { "<cmd>InspectTwoslashQueries<cr>" },
+
+    -- emmet-vim
+    -- ["<C-y>d"] = { "<Plug>(emmet-balance-tag-inward)", desc = "Balance (inward)" },
+    -- ["<C-y>f"] = { "<Plug>(emmet-balance-tag-outward)", desc = "Balance (outward)" },
+  },
+  i = {
+    -- emmet-vim
+    -- ["<C-y>d"] = { "<Plug>(emmet-balance-tag-inward)", desc = "Balance (inward)" },
+    -- ["<C-y>f"] = { "<Plug>(emmet-balance-tag-outward)", desc = "Balance (outward)" },
+  },
+  v = {
+    -- emmet-vim
+    -- ["<C-y>d"] = { "<Plug>(emmet-balance-tag-inward)", desc = "Balance (inward)" },
+    -- ["<C-y>f"] = { "<Plug>(emmet-balance-tag-outward)", desc = "Balance (outward)" },
+    ["<C-y>w"] = { "<Plug>(emmet-expand-abbr)", desc = "Expand abbreviation" },
   },
 }
