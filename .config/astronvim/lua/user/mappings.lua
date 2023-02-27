@@ -55,6 +55,7 @@ return {
 
     -- window management
     ["<C-w>h"] = { "<C-w>s", desc = "Split window horizontally" },
+    ["<C-w>m"] = { "<cmd>MaximizerToggle<cr>", desc = "Maximize window" },
     ["<leader>m"] = { "<cmd>MaximizerToggle<cr>", desc = "Maximize window" },
 
     -- resize

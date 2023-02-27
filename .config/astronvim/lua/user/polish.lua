@@ -16,8 +16,10 @@ return function()
 
   vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches
 
-  create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md", "*.tex" }, command = "setlocal spell" })
+  -- when creating or reading text file, enable spell checking
+  create_autocmd({ "BufRead", "BufNewFile" }, { pattern = { "*.txt", "*.md", "*.text" }, command = "setlocal spell" })
 
+  -- when creating or reading files matched with patterns specified below, set filetype to jsonc
   create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = {
       "settings.json",
@@ -28,6 +30,9 @@ return function()
     },
     command = "setlocal filetype=jsonc",
   })
+
+  -- when reading any files, open all folds
+  -- create_autocmd({ "BufReadPost", "FileReadPost" }, { pattern = { "*" }, command = "normal zR" })
 
   -- create_user_command(
   --   "BufferCloseAllButCurrent",

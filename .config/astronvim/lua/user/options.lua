@@ -21,6 +21,11 @@ return {
     autoindent = true, -- copy indent from current line when starting new one
     smartindent = true, -- make indenting smarter again
 
+    -- folding
+    -- foldenable = true, -- enable code folding
+    -- foldmethod = "expr", -- specify an expression to define folds
+    -- foldexpr = "nvim_treesitter#foldexpr()", -- enable syntax based code folding powered by Tree-sitter
+
     -- line wrapping
     wrap = false, -- display lines as one long line
     -- linebreak = false, -- companion to wrap, don't split words
@@ -75,7 +80,7 @@ return {
     undofile = true, -- enable persistent undo
 
     -- mapping
-    timeoutlen = 250, -- time to wait for a mapped sequence to complete (in milliseconds)
+    timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
   },
 
   g = {
