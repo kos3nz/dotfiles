@@ -52,6 +52,7 @@ brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
 
 # Apps
+cask "alacritty"
 # cask "alfred"
 # cask "bitwarden"
 # cask "blender"
