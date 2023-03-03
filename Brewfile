@@ -10,6 +10,7 @@ tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
 # tap "oven-sh/bun"
 tap "shopify/shopify"
+tap "wez/wezterm" # for wezterm
 
 # Formulae
 brew "bat"
@@ -80,6 +81,7 @@ cask "stats"
 cask "visual-studio-code"
 # cask "vscodium"
 cask "warp"
+cask "wez/wezterm/wezterm"
 
 # Mac App Store
 # mas "Bitwarden", id: 1352778147
