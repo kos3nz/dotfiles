@@ -2251,23 +2251,23 @@
 			<key>Guid</key>
 			<string>1DC47B67-8DB6-467E-9E66-801815B57B1B</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1.1399999999999999</real>
 			<key>HotKey Activated By Modifier</key>
-			<true/>
+			<false/>
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string>i</string>
+			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>i</string>
+			<string></string>
 			<key>HotKey Key Code</key>
-			<integer>34</integer>
+			<integer>0</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>2</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>1048576</integer>
+			<integer>0</integer>
 			<key>HotKey Window Animates</key>
 			<false/>
 			<key>HotKey Window AutoHides</key>
