@@ -1,5 +1,5 @@
 # Taps
-tap "daipeihust/tap"
+tap "daipeihust/tap" # for im-select
 tap "epk/epk" # for font-sf-mono-nerd-font
 # tap "heroku/brew"
 tap "homebrew/bundle"
@@ -7,7 +7,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jesseduffield/lazygit"
+tap "jesseduffield/lazygit" # for lazygit
 # tap "oven-sh/bun"
 tap "shopify/shopify"
 
@@ -51,33 +51,36 @@ brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
 
 # Apps
-cask "alfred"
-cask "karabiner-elements"
-cask "maccy"
-cask "runjs"
-cask "stats"
-cask "visual-studio-code"
+# cask "alfred"
 # cask "bitwarden"
 # cask "blender"
 # cask "brave-browser"
 # cask "docker"
 # cask "fig"
+# cask "figma"
+# cask "firefox"
 # cask "google-chrome"
 # cask "google-japanese-ime"
-# cask "firefox"
-# cask "figma"
+# cask "hyper"
 # cask "iconset"
 # cask "iterm2"
+cask "karabiner-elements"
 # cask "lapce"
 # cask "lunar"
+cask "maccy"
 # cask "obsidian"
 # cask "postman"
+cask "raycast"
 # cask "rectangle"
+cask "runjs"
 # cask "spotify"
+cask "stats"
+cask "visual-studio-code"
 # cask "vscodium"
-# cask "warp"
+cask "warp"
 
 # Mac App Store
+# mas "Bitwarden", id: 1352778147
 # mas "Be Focused - Pomodoro Timer", id: 973134470
 # mas "Kindle", id: 405399194
 # mas "Line", id: 539883307
