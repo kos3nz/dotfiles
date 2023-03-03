@@ -28,6 +28,10 @@ return {
     ["g~"] = { "g~", desc = "Switch case" },
 
     -- cursor navigation
+    ["<C-d>"] = { "25j" },
+    ["<C-u>"] = { "25k" },
+    ["<C-f>"] = { "50j" },
+    ["<C-b>"] = { "50k" },
     ["J"] = { "5j" },
     ["K"] = { "5k" },
     ["M"] = { "J" },
@@ -46,8 +50,11 @@ return {
     -- select all
     ["<A-a>"] = { "ggVG" },
 
+    -- save without formatting
+    ["<leader>W"] = { "<cmd>noa w<cr>", desc = "Save without formmating" },
+
     -- force quit
-    ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force Quit" },
+    ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force quit" },
 
     -- move text up and Down
     ["<A-k>"] = { ":m .-2<cr>==", desc = "Move text up" },
@@ -227,6 +234,14 @@ return {
     ["F"] = { "<Plug>Sneak_F" },
     ["t"] = { "<Plug>Sneak_t" },
     ["T"] = { "<Plug>Sneak_T" },
+
+    -- ReplaceWithRegister
+    ["grw"] = { "<Plug>ReplaceWithRegisterOperatoriw", desc = "<Plug>ReplaceWithRegisterOperator_iw" },
+    ["griw"] = { "<Plug>ReplaceWithRegisterOperatoriw", desc = "<Plug>ReplaceWithRegisterOperator_iw" },
+    ["grm"] = {
+      "<Plug>ReplaceWithRegisterOperator<Plug>CamelCaseMotion_ie",
+      desc = "<Plug>ReplaceWithRegisterOperator_m",
+    },
   },
 
   --------------------
@@ -270,8 +285,10 @@ return {
   --------------------
   v = {
     -- stay in indent mode
-    ["<"] = { "<gv" },
     [">"] = { ">gv" },
+    ["<"] = { "<gv" },
+    ["<Tab>"] = { ">gv" },
+    ["<S-Tab>"] = { "<gv" },
 
     -- cursor navigation
     ["J"] = { "5j" },
@@ -302,8 +319,10 @@ return {
   --------------------
   x = {
     -- stay in indent mode
-    ["<"] = { "<gv" },
     [">"] = { ">gv" },
+    ["<"] = { "<gv" },
+    ["<Tab>"] = { ">gv" },
+    ["<S-Tab>"] = { "<gv" },
 
     -- cursor navigation
     ["<C-a>"] = { "0" },
