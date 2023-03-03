@@ -1,5 +1,6 @@
 # Taps
 tap "daipeihust/tap"
+tap "epk/epk" # for font-sf-mono-nerd-font
 # tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -84,9 +85,12 @@ cask "visual-studio-code"
 # mas "Trello", id: 1278508951
 
 # Fonts
-cask "font-fira-code-nerd-font"
 # cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "font-hack"
+cask "font-hack-nerd-font"
 # cask "font-meslo-lg-nerd-font"
+cask "font-sf-mono-nerd-font"
 # cask "font-ubuntu-mono-nerd-font"
 # cask "font-ubuntu-nerd-font"
 # cask "font-victor-mono-nerd-font"
