@@ -67,7 +67,7 @@ return {
 
     -- cmp
     completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
-    updatetime = 300, -- faster completion (4000ms default)
+    updatetime = 200, -- faster completion (4000ms default)
 
     -- pop up
     pumheight = 10, -- pop up menu height

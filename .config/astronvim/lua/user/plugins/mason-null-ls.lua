@@ -6,7 +6,7 @@ return {
     -- Formatter
     "prettierd",
     "stylua",
-    "yamlfmt",
+    -- "yamlfmt",
 
     -- Linter
     "eslint_d",

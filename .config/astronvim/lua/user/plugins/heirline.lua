@@ -22,34 +22,37 @@ return function(config)
   }
 
   -- the second one is the winbar
-  config[2] = {
-    fallthrough = false,
-    -- if the current buffer matches the following buftype or filetype, disable the winbar
-    {
-      condition = function()
-        return astronvim.status.condition.buffer_matches({
-          buftype = { "terminal", "prompt", "nofile", "help", "quickfix" },
-          filetype = { "NvimTree", "neo-tree", "dashboard", "Outline", "aerial" },
-        })
-      end,
-      init = function()
-        vim.opt_local.winbar = nil
-      end,
-    },
-    -- if the window is currently active, show the breadcrumbs
-    {
-      condition = astronvim.status.condition.is_active,
-      astronvim.status.component.breadcrumbs({ hl = { fg = "winbar_fg", bg = "winbar_bg" } }),
-    },
-    -- if the window is not currently active, show the file information
-    {
-      astronvim.status.component.file_info({
-        file_icon = { hl = false },
-        hl = { fg = "winbarnc_fg", bg = "winbarnc_bg" },
-        surround = false,
-      }),
-    },
-  }
+  -- config[2] = {
+  --   fallthrough = false,
+  --   -- if the current buffer matches the following buftype or filetype, disable the winbar
+  --   {
+  --     condition = function()
+  --       return astronvim.status.condition.buffer_matches({
+  --         buftype = { "terminal", "prompt", "nofile", "help", "quickfix" },
+  --         filetype = { "NvimTree", "neo-tree", "dashboard", "Outline", "aerial" },
+  --       })
+  --     end,
+  --     init = function()
+  --       vim.opt_local.winbar = nil
+  --     end,
+  --   },
+  --   -- if the window is currently active, show the breadcrumbs
+  --   {
+  --     condition = astronvim.status.condition.is_active,
+  --     astronvim.status.component.breadcrumbs({ hl = { fg = "winbar_fg", bg = "winbar_bg" } }),
+  --   },
+  --   -- if the window is not currently active, show the file information
+  --   {
+  --     astronvim.status.component.file_info({
+  --       file_icon = { hl = false },
+  --       hl = { fg = "winbarnc_fg", bg = "winbarnc_bg" },
+  --       surround = false,
+  --     }),
+  --   },
+  -- }
+
+  -- disabel winbar
+  config[2] = false
 
   -- return the final configuration table
   return config
