@@ -141,6 +141,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Deno
 # export PATH="$HOME /.deno/bin:$PATH"
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # # Powerlevel10k
 # # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
