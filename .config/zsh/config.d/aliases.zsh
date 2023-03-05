@@ -3,10 +3,9 @@ alias his='history'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias e="emacs"
-alias v='vim'
 alias vi='vim'
+alias v='nvim'
 alias nv='nvim'
-alias tm='tmux'
 alias gu='gitui'
 alias lg='lazygit'
 alias so='source'
@@ -15,9 +14,8 @@ alias ber='bundle exec ruby'
 alias c="code"
 alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
 alias cn='code -n' # Vscodeを新しいウィンドウで開く(usage: cn <file | dir>)
-alias czsh='code ~/.zshrc'
+alias sz='source ~/.zshrc'
 alias szsh='source ~/.zshrc'
-alias al='alias'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
 alias portk='kill -9' # プロセスをkill (-9 = 強制終了) -> kill -9 [PIDの数字]
 alias restart='sudo fdesetup authrestart'
@@ -194,6 +192,10 @@ alias gqtx='ghq list > repolist.txt' # ghq管理下のリポジトリ一覧を�
 alias gqtx_local='ghq get --update --parallel < repolist.txt' # ghq管理下のリポジトリ一覧をテキストファイルから一括で最新の状態に更新(別マシンへのリポジトリ移行時に使用)
 alias gqroot='git config --global ghq.root' # ghqのrootディレクトリをgit configで設定
 alias gqmv='GHQ_MIGRATOR_ACTUALLY_RUN=1 ./ghq-migrator.bash' # ghq管理下へローカルリポジトリを移動(ghq-migratorディレクトリへ移動したあと、'gqmv ~/foo'でfooリポジトリをghq管理下へ移動)
+
+# Tmux
+alias tm='tmux'
+alias tn='tmux new-session -A -s $(basename "`pwd`")' # カレントディレクトリ名でセッション作成
 
 # ディレクトリ管理
 alias cleancdr='bash ~/shell-scripts/clean-no-exists-directories.sh > ~/shell-scripts/.chpwd-recent-dirs-clean && mv ~/shell-scripts/.chpwd-recent-dirs-clean ~/.chpwd-recent-dirs' # 存在しないディレクトリを .chpwd-recent-dir から削除
