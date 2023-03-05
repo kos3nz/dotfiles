@@ -1,4 +1,5 @@
 # Taps
+tap "arl/arl" # for gitmux
 tap "daipeihust/tap" # for im-select
 tap "epk/epk" # for font-sf-mono-nerd-font
 # tap "heroku/brew"
@@ -22,6 +23,7 @@ brew "fd"
 brew "fzf"
 brew "gawk"
 brew "gh"
+brew "gitmux"
 # brew "heroku"
 brew "jq"
 brew "mas"

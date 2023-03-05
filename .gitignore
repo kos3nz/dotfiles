@@ -46,9 +46,10 @@
 !/.github/**
 !/.config/
 !/.config/**
-/.config/nvim/plugin/
-/.config/lazygit/state.yml
 /.config/karabiner/automatic_backups
+/.config/lazygit/state.yml
+/.config/nvim/plugin/
+/.config/tmux/plugins/
 
 !/README.md
 !/LICENSE
