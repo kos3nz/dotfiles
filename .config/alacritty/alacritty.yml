@@ -845,6 +845,31 @@ key_bindings:
   # Shift
   - { key: Return,         mods: Shift,                      chars: "\x1b[13;2u" }
 
+  # Tmux
+  - { key: T,              mods: Command,                    chars: "\x11\x63" } # ^Q+c: New window
+  - { key: T,              mods: Command|Shift,              chars: "\x11\x21" } # ^Q+!: Break the current pane out of the window
+  - { key: D,              mods: Command,                    chars: "\x11\x7c" } # ^Q+|: New pane horizontally
+  - { key: D,              mods: Command|Shift,              chars: "\x11\x2d" } # ^Q+-: New pane vertically
+  - { key: W,              mods: Command,                    chars: "\x11\x78" } # ^Q+x: Kill pane
+  - { key: W,              mods: Command|Shift,              chars: "\x11\x78" } # ^Q+X: Kill window
+  - { key: LBracket,       mods: Command,                    chars: "\x11\x6e" } # ^Q+(: Previous window
+  - { key: RBracket,       mods: Command,                    chars: "\x11\x70" } # ^Q+): Next window
+  - { key: LBracket,       mods: Command|Shift,              chars: "\x11\x28" } # ^Q+(: Previous session
+  - { key: RBracket,       mods: Command|Shift,              chars: "\x11\x29" } # ^Q+): Next session
+  - { key: Key1,           mods: Command,                    chars: "\x11\x31" } # ^Q+number: Select window 0-9
+  - { key: Key2,           mods: Command,                    chars: "\x11\x32" } 
+  - { key: Key3,           mods: Command,                    chars: "\x11\x33" } 
+  - { key: Key4,           mods: Command,                    chars: "\x11\x34" } 
+  - { key: Key5,           mods: Command,                    chars: "\x11\x35" } 
+  - { key: Key6,           mods: Command,                    chars: "\x11\x36" } 
+  - { key: Key7,           mods: Command,                    chars: "\x11\x37" } 
+  - { key: Key8,           mods: Command,                    chars: "\x11\x38" } 
+  - { key: Key9,           mods: Command,                    chars: "\x11\x39" } 
+  - { key: L,              mods: Command,                    chars: "\x11\x4c" } # ^Q+L: Switch to last tmux session
+  - { key: Z,              mods: Command,                    chars: "\x11\x7a" } # ^Q+z: Toggle the zoom state of  the current tmux pane
+
+  # Neovim
+  - { key: S,              mods: Command,                    chars: "\x1b\x20\x77" } # "<esc><space>w", somehow "\x1b\x3a\x77\x0a"(<esc>:w<cr>) not working
 
 #debug:
   # Display the time it takes to redraw each frame.
