@@ -6,6 +6,9 @@ osascript -e 'tell application "Finder" to empty trash'
 # Toggle dark mode
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
+# Get the hex code. After running the command below, type whatever you want the hex code for and hit enter. (0a is enter key)
+xxd -psd
+
 
 % mac, volume
 
