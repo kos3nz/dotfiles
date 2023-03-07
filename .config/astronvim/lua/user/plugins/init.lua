@@ -32,6 +32,16 @@ return {
 
   { "hrsh7th/cmp-nvim-lua" },
 
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    -- optionally, override the default options:
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup({
+        color_square_width = 2,
+      })
+    end,
+  },
+
   -- ["tzachar/cmp-tabnine"] = {
   --   requires = "hrsh7th/nvim-cmp",
   --   after = "nvim-cmp",
@@ -260,7 +270,7 @@ return {
 
   -- { "andymass/vim-matchup" },
 
-  -- { "tpope/vim-repeat" },
+  { "tpope/vim-repeat" },
 
   -- git --
 
