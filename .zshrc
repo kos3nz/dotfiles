@@ -122,7 +122,10 @@ unset conf
 
 ### PATH ###
 # Heroku
-export PATH="/usr/local/opt/heroku-node/bin:$PATH"
+# export PATH="/usr/local/opt/heroku-node/bin:$PATH"
+
+# Alacritty
+export PATH="$HOME/.config/alacritty/bin:$PATH"
 
 # Volta
 export VOLTA_HOME="$HOME/.volta"
