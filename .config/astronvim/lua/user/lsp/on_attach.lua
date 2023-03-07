@@ -3,10 +3,10 @@ if not document_color_status then
   return
 end
 
-local twoslash_queries_status, twoslash_queries = pcall(require, "twoslash-queries")
-if not twoslash_queries_status then
-  return
-end
+-- local twoslash_queries_status, twoslash_queries = pcall(require, "twoslash-queries")
+-- if not twoslash_queries_status then
+--   return
+-- end
 
 -- enable keybinds only for when lsp server available
 local function lsp_keymaps(client, bufnr)
@@ -28,9 +28,9 @@ end
 return function(client, bufnr)
   lsp_keymaps(client, bufnr)
 
-  if client.name == "tsserver" then
-    twoslash_queries.attach(client, bufnr)
-  end
+  -- if client.name == "tsserver" then
+  --   twoslash_queries.attach(client, bufnr)
+  -- end
 
   if client.name == "tailwindcss" then
     document_color.buf_attach(bufnr)

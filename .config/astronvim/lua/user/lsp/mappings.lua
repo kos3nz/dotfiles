@@ -33,7 +33,7 @@ return {
     ["<leader>lS"] = { "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
 
     -- twoslash-queries
-    ["<leader>lq"] = { "<cmd>InspectTwoslashQueries<cr>" },
+    -- ["<leader>lq"] = { "<cmd>InspectTwoslashQueries<cr>" },
 
     -- emmet-vim
     -- ["<C-y>d"] = { "<Plug>(emmet-balance-tag-inward)", desc = "Balance (inward)" },

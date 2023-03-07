@@ -72,5 +72,5 @@ return {
   GitConflictAncestor = { bg = "#754a81" },
 
   -- Twoslash queries
-  TwoSlashQueries = { fg = "#777d86" },
+  -- TwoSlashQueries = { fg = "#777d86" },
 }
