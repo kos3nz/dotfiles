@@ -5,7 +5,7 @@ return {
   ensure_installed = {
     "html",
     "cssls",
-    "cssmodules_ls",
+    -- "cssmodules_ls",
     "tailwindcss",
     "emmet_ls",
     "tsserver",
