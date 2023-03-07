@@ -14,12 +14,6 @@ return {
       with_expanders = false,
       expander_highlight = "NeoTreeExpander",
     },
-    icon = {
-      folder_closed = "",
-      folder_open = "",
-      folder_empty = "",
-      default = "",
-    },
     name = {
       trailing_slash = false,
       use_git_status_colors = true,
