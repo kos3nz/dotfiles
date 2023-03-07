@@ -144,6 +144,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init zsh)"
 
+# Tmux plugin: t-smart-tmux-session-manager
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+
 # # Powerlevel10k
 # # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
