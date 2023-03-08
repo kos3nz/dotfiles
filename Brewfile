@@ -9,6 +9,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
+tap "koekeishiya/formulae"
 # tap "oven-sh/bun"
 tap "shopify/shopify"
 tap "wez/wezterm" # for wezterm
@@ -37,11 +38,13 @@ brew "neovim"
 brew "procs"
 brew "rename"
 brew "ripgrep"
+brew "skhd" # Simple hotkey daemon for macOS
 brew "starship"
 brew "tmux"
 brew "tree"
 # brew "volta"
 brew "wget"
+brew "yabai" # A tiling window manager for macOS based on binary space partitioning
 brew "zoxide"
 
 # Development
