@@ -41,14 +41,14 @@ return {
     ["<C-t>"] = { "%" },
     ["gM"] = { "gM", desc = "Move to middle of line" },
 
-    ["<A-]>"] = { ">>" },
-    ["<A-[>"] = { "<<" },
+    ["<Tab>"] = { ">>" },
+    ["<S-Tab>"] = { "<<" },
 
     -- delete single character without yanking into register
     ["x"] = { '"_x' },
 
     -- select all
-    ["<A-a>"] = { "ggVG" },
+    -- ["<A-a>"] = { "ggVG" },
 
     -- save without formatting
     ["<leader>W"] = { "<cmd>noa w<cr>", desc = "Save without formmating" },
@@ -57,8 +57,10 @@ return {
     ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force quit" },
 
     -- move text up and Down
-    ["<A-k>"] = { ":m .-2<cr>==", desc = "Move text up" },
-    ["<A-j>"] = { ":m .+1<cr>==", desc = "Move text down" },
+    -- ["<A-k>"] = { ":m .-2<cr>==", desc = "Move text up" },
+    -- ["<A-j>"] = { ":m .+1<cr>==", desc = "Move text down" },
+    ["<leader>ik"] = { ":m .-2<cr>==", desc = "Move text up", silent = true }, -- mapping for alacritty
+    ["<leader>ij"] = { ":m .+1<cr>==", desc = "Move text down", silent = true }, -- mapping for alacritty
 
     -- window management
     ["<C-w>h"] = { "<C-w>s", desc = "Split window horizontally" },
@@ -268,8 +270,8 @@ return {
     ["<C-j>"] = { "<Esc>gMa" }, -- move to middle of line
 
     -- move text up and down
-    ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
-    ["<A-j>"] = { "<Esc>:m .+1<cr>==gi" },
+    -- ["<A-k>"] = { "<Esc>:m .-2<cr>==gi" },
+    -- ["<A-j>"] = { "<Esc>:m .+1<cr>==gi" },
 
     -- comments
     ["<C-_>"] = {
@@ -299,8 +301,10 @@ return {
     ["<C-t>"] = { "%" },
 
     -- move text up and down
-    ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
-    ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
+    -- ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
+    -- ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
+    ["<leader>ik"] = { ":m '<-2<cr>gv=gv", desc = "Move text up", silent = true }, -- mapping for alacritty
+    ["<leader>ij"] = { ":m '>+1<cr>gv=gv", desc = "Move text down", silent = true }, -- mapping for alacritty
 
     -- ["p"] = { "_dP" },
 
@@ -331,8 +335,10 @@ return {
     ["<C-t>"] = { "%" },
 
     -- move text up and down
-    ["<A-k>"] = { ":move '<-2<cr>gv=gv" },
-    ["<A-j>"] = { ":move '>+1<cr>gv=gv" },
+    -- ["<A-k>"] = { ":move '<-2<cr>gv=gv" },
+    -- ["<A-j>"] = { ":move '>+1<cr>gv=gv" },
+    ["<leader>ik"] = { ":m '<-2<cr>gv=gv", desc = "Move text up", silent = true }, -- mapping for alacritty
+    ["<leader>ij"] = { ":m '>+1<cr>gv=gv", desc = "Move text down", silent = true }, -- mapping for alacritty
 
     -- comments
     ["<C-_>"] = {
