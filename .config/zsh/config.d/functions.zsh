@@ -9,71 +9,56 @@
 # zle redisplay : 画面のリフレッシュ
 #
 # zle -N my_edit_func : my_edit_funcをZLEウィジェットというものとして登録する
-#                       おまじない的に必ずつけるものだと思えば良い
 #
 # bindkey "^j" my_edit_func : ctrl+jにウィジェットmy_edit_funcを紐づける
-#
 
-# cp コマンドでカレントディレクトリ以下のディレクトリを絞り込んだ後に移動する
-function find_cd() {
-    cd "$(find . -type d | fzf --reverse)"
-}
-alias fd="find_cd"
-# fe コマンドでカレントディレクトリ以下のファイルを絞り込んだ後に bat で開く
-function find_and_bat() {
-    bat "$(find . -type f | fzf --reverse)"
-}
-alias fb="find_and_bat"
+
 # pk で実行中のプロセスを選択して kill
-function fzf-pkill() {
+function fzf-process-kill() {
   for pid in `ps aux | fzf | awk '{ print $2 }'`
   do
     kill $pid
     echo "Killed ${pid}"
   done
 }
-alias pk="fzf-pkill"
+zle -N fzf-process-kill
 
-# ⌃r = fzf で history 検索
-function fzf-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | fzf --reverse`
-    CURSOR=$#BUFFER
-    zle reset-prompt
-}
-zle -N fzf-history-selection
-bindkey '^R' fzf-history-selection
 
-# ^o = fzf で過去移動したディレクトリに移動
-# setting for cdr
-if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
-    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-    add-zsh-hook chpwd chpwd_recent_dirs
-    zstyle ':completion:*' recent-dirs-insert both
-    zstyle ':chpwd:*' recent-dirs-default true
-    zstyle ':chpwd:*' recent-dirs-max 1000
-fi
 # search a destination from cdr list
 function fzf-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
-  fzf --reverse
+  fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} --  
 }
 # search a destination from cdr list and cd the destination
 function fzf-cdr() {
-  local destination="$(fzf-get-destination-from-cdr)"
-  if [ -n "$destination" ]; then
-    BUFFER="cd $destination"
+  local target_dir="$(fzf-get-destination-from-cdr)"
+  if [ -n "$target_dir" ]; then
+    BUFFER="cd $target_dir"
     zle accept-line
   else
     zle reset-prompt
   fi
 }
 zle -N fzf-cdr
-bindkey '^O' fzf-cdr
 
-# ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。ctrl - ]にバインド。
+
+function clean-cdr() {
+  cat "$XDG_STATE_HOME/zsh/chpwd-recent-dirs" \
+    | sed -e 's/^..\(.*\)./\1/g' \
+    | while read line
+  do
+    if [ -d "$line" ]; then
+      echo "\$'$line'"
+    fi
+  done
+}
+zle -N clean-cdr
+
+
+# ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。
 function fzf-src () {
-  local selected_dir=$(ghq list -p | fzf --reverse)
+  local selected_dir=$(ghq list -p | fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- )
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -81,25 +66,15 @@ function fzf-src () {
   zle clear-screen
 }
 zle -N fzf-src
-bindkey '^]' fzf-src
 
-# === fzf + ripgrep ===
-function fzgrep() {
-  INITIAL_QUERY=""
-  RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
-  FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
-    fzf --bind "change:reload:$RG_PREFIX {q} || true" \
-        --ansi --phony --query "$INITIAL_QUERY" \
-        --preview 'bat `echo {} | cut -f 1 --delim ":"`'
-}
 
-# iTerm2のコマンドの真ん中に移動
+# ターミナルコマンドの真ん中に移動
 function jump_middle() {
     CURSOR=$((${#BUFFER} / 2))
     zle redisplay
 }
 zle -N jump_middle
-bindkey "^j" jump_middle
+
 
 # Node Scriptを参照
 function nsc() {
@@ -108,3 +83,44 @@ function nsc() {
         cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
     fi
 }
+zle -N nsc 
+
+# Highlighting `--help` message (ex: $help gh, help git commit)
+function help() {
+    "$@" --help 2>&1 | bat --plain --language=help
+}
+zle -N help 
+
+### navi ###
+_navi_call() {
+   local result="$(navi "$@" </dev/tty)"
+   printf "%s" "$result"
+}
+_navi_widget() {
+   local -r input="${LBUFFER}"
+   local -r last_command="$(echo "${input}" | navi fn widget::last_command)"
+   local replacement="$last_command"
+
+   if [ -z "$last_command" ]; then
+      replacement="$(_navi_call --print)"
+   elif [ "$LASTWIDGET" = "_navi_widget" ] && [ "$input" = "$previous_output" ]; then
+      replacement="$(_navi_call --print --query "$last_command")"
+   else
+      replacement="$(_navi_call --print --best-match --query "$last_command")"
+   fi
+
+   if [ -n "$replacement" ]; then
+      local -r find="${last_command}_NAVIEND"
+      previous_output="${input}_NAVIEND"
+      previous_output="${previous_output//$find/$replacement}"
+   else
+      previous_output="$input"
+   fi
+
+   zle kill-whole-line
+   LBUFFER="${previous_output}"
+   region_highlight=("P0 100 bold")
+   zle redisplay
+}
+zle -N _navi_widget
+

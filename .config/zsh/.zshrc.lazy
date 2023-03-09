@@ -1,0 +1,69 @@
+
+### OS settings ###
+case "$OSTYPE" in
+    darwin*)
+        # replacing BSD CLI tools to GNU
+        (( ${+commands[gawk]} )) && alias awk='gawk'
+        (( ${+commands[gdate]} )) && alias date='gdate'
+        # (( ${+commands[gls]} )) && alias ls='gls'
+        (( ${+commands[gmkdir]} )) && alias mkdir='gmkdir'
+        (( ${+commands[gcp]} )) && alias cp='gcp'
+        (( ${+commands[gmv]} )) && alias mv='gmv'
+        (( ${+commands[grm]} )) && alias rm='grm'
+        (( ${+commands[gdu]} )) && alias du='gdu'
+        (( ${+commands[ghead]} )) && alias head='ghead'
+        (( ${+commands[gtail]} )) && alias tail='gtail'
+        (( ${+commands[gsed]} )) && alias sed='gsed'
+        (( ${+commands[ggrep]} )) && alias grep='ggrep'
+        (( ${+commands[gfind]} )) && alias find='gfind'
+        (( ${+commands[gdirname]} )) && alias dirname='gdirname'
+        (( ${+commands[gxargs]} )) && alias xargs='gxargs'
+    ;;
+esac
+
+### cdr settings ###
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs 
+add-zsh-hook chpwd chpwd_recent_dirs # register hook function with add-zsh-hook when current directory is changed (=chpwd), call chpwd_recent-dirs
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-max 100
+zstyle ':chpwd:*' recent-dirs-file "$XDG_STATE_HOME/zsh/chpwd-recent-dirs"
+
+### completion styles ###
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors '=*=90'
+
+### zsh_plugins ### 
+zinit wait lucid light-mode for \
+    atinit"zicompinit; zicdreplay" \
+        'zdharma-continuum/fast-syntax-highlighting' \
+    atload'async_init' \
+        'mafredri/zsh-async' \
+    atload"_zsh_autosuggest_start" \
+        'zsh-users/zsh-autosuggestions' \
+    blockf atpull'zinit creinstall -q .' \
+        'zsh-users/zsh-completions'
+
+zinit wait'1' lucid light-mode for \
+    'hlissner/zsh-autopair'
+
+### forgit ###
+zinit wait'1' lucid light-mode for \
+    'wfxr/forgit'
+    
+### zoxide ###
+eval "$(zoxide init zsh)"
+
+autoload -Uz _zinit
+
+### Notes ###
+#
+### autoload : define shell function in $FPATH, $fpath
+#
+### Hook names for add-zsh-hook
+# chpwd : calls when current directory is changed
+# periodic : calls when prompt shows per $PERIOD second
+# precmd : calls everytime just before prompt shows
+# preexec : calls just before executing command (after hitting <enter> key)
+# zshaddhistory : calls before adding command to history
+    # zsh_directory_name : call when changing directory name by Dynamic Named Directories
