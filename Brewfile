@@ -34,7 +34,10 @@ brew "gitmux"
 # brew "heroku"
 brew "jesseduffield/lazygit/lazygit"
 brew "jq"
+brew "lf" # Terminal file manager.
 brew "luajit"
+brew "trash-cli" # Command line interface to the freedesktop.org trashcan.
+# brew "macos-trash" # Move files and folders to the trash.
 brew "mas"
 brew "nano"
 brew "navi"
