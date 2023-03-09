@@ -24,7 +24,8 @@ return {
     width = 32,
     mappings = {
       ["l"] = "open",
-      ["u"] = "close_node",
+      ["h"] = "close_node",
+      ["z"] = false,
       -- ["<2-LeftMouse>"] = "open",
       -- ["<cr>"] = "open",
       -- ["o"] = "open",
@@ -33,7 +34,6 @@ return {
       -- ["C"] = "close_node",
       -- ["<bs>"] = "navigate_up",
       -- ["."] = "set_root",
-      -- ["H"] = "toggle_hidden",
       -- ["R"] = "refresh",
       -- ["/"] = "fuzzy_finder",
       -- ["f"] = "filter_on_submit",
@@ -47,14 +47,13 @@ return {
       -- ["c"] = "copy",
       -- ["m"] = "move",
       -- ["q"] = "close_window",
-      -- ["z"] = "close_all_node",
     },
   },
   nesting_rules = {},
   filesystem = {
     filtered_items = {
       visible = false,
-      hide_dotfiles = true,
+      hide_dotfiles = false,
       hide_gitignored = false,
       hide_by_name = {
         ".DS_Store",
@@ -66,6 +65,14 @@ return {
     follow_current_file = true,
     hijack_netrw_behavior = "open_current",
     use_libuv_file_watcher = true,
+    window = {
+      mappings = {
+        O = "system_open",
+        h = "close_node",
+        ["zh"] = "toggle_hidden",
+        ["."] = "toggle_hidden",
+      },
+    },
   },
   buffers = {
     show_unloaded = true,
