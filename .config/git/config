@@ -7,6 +7,10 @@
 	pager = delta
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[commit]
+	verbose = true
+[merge]
+	conflictStyle = diff3
 [push]
 	default = current
 [pull]
