@@ -1,0 +1,7 @@
+% zsh
+
+# Check zsh start up time
+for i in {1..5}; do time zsh -ic exit; done
+
+# Edit chpwd_recent_dirs file
+cdr -e
