@@ -44,6 +44,7 @@
 !/.tmux/conf/**
 !/.tmux/log/
 !/.github/**
+!/scripts/
 !/.config/
 !/.config/**
 /.config/karabiner/automatic_backups
