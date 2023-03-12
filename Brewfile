@@ -18,19 +18,27 @@ tap "wez/wezterm" # for wezterm
 # Formulae
 brew "bat"
 brew "bun"
-brew "exa"
+brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
 brew "deno"
 brew "dust"
+brew "exa"
+brew "emojify"
 brew "fd"
-brew "fzf"
-brew "gawk"
+brew "findutils" # Collection of GNU find, xargs, and locate
+brew "fzf" # To install useful key bindings and fuzzy completion, run `$(brew --prefix)/opt/fzf/install`
+brew "gawk" # GNU awk utility
 brew "gh"
 brew "ghq"
 brew "gibo"
 brew "git"
 brew "git-delta"
+brew "git-now"
+brew "git-open"
+brew "git-recent"
 brew "gitmux"
+brew "gnu-sed" # GNU implementation of the famous stream editor
+brew "grep" # GNU grep, egrep, and fgrep
 # brew "heroku"
 brew "jesseduffield/lazygit/lazygit"
 brew "jq"
@@ -39,15 +47,17 @@ brew "luajit"
 brew "trash-cli" # Command line interface to the freedesktop.org trashcan.
 # brew "macos-trash" # Move files and folders to the trash.
 brew "mas"
+brew "mmv" # Rename multiple files with editor
 brew "nano"
 brew "navi"
 brew "ncdu"
 brew "neovim"
 # brew "peco"
 brew "procs"
-brew "rename"
+# brew "rename"
 brew "ripgrep"
-brew "rust"
+# brew "rust"
+# brew "rustup-init"
 # brew "safe-rm"
 brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
@@ -55,6 +65,7 @@ brew "skaffold"
 brew "skhd" # Simple hotkey daemon for macOS.
 brew "sqlite"
 brew "starship"
+brew "tealdeer" # Very fast implementation of tldr in Rust
 brew "tmux"
 brew "tree"
 # brew "volta"
@@ -66,6 +77,7 @@ brew "zsh"
 # Apps
 cask "alacritty"
 # cask "alfred"
+cask "authy"
 # cask "bitwarden"
 # cask "blender"
 # cask "brave-browser"
