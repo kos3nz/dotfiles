@@ -1,8 +1,8 @@
 ### Aliases ###
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias vi='vim'
 alias v='nvim'
+alias vi='nvim'
 alias nv='nvim'
 alias lg='lazygit'
 alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)

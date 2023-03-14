@@ -11,12 +11,12 @@ return {
   },
   disabled = { -- disable formatting capabilities for the listed language servers
     "jsonls",
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     -- "denols",
     -- "rust_analyzer",
   },
-  timeout_ms = 1000, -- default format timeout
+  timeout_ms = 2000,
   -- filter = function(client) -- fully override the default formatting function
   --   -- only enable null-ls for javascript files
   --   if vim.bo.filetype == "javascript" then

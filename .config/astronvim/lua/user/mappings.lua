@@ -1,37 +1,45 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
---
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
-
--- setting a mapping to false will disable it
--- ["<esc>"] = false,
-
 return {
   --------------------
   -- Normal mode
   --------------------
   n = {
     -- disable default mappings
-    ["<leader>C"] = false, -- Force close buffer
-    ["<leader>fn"] = false, -- New File
+    -- ["<leader>c"] = false, -- Close buffer
+    -- ["<leader>C"] = false, -- Force close buffer
     ["<leader>Sd"] = false, -- Delete session
     ["<leader>Sf"] = false, -- Search session
     ["<leader>Sl"] = false, -- Load last session
     ["<leader>S."] = false, -- Load current directory session
+    ["<leader>tf"] = false, -- ToggleTerm float
+    ["<leader>th"] = false, -- ToggleTerm horizontal split
+    ["<leader>tn"] = false, -- ToggleTerm node
+    ["<leader>tp"] = false, -- ToggleTerm python
+    ["<leader>tu"] = false, -- ToggleTerm gdu
+    ["<leader>tv"] = false, -- ToggleTerm vertical split
 
+    -- which key names
+    ["<leader>j"] = { name = "Hop" },
+    ["<leader>gx"] = { name = "Git Conflict" },
+    ["<leader>r"] = { name = "Recent/Session" },
+    ["<leader>t"] = { name = "Trouble" },
+    ["<leader>T"] = { name = "ToggleTerm" },
+    ["ga"] = { name = "Text Case" },
+    ["gA"] = { name = "Text Case Operator Mode" },
+
+    -- insert line
     ["<Enter>"] = { "o<Esc>", desc = "Insert new line below" },
     ["<S-Enter>"] = { "O<Esc>", desc = "Insert new line above" },
 
+    -- change case
     ["gu"] = { "gu", desc = "To lower case" },
     ["gU"] = { "gU", desc = "To Upper case" },
     ["g~"] = { "g~", desc = "Switch case" },
 
     -- cursor navigation
-    ["<C-d>"] = { "25j" },
-    ["<C-u>"] = { "25k" },
-    ["<C-f>"] = { "50j" },
-    ["<C-b>"] = { "50k" },
+    -- ["<C-d>"] = { "25j" },
+    -- ["<C-u>"] = { "25k" },
+    -- ["<C-f>"] = { "50j" },
+    -- ["<C-b>"] = { "50k" },
     ["J"] = { "5j" },
     ["K"] = { "5k" },
     ["M"] = { "J" },
@@ -41,8 +49,9 @@ return {
     ["<C-t>"] = { "%" },
     ["gM"] = { "gM", desc = "Move to middle of line" },
 
-    ["<Tab>"] = { ">>" },
-    ["<S-Tab>"] = { "<<" },
+    -- avoid mapping for <Tab> since the behavior will be changed with <C-i>
+    -- ["<Tab>"] = { ">>" },
+    -- ["<S-Tab>"] = { "<<" },
 
     -- delete single character without yanking into register
     ["x"] = { '"_x' },
@@ -53,7 +62,8 @@ return {
     -- save without formatting
     ["<leader>W"] = { "<cmd>noa w<cr>", desc = "Save without formmating" },
 
-    -- force quit
+    --  quit
+    ["<leader>q"] = { "<cmd>confirm q<cr>", desc = "Quit" },
     ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Force quit" },
 
     -- move text up and Down
@@ -74,16 +84,39 @@ return {
     ["<A-Up>"] = { ":resize +2<cr>" },
     ["<A-=>"] = { "<C-w>=", desc = "Resize equal" },
 
+    -- tab
+    ["<leader>c"] = { "<cmd>tabclose<cr>", desc = "Close tab" },
+
     -- manage buffers
+    L = {
+      function()
+        require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)
+      end,
+      desc = "Next buffer",
+    },
+    H = {
+      function()
+        require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))
+      end,
+      desc = "Previous buffer",
+    },
     ["<leader>x"] = {
       function()
-        astronvim.close_buf(0)
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("astronvim.utils.buffer").close(0)
+        if require("astronvim.utils").is_available("alpha-nvim") and not bufs[2] then
+          require("alpha").start(true)
+        end
       end,
       desc = "Close buffer",
     },
     ["<leader>X"] = {
       function()
-        astronvim.close_buf(0, true)
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("astronvim.utils.buffer").close(0, true)
+        if require("astronvim.utils").is_available("alpha-nvim") and not bufs[2] then
+          require("alpha").start(true)
+        end
       end,
       desc = "Force close buffer",
     },
@@ -102,18 +135,57 @@ return {
     ["<leader>bt"] = { "<cmd>enew<cr>", desc = "New file" },
     ["<leader>bx"] = { "<cmd>lua Close_all_but_current() <cr>", desc = "Close other buffers" },
     ["<leader>bX"] = { "<cmd>lua Close_all_but_current(true) <cr>", desc = "Force close other buffers" },
-    ["<leader>1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", desc = "Go to Buffer 1" },
-    ["<leader>2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", desc = "Go to Buffer 2" },
-    ["<leader>3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", desc = "Go to Buffer 3" },
-    ["<leader>4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", desc = "Go to Buffer 4" },
-    ["<leader>5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", desc = "Go to Buffer 5" },
-    ["<leader>6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", desc = "Go to Buffer 6" },
-    ["<leader>7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", desc = "Go to Buffer 7" },
-    ["<leader>8"] = { "<cmd>BufferLineGoToBuffer 8<cr>", desc = "Go to Buffer 8" },
-    ["<leader>9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", desc = "Go to Buffer 9" },
+
+    -- alpha
+    ["<leader>a"] = {
+      function()
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+        if #wins > 1 and vim.api.nvim_get_option_value("filetype", { win = wins[1] }) == "neo-tree" then
+          vim.fn.win_gotoid(wins[2]) -- go to non-neo-tree window to toggle alpha
+        end
+        require("alpha").start(false, require("alpha").default_config)
+      end,
+      desc = "Alpha dashboard",
+    },
 
     -- terminal
+    ["<leader>h"] = {
+      function()
+        require("astronvim.utils").toggle_term_cmd("lf")
+      end,
+      desc = "Toggle file manager",
+    },
     ["<C-\\>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
+    ["<leader>Tl"] = {
+      function()
+        require("astronvim.utils").toggle_term_cmd("lazygit")
+      end,
+      desc = "ToggleTerm lazygit",
+    },
+    ["<leader>Td"] = {
+      function()
+        require("astronvim.utils").toggle_term_cmd("deno")
+      end,
+      desc = "ToggleTerm node",
+    },
+    ["<leader>Tn"] = {
+      function()
+        require("astronvim.utils").toggle_term_cmd("node")
+      end,
+      desc = "ToggleTerm node",
+    },
+    ["<leader>Tu"] = {
+      function()
+        require("astronvim.utils").toggle_term_cmd("ncdu")
+      end,
+      desc = "ToggleTerm ncdu",
+    },
+    ["<leader>Tf"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+    ["<leader>Th"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+    ["<leader>Tv"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
+
+    -- ui
+    ["<leader>uo"] = { "<cmd>:silent !toggle_alacritty_opacity<cr>", desc = "Change terminal opacity" },
 
     -- comments
     ["<C-_>"] = { -- mapping for forward slash(/)
@@ -135,22 +207,40 @@ return {
     ["<leader>jw"] = { "<cmd>HopWord<cr>", desc = "HopWord" },
 
     -- telescope
-    ["<leader>fa"] = {
+    ["<leader>fd"] = {
+      function()
+        require("telescope.builtin").diagnostics()
+      end,
+      desc = "Find diagnostics",
+    },
+    ["<leader>fm"] = { "<cmd>Telescope vim_bookmarks current_file<cr>", desc = "Find bookmarks in current file" },
+    ["<leader>fM"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Find all bookmarks" },
+    ["<leader>fg"] = {
+      function()
+        require("telescope.builtin").registers()
+      end,
+      desc = "Find registers",
+    },
+    ["<leader>fr"] = {
+      function()
+        require("telescope.builtin").lsp_references()
+      end,
+      desc = "Find references of current symbol",
+    },
+    ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find document symbols" },
+    ["<leader>ft"] = { "<cmd>TodoTelescope<cr>", desc = "Find Todos" },
+    ["<leader>fw"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find words in current buffer" },
+    ["<leader>fW"] = {
       function()
         require("telescope").extensions.live_grep_args.live_grep_args()
       end,
-      desc = "Search words in all files",
+      desc = "Find words in all files",
     },
-    ["<leader>fm"] = { "<cmd>Telescope vim_bookmarks current_file<cr>", desc = "Search bookmarks in current file" },
-    ["<leader>fM"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Search all bookmarks" },
-    ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search document symbols" },
-    ["<leader>ft"] = { "<cmd>TodoTelescope<cr>", desc = "Search Todos" },
-    ["<leader>fw"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search words in current buffer" },
 
     -- trouble
     ["<leader>tt"] = { "<cmd>TroubleToggle<cr>" },
-    ["<leader>tw"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>" },
     ["<leader>td"] = { "<cmd>TroubleToggle document_diagnostics<cr>" },
+    ["<leader>tD"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>" },
     ["<leader>tq"] = { "<cmd>TroubleToggle quickfix<cr>" },
     ["<leader>tc"] = { "<cmd>TroubleToggle loclist<cr>" },
     ["<leader>tl"] = { "<cmd>TroubleToggle lsp_references<cr>" },
@@ -159,21 +249,16 @@ return {
     -- git
     ["<leader>ga"] = { "<cmd>Telescope git_stash<CR>", desc = "Git stash" },
     ["<leader>gC"] = { "<cmd>Telescope git_bcommits<CR>", desc = "Git buffer commits" },
+    ["<leader>gf"] = { "<cmd>DiffviewOpen<CR>", desc = "Open diffview" },
     ["[g"] = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", desc = "Previous Git hunk" },
     ["]g"] = { "<cmd>lua require('gitsigns').next_hunk()<cr>", desc = "Next Git hunk" },
-    ["<leader>cc"] = { "<cmd>GitConflictChooseOurs<CR>", desc = "Git Conflict: Choose current" },
-    ["<leader>ci"] = { "<cmd>GitConflictChooseTheirs<CR>", desc = "Git Conflict: Choose incoming" },
-    ["<leader>cb"] = { "<cmd>GitConflictChooseBoth<CR>", desc = "Git Conflict: Choose both" },
-    ["<leader>cn"] = { "<cmd>GitConflictChooseNone<CR>", desc = "Git Conflict: Choose none" },
-    ["<leader>cl"] = { "<cmd>GitConflictListQf<CR>", desc = "Git Conflict: List of conflicts" },
-    ["[c"] = { "<cmd>GitConflictPrevConflict<CR>", desc = "Git Conflict: Prev conflict" },
-    ["]c"] = { "<cmd>GitConflictNextConflict<CR>", desc = "Git Conflict: Next conflict" },
-
-    -- dashboard
-    ["<leader>a"] = { "<cmd>Alpha<cr>", desc = "Alpha Dashboard" },
-
-    -- doge
-    ["<leader>d"] = { "<cmd>DogeGenerate<cr>", desc = "Create documentaion" },
+    ["<leader>gxc"] = { "<cmd>GitConflictChooseOurs<CR>", desc = "Git Conflict: Choose current" },
+    ["<leader>gxi"] = { "<cmd>GitConflictChooseTheirs<CR>", desc = "Git Conflict: Choose incoming" },
+    ["<leader>gxb"] = { "<cmd>GitConflictChooseBoth<CR>", desc = "Git Conflict: Choose both" },
+    ["<leader>gxn"] = { "<cmd>GitConflictChooseNone<CR>", desc = "Git Conflict: Choose none" },
+    ["<leader>gxl"] = { "<cmd>GitConflictListQf<CR>", desc = "Git Conflict: List of conflicts" },
+    ["[x"] = { "<cmd>GitConflictPrevConflict<CR>", desc = "Git Conflict: Prev conflict" },
+    ["]x"] = { "<cmd>GitConflictNextConflict<CR>", desc = "Git Conflict: Next conflict" },
 
     -- session manager
     ["<leader>rl"] = { "<cmd>SessionManager! load_last_session<cr>", desc = "Load last session" },
@@ -183,7 +268,6 @@ return {
     ["<leader>r."] = { "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" },
 
     -- textcase
-    ["<leader>sa"] = { "<cmd>TextCaseOpenTelescope<cr>", desc = "Search text cases" },
     ["ga."] = { "<cmd>TextCaseOpenTelescope<cr>", desc = "Search text cases" },
     ["gau"] = { "<cmd>lua require('textcase').current_word('to_upper_case')<cr>", desc = "Convert to_upper_case" },
     ["gal"] = { "<cmd>lua require('textcase').current_word('to_lower_case')<cr>", desc = "Convert to_lower_case" },
@@ -313,6 +397,8 @@ return {
       "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
       desc = "Toggle comment line",
     },
+
+    ["w"] = { "iw" },
 
     -- CamelCaseMotion
     ["m"] = { "<Plug>CamelCaseMotion_ie" },

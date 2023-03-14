@@ -54,7 +54,7 @@ return function()
     for _, bufnr in ipairs(buffers) do
       if buf_get_option(bufnr, "buflisted") then
         if bufnr ~= current then
-          if astronvim.is_available("bufdelete.nvim") then
+          if require("astronvim.utils").is_available("bufdelete.nvim") then
             require("bufdelete").bufdelete(bufnr, force)
           else
             vim.cmd((force and "bd!" or "confirm bd") .. bufnr)

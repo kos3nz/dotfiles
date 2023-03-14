@@ -1,7 +1,7 @@
-local document_color_status, document_color = pcall(require, "document-color")
-if not document_color_status then
-  return
-end
+-- local document_color_status, document_color = pcall(require, "document-color")
+-- if not document_color_status then
+--   return
+-- end
 
 -- local twoslash_queries_status, twoslash_queries = pcall(require, "twoslash-queries")
 -- if not twoslash_queries_status then
@@ -32,7 +32,7 @@ return function(client, bufnr)
   --   twoslash_queries.attach(client, bufnr)
   -- end
 
-  if client.name == "tailwindcss" then
-    document_color.buf_attach(bufnr)
-  end
+  -- if client.name == "tailwindcss" then
+  --   document_color.buf_attach(bufnr)
+  -- end
 end

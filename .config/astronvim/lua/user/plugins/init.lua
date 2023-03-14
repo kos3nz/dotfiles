@@ -1,15 +1,16 @@
------------------------- Custom Plugin ------------------------
+-- https://github.com/folke/lazy.nvim#-migration-guide
 
 return {
-  ----- Disable plugins -----
+  ----- Disables -----
+  --------------------
 
-  ["p00f/nvim-ts-rainbow"] = { disable = true },
-  ["max397574/better-escape.nvim"] = { disable = true },
-  ["stevearc/aerial.nvim"] = { disable = true },
+  { "p00f/nvim-ts-rainbow", enabled = false },
+  { "max397574/better-escape.nvim", enabled = false },
+  { "stevearc/aerial.nvim", enabled = false },
+  { "mrjones2014/smart-splits.nvim", enabled = false },
 
-  ----- Adding plugins -----
-
-  -- colorscheme --
+  ----- Colorscheme -----
+  -----------------------
 
   {
     "catppuccin/nvim",
@@ -21,16 +22,16 @@ return {
     end,
   },
 
-  -- cmp --
+  ----- Cmp -----
+  ---------------
 
-  -- Add lazy loading for command line
-  -- that triggers the loading of cmp
-  ["hrsh7th/nvim-cmp"] = { keys = { ":", "/", "?" } },
-
-  -- add more custom sources
-  ["hrsh7th/cmp-cmdline"] = { after = "nvim-cmp" },
-
-  { "hrsh7th/cmp-nvim-lua" },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require("plugins.configs.luasnip")(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/snippets" } }) -- load snippets paths
+    end,
+  },
 
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
@@ -42,74 +43,29 @@ return {
     end,
   },
 
-  -- ["tzachar/cmp-tabnine"] = {
-  --   requires = "hrsh7th/nvim-cmp",
-  --   after = "nvim-cmp",
-  --   run = "./install.sh",
+  ----- Lsp -----
+  ---------------
+
+  { "jose-elias-alvarez/typescript.nvim" },
+
+  { "sigmasd/deno-nvim" },
+
+  { "simrat39/rust-tools.nvim" },
+
+  { "mattn/emmet-vim", event = "User AstroFile" },
+
+  -- {
+  --   "mrshmllow/document-color.nvim",
   --   config = function()
-  --     require("cmp_tabnine.config").setup({
-  --       max_lines = 1000,
-  --       max_num_results = 20,
-  --       sort = true,
-  --       run_on_every_keystroke = true,
-  --       snippet_placeholder = "..",
-  --       ignored_file_types = {
-  --         -- lua = true,
-  --       },
-  --       show_prediction_strength = false,
+  --     require("document-color").setup({
+  --       mode = "single", -- "background" | "foreground" | "single"
   --     })
-  --     require("core.utils").add_cmp_source({ name = "cmp_tabnine", priority = 100, max_item_count = 5 })
   --   end,
   -- },
 
-  -- { "hrsh7th/cmp-vsnip" },
-
-  -- lsp --
-
-  {
-    "jose-elias-alvarez/typescript.nvim",
-    after = "mason-lspconfig.nvim",
-    config = function()
-      require("typescript").setup({
-        server = astronvim.lsp.server_settings("tsserver"),
-      })
-    end,
-  },
-
-  {
-    "sigmasd/deno-nvim",
-    after = "mason-lspconfig.nvim",
-    config = function()
-      require("deno-nvim").setup({
-        server = astronvim.lsp.server_settings("denols"),
-      })
-    end,
-  },
-
-  {
-    "simrat39/rust-tools.nvim",
-    after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
-    config = function()
-      require("rust-tools").setup({
-        server = astronvim.lsp.server_settings("rust_analyzer"), -- get the server settings and built in capabilities/on_attach
-      })
-    end,
-  },
-
-  {
-    "mrshmllow/document-color.nvim",
-    config = function()
-      require("document-color").setup({
-        mode = "single", -- "background" | "foreground" | "single"
-      })
-    end,
-  },
-
-  { "mattn/emmet-vim" },
-
   -- {
   --   "ThePrimeagen/refactoring.nvim",
-  --   requires = {
+  --   dependencies = {
   --     { "nvim-lua/plenary.nvim" },
   --     { "nvim-treesitter/nvim-treesitter" },
   --   },
@@ -118,116 +74,65 @@ return {
   --   -- },
   -- },
 
-  -- {
-  --   "marilari88/twoslash-queries.nvim",
-  --   config = function()
-  --     require("twoslash-queries").setup({
-  --       multi_line = true, -- to print types in multi line mode
-  --       is_enabled = false, -- to keep disabled at startup and enable it on request with the EnableTwoslashQueries
-  --       highlight = "TwoSlashQueries", -- to set up a highlight group for the virtual text
-  --     })
-  --   end,
-  -- },
-
-  -- telescope --
-
-  ["nvim-telescope/telescope-live-grep-args.nvim"] = {
-    after = "telescope.nvim",
-    config = function()
-      require("telescope").load_extension("live_grep_args")
-    end,
-  },
-
-  ["tom-anders/telescope-vim-bookmarks.nvim"] = {
-    after = "telescope.nvim",
-    config = function()
-      require("telescope").load_extension("vim_bookmarks")
-    end,
-  },
+  ----- Telescope -----
+  ---------------------
 
   -- {
-  --   "nvim-telescope/telescope-frecency.nvim",
-  --   after = "telescope.nvim",
-  --   config = function()
-  --     require("telescope").load_extension("frecency")
-  --   end,
-  --   requires = { "kkharji/sqlite.lua" },
+  --     "nvim-telescope/telescope-file-browser.nvim",
+  --     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   -- },
 
-  -- ["nvim-telescope/telescope-media-files.nvim"] = {
-  --   after = "telescope.nvim",
-  --   config = function() require("telescope").load_extension "media_files" end,
-  -- },
+  ----- Syntax Highlighting ----
+  ------------------------------
 
-  -- ["nvim-telescope/telescope-file-browser.nvim"] = {
-  --   after = "telescope.nvim",
-  --   module = "telescope._extensions.file_browser",
-  --   config = function()
-  --     require("telescope").load_extension("file_browser")
-  --   end,
-  -- },
+  { "nvim-treesitter/playground", cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" } },
 
-  -- ["nvim-telescope/telescope-project.nvim"] = {
-  --   after = "telescope.nvim",
-  --   config = function()
-  --     require("telescope").load_extension("project")
-  --   end,
-  -- },
+  { "MaxMEllon/vim-jsx-pretty", event = "User AstroFile" },
 
-  -- treesitter --
-  -- { "nvim-treesitter/playground" },
 
-  -- enhancement --
 
-  ["folke/todo-comments.nvim"] = {
-    requires = "nvim-lua/plenary.nvim",
+
+  ----- Enhancement -----
+  -----------------------
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("todo-comments").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-      })
+      require("todo-comments").setup()
     end,
+    event = "User AstroFile",
   },
 
   {
     "folke/trouble.nvim", -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
-    requires = "kyazdani42/nvim-web-devicons",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("trouble").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-      })
+      require("trouble").setup()
     end,
   },
 
-  { "MattesGroeger/vim-bookmarks" },
+  { "MattesGroeger/vim-bookmarks", event = "User AstroFile" },
 
-  {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      require("user.plugins.symbols-outline")
-    end,
-  },
-
-  -- motion & edit --
+  ----- Motion & Edit -----
+  -------------------------
 
   {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require("nvim-surround").setup()
     end,
+    event = "User AstroFile",
   },
-  -- { "tpope/vim-surround" },
 
   {
     "phaazon/hop.nvim",
     branch = "v2",
     config = function()
-      require("hop").setup({})
+      require("hop").setup()
     end,
+    event = "User AstroFile",
   },
 
   {
@@ -235,67 +140,84 @@ return {
     config = function()
       require("numb").setup()
     end,
+    event = "User AstroFile",
   },
 
-  { "szw/vim-maximizer" },
+  { "mg979/vim-visual-multi", event = "User AstroFile" },
 
-  { "mg979/vim-visual-multi" },
-
-  -- {
-  --  "michaelb/sniprun", -- run lines/blocs of code (independently of the rest of the file)
-  --  run = "bash ./install.sh",
-  --  config = function()
-  --    require("user.plugins.sniprun")
-  --  end,
-  -- },
-
-  { "zhaosheng-pan/vim-im-select" },
+  { "zhaosheng-pan/vim-im-select", event = "User AstroFile" },
 
   {
     "johmsalas/text-case.nvim",
     config = function()
-      require("textcase").setup({})
+      require("textcase").setup()
     end,
+    event = "User AstroFile",
   },
 
-  { "bkad/CamelCaseMotion" },
+  { "bkad/CamelCaseMotion", event = "User AstroFile" },
 
-  { "wellle/targets.vim" },
+  { "wellle/targets.vim", event = "User AstroFile" },
 
-  { "vim-scripts/ReplaceWithRegister" },
+  { "vim-scripts/ReplaceWithRegister", event = "User AstroFile" },
 
-  { "justinmk/vim-sneak" },
+  { "justinmk/vim-sneak", event = "User AstroFile" },
 
-  -- { "ggandor/lightspeed.nvim" },
+  { "tpope/vim-repeat", event = "User AstroFile" },
 
-  -- { "andymass/vim-matchup" },
+  -- { "andymass/vim-matchup", event = "User AstroFile" },
 
-  { "tpope/vim-repeat" },
+  ----- Misc -----
+  ----------------
 
-  -- Git --
+  { "szw/vim-maximizer", cmd = "MaximizerToggle" },
 
-  -- { "tpope/vim-fugitive" },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup({
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
+        hide_cursor = true, -- Hide cursor while scrolling
+        stop_eof = true, -- Stop at <EOF> when scrolling downwards
+        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil, -- Default easing function
+        pre_hook = nil, -- Function to run before the scrolling animation starts
+        post_hook = nil, -- Function to run after the scrolling animation ends
+        performance_mode = false, -- Disable "Performance Mode" on all buffers.
+      })
 
-  ["akinsho/git-conflict.nvim"] = {
-    tag = "*",
+      local t = {}
+      -- Syntax: t[keys] = {function, {function arguments}}
+      t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "35" } }
+      t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "35" } }
+      t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "70" } }
+      t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "70" } }
+      t["zt"] = { "zt", { "60" } }
+      t["zz"] = { "zz", { "60" } }
+      t["zb"] = { "zb", { "60" } }
+
+      require("neoscroll.config").set_mappings(t)
+    end,
+    event = "User AstroFile",
+  },
+
+  ----- Git -----
+  ---------------
+
+  {
+    "akinsho/git-conflict.nvim",
+    version = "*",
     config = function()
       require("git-conflict").setup()
     end,
+    event = "User AstroGitFile",
   },
 
-  -- ["sindrets/diffview.nvim"] = {
-  --   after = "plenary.nvim",
-  --   requires = "nvim-lua/plenary.nvim",
-  -- },
-
-  -- docs --
-
-  -- {
-  --  "kkoomen/vim-doge",
-  --  run = ":call doge#install()",
-  --  config = function()
-  --  require("user.plugins.vim-doge-conf").setup()
-  --  end,
-  --  cmd = { "DogeGenerate", "DogeCreateDocStandard" },
-  --},
+  {
+    "sindrets/diffview.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    event = "User AstroGitFile",
+  },
 }

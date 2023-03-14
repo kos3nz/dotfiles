@@ -1,19 +1,16 @@
 -- easily add or disable built in mappings added during LSP attaching
 return {
   n = {
-    -- ["<leader>lf"] = false -- disable formatting keymap
-    -- gi = function()
-    --   require("telescope.builtin").lsp_implementations()
-    -- end,
-    -- gr = function()
-    --   require("telescope.builtin").lsp_references()
-    -- end,
-    -- gd = function()
-    --   require("telescope.builtin").lsp_definitions()
-    -- end,
-
+    gr = false,
     gT = false,
+    K = false,
 
+    gD = {
+      function()
+        require("telescope.builtin").lsp_references()
+      end,
+      desc = "References of current symbol",
+    },
     gh = {
       function()
         vim.lsp.buf.hover()
@@ -26,8 +23,6 @@ return {
       end,
       desc = "Definition of current type",
     },
-
-    K = false,
 
     -- symbols-outline
     ["<leader>lS"] = { "<cmd>SymbolsOutline<cr>", desc = "Toggle outline" },
