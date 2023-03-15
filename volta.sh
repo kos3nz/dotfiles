@@ -5,3 +5,4 @@ volta install pnpm
 volta install npm-check-updates
 volta install netlify-cli
 volta install @antfu/ni
+volta install better-commits
