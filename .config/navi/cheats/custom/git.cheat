@@ -20,3 +20,15 @@ ghq list | ghq get --update --parallel
 
 # Create a new private repository on Github, and git clone with ghq
 gh repo create <repo-name> --private && ghq get <repo-name>
+
+# Show a list of remote repositories
+gh repo list
+
+# Rename remote repository on the current working directory
+gh repo rename <new-repository-name>
+
+# Rename remote repository by specifying the name of the repository 
+gh repo rename <new-repository-name> -R <owner>/<repository-name>
+
+# Delete remote repository
+gh repo delete <repository-name>
