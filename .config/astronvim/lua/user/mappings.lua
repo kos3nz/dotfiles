@@ -213,6 +213,18 @@ return {
       end,
       desc = "Find diagnostics",
     },
+    ["<leader>ff"] = {
+      function()
+        require("telescope.builtin").find_files({ hidden = true })
+      end,
+      desc = "Find files",
+    },
+    ["<leader>fF"] = {
+      function()
+        require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+      end,
+      desc = "Find all files",
+    },
     ["<leader>fm"] = { "<cmd>Telescope vim_bookmarks current_file<cr>", desc = "Find bookmarks in current file" },
     ["<leader>fM"] = { "<cmd>Telescope vim_bookmarks all<cr>", desc = "Find all bookmarks" },
     ["<leader>fg"] = {
@@ -229,13 +241,37 @@ return {
     },
     ["<leader>fs"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find document symbols" },
     ["<leader>ft"] = { "<cmd>TodoTelescope<cr>", desc = "Find Todos" },
-    ["<leader>fw"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find words in current buffer" },
+    ["<leader>fw"] = {
+      function()
+        require("telescope.builtin").live_grep({
+          additional_args = function(args)
+            return vim.list_extend(args, { "--hidden" })
+          end,
+        })
+      end,
+      desc = "Find words",
+    },
     ["<leader>fW"] = {
       function()
-        require("telescope").extensions.live_grep_args.live_grep_args()
+        require("telescope.builtin").live_grep({
+          additional_args = function(args)
+            return vim.list_extend(args, { "--hidden", "--no-ignore" })
+          end,
+        })
       end,
       desc = "Find words in all files",
     },
+    -- ["<leader>fW"] = {
+    --   function()
+    --     require("telescope").extensions.live_grep_args.live_grep_args({
+    --       additional_args = function(args)
+    --         return vim.list_extend(args, { "--hidden", "--no-ignore" })
+    --       end,
+    --     })
+    --   end,
+    --   desc = "Find words in all files",
+    -- },
+    ["<leader>f/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find words in current buffer" },
 
     -- trouble
     ["<leader>tt"] = { "<cmd>TroubleToggle<cr>" },

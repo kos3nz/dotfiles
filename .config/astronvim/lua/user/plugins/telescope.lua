@@ -32,11 +32,8 @@ return {
 
       mappings = {
         i = {
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-n>"] = actions.move_selection_next,
+          ["<C-p>"] = actions.move_selection_previous,
 
           ["<C-c>"] = actions.close,
 
@@ -44,7 +41,6 @@ return {
           ["<Up>"] = actions.move_selection_previous,
 
           ["<CR>"] = actions.select_default,
-          ["<C-o>"] = actions.select_default,
           ["<C-x>"] = actions.select_horizontal,
           ["<C-v>"] = actions.select_vertical,
           ["<C-t>"] = actions.select_tab,
@@ -55,11 +51,18 @@ return {
           ["<PageUp>"] = actions.results_scrolling_up,
           ["<PageDown>"] = actions.results_scrolling_down,
 
-          ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-          ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-          ["<C-]>"] = actions.send_to_qflist + actions.open_qflist,
-          ["<M-]>"] = actions.send_selected_to_qflist + actions.open_qflist,
-          ["<C-l>"] = actions.complete_tag,
+          -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+          -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+          ["<C-l>"] = actions.toggle_selection + actions.move_selection_worse,
+          ["<Tab>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          ["<S-Tab>"] = actions.send_to_qflist + actions.open_qflist,
+          -- ["<C-l>"] = actions.complete_tag,
+          ["<C-/>"] = actions.which_key,
+          ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+          ["<C-w>"] = { "<c-s-w>", type = "command" },
+
+          -- disable c-j because we dont want to allow new lines #2123
+          ["<C-j>"] = actions.nop,
         },
 
         n = {
@@ -71,8 +74,8 @@ return {
 
           ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
           ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-          ["<C-]>"] = actions.send_to_qflist + actions.open_qflist,
-          ["<M-]>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+          ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
           ["j"] = actions.move_selection_next,
           ["k"] = actions.move_selection_previous,
@@ -90,6 +93,8 @@ return {
 
           ["<PageUp>"] = actions.results_scrolling_up,
           ["<PageDown>"] = actions.results_scrolling_down,
+
+          ["?"] = actions.which_key,
         },
       },
     }
