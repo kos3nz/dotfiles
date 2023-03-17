@@ -39,7 +39,7 @@ export FZF_ALT_C_COMMAND="fd --hidden --type d" # show only directories
 export FZF_TMUX_OPTS="-p 80%,60%" # width,height
 
 ### ripgrep ###
-# export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 ### rust ###
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
