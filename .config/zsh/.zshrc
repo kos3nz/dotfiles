@@ -75,6 +75,7 @@ eval "$(starship init zsh)"
 
 
 ### Key Bindings ###
+bindkey -e # e-macs keybindings
 bindkey "^j" jump_middle
 bindkey '^O' fzf-cdr
 bindkey '^]' fzf-src
