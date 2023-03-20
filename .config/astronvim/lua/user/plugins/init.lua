@@ -101,8 +101,11 @@ return {
 
   { "MaxMEllon/vim-jsx-pretty", event = "User AstroFile" },
 
+  -- { "sheerun/vim-polyglot", event = "User AstroFile" },
 
+  { "preservim/vim-markdown", ft = "markdown" },
 
+  { "jxnblk/vim-mdx-js", ft = "markdown.mdx" },
 
   ----- Enhancement -----
   -----------------------

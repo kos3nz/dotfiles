@@ -68,6 +68,18 @@
       {
         "language": "typescriptreact",
         "path": "./remix.code-snippets"
+      },
+      {
+        "language": "mdx",
+        "path": "./html.code-snippets"
+      },
+      {
+        "language": "mdx",
+        "path": "./javascript.code-snippets"
+      },
+      {
+        "language": "mdx",
+        "path": "./react.code-snippets"
       }
     ]
   }

@@ -59,6 +59,15 @@ return {
 
       eslint_d = function()
         null_ls.register(null_ls.builtins.diagnostics.eslint_d.with({
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "astro",
+            "markdown.mdx",
+          },
           condition = function(utils)
             return utils.root_has_file(".eslintrc.json")
               or utils.root_has_file(".eslintrc.yaml")
@@ -70,7 +79,9 @@ return {
       end,
 
       markdownlint = function()
-        null_ls.register(null_ls.builtins.diagnostics.markdownlint)
+        null_ls.register(null_ls.builtins.diagnostics.markdownlint.with({
+          filetypes = { "markdown" },
+        }))
         null_ls.register(null_ls.builtins.formatting.markdownlint.with({
           condition = function(utils)
             if -- if any of these files are exist, stop formatting with markdownlint
