@@ -27,9 +27,13 @@
 
 return {
   filetypes = {
+    "html",
     "css",
     "less",
     "scss",
+    "astro",
+    "vue",
+    "svelte",
   },
   settings = {
     stylelintplus = {

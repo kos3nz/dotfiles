@@ -607,7 +607,15 @@
   "scss.validate": false,
 
   // "stylelint.configFile": "./.stylelintrc",
-  "stylelint.validate": ["css", "scss", "less", "tailwindcss"],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "tailwindcss",
+    "astro",
+    "vue",
+    "svelte"
+  ],
 
   /* -------------------------------------------------------------------------- */
   /*                          Tailwind CSS IntelliSense                         */
