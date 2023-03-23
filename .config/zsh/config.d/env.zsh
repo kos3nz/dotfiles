@@ -8,19 +8,6 @@ else
   export EDITOR='nvim'
 fi
 
-### paths ###
-typeset -U path
-# typeset -U fpath
-
-path=(
-  "$HOME/.config/alacritty/bin"(N-/)
-  "$VOLTA_HOME/bin"(N-/)
-  "$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin"(N-/)
-  $path
-)
-
-# fpath=()
-
 ### bat ###
 export BAT_THEME="base16"
 export BAT_STYLE='numbers,changes,header,header-filesize,grid'
@@ -43,6 +30,7 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 ### rust ###
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
 
 ### starship ###
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"

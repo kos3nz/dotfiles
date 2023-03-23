@@ -85,6 +85,20 @@ bindkey -r '^[c'
 bindkey '^G' fzf-cd-widget
 
 
+### Paths ###
+typeset -U path
+# typeset -U fpath
+
+path=(
+  "$HOME/.config/alacritty/bin"(N-/)
+  "$VOLTA_HOME/bin"(N-/)
+  "$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin"(N-/)
+  $path
+)
+
+# fpath=()
+
+
 ### Async Loading ###
 zinit wait lucid light-mode as'null' \
     atinit'source "$ZDOTDIR/.zshrc.lazy"' \
