@@ -6,6 +6,7 @@ alias vi='nvim'
 alias nv='nvim'
 alias lg='lazygit'
 alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
+alias vh='nvim ~/.local/state/zsh/zsh_history'
 alias sz='source ~/.config/zsh/.zshrc'
 alias szsh='source ~/.config/zsh/.zshrc'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
@@ -29,7 +30,6 @@ fi
 
 # rm/trash
 if type "trash" > /dev/null 2>&1; then
-    alias tr="trash"
     alias tp="trash-put"
     alias te="trash-empty"
     alias tl="trash-list"
