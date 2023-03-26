@@ -11,7 +11,7 @@ return {
 
     -- line numbers
     number = true, -- who line numbers
-    numberwidth = 2, -- set number column width to 2 (default 4)
+    numberwidth = 4, -- set number column width (default 4)
     relativenumber = false, -- set relative numbered lines
 
     -- tabs & indentation
