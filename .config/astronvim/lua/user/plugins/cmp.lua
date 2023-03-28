@@ -107,8 +107,8 @@ return {
     -- modify the sources part of the options table
     opts.sources = cmp.config.sources({
       { name = "nvim_lsp", priority = 1000 },
-      { name = "nvim_lua", priority = 900 },
-      { name = "luasnip", priority = 750, keyword_length = 2 },
+      { name = "luasnip", priority = 900, keyword_length = 2 },
+      { name = "nvim_lua", priority = 800 },
       { name = "buffer", priority = 500 },
       { name = "path", priority = 250 },
     })
