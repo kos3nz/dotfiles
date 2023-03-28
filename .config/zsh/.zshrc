@@ -77,12 +77,12 @@ eval "$(starship init zsh)"
 ### Key Bindings ###
 bindkey -e # e-macs keybindings
 bindkey "^j" jump_middle
-bindkey '^O' fzf-cdr
-bindkey '^]' fzf-src
-bindkey '^V' _navi_widget
+bindkey '^o' fzf-cdr
+bindkey '^v' navi_widget
+bindkey '^]' fzf-ghq
 # fzf (fzf-history-widget: ^R, fzf-cd-widget: ^[c, fzf-file-widget: ^T )
 bindkey -r '^[c'
-bindkey '^G' fzf-cd-widget
+bindkey '^g' fzf-cd-widget
 
 
 ### Paths ###

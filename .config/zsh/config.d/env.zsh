@@ -23,7 +23,7 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|),ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 "
 export FZF_ALT_C_COMMAND="fd --hidden --type d" # show only directories
-export FZF_TMUX_OPTS="-p 80%,60%" # width,height
+export FZF_TMUX_OPTS="-p 90%,75%" # width,height
 
 ### ripgrep ###
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"

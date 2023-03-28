@@ -28,7 +28,8 @@ zle -N fzf-process-kill
 function fzf-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
-  fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} --  
+  # fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} --
+  fzf
 }
 # search a destination from cdr list and cd the destination
 function fzf-cdr() {
@@ -57,15 +58,16 @@ zle -N clean-cdr
 
 
 # ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。
-function fzf-src () {
-  local selected_dir=$(ghq list -p | fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- )
+function fzf-ghq () {
+  # local selected_dir=$(ghq list -p | fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- )
+  local selected_dir=$(ghq list -p | fzf )
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
   zle clear-screen
 }
-zle -N fzf-src
+zle -N fzf-ghq
 
 
 # ターミナルコマンドの真ん中に移動
@@ -96,14 +98,14 @@ _navi_call() {
    local result="$(navi "$@" </dev/tty)"
    printf "%s" "$result"
 }
-_navi_widget() {
+navi_widget() {
    local -r input="${LBUFFER}"
    local -r last_command="$(echo "${input}" | navi fn widget::last_command)"
    local replacement="$last_command"
 
    if [ -z "$last_command" ]; then
       replacement="$(_navi_call --print)"
-   elif [ "$LASTWIDGET" = "_navi_widget" ] && [ "$input" = "$previous_output" ]; then
+   elif [ "$LASTWIDGET" = "navi_widget" ] && [ "$input" = "$previous_output" ]; then
       replacement="$(_navi_call --print --query "$last_command")"
    else
       replacement="$(_navi_call --print --best-match --query "$last_command")"
@@ -122,5 +124,21 @@ _navi_widget() {
    region_highlight=("P0 100 bold")
    zle redisplay
 }
-zle -N _navi_widget
+zle -N navi_widget
 
+### lf ###
+lfcd() {
+  tmp="$(mktemp)"
+  # `command` is needed in case `lfcd` is aliased to `lf`
+  command lf -last-dir-path="$tmp" "$@"
+  if [ -f "$tmp" ]; then
+    dir="$(cat "$tmp")"
+    rm -f "$tmp"
+    if [ -d "$dir" ]; then
+      if [ "$dir" != "$(pwd)" ]; then
+        cd "$dir"
+      fi
+    fi
+  fi
+}
+zle -N lfcd

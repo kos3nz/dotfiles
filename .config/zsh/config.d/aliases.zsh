@@ -1,12 +1,7 @@
 ### Aliases ###
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias v='nvim'
-alias vi='nvim'
-alias nv='nvim'
-alias lg='lazygit'
 alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
-alias vh='nvim ~/.local/state/zsh/zsh_history'
 alias sz='source ~/.config/zsh/.zshrc'
 alias szsh='source ~/.config/zsh/.zshrc'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
@@ -15,17 +10,36 @@ alias restart='sudo fdesetup authrestart'
 alias delcache='sudo rm -rf /System/Library/Caches/* /Library/Caches/* ~/Library/Caches/*' # Macのキャッシュを削除
 
 
-# ls
+# bat
+if type "bat" > /dev/null 2>&1; then
+    alias cat="bat"
+fi
+
+# exa
 if type "exa" > /dev/null 2>&1; then
     alias ls='exa'
     alias l='exa -F'
     alias la='exa -a'
-    alias ll='exa -l'
+    alias ll='exa -alh'
+    alias tree='exa --tree -a'
 fi
 
-# cat
-if type "bat" > /dev/null 2>&1; then
-    alias cat="bat"
+# lf
+if type "lf" > /dev/null 2>&1; then
+    alias lf="lfcd"
+fi
+
+# lazygit
+if type "lazygit" > /dev/null 2>&1; then
+    alias lg='lazygit'
+fi
+
+# neovim
+if type "nvim" > /dev/null 2>&1; then
+    alias v='nvim'
+    alias vi='nvim'
+    alias nv='nvim'
+    alias vh='nvim ~/.local/state/zsh/zsh_history'
 fi
 
 # rm/trash
@@ -34,6 +48,7 @@ if type "trash" > /dev/null 2>&1; then
     alias te="trash-empty"
     alias tl="trash-list"
 fi
+
 
 # Git && Github
 # alias g='git'
