@@ -33,6 +33,8 @@ return {
       mappings = {
         i = {
           ["<C-n>"] = actions.move_selection_next,
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
           ["<C-p>"] = actions.move_selection_previous,
 
           ["<C-c>"] = actions.close,
@@ -62,7 +64,7 @@ return {
           ["<C-w>"] = { "<c-s-w>", type = "command" },
 
           -- disable c-j because we dont want to allow new lines #2123
-          ["<C-j>"] = actions.nop,
+          -- ["<C-j>"] = actions.nop,
         },
 
         n = {

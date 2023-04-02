@@ -26,6 +26,12 @@ local kind_icons = {
   TypeParameter = "",
 }
 
+-- this function helps super tab work better
+local check_backspace = function()
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
+
 return {
   "hrsh7th/nvim-cmp",
   keys = { ":", "/", "?" }, -- lazy load cmp on more keys along with insert mode
@@ -84,6 +90,8 @@ return {
           --   luasnip.expand_or_jump()
         elseif luasnip.jumpable(1) then
           luasnip.jump(1)
+        elseif check_backspace() then
+          fallback()
         else
           fallback()
         end

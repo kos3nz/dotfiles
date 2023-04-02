@@ -66,6 +66,26 @@ return {
 
   { "mattn/emmet-vim", event = "User AstroFile" },
 
+  {
+    "zbirenbaum/neodim",
+    event = "LspAttach",
+    config = function()
+      require("neodim").setup({
+        alpha = 0.5,
+        blend_color = "#10171f",
+        update_in_insert = {
+          enable = true,
+          delay = 100,
+        },
+        hide = {
+          virtual_text = false,
+          signs = false,
+          underline = true,
+        },
+      })
+    end,
+  },
+
   -- {
   --   "mrshmllow/document-color.nvim",
   --   config = function()
