@@ -33,6 +33,7 @@ brew "ghq"
 brew "gibo"
 brew "git"
 brew "git-delta"
+brew "git-lfs" # Git extension for versioning large files
 brew "git-now"
 brew "git-open"
 brew "git-recent"
