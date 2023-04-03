@@ -20,6 +20,7 @@ return {
     -- which key names
     ["<leader>j"] = { name = "Hop" },
     ["<leader>gx"] = { name = "Git Conflict" },
+    ["<leader>lR"] = { name = "Restart Server" },
     ["<leader>r"] = { name = "Recent/Session" },
     ["<leader>t"] = { name = "Trouble" },
     ["<leader>T"] = { name = "ToggleTerm" },
@@ -273,6 +274,11 @@ return {
     -- },
     ["<leader>f/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find words in current buffer" },
 
+    -- lsp
+    ["<leader>lRe"] = { "<cmd>!eslint_d restart<cr>", desc = "Restart eslint_d" },
+    ["<leader>lRl"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+    ["<leader>lRp"] = { "<cmd>!prettierd flush-cache<cr>", desc = "Restart prettierd" },
+
     -- trouble
     ["<leader>tt"] = { "<cmd>TroubleToggle<cr>" },
     ["<leader>td"] = { "<cmd>TroubleToggle document_diagnostics<cr>" },
@@ -378,14 +384,17 @@ return {
     -- ["<C-j>"] = { "<Down>" },
     ["<C-n>"] = { "<Down>" },
     ["<C-b>"] = { "<Left>" },
-    ["<C-l>"] = { "<Right>" },
+    -- ["<C-l>"] = { "<Right>" },
     ["<C-f>"] = { "<Right>" },
     ["<C-a>"] = { "<Esc>I" },
     ["<C-e>"] = { "<Esc>A" },
+    ["<C-r>"] = { "<C-o>b" },
+    ["<C-t>"] = { "<C-o>e" },
+    ["<C-l>"] = { "<C-o>db" },
     ["<C-s>"] = { "<C-o>^" },
     ["<C-d>"] = { "<Del>" },
     ["<C-k>"] = { "<C-o>D" },
-    ["<C-t>"] = { "<C-o>%" },
+    -- ["<C-t>"] = { "<C-o>%" },
 
     ["<C-j>"] = { "<Esc>gMa" }, -- move to middle of line
 
