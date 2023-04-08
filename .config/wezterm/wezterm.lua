@@ -17,17 +17,23 @@ return {
 	-- font = wezterm.font("FiraCode Nerd Font"),
 	-- font = wezterm.font("Operator Mono Lig"),
 
-	-- Hack
-	-- font = wezterm.font("Hack"),
+	-- HackGen35
+	-- font = wezterm.font("HackGen35 Console NFJ"),
 	-- font_size = 14.0,
 	-- cell_width = 1.10,
 	-- line_height = 1.15,
 
-	-- MesloLGS
-	font = wezterm.font("MesloLGS NF"),
+	-- Hack
+	font = wezterm.font("Hack Nerd Font"),
 	font_size = 14.0,
 	cell_width = 1.10,
-	line_height = 1.1,
+	line_height = 1.15,
+
+	-- MesloLGS
+	-- font = wezterm.font("MesloLGS NF"),
+	-- font_size = 14.0,
+	-- cell_width = 1.10,
+	-- line_height = 1.1,
 
 	-- SF Mono
 	-- font = wezterm.font("SFMono Nerd Font"),
@@ -40,7 +46,7 @@ return {
 	initial_rows = 120,
 	window_background_opacity = 0.95,
 	window_decorations = "RESIZE",
-	window_padding = { left = 20, right = 12, top = 12, bottom = 0 },
+	window_padding = { left = 20, right = 12, top = 12, bottom = 20 },
 	-- launch_menu = {
 	-- 	position = { x = 0, y = 0 },
 	-- },
@@ -55,7 +61,7 @@ return {
 		-- The font used in the tab bar.
 		-- Roboto Bold is the default; this font is bundled with wezterm.
 		-- Whatever font is selected here, it will have the main font setting appended to it to pick up any fallback fonts you may have used there.
-		font = wezterm.font({ family = "SFMono Nerd Font", weight = "Bold" }),
+		font = wezterm.font({ family = "Hack Nerd Font", weight = "Bold" }),
 
 		-- The size of the font in the tab bar.
 		font_size = 14.0,
@@ -68,7 +74,7 @@ return {
 	inactive_pane_hsb = {
 		hue = 1.0,
 		saturation = 1.0,
-		brightness = 0.50,
+		brightness = 0.40,
 		-- brightness = 1.00,
 	},
 
@@ -78,11 +84,13 @@ return {
 	-- Cursor --
 	cursor_blink_rate = 1000,
 	cursor_thickness = 3,
+	-- enable swapping the foreground color and the background color
+	-- force_reverse_video_cursor = true,
 
 	-- Color scheme --
 	-- 自分の好きなテーマ探す https://wezfurlong.org/wezterm/colorschemes/index.html
-	-- color_scheme = "Catppuccin Mocha",
-	color_scheme = "OneDark (base16)",
+	color_scheme = "Catppuccin Mocha",
+	-- color_scheme = "OneDark (base16)",
 	-- color_scheme = "neobones_dark",
 	-- color_scheme = "neon-night (Gogh)",
 
@@ -118,13 +126,50 @@ return {
 	disable_default_key_bindings = true,
 
 	keys = {
+		{ key = "Enter", mods = "CMD", action = "ToggleFullScreen" },
 		{ key = "c", mods = "CMD", action = action({ CopyTo = "Clipboard" }) },
 		{ key = "v", mods = "CMD", action = action({ PasteFrom = "Clipboard" }) },
-		{ key = "-", mods = "CMD", action = "DecreaseFontSize" },
-		{ key = "+", mods = "CMD|SHIFT", action = "IncreaseFontSize" },
-		{ key = "]", mods = "LEADER", action = "QuickSelect" },
+		{
+			key = "d",
+			mods = "CMD",
+			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		},
+		{
+			key = "D",
+			mods = "CMD|SHIFT",
+			action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+		},
+		{
+			key = "r",
+			mods = "CMD",
+			action = action.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+		{ key = "t", mods = "CMD", action = action({ SpawnTab = "CurrentPaneDomain" }) },
 		{ key = "w", mods = "CMD", action = action({ CloseCurrentPane = { confirm = true } }) },
-		{ key = "W", mods = "CMD|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "q", mods = "CMD", action = action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "z", mods = "CMD", action = "TogglePaneZoomState" },
+		{ key = "-", mods = "CMD", action = "DecreaseFontSize" },
+		{ key = "=", mods = "CMD", action = "IncreaseFontSize" },
+		{ key = "]", mods = "LEADER", action = "QuickSelect" },
+		{ key = "1", mods = "CMD", action = action({ ActivateTab = 0 }) },
+		{ key = "2", mods = "CMD", action = action({ ActivateTab = 1 }) },
+		{ key = "3", mods = "CMD", action = action({ ActivateTab = 2 }) },
+		{ key = "4", mods = "CMD", action = action({ ActivateTab = 3 }) },
+		{ key = "5", mods = "CMD", action = action({ ActivateTab = 4 }) },
+		{ key = "6", mods = "CMD", action = action({ ActivateTab = 5 }) },
+		{ key = "7", mods = "CMD", action = action({ ActivateTab = 6 }) },
+		{ key = "8", mods = "CMD", action = action({ ActivateTab = 7 }) },
+		{ key = "9", mods = "CMD", action = action({ ActivateTab = 8 }) },
 
 		-- Tmux-like key bindings
 		-- Send "CTRL-Q" to the terminal when pressing CTRL-Q, CTRL-Q
@@ -134,6 +179,21 @@ return {
 			key = "|",
 			mods = "LEADER",
 			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		},
+		{
+			key = "r",
+			mods = "LEADER",
+			action = action.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					-- line will be `nil` if they hit escape without entering anything
+					-- An empty string if they just hit enter
+					-- Or the actual line of text they wrote
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
 		},
 		{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
 		{ key = "[", mods = "LEADER", action = "ActivateCopyMode" },
@@ -146,10 +206,6 @@ return {
 		{ key = "j", mods = "LEADER", action = action({ ActivatePaneDirection = "Down" }) },
 		{ key = "k", mods = "LEADER", action = action({ ActivatePaneDirection = "Up" }) },
 		{ key = "l", mods = "LEADER", action = action({ ActivatePaneDirection = "Right" }) },
-		{ key = "H", mods = "CTRL|SHIFT", action = action({ AdjustPaneSize = { "Left", 5 } }) },
-		{ key = "J", mods = "CTRL|SHIFT", action = action({ AdjustPaneSize = { "Down", 5 } }) },
-		{ key = "K", mods = "CTRL|SHIFT", action = action({ AdjustPaneSize = { "Up", 5 } }) },
-		{ key = "L", mods = "CTRL|SHIFT", action = action({ AdjustPaneSize = { "Right", 5 } }) },
 		{ key = "1", mods = "LEADER", action = action({ ActivateTab = 0 }) },
 		{ key = "2", mods = "LEADER", action = action({ ActivateTab = 1 }) },
 		{ key = "3", mods = "LEADER", action = action({ ActivateTab = 2 }) },
@@ -162,9 +218,12 @@ return {
 		{ key = "X", mods = "LEADER|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
 		{ key = "x", mods = "LEADER", action = action({ CloseCurrentPane = { confirm = true } }) },
 
-		{ key = "Enter", mods = "CMD", action = "ToggleFullScreen" },
-		{ key = "v", mods = "CTRL|SHIFT", action = "Paste" },
-		{ key = "c", mods = "CTRL|SHIFT", action = "Copy" },
+		-- Neovim
+		{ key = "/", mods = "CTRL", action = wezterm.action({ SendString = "\x1f" }) }, -- Comment out: <C-/>
+		{ key = "s", mods = "CMD", action = wezterm.action({ SendString = "\x1b\x20\x77" }) }, -- Save file: etc<space>w
+		{ key = "a", mods = "CMD", action = wezterm.action({ SendString = "\x67\x67\x56\x47" }) }, -- Select all: ggVG
+		{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action({ SendString = "\x20\x69\x6b" }) }, -- Move text up: <space>ik
+		{ key = "j", mods = "CTRL|SHIFT", action = wezterm.action({ SendString = "\x20\x69\x6a" }) }, -- Move text down: <space>ij
 
 		-- Custom events
 		{

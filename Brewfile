@@ -7,6 +7,7 @@ tap "epk/epk" # for font-sf-mono-nerd-font
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
@@ -106,7 +107,7 @@ cask "stats"
 cask "visual-studio-code"
 # cask "vscodium"
 cask "warp"
-cask "wez/wezterm/wezterm"
+# cask "wezterm" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
 
 # Mac App Store
 # mas "Bitwarden", id: 1352778147
@@ -121,6 +122,7 @@ cask "wez/wezterm/wezterm"
 cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
+cask "font-hackgen-nerd"
 # cask "font-meslo-lg-nerd-font"
 cask "font-sf-mono-nerd-font"
 # cask "font-ubuntu-mono-nerd-font"
