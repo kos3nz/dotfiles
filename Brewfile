@@ -14,7 +14,6 @@ tap "jesseduffield/lazygit" # for lazygit
 tap "koekeishiya/formulae"
 tap "oven-sh/bun"
 tap "shopify/shopify"
-tap "wez/wezterm" # for wezterm
 
 # Formulae
 brew "bat"
@@ -64,7 +63,7 @@ brew "ripgrep"
 brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
 brew "skaffold"
-brew "skhd" # Simple hotkey daemon for macOS.
+# brew "skhd" # Simple hotkey daemon for macOS.
 brew "sqlite"
 brew "starship"
 brew "tealdeer" # Very fast implementation of tldr in Rust
@@ -72,7 +71,7 @@ brew "tmux"
 brew "tree"
 # brew "volta"
 brew "wget"
-brew "yabai" # A tiling window manager for macOS based on binary space partitioning.
+# brew "yabai" # A tiling window manager for macOS based on binary space partitioning.
 brew "zoxide" # A smarter cd command. Supports all major shells.
 brew "zsh"
 
