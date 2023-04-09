@@ -37,6 +37,7 @@ return {
             "typescript",
             "typescriptreact",
             "markdown",
+            "markdown.mdx",
             "json",
             "jsonc",
             -- "yaml",
@@ -66,6 +67,7 @@ return {
             "typescriptreact",
             "vue",
             "astro",
+            "markdown",
             "markdown.mdx",
           },
           condition = function(utils)
