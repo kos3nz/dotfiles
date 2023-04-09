@@ -28,6 +28,9 @@ end
 return function(client, bufnr)
   lsp_keymaps(client, bufnr)
 
+  -- disable semantic tokens (https://github.com/neovim/neovim/issues/22956)
+  client.server_capabilities.semanticTokensProvider = nil
+
   -- if client.name == "tsserver" then
   --   twoslash_queries.attach(client, bufnr)
   -- end
