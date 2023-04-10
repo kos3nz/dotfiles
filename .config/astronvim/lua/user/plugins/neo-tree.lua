@@ -1,6 +1,6 @@
 -- local get_icon = require("astronvim.utils").get_icon
 
-vim.cmd([[highlight NeoTreeModified guifg=#4ade80 gui=nocombine]])
+vim.cmd([[highlight NeoTreeModified guifg=#059669 gui=nocombine]])
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
