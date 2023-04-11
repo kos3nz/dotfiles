@@ -11,6 +11,16 @@ wezterm.on("toggle-opacity", function(window)
 	window:set_config_overrides(overrides)
 end)
 
+wezterm.on("toggle-cursor-color", function(window)
+	local overrides = window:get_config_overrides() or {}
+	if overrides.force_reverse_video_cursor then
+		overrides.force_reverse_video_cursor = false
+	else
+		overrides.force_reverse_video_cursor = true
+	end
+	window:set_config_overrides(overrides)
+end)
+
 return {
 	-- Font --
 
@@ -85,7 +95,7 @@ return {
 	cursor_blink_rate = 1000,
 	cursor_thickness = 3,
 	-- enable swapping the foreground color and the background color
-	-- force_reverse_video_cursor = true,
+	force_reverse_video_cursor = false,
 
 	-- Color scheme --
 	-- 自分の好きなテーマ探す https://wezfurlong.org/wezterm/colorschemes/index.html
@@ -231,6 +241,7 @@ return {
 			mods = "CMD",
 			action = wezterm.action.EmitEvent("toggle-opacity"),
 		},
+		{ key = "0", mods = "CMD", action = wezterm.action.EmitEvent("toggle-cursor-color") },
 
 		-- Enter resize_pane key table. Escape to leave
 		{
