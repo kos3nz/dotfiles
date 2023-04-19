@@ -58,7 +58,7 @@ return {
 
     window = {
       position = "left",
-      width = 32,
+      width = 28,
       mappings = {
         ["<space>"] = false, -- disable space until we figure out which-key disabling
         ["[b"] = false, -- "prev_source",
