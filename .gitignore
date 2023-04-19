@@ -52,6 +52,8 @@
 /.config/nvim/plugin/
 /.config/tmux/plugins/
 
+*.secret.*
+
 !/README.md
 !/LICENSE
 !.gitignore
