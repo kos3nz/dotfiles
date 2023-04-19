@@ -70,6 +70,10 @@
         "path": "./remix.code-snippets"
       },
       {
+        "language": "astro",
+        "path": "./javascript.code-snippets"
+      },
+      {
         "language": "mdx",
         "path": "./html.code-snippets"
       },
