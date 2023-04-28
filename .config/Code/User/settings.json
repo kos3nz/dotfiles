@@ -6,6 +6,10 @@
   "files.defaultLanguage": "typescript",
   // "files.defaultLanguage": "javascript",
   // "files.defaultLanguage": "mdx",
+  "files.associations": {
+    "*.mdx": "markdown"
+    //   "*.css": "tailwindcss"
+  },
   "editor.renderWhitespace": "all",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "on",
@@ -88,7 +92,7 @@
   /*                                    Font                                    */
   /* -------------------------------------------------------------------------- */
   "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.fontWeight": "normal",
   "editor.letterSpacing": -0.25,
   "editor.fontLigatures": true,
@@ -97,7 +101,7 @@
   /*                                  Workbench                                 */
   /* -------------------------------------------------------------------------- */
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Moonlight II",
   "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
@@ -120,7 +124,7 @@
   "terminal.integrated.fontFamily": "MesloLGS NF, Operator Mono Lig, monospace",
   "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.gpuAcceleration": "on",
-  "terminal.external.osxExec": "Alacritty.app",
+  "terminal.external.osxExec": "WezTerm.app",
   // "terminal.integrated.defaultProfile.osx": "tmux",
   // "terminal.integrated.profiles.osx": {
   //   "zsh": {
@@ -490,7 +494,7 @@
     "statusBarItem.remoteBackground": "#035770",
     "statusBarItem.remoteForeground": "#e7e7e7",
     "list.highlightForeground": "#559BF5",
-    "list.focusBackground": "#559BF588",
+    "list.focusBackground": "#559BF546",
     "list.focusForeground": "#fff",
     "button.background": "#559BF5e7",
     "notificationToast.border": "#559BF5",
@@ -531,8 +535,7 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "gitlens.codeLens.scopes": ["document"]
   },
   "[jsonc]": {},
   // "[dockerfile]": {
@@ -610,19 +613,16 @@
   "stylelint.validate": [
     "css",
     "scss",
-    "less",
-    "tailwindcss",
-    "astro",
-    "vue",
-    "svelte"
+    "less"
+    // "tailwindcss",
+    // "astro",
+    // "vue",
+    // "svelte"
   ],
 
   /* -------------------------------------------------------------------------- */
   /*                          Tailwind CSS IntelliSense                         */
   /* -------------------------------------------------------------------------- */
-  // "files.associations": {
-  //   "*.css": "tailwindcss"
-  // },
   "editor.quickSuggestions": {
     "strings": true // JSXでもCSSクラスを補完できるように
   },
@@ -1192,7 +1192,7 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#559af5aa",
   "vim.highlightedyank.duration": 150,
-  // "vim.foldfix": true,
+  "vim.foldfix": true,
   // "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?", // ハイフンを単語選択に含める
 
   // Plugins
@@ -2136,5 +2136,7 @@
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
+  "GitLive.Issue tracker integration": "Disabled"
 }
