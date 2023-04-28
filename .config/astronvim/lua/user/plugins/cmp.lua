@@ -88,7 +88,7 @@ return {
           --   luasnip.expand()
           -- elseif luasnip.expand_or_jumpable() then
           --   luasnip.expand_or_jump()
-        elseif luasnip.jumpable(1) then
+        elseif luasnip.locally_jumpable(1) then
           luasnip.jump(1)
         elseif check_backspace() then
           fallback()
@@ -102,7 +102,7 @@ return {
       ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
+        elseif luasnip.locally_jumpable(-1) then
           luasnip.jump(-1)
         else
           fallback()
