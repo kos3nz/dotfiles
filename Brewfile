@@ -15,7 +15,7 @@ tap "koekeishiya/formulae"
 tap "oven-sh/bun"
 tap "shopify/shopify"
 
-# Formulae
+# Binaries
 brew "bat"
 brew "bun"
 brew "coreutils" # GNU File, Shell, and Text utilities
@@ -40,6 +40,7 @@ brew "git-recent"
 brew "gitmux"
 brew "gnu-sed" # GNU implementation of the famous stream editor
 brew "grep" # GNU grep, egrep, and fgrep
+brew "hey" # HTTP load generator, ApacheBench (ab) replacement
 # brew "heroku"
 brew "jesseduffield/lazygit/lazygit"
 brew "jq"
@@ -49,10 +50,12 @@ brew "trash-cli" # Command line interface to the freedesktop.org trashcan.
 # brew "macos-trash" # Move files and folders to the trash.
 brew "mas"
 brew "mmv" # Rename multiple files with editor
+brew "lindell/multi-gitter/multi-gitter" # Update multiple repositories in with one command
 brew "nano"
 brew "navi"
 brew "ncdu"
 brew "neovim"
+brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
 # brew "peco"
 brew "procs"
 # brew "rename"
@@ -103,6 +106,7 @@ cask "runjs"
 # cask "spotify"
 cask "spacelauncher" # Hold down spacebar while pressing a key to launch or switch to an app.
 cask "stats"
+cask "tabby"
 cask "visual-studio-code"
 # cask "vscodium"
 cask "warp"
