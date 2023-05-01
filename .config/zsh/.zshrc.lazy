@@ -26,7 +26,7 @@ autoload -Uz add-zsh-hook cdr chpwd_recent_dirs
 add-zsh-hook chpwd chpwd_recent_dirs # register hook function with add-zsh-hook when current directory is changed (=chpwd), call chpwd_recent-dirs
 zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-default true
-zstyle ':chpwd:*' recent-dirs-max 100
+zstyle ':chpwd:*' recent-dirs-max 200
 zstyle ':chpwd:*' recent-dirs-file "$XDG_STATE_HOME/zsh/chpwd-recent-dirs"
 
 
