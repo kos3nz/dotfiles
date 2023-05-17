@@ -2,8 +2,8 @@ return {
   MacroRecording = "",
   ActiveLSP = "", --   
   ActiveTS = "綠",
-  BufferClose = "",
-  NeovimClose = "",
+  BufferClose = "",
+  NeovimClose = "󰅙",
   DefaultFile = "", --  
   Diagnostic = "裂", -- 裂
   DiagnosticError = "", --  

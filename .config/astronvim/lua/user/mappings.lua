@@ -205,7 +205,7 @@ return {
       desc = "Hop onto character",
       remap = true,
     },
-    ["<leader>jw"] = { "<cmd>HopWord<cr>", desc = "HopWord" },
+    ["<leader>jf"] = { "<cmd>HopWord<cr>", desc = "HopWord" },
 
     -- telescope
     ["<leader>fd"] = {
