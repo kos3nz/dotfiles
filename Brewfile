@@ -2,6 +2,7 @@
 
 tap "arl/arl" # for gitmux
 tap "daipeihust/tap" # for im-select
+tap "delphinus/sfmono-square" # for sfmono-square font
 tap "epk/epk" # for font-sf-mono-nerd-font
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -15,7 +16,6 @@ tap "lindell/multi-gitter"
 tap "oven-sh/bun"
 tap "shopify/shopify"
 
-# tap "delphinus/sfmono-square" # for sfmono-square font
 # tap "heroku/brew"
 
 
@@ -142,11 +142,11 @@ cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-hackgen-nerd"
 cask "font-sf-mono-nerd-font"
+brew "sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
 
 # cask "font-fira-code"
 # cask "font-meslo-lg-nerd-font"
 # cask "font-ubuntu-mono-nerd-font"
 # cask "font-ubuntu-nerd-font"
 # cask "font-victor-mono-nerd-font"
-# brew "sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
 # "operator-mono-lig" # needs to install manually: https://github.com/kiliman/operator-mono-lig 

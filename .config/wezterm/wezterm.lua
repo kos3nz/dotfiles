@@ -29,7 +29,7 @@ return {
 
 	-- HackGen35
 	-- font = wezterm.font("HackGen35 Console NFJ"),
-	-- font_size = 14.0,
+	-- font_size = 14.5,
 	-- cell_width = 1.10,
 	-- line_height = 1.15,
 
@@ -48,6 +48,12 @@ return {
 	-- SF Mono
 	-- font = wezterm.font("SFMono Nerd Font"),
 	-- font_size = 14,
+	-- cell_width = 1.05,
+	-- line_height = 1.15,
+
+	-- SFMono Square
+	-- font = wezterm.font("SF Mono Square"),
+	-- font_size = 18.5,
 	-- cell_width = 1.05,
 	-- line_height = 1.15,
 

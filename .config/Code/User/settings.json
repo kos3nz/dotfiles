@@ -91,10 +91,10 @@
   /* -------------------------------------------------------------------------- */
   /*                                    Font                                    */
   /* -------------------------------------------------------------------------- */
-  "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
-  "editor.fontSize": 15,
+  "editor.fontFamily": "SF Mono Square, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
+  "editor.fontSize": 17.5,
   "editor.fontWeight": "normal",
-  "editor.letterSpacing": -0.25,
+  "editor.letterSpacing": 0,
   "editor.fontLigatures": true,
 
   /* -------------------------------------------------------------------------- */
