@@ -15,6 +15,7 @@ for file in .??*; do
 	[ "$file" = ".git" ] && continue
 	[ "$file" = ".gitconfig.local.template" ] && continue
 	[ "$file" = ".gitmodules" ] && continue
+	[ "$file" = ".gitignore" ] && continue
 
 	# 上記以外ののファイルがあれば、シンボリックリンクを貼る
 	ln -snfv ${PWD}/"$file" ~/
