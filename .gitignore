@@ -55,6 +55,7 @@
 /.config/raycast/extensions/
 /.config/tmux/plugins/
 /.config/zsh/.zsh_sessions/
+!/Library/
 
 *.secret.*
 
