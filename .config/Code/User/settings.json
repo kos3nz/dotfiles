@@ -7,8 +7,8 @@
   // "files.defaultLanguage": "javascript",
   // "files.defaultLanguage": "mdx",
   "files.associations": {
-    "*.mdx": "markdown"
-    //   "*.css": "tailwindcss"
+    // "*.mdx": "markdown",
+    // "*.css": "tailwindcss"
   },
   "editor.renderWhitespace": "all",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -31,7 +31,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?",
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -92,7 +92,7 @@
   /*                                    Font                                    */
   /* -------------------------------------------------------------------------- */
   "editor.fontFamily": "Operator Mono Lig, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
-  "editor.fontSize": 16,
+  "editor.fontSize": 15,
   "editor.fontWeight": "normal",
   "editor.letterSpacing": -0.25,
   "editor.fontLigatures": true,
@@ -568,12 +568,17 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".md", ".mdx"]
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "astro"
+    "astro",
+    "markdown",
+    "mdx"
   ],
   "eslint.packageManager": "yarn",
   "stylelint.packageManager": "yarn",
@@ -881,6 +886,7 @@
     "MICROTASKS",
     "middlewares",
     "minmax",
+    "nanostores",
     "nextjs",
     "nextui",
     "nodebrew",
@@ -962,6 +968,8 @@
   /* -------------------------------------------------------------------------- */
   "git.confirmSync": false,
   "diffEditor.wordWrap": "off",
+  "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
+  "GitLive.Issue tracker integration": "Disabled",
 
   /* -------------------------------------------------------------------------- */
   /*                               Thunder Client                               */
@@ -1202,8 +1210,8 @@
   "vim.replaceWithRegister": true,
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
-  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
-  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
   "vim.argumentObjectOpeningDelimiters": ["(", "[", "{"],
   "vim.argumentObjectClosingDelimiters": [")", "]", "}"],
 
@@ -1473,13 +1481,13 @@
     },
     // Find word
     {
-      "before": ["<leader>", "f", "w"],
+      "before": ["<leader>", "f", "."],
       "commands": ["actions.find"],
       "silent": true
     },
     // Find word in all files
     {
-      "before": ["<leader>", "f", "W"],
+      "before": ["<leader>", "f", "w"],
       "commands": ["workbench.action.findInFiles"],
       "silent": true
     },
@@ -1623,11 +1631,16 @@
       "silent": true
     },
     // Hover Definition
-    // {
-    //   "before": ["g", "h"],
-    //   "commands": ["editor.action.showDefinitionPreviewHover"],
-    //   "silent": true
-    // },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showHover"],
+      "silent": true
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.showDefinitionPreviewHover"],
+      "silent": true
+    },
     // Go to Definition
     {
       "before": ["g", "d"],
@@ -1767,12 +1780,12 @@
     },
     // Start of word forwards
     {
-      "before": ["<leader>", "j", "w"],
+      "before": ["<leader>", "j", "f"],
       "after": ["<leader>", "<leader>", "w"]
     },
     // Start of word backward
     {
-      "before": ["<leader>", "j", "b"],
+      "before": ["<leader>", "j", "F"],
       "after": ["<leader>", "<leader>", "b"]
     },
     // End of word forwards
@@ -2136,7 +2149,5 @@
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false,
-  "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
-  "GitLive.Issue tracker integration": "Disabled"
+  "workbench.activityBar.visible": false
 }

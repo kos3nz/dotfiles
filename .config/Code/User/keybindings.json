@@ -138,6 +138,11 @@
     "command": "workbench.action.closeQuickOpen",
     "when": "inQuickOpen"
   },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
 
   /* --------------------------------- Window --------------------------------- */
   // Reload Window
@@ -461,6 +466,11 @@
     "when": "editorFocus && findWidgetVisible && !isComposing"
   },
   {
+    "key": "ctrl+c",
+    "command": "multiCommand.blurAfterCloseFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
     "key": "escape",
     "command": "-closeFindWidget",
     "when": "editorFocus && findWidgetVisible && !isComposing"
@@ -544,6 +554,11 @@
     "command": "multiCommand.blurAfterCloseHideSuggestWidget",
     "when": "suggestWidgetVisible && textInputFocus"
   },
+  {
+    "key": "ctrl+c",
+    "command": "multiCommand.blurAfterCloseHideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
 
   /* ----------------------------------- LSP ---------------------------------- */
 
@@ -576,7 +591,17 @@
     "when": "codeActionMenuVisible"
   },
   {
+    "key": "ctrl+c",
+    "command": "hideCodeActionWidget",
+    "when": "codeActionMenuVisible"
+  },
+  {
     "key": "ctrl+[",
+    "command": "cancelRenameInput",
+    "when": "editorFocus && renameInputVisible"
+  },
+  {
+    "key": "ctrl+c",
     "command": "cancelRenameInput",
     "when": "editorFocus && renameInputVisible"
   },
@@ -586,9 +611,59 @@
     "when": "editorFocus && parameterHintsVisible"
   },
   {
+    "key": "ctrl+c",
+    "command": "closeParameterHints",
+    "when": "editorFocus && parameterHintsVisible"
+  },
+  {
     "key": "ctrl+[",
     "command": "closeReferenceSearch",
     "when": "referenceSearchVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "closeReferenceSearch",
+    "when": "referenceSearchVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "h",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "editor.action.pageDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "editor.action.pageUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.action.escapeFocusHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.escapeFocusHover",
+    "when": "editorHoverFocused"
   },
 
   /* ---------------------------------- Emmet --------------------------------- */
@@ -725,6 +800,11 @@
     "command": "closeBreakpointWidget",
     "when": "breakpointWidgetVisible && textInputFocus"
   },
+  {
+    "key": "ctrl+c",
+    "command": "closeBreakpointWidget",
+    "when": "breakpointWidgetVisible && textInputFocus"
+  },
 
   /* ----------------------------- Panel/Terminal ----------------------------- */
   // Toggle terminal
@@ -841,9 +921,14 @@
     "command": "deleteRight",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
   },
+  {
+    "key": "ctrl+w",
+    "command": "deleteWordPartLeft",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
+  },
   // {
   //   "key": "ctrl+y",
-  //   "command": "cursorWordLeft",
+  //   "command": "cursor-word-left",
   //   "when": "textInputFocus && vim.mode == 'Insert'"
   // },
   // {
