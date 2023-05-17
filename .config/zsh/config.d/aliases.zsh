@@ -47,6 +47,7 @@ if type "trash" > /dev/null 2>&1; then
     alias tp="trash-put"
     alias te="trash-empty"
     alias tl="trash-list"
+    alias ts="trash-restore"
 fi
 
 

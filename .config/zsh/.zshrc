@@ -6,10 +6,8 @@
 typeset -gAH ZINIT
 ZINIT[HOME_DIR]="$XDG_DATA_HOME/zinit"
 ZINIT[ZCOMPDUMP_PATH]="$XDG_STATE_HOME/zsh/zcompdump"
-source "${ZINIT[HOME_DIR]}/zinit.git/zinit.zsh"
 
-### Added by Zinit's installer
-
+# Added by Zinit's installer
 if [[ ! -f ${ZINIT[HOME_DIR]}/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "${ZINIT[HOME_DIR]}" && command chmod g-rwX "${ZINIT[HOME_DIR]}"
@@ -17,6 +15,9 @@ if [[ ! -f ${ZINIT[HOME_DIR]}/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+
+# Load zinit
+source "${ZINIT[HOME_DIR]}/zinit.git/zinit.zsh"
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
