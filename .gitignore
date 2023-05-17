@@ -47,10 +47,14 @@
 !/scripts/
 !/.config/
 !/.config/**
+/.config/**/node_modules/
+/.config/fish/conf.d/
 /.config/karabiner/automatic_backups
 /.config/lazygit/state.yml
 /.config/nvim/plugin/
+/.config/raycast/extensions/
 /.config/tmux/plugins/
+/.config/zsh/.zsh_sessions/
 
 *.secret.*
 
