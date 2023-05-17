@@ -28,7 +28,7 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE)  H:mm:ss"
 
 
-### Docker
+### Dock
 # show hidden files in finder
 defaults write com.apple.finder AppleShowAllFiles YES
 # Automatically hide or show the Dock
