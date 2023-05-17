@@ -358,6 +358,8 @@ return {
     ["dm"] = { "d<Plug>CamelCaseMotion_ie", desc = "Delete word segment forward" },
 
     -- vim-sneak
+    ["s"] = { "<Plug>Sneak_s" },
+    ["S"] = { "<Plug>Sneak_S" },
     ["f"] = { "<Plug>Sneak_f" },
     ["F"] = { "<Plug>Sneak_F" },
     ["t"] = { "<Plug>Sneak_t" },
@@ -376,7 +378,7 @@ return {
   -- Insert mode
   --------------------
   i = {
-    -- ["jk"] = { "<esc>" },
+    -- ["jj"] = { "<esc>" },
 
     -- cursor navigation
     -- ["<C-k>"] = { "<Up>" },
@@ -390,7 +392,7 @@ return {
     ["<C-e>"] = { "<Esc>A" },
     ["<C-r>"] = { "<C-o>b" },
     ["<C-t>"] = { "<C-o>e" },
-    ["<C-l>"] = { "<C-o>db" },
+    -- ["<C-l>"] = { "<C-o>db" },
     ["<C-s>"] = { "<C-o>^" },
     ["<C-d>"] = { "<Del>" },
     ["<C-k>"] = { "<C-o>D" },
@@ -521,6 +523,8 @@ return {
     -- ["m"] = { "<Plug>CamelCaseMotion_ie" }, -- this operation is a bit slow thant mapping "dm" and "cm" respectively
 
     -- vim-sneak
+    ["s"] = { "<Plug>Sneak_s" },
+    ["S"] = { "<Plug>Sneak_S" },
     ["f"] = { "<Plug>Sneak_f" },
     ["F"] = { "<Plug>Sneak_F" },
     ["t"] = { "<Plug>Sneak_t" },
