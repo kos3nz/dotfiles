@@ -25,6 +25,9 @@ export FZF_CTRL_T_OPTS="
 export FZF_ALT_C_COMMAND="fd --hidden --type d --exclude .git" # show only directories
 export FZF_TMUX_OPTS="-p 90%,75%" # width,height
 
+### ni ###
+export NI_CONFIG_FILE="$HOME/.config/ni/nirc"
+
 ### ripgrep ###
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
