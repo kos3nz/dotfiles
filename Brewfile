@@ -1,9 +1,8 @@
-# Taps
+##### Taps #####
+
 tap "arl/arl" # for gitmux
 tap "daipeihust/tap" # for im-select
-# tap "delphinus/sfmono-square" # for sfmono-square font
 tap "epk/epk" # for font-sf-mono-nerd-font
-# tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -12,10 +11,16 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
 tap "koekeishiya/formulae"
+tap "lindell/multi-gitter"
 tap "oven-sh/bun"
 tap "shopify/shopify"
 
-# Binaries
+# tap "delphinus/sfmono-square" # for sfmono-square font
+# tap "heroku/brew"
+
+
+##### Formulae #####
+
 brew "bat"
 brew "bun"
 brew "coreutils" # GNU File, Shell, and Text utilities
@@ -41,95 +46,105 @@ brew "gitmux"
 brew "gnu-sed" # GNU implementation of the famous stream editor
 brew "grep" # GNU grep, egrep, and fgrep
 brew "hey" # HTTP load generator, ApacheBench (ab) replacement
-# brew "heroku"
-brew "jesseduffield/lazygit/lazygit"
+brew "lazygit"
 brew "jq"
 brew "lf" # Terminal file manager.
 brew "luajit"
 brew "trash-cli" # Command line interface to the freedesktop.org trashcan.
-# brew "macos-trash" # Move files and folders to the trash.
 brew "mas"
 brew "mmv" # Rename multiple files with editor
-brew "lindell/multi-gitter/multi-gitter" # Update multiple repositories in with one command
+brew "multi-gitter" # Update multiple repositories in with one command
 brew "nano"
 brew "navi"
 brew "ncdu"
 brew "neovim"
 brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
-# brew "peco"
 brew "procs"
-# brew "rename"
 brew "ripgrep"
-# brew "rust"
-# brew "rustup-init"
-# brew "safe-rm"
 brew "shopify/shopify/shopify-cli"
 brew "shopify/shopify/themekit"
 brew "skaffold"
-# brew "skhd" # Simple hotkey daemon for macOS.
 brew "sqlite"
 brew "starship"
 brew "tealdeer" # Very fast implementation of tldr in Rust
 brew "tmux"
 brew "tree"
-# brew "volta"
+brew "volta"
 brew "wget"
-# brew "yabai" # A tiling window manager for macOS based on binary space partitioning.
 brew "zoxide" # A smarter cd command. Supports all major shells.
 brew "zsh"
 
-# Apps
+# brew "heroku"
+# brew "macos-trash" # Move files and folders to the trash.
+# brew "peco"
+# brew "rename"
+# brew "rust"
+# brew "rustup-init"
+# brew "safe-rm"
+# brew "skhd" # Simple hotkey daemon for macOS.
+# brew "yabai" # A tiling window manager for macOS based on binary space partitioning.
+
+
+##### Apps #####
+
+cask "authy"
+cask "brave-browser"
+cask "docker"
+cask "fig"
+cask "figma"
+cask "firefox"
+cask "fliqlo" # Flip clock screensaver
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "logi-options-plus"
+cask "lunar"
+cask "maccy"
+cask "obsidian"
+cask "postman"
+cask "raycast"
+cask "rectangle"
+cask "runjs"
+cask "spotify"
+cask "stats"
+cask "visual-studio-code"
+cask "warp"
+cask "wezterm-nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
+
 # cask "alacritty"
 # cask "alfred"
-cask "authy"
 # cask "bitwarden"
 # cask "blender"
-# cask "brave-browser"
-# cask "docker"
-cask "fig"
-# cask "figma"
-# cask "firefox"
-cask "fliqlo" # Flip clock screensaver
-# cask "google-chrome"
-# cask "google-japanese-ime"
 # cask "hyper"
 # cask "iconset"
 # cask "iterm2"
-cask "karabiner-elements"
+# cask "karabiner-elements"
 # cask "lapce"
-cask "logi-options-plus"
-# cask "lunar"
-cask "maccy"
-# cask "obsidian"
-# cask "postman"
-cask "raycast"
-# cask "rectangle"
-cask "runjs"
-# cask "spotify"
-cask "spacelauncher" # Hold down spacebar while pressing a key to launch or switch to an app.
-cask "stats"
-cask "tabby"
-cask "visual-studio-code"
+# cask "spacelauncher" # Hold down spacebar while pressing a key to launch or switch to an app.
+# cask "tabby"
 # cask "vscodium"
-cask "warp"
-# cask "wezterm" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
 
-# Mac App Store
-# mas "Bitwarden", id: 1352778147
+
+##### Mac App Store #####
+
+mas "Line", id: 539883307
+mas "ScreenBrush", id: 1233965871
+
 # mas "Be Focused - Pomodoro Timer", id: 973134470
+# mas "Bitwarden", id: 1352778147
 # mas "Kindle", id: 405399194
-# mas "Line", id: 539883307
-# mas "ScreenBrush", id: 1233965871
 # mas "Trello", id: 1278508951
 
-# Fonts
-# cask "font-fira-code"
+
+##### Fonts #####
+
 cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-hackgen-nerd"
-# cask "font-meslo-lg-nerd-font"
 cask "font-sf-mono-nerd-font"
+
+# cask "font-fira-code"
+# cask "font-meslo-lg-nerd-font"
 # cask "font-ubuntu-mono-nerd-font"
 # cask "font-ubuntu-nerd-font"
 # cask "font-victor-mono-nerd-font"
