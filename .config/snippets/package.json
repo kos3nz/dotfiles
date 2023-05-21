@@ -74,16 +74,16 @@
         "path": "./javascript.code-snippets"
       },
       {
+        "language": "md",
+        "path": "./markdown.code-snippets"
+      },
+      {
         "language": "mdx",
-        "path": "./html.code-snippets"
+        "path": "./markdown.code-snippets"
       },
       {
         "language": "mdx",
         "path": "./javascript.code-snippets"
-      },
-      {
-        "language": "mdx",
-        "path": "./react.code-snippets"
       }
     ]
   }
