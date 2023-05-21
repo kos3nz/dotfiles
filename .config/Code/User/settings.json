@@ -1223,6 +1223,11 @@
   /* -------------------------------------------------------------------------- */
   /*                                     Vim                                    */
   /* -------------------------------------------------------------------------- */
+  // Fix poor performance when inserting on vim extention?  https://github.com/microsoft/vscode/issues/75627#issuecomment-1078827311
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
   "vim.leader": "<space>",
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
@@ -1234,6 +1239,7 @@
   "vim.highlightedyank.color": "#559af5aa",
   "vim.highlightedyank.duration": 150,
   "vim.foldfix": true,
+  "vim.statusBarColorControl": false,
   // "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?", // ハイフンを単語選択に含める
 
   // Plugins
@@ -2224,6 +2230,12 @@
     //   "after": ["i", "<leader>", "w"]
     // }
   ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Performance                                */
+  /* -------------------------------------------------------------------------- */
+  // Trying to avoid VS Code using too much CPU : https://stackoverflow.com/questions/71516186/vs-code-uses-100-cpu-even-if-it-is-closed/72518926#72518926
+  "settingsSync.keybindingsPerPlatform": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
