@@ -45,13 +45,15 @@
     "**/node_modules/**": true,
     "**/.hg/store/**": true,
     // Build Directories or files
-    "**/dist": true,
-    "**/build": true,
-    "**/.next": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.next/**": true,
+    "**/.astro/**": true,
     // Bundle files
     "**/bundle.*": true,
     // Cache Directories or files
     "**/.cache": true,
+    "**/tmp/**": true,
     // Custom Setting
     "**/GoogleDrive/**": true,
     "**/Library/**": true,
@@ -60,6 +62,9 @@
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/tmp": true,
     // "**/node_modules": true,
     "**/.next": true
   },
@@ -94,6 +99,7 @@
   "editor.fontFamily": "SF Mono Square, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
   "editor.fontSize": 17.5,
   "editor.fontWeight": "normal",
+  "editor.lineHeight": 25,
   "editor.letterSpacing": 0,
   "editor.fontLigatures": true,
 
@@ -101,7 +107,7 @@
   /*                                  Workbench                                 */
   /* -------------------------------------------------------------------------- */
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Moonlight II",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
@@ -120,8 +126,9 @@
   /* -------------------------------------------------------------------------- */
   /*                                  Terminal                                  */
   /* -------------------------------------------------------------------------- */
-  "terminal.integrated.fontSize": 15,
-  "terminal.integrated.fontFamily": "MesloLGS NF, Operator Mono Lig, monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Hack Nerd Font, MesloLGS NF, Operator Mono Lig, monospace",
+  "terminal.integrated.letterSpacing": 1.1,
   "terminal.integrated.lineHeight": 1.3,
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.external.osxExec": "WezTerm.app",
@@ -445,7 +452,7 @@
   },
   "workbench.colorCustomizations": {
     "editor.background": "#101010",
-    "editorCursor.foreground": "#f1f1f1",
+    "editorCursor.foreground": "#e2e8f0",
     "editorCursor.background": "#063a7f",
     "editorLineNumber.activeForeground": "#559BF5",
     "scrollbarSlider.background": "#559BF55e",
@@ -1294,7 +1301,7 @@
     },
     // Open Keybindings
     {
-      "before": ["<leader>", "="],
+      "before": ["<leader>", "y"],
       "commands": ["workbench.action.openGlobalKeybindingsFile"],
       "silent": true
     },
@@ -2148,6 +2155,5 @@
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false
+  "editor.minimap.enabled": false
 }
