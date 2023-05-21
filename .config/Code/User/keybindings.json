@@ -40,6 +40,16 @@
   },
   // Move lines up and down
   {
+    "key": "ctrl+shift+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -112,6 +122,11 @@
     "key": "shift+right",
     "command": "workbench.action.increaseViewWidth",
     "when": "editorTextFocus"
+  },
+  // Zoom
+  {
+    "key": "cmd+=",
+    "command": "workbench.action.zoomIn"
   },
 
   /* ------------------------------- Quick Open ------------------------------- */
@@ -281,6 +296,11 @@
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   },
+  {
+    "key": "z",
+    "command": "list.collapseAll",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
 
   /* --------------------------------- Cursor --------------------------------- */
   // Emacs-like cursor navigation
@@ -305,15 +325,6 @@
     "command": "editor.action.jumpToBracket",
     "when": "editorTextFocus"
   },
-  // Temp fix for code-folding when moving up/down the cursor
-  // {
-  //   "before": ["j"],
-  //   "after": ["g", "j"]
-  // },
-  // {
-  //   "before": ["k"],
-  //   "after": ["g", "k"]
-  // },
   {
     "key": "ctrl+d",
     "command": "vim.remap",
@@ -347,22 +358,22 @@
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
   },
   // Multiple cursor
-  {
-    "key": "k",
-    "command": "vim.remap",
-    "args": {
-      "after": ["g", "k"]
-    },
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && editorHasMultipleSelections"
-  },
-  {
-    "key": "j",
-    "command": "vim.remap",
-    "args": {
-      "after": ["g", "j"]
-    },
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && editorHasMultipleSelections"
-  },
+  // {
+  //   "key": "k",
+  //   "command": "vim.remap",
+  //   "args": {
+  //     "after": ["g", "k"]
+  //   },
+  //   "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && editorHasMultipleSelections"
+  // },
+  // {
+  //   "key": "j",
+  //   "command": "vim.remap",
+  //   "args": {
+  //     "after": ["g", "j"]
+  //   },
+  //   "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && editorHasMultipleSelections"
+  // },
   {
     "key": "ctrl+g",
     "command": "editor.action.addSelectionToNextFindMatch",
@@ -389,7 +400,7 @@
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Visual' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
   },
   {
-    "key": "ctrl+shift+g",
+    "key": "ctrl+shift+d",
     "command": "editor.action.changeAll",
     "when": "editorFocus && editorTextFocus && !editorReadonly"
   },
@@ -481,12 +492,12 @@
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
 
   /* ----------------------------------- Cmp ---------------------------------- */
@@ -817,17 +828,22 @@
     "command": "-workbench.action.terminal.toggleTerminal"
   },
   // Switch active terminal
-  // {
-  //   "key": "ctrl+q w",
-  //   "command": "workbench.action.quickOpenTerm",
-  //   "when": "terminalFocus"
-  // },
-  // {
-  //   "key": "ctrl+q s",
-  //   "command": "workbench.action.quickOpenTerm",
-  //   "when": "terminalFocus"
-  // },
+  {
+    "key": "ctrl+q w",
+    "command": "workbench.action.quickOpenTerm",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+q s",
+    "command": "workbench.action.quickOpenTerm",
+    "when": "terminalFocus"
+  },
   // Maximize terminal panel size
+  {
+    "key": "ctrl+q m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile || problemFocus || problemsFilterFocus"
+  },
   {
     "key": "ctrl+w m",
     "command": "workbench.action.toggleMaximizedPanel",
@@ -855,30 +871,35 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || problemFocus || problemsFilterFocus"
   },
   // Terminal split
-  // {
-  //   "key": "ctrl+q shift+\\",
-  //   "command": "workbench.action.terminal.split",
-  //   "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  // },
-  // Navigate between terminal panes
-  // {
-  //   "key": "ctrl+q h",
-  //   "command": "workbench.action.terminal.focusPreviousPane",
-  //   "when": "terminalFocus && terminalProcessSupported"
-  // },
-  // {
-  //   "key": "ctrl+q l",
-  //   "command": "workbench.action.terminal.focusNextPane",
-  //   "when": "terminalFocus && terminalProcessSupported"
-  // },
-  // Kill terminal instance
-  // {
-  //   "key": "ctrl+q x",
-  //   "command": "workbench.action.terminal.kill",
-  //   "when": "terminalFocus && terminalProcessSupported"
-  // },
   {
-    "key": "alt+q",
+    "key": "cmd+d",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+q shift+\\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+  // Navigate between terminal panes
+  {
+    "key": "ctrl+q h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+q l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  // Kill terminal instance
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+q x",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus && terminalProcessSupported"
   },
@@ -899,6 +920,12 @@
     "when": "problemFocus"
   },
 
+  /* ----------------------------------- UI ----------------------------------- */
+  {
+    "key": "shift+cmd+b",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+
   /* --------------------------- Syntax Highlighting -------------------------- */
   // Inspect editor tokens and scopes
   {
@@ -909,7 +936,7 @@
   /* -------------------------------- Settings -------------------------------- */
   // Open keybindings
   {
-    "key": "cmd+=",
+    "key": "cmd+y",
     "command": "workbench.action.openGlobalKeybindings"
   },
 
@@ -1050,5 +1077,14 @@
   {
     "key": "ctrl+q",
     "command": "-workbench.action.quickOpenView"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "-rust-analyzer.joinLines",
+    "when": "editorTextFocus && editorLangId == 'rust'"
   }
 ]

@@ -31,7 +31,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?",
+  "editor.wordSeparators": "\\()\"':,.;<>~!@#$%^&*|+={}`?",
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -1023,7 +1023,7 @@
     //   ]
     // },
 
-    /* --------------------------------- Cursor --------------------------------- */
+    /* --------------------------------- Cursor & Motion--------------------------------- */
     {
       "command": "multiCommand.addCursorsLineEnds",
       "sequence": [
@@ -1032,6 +1032,32 @@
           "command": "vim.remap",
           "args": {
             "after": ["<Esc>", "a"]
+          }
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.deleteCursorWord",
+      "sequence": [
+        "cursorWordPartRight",
+        "deleteWordPartLeft",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": ["<Esc>"]
+          }
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.deleteCursorWordAndInsert",
+      "sequence": [
+        "cursorWordPartRight",
+        "deleteWordPartLeft",
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": ["i"]
           }
         }
       ]
@@ -1213,7 +1239,7 @@
   // Plugins
   "vim.easymotion": true,
   "vim.sneak": true,
-  "vim.camelCaseMotion.enable": true,
+  "vim.camelCaseMotion.enable": false,
   "vim.replaceWithRegister": true,
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
@@ -1232,6 +1258,15 @@
   /* -------------------------------------------------------------------------- */
   "vim.normalModeKeyBindingsNonRecursive": [
     /* -------------------------------- Essential ------------------------------- */
+    // Temp fix for code-folding when moving up/down the cursor
+    // {
+    //   "before": ["j"],
+    //   "after": ["g", "j"]
+    // },
+    // {
+    //   "before": ["k"],
+    //   "after": ["g", "k"]
+    // },
     // Undo/Redo
     {
       "before": ["u"],
@@ -1704,6 +1739,12 @@
       "commands": ["gitlens.toggleFileBlame"],
       "silent": true
     },
+    // Discard changes
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.clean"],
+      "silent": true
+    },
     // Preview changes
     {
       "before": ["<leader>", "g", "p"],
@@ -1818,16 +1859,44 @@
     // Camel Case Motion
     {
       "before": ["w"],
-      "after": ["<leader>", "w"]
+      "commands": ["cursorWordPartRight"]
     },
     {
       "before": ["e"],
-      "after": ["<leader>", "e"]
+      "commands": ["cursorWordPartRight"]
     },
     {
       "before": ["b"],
-      "after": ["<leader>", "b"]
+      "commands": ["cursorWordPartLeft"]
     },
+    {
+      "before": ["d", "m"],
+      "commands": ["multiCommand.deleteCursorWord"]
+    },
+    {
+      "before": ["c", "m"],
+      "commands": ["multiCommand.deleteCursorWordAndInsert"]
+    },
+    // {
+    //   "before": ["w"],
+    //   "after": ["<leader>", "w"]
+    // },
+    // {
+    //   "before": ["e"],
+    //   "after": ["<leader>", "e"]
+    // },
+    // {
+    //   "before": ["b"],
+    //   "after": ["<leader>", "b"]
+    // },
+
+    /* ---------------------------------- Emmet --------------------------------- */
+    {
+      "before": ["c", "s", "t"],
+      "commands": ["editor.emmet.action.updateTag"],
+      "silent": true
+    },
+
     /* -------------------------------- Bookmark -------------------------------- */
     // Find bookmarks
     {
@@ -2142,13 +2211,18 @@
     // change motion for word
     {
       "before": ["w"],
-      "after": ["i", "w"]
-    },
-    // change motion for Camel case motion
-    {
-      "before": ["m"],
-      "after": ["i", "<leader>", "w"]
+      "after": ["a", "w"]
     }
+    // change motion for Camel case motion
+    // {
+    //   "before": ["m"],
+    //   "commands": ["multiCommand.deleteCursorWord"],
+    //   "silent": true
+    // }
+    // {
+    //   "before": ["m"],
+    //   "after": ["i", "<leader>", "w"]
+    // }
   ],
 
   /* -------------------------------------------------------------------------- */
