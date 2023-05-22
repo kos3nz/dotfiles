@@ -48,6 +48,7 @@
 !/.config/
 !/.config/**
 /.config/**/node_modules/
+/.config/configstore/
 /.config/fish/conf.d/
 /.config/karabiner/automatic_backups
 /.config/lazygit/state.yml
