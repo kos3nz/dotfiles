@@ -37,7 +37,7 @@ return {
   },
   settings = {
     stylelintplus = {
-      autoFixOnFormat = true, -- Prettierでフォーマット後にstylelintでフォーマット
+      autoFixOnFormat = false, -- Prettierでフォーマット後にstylelintでフォーマットしない
     },
   },
 }
