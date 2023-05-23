@@ -587,8 +587,8 @@
     "markdown",
     "mdx"
   ],
-  "eslint.packageManager": "yarn",
-  "stylelint.packageManager": "yarn",
+  "eslint.packageManager": "pnpm",
+  "stylelint.packageManager": "pnpm",
 
   /* -------------------------------------------------------------------------- */
   /*                                  Formatter                                 */
@@ -597,14 +597,15 @@
   "editor.formatOnSave": true, // ファイル保存時にデフォルトフォーマッターでファイルをフォーマットする
   "editor.codeActionsOnSave": {
     // ファイル保存時のコードアクション設定
-    "source.fixAll.eslint": true, // ESLint プラグインでフォーマットする
-    "source.fixAll.stylelint": true // Stylelint プラグインでフォーマットする
+    "source.fixAll.eslint": false, // ESLint プラグインでフォーマットしない
+    "source.fixAll.stylelint": false // Stylelint プラグインでフォーマットしない
   },
 
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.documentSelectors": ["**/*.astro"],
+  // "prettier.prettierPath": "./node_modules/pretteir",
 
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
