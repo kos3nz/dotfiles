@@ -8,6 +8,7 @@ return {
     -- ["<leader>C"] = false, -- Force close buffer
     ["<leader>Sd"] = false, -- Delete session
     ["<leader>Sf"] = false, -- Search session
+    ["<leader>Ss"] = false, -- Save current session
     ["<leader>Sl"] = false, -- Load last session
     ["<leader>S."] = false, -- Load current directory session
     ["<leader>tf"] = false, -- ToggleTerm float
