@@ -421,6 +421,17 @@
   },
 
   /* --------------------------------- Search --------------------------------- */
+  // SearchList
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusSearchList",
+    "when": "hasSearchResult && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.findInFiles",
+    "when": "hasSearchResult && searchViewletFocus"
+  },
   // Toggle Regex in search
   {
     "key": "alt+r",
@@ -1086,5 +1097,51 @@
     "key": "ctrl+shift+j",
     "command": "-rust-analyzer.joinLines",
     "when": "editorTextFocus && editorLangId == 'rust'"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+
+  {
+    "key": "shift+,",
+    "command": "list.focusFirst",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+.",
+    "command": "list.focusLast",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "multiCommand.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "multiCommand.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "list.focusPageUp",
+    "when": "listFocus && !inputFocus"
   }
 ]

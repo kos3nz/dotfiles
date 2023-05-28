@@ -31,7 +31,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
-  "editor.wordSeparators": "\\()\"':,.;<>~!@#$%^&*|+={}`?",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+={}[]`?",
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -107,7 +107,7 @@
   /*                                  Workbench                                 */
   /* -------------------------------------------------------------------------- */
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Moonlight",
   "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
@@ -186,6 +186,19 @@
     "comments": {
       "foreground": "#8199b8d0", // #8199b8d0
       "fontStyle": "italic"
+    },
+    "[Moonlight]": {
+      "textMateRules": [
+        {
+          "scope": [
+            // typescript
+            "support.type.primitive"
+          ],
+          "settings": {
+            "foreground": "#61ccda"
+          }
+        }
+      ]
     },
     "[One Dark Pro]": {
       "textMateRules": [
@@ -476,6 +489,7 @@
     "editorSuggestWidget.selectedBackground": "#559BF560",
     "editorSuggestWidget.foreground": "#ccc",
     "editorGroupHeader.tabsBackground": "#141921",
+    "peekView.border": "#559BF5",
     "tab.activeBorder": "#559BF5",
     "tab.inactiveBackground": "#141921",
     "tab.activeBackground": "#85aBF52a",
@@ -1024,7 +1038,35 @@
     //   ]
     // },
 
-    /* --------------------------------- Cursor & Motion--------------------------------- */
+    /* ---------------------------------- List ---------------------------------- */
+    {
+      "command": "multiCommand.focusUp",
+      "sequence": [
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp",
+        "list.focusUp"
+      ]
+    },
+    {
+      "command": "multiCommand.focusDown",
+      "sequence": [
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown",
+        "list.focusDown"
+      ]
+    },
+
+    /* ----------------------------- Cursor & Motion ---------------------------- */
     {
       "command": "multiCommand.addCursorsLineEnds",
       "sequence": [
@@ -1445,9 +1487,15 @@
       "commands": ["workbench.action.revertAndCloseActiveEditor"],
       "silent": true
     },
-    // Create new file
+    // Reopen closed buffer
     {
       "before": ["<leader>", "b", "t"],
+      "commands": ["workbench.action.reopenClosedEditor"],
+      "silent": true
+    },
+    // Create new file
+    {
+      "before": ["<leader>", "b", "n"],
       "commands": ["workbench.action.files.newUntitledFile"],
       "silent": true
     },
