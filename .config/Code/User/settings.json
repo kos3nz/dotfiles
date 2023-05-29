@@ -1659,11 +1659,32 @@
     },
     // Search recently used projects
     {
-      "before": ["<leader>", "r", "f"],
+      "before": ["<leader>", "r", "r"],
       "commands": ["workbench.action.openRecent"],
       "silent": true
     },
 
+    // Project Manager
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["projectManager.listProjects"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "r", "F"],
+      "commands": ["projectManager.listProjectsNewWindow"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "r", "s"],
+      "commands": ["projectManager.saveProject"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "r", "e"],
+      "commands": ["projectManager.editProjects"],
+      "silent": true
+    },
     /* ----------------------------------- Cmp ---------------------------------- */
     // Insert Snippet
     {
@@ -1914,23 +1935,28 @@
     // Camel Case Motion
     {
       "before": ["w"],
-      "commands": ["cursorWordPartRight"]
+      "commands": ["cursorWordPartRight"],
+      "silent": true
     },
     {
       "before": ["e"],
-      "commands": ["cursorWordPartRight"]
+      "commands": ["cursorWordPartRight"],
+      "silent": true
     },
     {
       "before": ["b"],
-      "commands": ["cursorWordPartLeft"]
+      "commands": ["cursorWordPartLeft"],
+      "silent": true
     },
     {
       "before": ["d", "m"],
-      "commands": ["multiCommand.deleteCursorWord"]
+      "commands": ["multiCommand.deleteCursorWord"],
+      "silent": true
     },
     {
       "before": ["c", "m"],
-      "commands": ["multiCommand.deleteCursorWordAndInsert"]
+      "commands": ["multiCommand.deleteCursorWordAndInsert"],
+      "silent": true
     },
     // {
     //   "before": ["w"],
