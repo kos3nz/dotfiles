@@ -50,6 +50,7 @@
 /.config/**/node_modules/
 /.config/configstore/
 /.config/fish/conf.d/
+/.config/gh/hosts.yml
 /.config/karabiner/automatic_backups
 /.config/lazygit/state.yml
 /.config/nvim/plugin/
