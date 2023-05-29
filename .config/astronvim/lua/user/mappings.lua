@@ -519,7 +519,7 @@ return {
   -- Operator pending mode
   --------------------
   o = {
-    ["w"] = { "iw" },
+    ["w"] = { "aw" },
     -- ["t"] = { "at" },
     -- ["m"] = { "<Plug>CamelCaseMotion_ie" }, -- this operation is a bit slow thant mapping "dm" and "cm" respectively
 
