@@ -590,7 +590,7 @@
     "enable": true
   },
   "eslint.options": {
-    "extensions": [".js", ".jsx", ".ts", ".tsx", ".md", ".mdx"]
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".md", ".mdx", ".astro"]
   },
   "eslint.validate": [
     "javascript",
@@ -630,7 +630,7 @@
   /* -------------------------------------------------------------------------- */
   /*                                  Stylelint                                 */
   /* -------------------------------------------------------------------------- */
-  // "stylelint.enable": true,
+  "stylelint.enable": true,
   // Disable vscode built-in linters for css, less, scss
   "css.validate": false,
   "less.validate": false,
@@ -640,9 +640,10 @@
   "stylelint.validate": [
     "css",
     "scss",
-    "less"
-    // "tailwindcss",
-    // "astro",
+    "less",
+    "tailwindcss",
+    "astro",
+    "postcss"
     // "vue",
     // "svelte"
   ],
@@ -2316,5 +2317,6 @@
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false
 }
