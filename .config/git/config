@@ -1,6 +1,6 @@
 [user]
-	name = kos3126
-	email = 60677527+kos3126@users.noreply.github.com
+	name = kos3nz
+	email = 60677527+kos3nz@users.noreply.github.com
 [core]
 	editor = vim
 	autocrlf = false
@@ -33,4 +33,4 @@
 	path = ~/.config/delta/theme.gitconfig
 [ghq]
 	root = ~/ghq
-	user = kos3126
+	user = kos3nz
