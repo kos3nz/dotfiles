@@ -165,8 +165,8 @@
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
-    "mdx": "html"
-    // "postcss": "css",
+    "mdx": "html",
+    "postcss": "css"
   },
   // "emmet.showExpandedAbbreviation": "never",
 
@@ -995,6 +995,11 @@
   "GitLive.Issue tracker integration": "Disabled",
 
   /* -------------------------------------------------------------------------- */
+  /*                                   Testing                                  */
+  /* -------------------------------------------------------------------------- */
+  "playwright.reuseBrowser": false,
+
+  /* -------------------------------------------------------------------------- */
   /*                               Thunder Client                               */
   /* -------------------------------------------------------------------------- */
   "thunder-client.httpVersion": "HTTP/2",
@@ -1725,12 +1730,18 @@
       "commands": ["editor.action.organizeImports"],
       "silent": true
     },
-    // Open preview.js
+    // Change Language Mode
     {
-      "before": ["<leader>", "l", "p"],
-      "commands": ["previewjs.open"],
+      "before": ["<leader>", "l", "i"],
+      "commands": ["workbench.action.editor.changeLanguageMode"],
       "silent": true
     },
+    // Open preview.js
+    // {
+    //   "before": ["<leader>", "l", "p"],
+    //   "commands": ["previewjs.open"],
+    //   "silent": true
+    // },
     // Rename symbol
     {
       "before": ["<leader>", "l", "r"],
@@ -2318,5 +2329,4 @@
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": false
 }
