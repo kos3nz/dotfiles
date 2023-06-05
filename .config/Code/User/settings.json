@@ -32,6 +32,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+={}[]`?",
+  "editor.linkedEditing": true,
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -1471,6 +1472,11 @@
       "commands": ["workbench.action.files.save"],
       "silent": true
     },
+    {
+      "before": ["<leader>", "W"],
+      "commands": ["workbench.action.files.saveWithoutFormatting"],
+      "silent": true
+    },
     // Close buffer
     {
       "before": ["<leader>", "q"],
@@ -2328,5 +2334,5 @@
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": false
 }

@@ -291,6 +291,11 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
     "key": "c",
     "command": "filesExplorer.copy",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
@@ -835,6 +840,16 @@
     "key": "ctrl+c",
     "command": "closeBreakpointWidget",
     "when": "breakpointWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "editor.closeTestPeek",
+    "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "editor.closeTestPeek",
+    "when": "testing.isPeekVisible"
   },
 
   /* ----------------------------- Panel/Terminal ----------------------------- */
