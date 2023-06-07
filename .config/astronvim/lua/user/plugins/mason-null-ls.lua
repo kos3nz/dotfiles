@@ -69,8 +69,8 @@ return {
               "typescriptreact",
               "vue",
               "astro",
-              "markdown",
-              "markdown.mdx",
+              -- "markdown",
+              -- "markdown.mdx",
             },
             condition = function(utils)
               return utils.root_has_file(".eslintrc.json")
