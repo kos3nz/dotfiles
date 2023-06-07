@@ -586,21 +586,19 @@
   /* -------------------------------------------------------------------------- */
   /*                                    Lint                                    */
   /* -------------------------------------------------------------------------- */
-  "eslint.run": "onSave",
+  "eslint.run": "onType",
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
   "eslint.options": {
-    "extensions": [".js", ".jsx", ".ts", ".tsx", ".md", ".mdx", ".astro"]
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".astro"]
   },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "astro",
-    "markdown",
-    "mdx"
+    "astro"
   ],
   "eslint.packageManager": "pnpm",
   "stylelint.packageManager": "pnpm",
@@ -1590,7 +1588,7 @@
     },
     // Find word
     {
-      "before": ["<leader>", "f", "."],
+      "before": ["<leader>", "f", "/"],
       "commands": ["actions.find"],
       "silent": true
     },
@@ -1716,6 +1714,11 @@
     {
       "before": ["<leader>", "l", "a"],
       "commands": ["editor.action.quickFix"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "l", "A"],
+      "commands": ["editor.action.fixAll"],
       "silent": true
     },
     // Format
