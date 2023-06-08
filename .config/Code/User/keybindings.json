@@ -158,9 +158,14 @@
     "command": "workbench.action.closeQuickOpen",
     "when": "inQuickOpen"
   },
-  // Open Recent File
+  // Add Project to Workspace
   {
     "key": "cmd+o",
+    "command": "projectManager.addToWorkspace"
+  },
+  // Open Recent File
+  {
+    "key": "shift+cmd+o",
     "command": "workbench.action.openRecent"
   },
   {
@@ -313,6 +318,16 @@
   {
     "key": "z",
     "command": "list.collapseAll",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "list.collapseAll",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "q",
+    "command": "removeRootFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
 
@@ -1189,5 +1204,6 @@
     "command": "-workbench.action.files.openLocalFileFolder",
     "when": "remoteFileDialogVisible"
   }
+
   /* -------------------------------------------------------------------------- */
 ]

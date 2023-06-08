@@ -560,9 +560,12 @@
     "gitlens.codeLens.scopes": ["document"]
   },
   "[jsonc]": {},
-  // "[dockerfile]": {
-  //   "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  // },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
 
   /* ------------------------- Javascript & Typescript ------------------------ */
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -990,6 +993,7 @@
   /*                                     Git                                    */
   /* -------------------------------------------------------------------------- */
   "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
   "diffEditor.wordWrap": "off",
   "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
   "GitLive.Issue tracker integration": "Disabled",
@@ -1478,24 +1482,26 @@
     },
     // Close buffer
     {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"],
-      "silent": true
-    },
-    {
       "before": ["<leader>", "x"],
       "commands": ["workbench.action.closeActiveEditor"],
       "silent": true
     },
     // Force close buffer
     {
-      "before": ["<leader>", "Q"],
+      "before": ["<leader>", "X"],
       "commands": ["workbench.action.revertAndCloseActiveEditor"],
       "silent": true
     },
+    // Close all editors in group
     {
-      "before": ["<leader>", "X"],
-      "commands": ["workbench.action.revertAndCloseActiveEditor"],
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeEditorsInGroup"],
+      "silent": true
+    },
+    // Close all editor groups
+    {
+      "before": ["<leader>", "Q"],
+      "commands": ["workbench.action.closeAllGroups"],
       "silent": true
     },
     // Reopen closed buffer
@@ -1674,6 +1680,11 @@
       "commands": ["workbench.action.openRecent"],
       "silent": true
     },
+    {
+      "before": ["<leader>", "r", "x"],
+      "commands": ["workbench.action.removeRootFolder"],
+      "silent": true
+    },
 
     // Project Manager
     {
@@ -1694,6 +1705,11 @@
     {
       "before": ["<leader>", "r", "e"],
       "commands": ["projectManager.editProjects"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "r", "a"],
+      "commands": ["projectManager.addToWorkspace"],
       "silent": true
     },
     /* ----------------------------------- Cmp ---------------------------------- */
