@@ -25,7 +25,6 @@
   "editor.cursorBlinking": "solid",
   "editor.guides.indentation": false,
   "editor.bracketPairColorization.enabled": true,
-  "editor.stickyScroll.enabled": true,
   "editor.useTabStops": false,
   "editor.insertSpaces": false,
   "editor.inlineSuggest.enabled": true,
@@ -123,6 +122,7 @@
   "editor.suggestSelection": "first", // 入力した時にどの項目にカーソルを合わせた状態にするか
   "editor.suggest.snippetsPreventQuickSuggestions": false, // タブストップ中にも入力補完が有効
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "tabnine.experimentalAutoImports": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                  Terminal                                  */
@@ -491,6 +491,7 @@
     "editorSuggestWidget.foreground": "#ccc",
     "editorGroupHeader.tabsBackground": "#141921",
     "peekView.border": "#559BF5",
+    "peekViewEditorStickyScroll.background": "#101010",
     "tab.activeBorder": "#559BF5",
     "tab.inactiveBackground": "#141921",
     "tab.activeBackground": "#85aBF52a",
@@ -500,6 +501,7 @@
     "activityBar.background": "#141921",
     "activityBar.activeBorder": "#559BF5",
     "activityBarBadge.background": "#559BF5c4",
+    "sideBar.foreground": "#b0b6c0",
     "sideBar.background": "#101010",
     "sideBarSectionHeader.background": "#141921",
     "sideBarSectionHeader.foreground": "#559BF5",
