@@ -526,6 +526,17 @@
     "command": "-closeFindWidget",
     "when": "editorFocus && findWidgetVisible && !isComposing"
   },
+  // Dismiss search results
+  {
+    "key": "d",
+    "command": "search.action.remove",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "x",
+    "command": "search.action.remove",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
 
   /* --------------------------------- Buffer --------------------------------- */
   // Navigate buffers
@@ -549,11 +560,6 @@
   },
   // Up/Down
   {
-    "key": "tab",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
     "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
@@ -561,11 +567,6 @@
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
@@ -941,6 +942,12 @@
   {
     "key": "ctrl+q l",
     "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  // Rename terminal instance
+  {
+    "key": "ctrl+q r",
+    "command": "workbench.action.terminal.rename",
     "when": "terminalFocus && terminalProcessSupported"
   },
   // Kill terminal instance

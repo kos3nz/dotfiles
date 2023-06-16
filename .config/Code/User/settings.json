@@ -64,9 +64,9 @@
     "**/.DS_Store": true,
     "**/.hg": true,
     "**/.svn": true,
-    "**/tmp": true,
+    "**/tmp": true
     // "**/node_modules": true,
-    "**/.next": true
+    // "**/.next": true
   },
   "search.exclude": {
     // Default Settings
@@ -108,7 +108,7 @@
   /* -------------------------------------------------------------------------- */
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorTheme": "Moonlight",
-  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  // "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": true, // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
@@ -150,9 +150,7 @@
   //     "icon": "terminal-tmux"
   //   }
   // },
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
+  "terminal.integrated.env.osx": {},
 
   /* -------------------------------------------------------------------------- */
   /*                                  Keyboard                                  */
