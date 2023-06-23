@@ -3,6 +3,7 @@
 # Remove the container and its associated anonymous volume. (leaves a dangling volume)
 docker rm <container-name>
 
+
 % docker, volume
 
 # Remove the container and its associated anonymous volume. (not named volumes)
@@ -22,3 +23,16 @@ docker volume rm $(docker volume ls -qf dangling=true)
 
 # Remove all volumes
 docker volume prune
+
+
+
+% docker-compose, volume
+
+# Run one-off commands for a service
+docker compose run <service-name> <commands>
+
+
+% docker-compose, volume
+
+# Remove the containers and the volumes entirely with docker-compose
+docker compose down --volumes
