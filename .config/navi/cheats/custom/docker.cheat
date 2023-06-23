@@ -1,0 +1,24 @@
+% docker, container
+
+# Remove the container and its associated anonymous volume. (leaves a dangling volume)
+docker rm <container-name>
+
+% docker, volume
+
+# Remove the container and its associated anonymous volume. (not named volumes)
+docker rm -v <container-name>
+
+# List all the volumes
+docker volume ls
+
+# List all the dangling voluems
+docker volume ls -qf dangling=true
+
+# Remove volumes
+docker volume rm <volume>
+
+# Remove all the dangling volumes
+docker volume rm $(docker volume ls -qf dangling=true)
+
+# Remove all volumes
+docker volume prune
