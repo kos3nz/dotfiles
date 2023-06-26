@@ -884,6 +884,23 @@
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal"
   },
+  // Create new terminal
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  // Focus previous/next terminal
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
   // Switch active terminal
   {
     "key": "ctrl+q w",
