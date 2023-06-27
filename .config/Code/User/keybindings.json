@@ -543,12 +543,12 @@
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible  && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
 
   /* ----------------------------------- Cmp ---------------------------------- */
