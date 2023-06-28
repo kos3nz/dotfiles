@@ -183,22 +183,22 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
+    "when": "!inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "!terminalFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
+    "when": "!terminalFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !terminalFocus && !isInDiffEditor && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode'"
   },
   // Quick Navigation for diff view
   {
@@ -548,7 +548,7 @@
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible  && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
 
   /* ----------------------------------- Cmp ---------------------------------- */
