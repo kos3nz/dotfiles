@@ -53,6 +53,7 @@
 /.config/gh/hosts.yml
 /.config/karabiner/automatic_backups
 /.config/lazygit/state.yml
+/.config/ngrok/
 /.config/nvim/plugin/
 /.config/raycast/extensions/
 /.config/tmux/plugins/
