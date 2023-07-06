@@ -869,6 +869,17 @@
   },
 
   /* ----------------------------- Panel/Terminal ----------------------------- */
+  // Scroll up / down
+  {
+    "key": "ctrl+u",
+    "command": "workbench.action.terminal.scrollUpPage",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.scrollDownPage",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
   // Delete word left
   {
     "key": "ctrl+w",

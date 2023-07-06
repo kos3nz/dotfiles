@@ -1443,6 +1443,11 @@
       "commands": ["workbench.view.extension.todo-tree-container"],
       "silent": true
     },
+    {
+      "before": ["<leader>", "f", "t"],
+      "commands": ["workbench.view.extension.todo-tree-container"],
+      "silent": true
+    },
     // Show Bookmark
     {
       "before": ["<leader>", "t", "m"],
