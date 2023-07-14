@@ -603,7 +603,7 @@
     "typescriptreact",
     "astro"
   ],
-  "eslint.packageManager": "pnpm",
+  // "eslint.packageManager": "pnpm",
   "stylelint.packageManager": "pnpm",
 
   /* -------------------------------------------------------------------------- */
