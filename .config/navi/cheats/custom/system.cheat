@@ -9,6 +9,18 @@ osascript -e 'tell app "System Events" to tell appearance preferences to set dar
 # Get the hex code. After running the command below, type whatever you want the hex code for and hit enter. (0a is enter key)
 xxd -psd
 
+# Print the CPU Info
+sysctl machdep.cpu.brand_string
+
+# Print system architecture and processor information
+uname -mp
+
+# Print kernel name, kernel release and kernel version
+uname -srv
+
+# List all architectures contained in a universal file (Ex. lipo /bin/zsh -archs)
+lipo <path/to/binary_file> -archs
+
 
 % mac, volume
 
