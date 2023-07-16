@@ -97,9 +97,9 @@
   /*                                    Font                                    */
   /* -------------------------------------------------------------------------- */
   "editor.fontFamily": "SF Mono Square, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
-  "editor.fontSize": 17.5,
+  "editor.fontSize": 16.5,
   "editor.fontWeight": "normal",
-  "editor.lineHeight": 25,
+  "editor.lineHeight": 22,
   "editor.letterSpacing": 0,
   "editor.fontLigatures": true,
 
@@ -110,7 +110,6 @@
   "workbench.colorTheme": "Moonlight",
   // "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
   "workbench.editor.showTabs": true, // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
   "workbench.editor.wrapTabs": true,
 
@@ -150,7 +149,9 @@
   //     "icon": "terminal-tmux"
   //   }
   // },
-  "terminal.integrated.env.osx": {},
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
 
   /* -------------------------------------------------------------------------- */
   /*                                  Keyboard                                  */
@@ -672,6 +673,9 @@
     "tw={\"([^\"}]*)", // <div tw={"..."} />
     "tw\\.\\w+`([^`]*)", // tw.xxx`...`
     "tw\\(.*?\\)`([^`]*)", // tw(Component)`...`
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for clsx
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"] // IntelliSense support for cva
   ], // 上記の形でもVSCodeが補完してくれる
 
@@ -2171,6 +2175,13 @@
       "before": ["<leader>", "u", "w"],
       "commands": ["editor.action.toggleWordWrap"],
       "silent": true
+    },
+
+    /* ----------------------------------- AI ----------------------------------- */
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["codeium.openChatView"],
+      "silent": true
     }
   ],
   /* -------------------------------------------------------------------------- */
@@ -2359,5 +2370,9 @@
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "codeium.enableConfig": {
+    "*": true,
+    "prisma": true
+  }
 }
