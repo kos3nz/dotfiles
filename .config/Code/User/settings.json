@@ -39,8 +39,8 @@
   "files.watcherExclude": {
     // Default Settings
     "**/.git/**": true,
-    // "**/.git/objects/**": true,
-    // "**/.git/subtree-cache/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
     "/node_modules": true,
     "**/node_modules/**": true,
     "**/.hg/store/**": true,
@@ -664,7 +664,7 @@
     "typescript": "javascript",
     "typescriptreact": "javascript"
   },
-  "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
+  // "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
   "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする
   "tailwindCSS.experimental.classRegex": [
     // "className = ['\"`]([^('\"`)]*)",
@@ -1314,7 +1314,9 @@
   // Custom key mappings
   "vim.handleKeys": {
     "<C-k>": false,
-    "<C-y>": false
+    "<C-y>": false,
+    "<C-i>": false,
+    "<C-o>": false
   },
   /* -------------------------------------------------------------------------- */
   /*                               Vim Normal Mode                              */
@@ -1643,6 +1645,12 @@
       "commands": ["extension.search"],
       "silent": true
     },
+    // Show Problems
+    {
+      "before": ["<leader>", "f", "d"],
+      "commands": ["workbench.actions.view.problems"],
+      "silent": true
+    },
 
     /* --------------------------------- Search --------------------------------- */
     // Clear highlight
@@ -1862,7 +1870,13 @@
       "commands": ["gitlens.toggleFileBlame"],
       "silent": true
     },
-    // Discard changes
+    // Reset git hunk
+    {
+      "before": ["<leader>", "g", "h"],
+      "commands": ["git.revertSelectedRanges"],
+      "silent": true
+    },
+    // Reset git buffer
     {
       "before": ["<leader>", "g", "r"],
       "commands": ["git.clean"],
@@ -1871,7 +1885,8 @@
     // Preview changes
     {
       "before": ["<leader>", "g", "p"],
-      "commands": ["git.openChange"],
+      "commands": ["gitlens.diffLineWithWorking"],
+      // "commands": ["git.openChange"],
       "silent": true
     },
     // Next/Previous hunk

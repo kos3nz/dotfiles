@@ -161,13 +161,14 @@
   // Add Project to Workspace
   {
     "key": "cmd+o",
-    "command": "projectManager.addToWorkspace"
+    "command": "workbench.action.openRecent"
   },
   // Open Recent File
   {
     "key": "shift+cmd+o",
-    "command": "workbench.action.openRecent"
+    "command": "projectManager.listProjects"
   },
+  // Disable defaults
   {
     "key": "ctrl+r",
     "command": "-workbench.action.openRecent"
@@ -259,6 +260,46 @@
     "command": "-list.toggleExpand",
     "when": "listFocus && !inputFocus"
   },
+  {
+    "key": "shift+,",
+    "command": "list.focusFirst",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "shift+.",
+    "command": "list.focusLast",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "multiCommand.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "multiCommand.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
   // Explorer
   {
     "key": "a",
@@ -332,6 +373,27 @@
   },
 
   /* --------------------------------- Cursor --------------------------------- */
+  // Navigation back/forward
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
   // Emacs-like cursor navigation
   {
     "key": "ctrl+e",
@@ -1178,47 +1240,6 @@
     "command": "-workbench.action.terminal.openNativeConsole",
     "when": "!terminalFocus"
   },
-
-  {
-    "key": "shift+,",
-    "command": "list.focusFirst",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "shift+.",
-    "command": "list.focusLast",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "multiCommand.focusDown",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "-list.focusPageDown",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+u",
-    "command": "multiCommand.focusUp",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+u",
-    "command": "-list.focusPageUp",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "list.focusPageDown",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "list.focusPageUp",
-    "when": "listFocus && !inputFocus"
-  },
   {
     "key": "cmd+o",
     "command": "-workbench.action.files.openFileFolder",
@@ -1239,6 +1260,4 @@
     "command": "-workbench.action.files.openLocalFileFolder",
     "when": "remoteFileDialogVisible"
   }
-
-  /* -------------------------------------------------------------------------- */
 ]
