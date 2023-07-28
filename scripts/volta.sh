@@ -7,3 +7,4 @@ volta install netlify-cli
 volta install wrangler
 volta install @antfu/ni
 volta install better-commits
+volta install tw3panda-cli 
