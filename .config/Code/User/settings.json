@@ -633,7 +633,7 @@
   /* -------------------------------------------------------------------------- */
   /*                                  Stylelint                                 */
   /* -------------------------------------------------------------------------- */
-  "stylelint.enable": true,
+  "stylelint.enable": false,
   // Disable vscode built-in linters for css, less, scss
   "css.validate": false,
   "less.validate": false,
