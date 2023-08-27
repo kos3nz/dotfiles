@@ -21,6 +21,9 @@ uname -srv
 # List all architectures contained in a universal file (Ex. lipo /bin/zsh -archs)
 lipo <path/to/binary_file> -archs
 
+# Prevent spotlight from indexing all devices
+sudo mdutil -a -i off
+
 
 % mac, volume
 
@@ -35,3 +38,4 @@ osascript -e 'set volume output muted not (output muted of (get volume settings)
 
 # Open or switch to Safari
 osascript -e 'tell app "Safari" to activate'
+
