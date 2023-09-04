@@ -1328,4 +1328,124 @@
     "key": "ctrl+w",
     "command": "-workbench.action.switchWindow"
   }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Neovim                                   */
+  /* -------------------------------------------------------------------------- */
+  // {
+  //   "key": "j",
+  //   "command": "vscode-neovim.send",
+  //   "args": "gj",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "key": "j",
+  //   "command": "vscode-neovim.send",
+  //   "args": "gj",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "command": "editor.toggleFold",
+  //   "key": "z a",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.unfoldAll",
+  //   "key": "z shift+r",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldAll",
+  //   "key": "z shift+m",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.unfold",
+  //   "key": "z o",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.unfoldRecursively",
+  //   "key": "z shift+o",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.fold",
+  //   "key": "z c",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldRecursively",
+  //   "key": "z shift+c",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel1",
+  //   "key": "z 1",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel2",
+  //   "key": "z 2",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel3",
+  //   "key": "z 3",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel4",
+  //   "key": "z 4",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel5",
+  //   "key": "z 5",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel6",
+  //   "key": "z 6",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldLevel7",
+  //   "key": "z 7",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.foldAllExcept",
+  //   "key": "z shift+v",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.gotoNextFold",
+  //   "key": "z j",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "command": "editor.gotoPreviousFold",
+  //   "key": "z k",
+  //   "when": "editorTextFocus && neovim.mode == normal"
+  // },
+  // {
+  //   "key": "space e",
+  //   "command": "workbench.action.toggleSidebarVisibility",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "vscode-neovim.send",
+  //   "args": "25gj",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "vscode-neovim.send",
+  //   "args": "25gk",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // }
 ]
+
+/* -------------------------------------------------------------------------- */

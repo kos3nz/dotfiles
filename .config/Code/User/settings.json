@@ -1282,7 +1282,8 @@
   /* -------------------------------------------------------------------------- */
   // Fix poor performance when inserting on vim extention?  https://github.com/microsoft/vscode/issues/75627#issuecomment-1078827311
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
   },
 
   "vim.leader": "<space>",
@@ -1380,6 +1381,21 @@
     //   "commands": ["editor.unfoldAll"],
     //   "silent": true
     // },
+    {
+      "before": ["z", "p"],
+      "commands": ["editor.gotoParentFold"],
+      "silent": true
+    },
+    {
+      "before": ["z", "j"],
+      "commands": ["editor.gotoNextFold"],
+      "silent": true
+    },
+    {
+      "before": ["z", "k"],
+      "commands": ["editor.gotoPreviousFold"],
+      "silent": true
+    },
 
     // Show commands
     {
