@@ -188,12 +188,12 @@
     "command": "workbench.action.closeQuickOpen",
     "when": "inQuickOpen"
   },
-  // Add Project to Workspace
+  // Open recent project
   {
     "key": "cmd+o",
     "command": "workbench.action.openRecent"
   },
-  // Open Recent File
+  // Open project
   {
     "key": "shift+cmd+o",
     "command": "projectManager.listProjects"
@@ -1072,6 +1072,11 @@
   {
     "key": "ctrl+q l",
     "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+q k",
+    "command": "workbench.action.focusFirstEditorGroup",
     "when": "terminalFocus && terminalProcessSupported"
   },
   // Rename terminal instance
