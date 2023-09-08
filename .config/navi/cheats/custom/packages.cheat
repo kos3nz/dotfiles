@@ -1,0 +1,28 @@
+% eslint, nextjs
+
+# Install eslint packages for nextjs
+ni -D eslint eslint-config-next eslint-config-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-tailwindcss
+
+
+% prettier
+
+# Install prettier packages
+ni -D prettier @ianvs/prettier-plugin-sort-imports prettier-plugin-tailwindcss
+
+
+% tailwindcss
+
+# Install tailwindcss
+ni -D tailwindcss postcss autoprefixer
+
+
+% typescript
+
+# Install typescript
+ni -D typescript @types/node @types/react @types/react-dom @total-typescript/ts-reset
+
+
+% nest, nestjs
+
+# Generate Nest application with TypeScript strict mode, skipping initializing git, and pnpm with the package-manager
+nest new <app-name> --strict --skip-git --package-manager=<package-manager>

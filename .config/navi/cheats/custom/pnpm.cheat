@@ -1,0 +1,10 @@
+% pnpm, store
+
+# Checks for modified packages in the store
+pnpm store status
+
+# Add new packages to the store directly without modifying any projects or files
+pnpm store add <package>
+
+# Removes unreferenced packages from the store
+pnpm store prune

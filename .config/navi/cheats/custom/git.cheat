@@ -10,6 +10,24 @@ git show <branch-name>:<file-name>
 git help tutorial
 
 
+% git, sparse-checkout
+
+# Clone with sparse option
+git clone --filter=blob:none --sparse <repository-name>
+
+# Enable sparse-checkout and checkout only directories you need
+git sparse-checkout set <directory-name>
+
+# Update the sparse-checkout file to include additional directories (in cone mode) or patterns (in non-cone mode).
+git sparse-checkout add <directory-name>
+
+# Describe the directories or patterns in the sparse-checkout file.
+git sparse-checkout list
+
+# Disable the core.sparseCheckout config setting, and restore the working directory to include all files.
+git sparse-checkout disable
+
+
 % git, ghq
 
 # Update all local repositories
