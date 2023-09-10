@@ -18,8 +18,8 @@ return {
 
     dashboard.section.buttons.val = {
       alpha_button("LDR f f", "  Find File  "),
-      alpha_button("LDR f o", "  Recent  "),
-      alpha_button("LDR f w", "  Find Word  "),
+      alpha_button("LDR f o", "󰅐  Recent  "),
+      alpha_button("LDR f w", "󰬞  Find Word  "),
       alpha_button("LDR f m", "  Bookmarks  "),
       alpha_button("LDR r f", "  Find Session  "),
       alpha_button("LDR r .", "  Last Session  "),

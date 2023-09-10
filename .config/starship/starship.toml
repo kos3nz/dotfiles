@@ -151,22 +151,22 @@ detect_folders = ['lua']
 style = 'blue'
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
 
 [nodejs]
-format = "[|](black) [ $version](green) "
+format = "[|](black) [󰎙 $version](green) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
 [package]
 format = "[|](black) [$symbol $version]($style) "
-symbol = ""
+symbol = ""
 style = "208"
 
 [perl]
