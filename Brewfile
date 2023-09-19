@@ -5,10 +5,10 @@ tap "daipeihust/tap" # for im-select
 tap "delphinus/sfmono-square" # for sfmono-square font
 tap "epk/epk" # for font-sf-mono-nerd-font
 tap "homebrew/bundle"
-tap "homebrew/cask"
+# tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
+# tap "homebrew/cask-versions"
+# tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
 tap "koekeishiya/formulae"
