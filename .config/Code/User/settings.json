@@ -1713,6 +1713,7 @@
       "commands": ["workbench.action.openRecent"],
       "silent": true
     },
+    // Remove root folder
     {
       "before": ["<leader>", "r", "x"],
       "commands": ["workbench.action.removeRootFolder"],
