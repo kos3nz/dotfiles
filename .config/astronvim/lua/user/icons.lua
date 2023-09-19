@@ -1,11 +1,11 @@
 return {
   MacroRecording = "",
   ActiveLSP = "", --   
-  ActiveTS = "綠",
+  ActiveTS = "󱘎",
   BufferClose = "",
   NeovimClose = "󰅙",
   DefaultFile = "", --  
-  Diagnostic = "裂", -- 裂
+  Diagnostic = "󰩂", -- 󰩂 
   DiagnosticError = "", --  
   DiagnosticHint = "", --   󰰀
   DiagnosticInfo = "", --  
@@ -16,7 +16,7 @@ return {
   FolderClosed = "", --   
   FolderEmpty = "", --  
   FolderOpen = "", --  
-  Git = "", --  
+  Git = "󰊢", -- 󰊢 
   GitAdd = "Σ", -- Σ
   GitBranch = "", --  
   GitChange = "", -- 

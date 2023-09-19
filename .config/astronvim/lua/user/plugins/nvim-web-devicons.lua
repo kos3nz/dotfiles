@@ -5,7 +5,7 @@ return {
       override = {
         deb = { icon = "", name = "Deb" },
         lock = { icon = "", name = "Lock" },
-        mp3 = { icon = "", name = "Mp3" },
+        mp3 = { icon = "󰝚", name = "Mp3" },
         mp4 = { icon = "", name = "Mp4" },
         out = { icon = "", name = "Out" },
         ["robots.txt"] = { icon = "ﮧ", name = "Robots" },
@@ -31,7 +31,7 @@ return {
       -- takes effect when `strict` is true
       override_by_filename = {
         [".gitignore"] = {
-          icon = "",
+          icon = "󰊢",
           color = "#f1502f",
           name = "Gitignore",
         },
