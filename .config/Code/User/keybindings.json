@@ -963,12 +963,22 @@
   /* ----------------------------- Panel/Terminal ----------------------------- */
   // Scroll up / down
   {
-    "key": "ctrl+u",
+    "key": "alt+k",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  {
+    "key": "shift+alt+k",
     "command": "workbench.action.terminal.scrollUpPage",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
   },
   {
-    "key": "ctrl+d",
+    "key": "shift+alt+j",
     "command": "workbench.action.terminal.scrollDownPage",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
   },
