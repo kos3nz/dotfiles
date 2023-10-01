@@ -46,6 +46,7 @@ brew "gitmux"
 brew "gnu-sed" # GNU implementation of the famous stream editor
 brew "grep" # GNU grep, egrep, and fgrep
 brew "hey" # HTTP load generator, ApacheBench (ab) replacement
+brew "hyperfine" # A command-line benchmarking tool
 brew "lazygit"
 brew "jq"
 brew "lf" # Terminal file manager.
@@ -101,6 +102,7 @@ cask "lunar"
 cask "maccy"
 cask "ngrok"
 cask "obsidian"
+cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
 cask "postman"
 cask "raycast"
 cask "rectangle"
