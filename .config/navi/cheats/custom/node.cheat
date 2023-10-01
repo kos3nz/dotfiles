@@ -1,0 +1,5 @@
+% node, debug
+
+# Enable debugging mode for Node.js application
+NODE_OPTIONS="--inspect" <commands>
+
