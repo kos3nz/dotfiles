@@ -60,9 +60,9 @@ zle -N clean-cdr
 # ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。
 function fzf-ghq () {
   # local selected_dir=$(ghq list -p | fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- )
-  local selected_dir=$(ghq list -p | fzf )
+  local selected_dir=$(ghq list | fzf )
   if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
+    BUFFER="cd $HOME/ghq/${selected_dir}"
     zle accept-line
   fi
   zle clear-screen

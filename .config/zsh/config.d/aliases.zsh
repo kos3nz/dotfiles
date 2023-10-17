@@ -1,7 +1,8 @@
 ### Aliases ###
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias c.='code .' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
+alias c='code' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
+alias c.='code .'
 alias sz='source ~/.config/zsh/.zshrc'
 alias szsh='source ~/.config/zsh/.zshrc'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
