@@ -1,21 +1,21 @@
 
 {
-  "code": {
-    "prefix": ["```"],
-    "body": [
-      "```",
-      "  $0",
-      "```"
-    ],
-    "description": "code block"
-  },
-  "typescript code": {
-    "prefix": ["```typescript"],
-    "body": [
-      "```typescript",
-      "  $0",
-      "```"
-    ],
-    "description": "code block for typescript"
-  }
+  // "code": {
+  //   "prefix": ["```"],
+  //   "body": [
+  //     "```",
+  //     "  $0",
+  //     "```"
+  //   ],
+  //   "description": "code block"
+  // },
+  // "typescript code": {
+  //   "prefix": ["```typescript"],
+  //   "body": [
+  //     "```typescript",
+  //     "  $0",
+  //     "```"
+  //   ],
+  //   "description": "code block for typescript"
+  // }
 }
