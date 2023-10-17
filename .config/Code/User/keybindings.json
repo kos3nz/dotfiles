@@ -635,12 +635,12 @@
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "editorTextFocus && !inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "!inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
+    "when": "editorTextFocus && !inQuickOpen && !filesExplorerFocus && !searchInputBoxFocus && !inKeybindingsSearch && !inSettingsSearch && !findInputFocussed && !sideBarFocus && !terminalFocus && !problemsFilterFocus && !renameInputVisible && vim.active && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress' && vim.mode != 'SearchInProgressMode' && vim.mode != 'OperatorPendingMode' && vim.mode != 'Replace'"
   },
 
   /* ----------------------------------- Cmp ---------------------------------- */
@@ -662,12 +662,22 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
     "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
     "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -681,6 +691,11 @@
     "key": "ctrl+m",
     "command": "acceptAlternativeSelectedSuggestion",
     "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
   },
   // Close suggestion
   {
@@ -1299,50 +1314,64 @@
   },
 
   /* -------------------------------------------------------------------------- */
-  /*                                  Disables                                  */
+  /*                                   Codeium                                  */
   /* -------------------------------------------------------------------------- */
+  // Show next completion
   {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quickOpenView"
+    "key": "tab",
+    "command": "codeium.showNextCompletion",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
   {
-    "key": "shift+cmd+=",
-    "command": "-workbench.action.zoomIn"
+    "key": "ctrl+j",
+    "command": "codeium.showNextCompletion",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  // Show previous completion
+  {
+    "key": "shift+tab",
+    "command": "codeium.showPreviousCompletion",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
   {
-    "key": "ctrl+shift+j",
-    "command": "-rust-analyzer.joinLines",
-    "when": "editorTextFocus && editorLangId == 'rust'"
+    "key": "ctrl+k",
+    "command": "codeium.showPreviousCompletion",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  // Accept inline completion
+  {
+    "key": "enter",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
   {
-    "key": "shift+cmd+c",
-    "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
+    "key": "ctrl+m",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
   {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openFileFolder",
-    "when": "isMacNative && openFolderWorkspaceSupport"
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
+  // Accept next word
   {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openFolderViaWorkspace",
-    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+    "key": "ctrl+f",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
   },
+  // Accept next line
   {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openFile",
-    "when": "false"
+    "key": "ctrl+l",
+    "command": "editor.action.inlineSuggest.acceptNextLine",
+    "when": "inlineSuggestionVisible && !editorReadonly"
   },
+  // Hide inline suggestion
   {
-    "key": "cmd+o",
-    "command": "-workbench.action.files.openLocalFileFolder",
-    "when": "remoteFileDialogVisible"
+    "key": "ctrl+d",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible"
   },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.switchWindow"
-  }
 
   /* -------------------------------------------------------------------------- */
   /*                                   Neovim                                   */
@@ -1461,6 +1490,52 @@
   //   "args": "25gk",
   //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
   // }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Disables                                  */
+  /* -------------------------------------------------------------------------- */
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "-rust-analyzer.joinLines",
+    "when": "editorTextFocus && editorLangId == 'rust'"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFileFolder",
+    "when": "isMacNative && openFolderWorkspaceSupport"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFolderViaWorkspace",
+    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "false"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openLocalFileFolder",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  }
 ]
 
 /* -------------------------------------------------------------------------- */
