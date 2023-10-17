@@ -7,7 +7,7 @@
   // "files.defaultLanguage": "javascript",
   // "files.defaultLanguage": "mdx",
   "files.associations": {
-    // "*.mdx": "markdown",
+    "*.mdx": "markdown"
     // "*.css": "tailwindcss"
   },
   "editor.renderWhitespace": "all",
@@ -176,7 +176,7 @@
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
-      "variable.defaultLibrary": "#f4f5f8c7",
+      "variable.defaultLibrary": "#E4F3FA",
       "*.readonly": "#ff94a1e3",
       "*.static": "#D19A66",
       "function": "#73bdfa"
@@ -456,7 +456,7 @@
             "source.env"
           ],
           "settings": {
-            "foreground": "#f4f5f8c7", // #ABB2BF, #d3d3d3 #D8DEE9 #d8dcd6e8
+            "foreground": "#E4F3FA", // #ABB2BF, #d3d3d3 #D8DEE9 #d8dcd6e8
             "fontStyle": ""
           }
         }
@@ -618,7 +618,8 @@
     "source.fixAll.stylelint": false // Stylelint プラグインでフォーマットしない
   },
 
-  "prettier.singleQuote": true,
+  "prettier.singleQuote": false,
+  "prettier.semi": false,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.documentSelectors": ["**/*.astro"],
@@ -2217,7 +2218,7 @@
     /* ----------------------------------- AI ----------------------------------- */
     {
       "before": ["<leader>", "a"],
-      "commands": ["codeium.openChatView"],
+      "commands": ["codeium.openChatInPane"],
       "silent": true
     }
   ],
