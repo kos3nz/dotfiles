@@ -69,6 +69,28 @@ function fzf-ghq () {
 }
 zle -N fzf-ghq
 
+# Open a project with VSCode in a new window.
+function code-ghq-n () {
+  local selected_dir=$(ghq list | fzf )
+  if [ -n "$selected_dir" ]; then
+    BUFFER="code -n $HOME/ghq/${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N code-ghq-n
+
+# Open a project with VSCode in an already opened window.
+function code-ghq-r () {
+  local selected_dir=$(ghq list | fzf )
+  if [ -n "$selected_dir" ]; then
+    BUFFER="code -r $HOME/ghq/${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N code-ghq-r
+
 
 # ターミナルコマンドの真ん中に移動
 function jump_middle() {
