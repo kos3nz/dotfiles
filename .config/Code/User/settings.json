@@ -110,7 +110,7 @@
   "workbench.colorTheme": "Moonlight",
   // "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.showTabs": true, // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
+  "workbench.editor.showTabs": "multiple", // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
   "workbench.editor.wrapTabs": true,
 
   /* -------------------------------------------------------------------------- */

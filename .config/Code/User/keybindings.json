@@ -330,6 +330,11 @@
     "command": "list.focusPageUp",
     "when": "listFocus && !inputFocus"
   },
+  {
+    "key": "ctrl+t",
+    "command": "openInIntegratedTerminal",
+    "when": "listFocus && !inputFocus"
+  },
   // Explorer
   {
     "key": "a",
@@ -1371,6 +1376,11 @@
     "key": "ctrl+d",
     "command": "editor.action.inlineSuggest.hide",
     "when": "inlineSuggestionVisible"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "textInputFocus && vim.active && !inDebugRepl || vim.mode == 'Insert'"
   },
 
   /* -------------------------------------------------------------------------- */
