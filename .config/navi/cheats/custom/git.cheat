@@ -9,6 +9,9 @@ git show <branch-name>:<file-name>
 # Git tutorial on the terminal
 git help tutorial
 
+# Apply changes in a .git directory
+git read-tree -mu HEAD
+
 
 % git, sparse-checkout
 
@@ -18,7 +21,7 @@ git clone --filter=blob:none --sparse <repository-name>
 # Enable sparse-checkout and checkout only directories you need
 git sparse-checkout set <directory-name>
 
-# Update the sparse-checkout file to include additional directories (in cone mode) or patterns (in non-cone mode).
+# Update the sparse-checkout dir\file to include additional directories (in cone mode) or patterns (in non-cone mode).
 git sparse-checkout add <directory-name>
 
 # Describe the directories or patterns in the sparse-checkout file.
@@ -26,6 +29,18 @@ git sparse-checkout list
 
 # Disable the core.sparseCheckout config setting, and restore the working directory to include all files.
 git sparse-checkout disable
+
+# Clone a specific directory with sparse-checkout
+mkdir -p <repo-name> && cd $_ && git init && git remote add <remote> <repo-url>  && git sparse-checkout init --cone && git sparse-checkout set <directory-names> && git fetch --depth=1 <remote> <branch> && git checkout <branch>
+
+# Edit dir/file from space-checkout (make sure to run git read-tree -mu HEAD to apply the changes)
+v .git/info/sparce-checkout
+
+# Enable sparse-checkout
+git config core.sparseCheckout true
+
+# Disable sparse-checkout
+git config core.sparseCheckout false
 
 
 % git, ghq
@@ -50,3 +65,5 @@ gh repo rename <new-repository-name> -R <owner>/<repository-name>
 
 # Delete remote repository
 gh repo delete <repository-name>
+
+
