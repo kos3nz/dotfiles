@@ -12,6 +12,9 @@ git help tutorial
 # Apply changes in a .git directory
 git read-tree -mu HEAD
 
+# Checkout a remote branch as a local branch
+git checkout -b <branch-name> <remote>/<branch-name>
+
 
 % git, sparse-checkout
 
@@ -31,7 +34,7 @@ git sparse-checkout list
 git sparse-checkout disable
 
 # Clone a specific directory with sparse-checkout
-mkdir -p <repo-name> && cd $_ && git init && git remote add <remote> <repo-url>  && git sparse-checkout init --cone && git sparse-checkout set <directory-names> && git fetch --depth=1 <remote> <branch> && git checkout <branch>
+cd ~/ghq/github.com/ && mkdir -p <repo-name> && cd $_ && git init && git remote add <remote> git@github.com:<repo-name>.git  && git sparse-checkout init --cone && git sparse-checkout set <directory-names> && git fetch --depth=1 <remote> <branch> && git checkout <branch>
 
 # Edit dir/file from space-checkout (make sure to run git read-tree -mu HEAD to apply the changes)
 v .git/info/sparce-checkout
