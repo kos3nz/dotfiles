@@ -1,3 +1,6 @@
+# Git
+.git
+
 # Debug logs (npm, yarn)
 *.log
 
