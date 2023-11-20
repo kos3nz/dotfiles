@@ -60,7 +60,7 @@
     "**/Pictures/**": true
   },
   "files.exclude": {
-    "**/.git": true,
+    "**/.git": false,
     "**/.DS_Store": true,
     "**/.hg": true,
     "**/.svn": true,
@@ -572,17 +572,28 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
   "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
 
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsserver.log": "off",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
 
   /* ---------------------------------- Deno ---------------------------------- */
-  "deno.inlayHints.enumMemberValues.enabled": true,
-  "deno.inlayHints.functionLikeReturnTypes.enabled": true,
-  "deno.inlayHints.parameterTypes.enabled": true,
-  "deno.inlayHints.propertyDeclarationTypes.enabled": true,
-  "deno.inlayHints.variableTypes.enabled": true,
-  "deno.inlayHints.parameterNames.enabled": "literals",
+  // "deno.inlayHints.enumMemberValues.enabled": true,
+  // "deno.inlayHints.functionLikeReturnTypes.enabled": true,
+  // "deno.inlayHints.parameterTypes.enabled": true,
+  // "deno.inlayHints.propertyDeclarationTypes.enabled": true,
+  // "deno.inlayHints.variableTypes.enabled": true,
+  // "deno.inlayHints.parameterNames.enabled": "literals",
 
   /* ---------------------------------- Rust ---------------------------------- */
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
