@@ -106,6 +106,7 @@ cask "orbstack" # A fast, light, and simple way to run containers and Linux mach
 cask "postman"
 cask "raycast"
 cask "rectangle"
+cask "replay"
 cask "runjs"
 cask "spotify"
 cask "stats"
