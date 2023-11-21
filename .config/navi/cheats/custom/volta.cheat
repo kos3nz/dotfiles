@@ -1,0 +1,5 @@
+% volta, mac
+
+# Remove node/npm/yarn versions
+rm -rf ~/.volta/tools/image/<package-name>/<version>
+
