@@ -1,0 +1,10 @@
+% openssl, password
+
+# Generate a random password in hex format
+openssl rand -hex <bytes_number>
+
+# Generate a random password in base64 format
+openssl rand -base64 <bytes_number>
+
+# print the output of the password
+openssl rand -out <file_name> -<format> <bytes_number>
