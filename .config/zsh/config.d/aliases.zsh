@@ -16,13 +16,13 @@ if type "bat" > /dev/null 2>&1; then
     alias cat="bat"
 fi
 
-# exa
-if type "exa" > /dev/null 2>&1; then
-    alias ls='exa'
-    alias l='exa -F'
-    alias la='exa -a'
-    alias ll='exa -alh'
-    alias tree='exa --tree -a'
+# eza
+if type "eza" > /dev/null 2>&1; then
+    alias ls='eza'
+    alias l='eza -F'
+    alias la='eza -a'
+    alias ll='eza -alh'
+    alias tree='eza --tree -a'
 fi
 
 # lf

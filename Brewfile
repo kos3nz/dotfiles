@@ -27,7 +27,7 @@ brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
 brew "deno"
 brew "dust"
-brew "exa"
+brew "eza" # A mordern, maintained replacement for ls.
 brew "emojify"
 brew "fd"
 brew "findutils" # Collection of GNU find, xargs, and locate
