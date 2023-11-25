@@ -39,3 +39,15 @@ osascript -e 'set volume output muted not (output muted of (get volume settings)
 # Open or switch to Safari
 osascript -e 'tell app "Safari" to activate'
 
+
+% mac, process
+
+# Retrieves the PID associated with the server's port
+lsof -i :<port> -t
+
+# Terminates a process associated with the PID
+kill -9 <pid>
+
+# Terminates a process associated with the server's port
+kill -9 $(lsof -i :<port> -t) 
+
