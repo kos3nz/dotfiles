@@ -112,8 +112,10 @@ alias bst='brew services stop'
 
 # Docker
 alias d='docker'
-alias dc='docker-compose'
-alias dc_build_up='docker-compose rm -fv && docker-compose build && docker-compose up'
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcd='docker compose down'
+alias dc_build_up='docker compose rm -fv && docker-compose build && docker-compose up'
 alias rm_docker_images='docker images -qf dangling=true | xargs docker rmi'
 alias rm_docker_containers='docker ps -aqf status=exited | xargs docker rm -v' # rm with volumes
 alias rm_docker_volumes='docker volume ls -qf dangling=true | xargs docker volume rm'
