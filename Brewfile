@@ -113,6 +113,7 @@ cask "stats"
 cask "visual-studio-code"
 cask "warp"
 cask "wezterm-nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
+cask "zoom"
 
 # cask "alacritty"
 # cask "alfred"
@@ -123,6 +124,7 @@ cask "wezterm-nightly" # 'brew install --cask wezterm-nightly' to use a nightly 
 # cask "iterm2"
 # cask "karabiner-elements"
 # cask "lapce"
+# cask "slack"
 # cask "spacelauncher" # Hold down spacebar while pressing a key to launch or switch to an app.
 # cask "tabby"
 # cask "vscodium"
