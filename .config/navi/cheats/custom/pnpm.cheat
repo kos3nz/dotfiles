@@ -1,5 +1,8 @@
 % pnpm, store
 
+# Returns the path to the active store directory
+pnpm store path
+
 # Checks for modified packages in the store
 pnpm store status
 
