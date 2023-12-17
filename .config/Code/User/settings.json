@@ -571,21 +571,21 @@
   /* ------------------------- Javascript & Typescript ------------------------ */
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "literals",
+  // "javascript.inlayHints.enumMemberValues.enabled": true,
+  // "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  // "javascript.inlayHints.parameterTypes.enabled": true,
+  // "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  // "javascript.inlayHints.variableTypes.enabled": true,
+  // "javascript.inlayHints.parameterNames.enabled": "literals",
 
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsserver.log": "off",
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "literals",
+  // "typescript.inlayHints.enumMemberValues.enabled": true,
+  // "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  // "typescript.inlayHints.parameterTypes.enabled": true,
+  // "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  // "typescript.inlayHints.variableTypes.enabled": true,
+  // "typescript.inlayHints.parameterNames.enabled": "literals",
 
   /* ---------------------------------- Deno ---------------------------------- */
   // "deno.inlayHints.enumMemberValues.enabled": true,
@@ -624,9 +624,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトフォーマッターとして Prettier プラグインを利用
   "editor.formatOnSave": true, // ファイル保存時にデフォルトフォーマッターでファイルをフォーマットする
   "editor.codeActionsOnSave": {
-    // ファイル保存時のコードアクション設定
-    "source.fixAll.eslint": false, // ESLint プラグインでフォーマットしない
-    "source.fixAll.stylelint": false // Stylelint プラグインでフォーマットしない
+    "source.fixAll.eslint": "never",
+    "source.fixAll.stylelint": "never"
   },
 
   "prettier.singleQuote": false,

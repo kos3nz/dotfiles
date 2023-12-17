@@ -282,13 +282,28 @@
   },
   {
     "key": "o",
-    "command": "list.select",
+    "command": "list.selectAndPreserveFocus",
     "when": "listFocus && !inputFocus"
   },
   {
     "key": "o",
     "command": "-list.toggleExpand",
     "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "v",
+    "command": "list.toggleSelection",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.expandSelectionDown",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.expandSelectionUp",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
   },
   {
     "key": "shift+,",
