@@ -60,7 +60,7 @@
     "**/Pictures/**": true
   },
   "files.exclude": {
-    "**/.git": false,
+    "**/.git": true,
     "**/.DS_Store": true,
     "**/.hg": true,
     "**/.svn": true,
@@ -684,11 +684,13 @@
     "tw={\"([^\"}]*)", // <div tw={"..."} />
     "tw\\.\\w+`([^`]*)", // tw.xxx`...`
     "tw\\(.*?\\)`([^`]*)", // tw(Component)`...`
-    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for clsx
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"] // IntelliSense support for cva
-  ], // 上記の形でもVSCodeが補完してくれる
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // IntelliSense support for clsx
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for cx
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for cn
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], // for cva
+    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"] // for tailwind-variants
+  ],
+  "tailwindCSS.lint.cssConflict": "ignore",
 
   /* -------------------------------------------------------------------------- */
   /*                                   Quokka                                   */
@@ -753,12 +755,18 @@
   /* -------------------------------------------------------------------------- */
   "todo-tree.general.tags": [
     "CHANGED:",
-    "FIXME:",
+    "FIX:",
     "NOTE:",
     "REVIEW:",
     "TODO:",
     "WARNING:",
-    "FIXME"
+
+    "@changed:",
+    "@fix:",
+    "@note:",
+    "@review:",
+    "@todo:",
+    "@warning:"
   ],
   "todo-tree.highlights.defaultHighlight": {
     "icon": "checklist",
@@ -771,7 +779,7 @@
       "background": "#42b883",
       "iconColour": "#42b883"
     },
-    "FIXME:": {
+    "FIX:": {
       "foreground": "#fff",
       "background": "#e05b7c",
       "iconColour": "#e05b7c"
@@ -792,6 +800,37 @@
       "iconColour": "#FF5F17"
     },
     "WARNING:": {
+      "foreground": "#fff",
+      "background": "#fe536a",
+      "iconColour": "#fe536a"
+    },
+
+    "@changed:": {
+      "foreground": "#fff",
+      "background": "#42b883",
+      "iconColour": "#42b883"
+    },
+    "@fix:": {
+      "foreground": "#fff",
+      "background": "#e05b7c",
+      "iconColour": "#e05b7c"
+    },
+    "@note:": {
+      "foreground": "#000",
+      "background": "#eee",
+      "iconColour": "#eee"
+    },
+    "@review:": {
+      "foreground": "#fff",
+      "background": "#2C7CFF",
+      "iconColour": "#2C7CFF"
+    },
+    "@todo:": {
+      "foreground": "#fff",
+      "background": "#FF5F17",
+      "iconColour": "#FF5F17"
+    },
+    "@warning:": {
       "foreground": "#fff",
       "background": "#fe536a",
       "iconColour": "#fe536a"
@@ -1887,6 +1926,18 @@
     {
       "before": ["y", "d"],
       "commands": ["errorLens.copyProblemMessage"],
+      "silent": true
+    },
+    // Copy file path
+    {
+      "before": ["y", "P"],
+      "commands": ["copyFilePath"],
+      "silent": true
+    },
+    // Copy relative file path
+    {
+      "before": ["y", "p"],
+      "commands": ["copyRelativeFilePath"],
       "silent": true
     },
 

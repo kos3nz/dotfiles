@@ -158,6 +158,11 @@
     "key": "alt+[",
     "command": "workbench.action.moveEditorLeftInGroup"
   },
+  // Switch window
+  {
+    "key": "ctrl+]",
+    "command": "workbench.action.quickSwitchWindow"
+  },
 
   /* ------------------------------- Quick Open ------------------------------- */
   // Move up/down
@@ -260,6 +265,11 @@
   },
   {
     "key": "ctrl+w h",
+    "command": "workbench.action.splitEditorOrthogonal",
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
+  },
+  {
+    "key": "cmd+shift+\\",
     "command": "workbench.action.splitEditorOrthogonal",
     "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
   },
@@ -1393,7 +1403,7 @@
     "when": "inlineSuggestionVisible"
   },
   {
-    "key": "ctrl+]",
+    "key": "ctrl+[",
     "command": "editor.action.inlineSuggest.trigger",
     "when": "textInputFocus && vim.active && !inDebugRepl || vim.mode == 'Insert'"
   },
@@ -1560,6 +1570,16 @@
   {
     "key": "ctrl+w",
     "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+\\",
+    "command": "-editor.action.jumpToBracket",
+    "when": "editorTextFocus"
   }
 ]
 
