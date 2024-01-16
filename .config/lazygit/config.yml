@@ -222,3 +222,7 @@ customCommands:
       context: 'commits'
       command: 'git commit --allow-empty -m "empty commit"'
       loadingText: 'Committing empty commit...'
+    - key: 'N'
+      description: 'Git Now'
+      context: 'files'
+      command: 'git add -A && git now'
