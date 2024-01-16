@@ -1,4 +1,80 @@
 {
+  "FunctionExport": {
+    "prefix": "fc",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE}}(${2}) {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Function export",
+  },
+  "FunctionDefaultExport": {
+    "prefix": "fd",
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE}}(${2}) {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Function default export",
+  },
+  "AsyncFunctionExport": {
+    "prefix": "afc",
+    "body": [
+      "export async function ${1:${TM_FILENAME_BASE}}(${2}) {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Async function export",
+  },
+  "AsyncFunctionDefaultExport": {
+    "prefix": "afd",
+    "body": [
+      "export default async function ${1:${TM_FILENAME_BASE}}(${2}) {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Async function default export",
+  },
+  "NamedFunctionExport": {
+    "prefix": "nfc",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE}} = (${2}) => {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Named function export",
+  },
+  "NamedFunctionDefaultExport": {
+    "prefix": "nfc",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE}} = (${2}) => {",
+      "  return ${3}",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Named function export",
+  },
+  "NamedAsyncFunctionExport": {
+    "prefix": "anfc",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE}} = async (${2}) => {",
+      "  return ${3}",
+      "}"
+    ],
+    "description": "Named async function export",
+  },
+  "NamedAsyncFunctionDefaultExport": {
+    "prefix": "anfc",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE}} = async (${2}) => {",
+      "  return ${3}",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Named async function export",
+  },
   "(req: Request, res: Response) => {}": {
     "prefix": "reqres",
     "body": ["(req: Request, res: Response) => {", "  $0", "}"],
