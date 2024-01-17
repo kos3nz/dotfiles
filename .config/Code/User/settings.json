@@ -691,6 +691,8 @@
     ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"] // for tailwind-variants
   ],
   "tailwindCSS.lint.cssConflict": "ignore",
+  "tailwind-fold.foldedText": "...",
+  "tailwind-fold.foldLengthThreshold": 0,
 
   /* -------------------------------------------------------------------------- */
   /*                                   Quokka                                   */
@@ -1449,6 +1451,11 @@
     {
       "before": ["z", "k"],
       "commands": ["editor.gotoPreviousFold"],
+      "silent": true
+    },
+    {
+      "before": ["z", "T"],
+      "commands": ["tailwind-fold.toggleAutoFold"],
       "silent": true
     },
 
@@ -2275,6 +2282,12 @@
       "commands": ["editor.action.toggleWordWrap"],
       "silent": true
     },
+    // Toggle tailwindcss fold
+    {
+      "before": ["<leader>", "u", "t"],
+      "commands": ["tailwind-fold.toggleAutoFold"],
+      "silent": true
+    },
 
     /* ----------------------------------- AI ----------------------------------- */
     {
@@ -2473,5 +2486,6 @@
   "codeium.enableConfig": {
     "*": true,
     "prisma": true
-  }
+  },
+  "tailwind-fold.autoFold": false
 }
