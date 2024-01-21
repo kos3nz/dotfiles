@@ -48,19 +48,19 @@ trim_at = "."
 disabled = false
 
 [character]
-success_symbol = "[❯](bold green)"
+success_symbol = "[>](bold green)" # ❯ >
 error_symbol = "[✗](bold red)"
-#  
+
 # configure directory
 [directory]
-format = '[](white) [$path]($style)[$read_only]($read_only_style) '
+format = '[ ](white) [$path]($style)[$read_only]($read_only_style) ' #   
 read_only = " "
 truncation_length = 10
 truncate_to_repo = true # truncates directory to root folder if in github repo
 style = "blue bold"
 
 [cmd_duration]
-format='[|](black) [](yellow) [$duration]($style)'
+format='[|](black) [󰔛 ](yellow) [$duration]($style)' #   󰄉  󰔛
 min_time = 4
 show_milliseconds = false
 disabled = false
@@ -85,19 +85,19 @@ $stashed\
 )\
 ([|](black) $ahead_behind )\
 """
-conflicted = "[](red) "
+conflicted = "[ ](red) "
 ahead = "[⇡·${count}](green)"
 behind = "[⇣·${count}](red)"
 diverged = "[⇡·${ahead_count}](green)[⇣·${behind_count}](red)"
-untracked = "[? ${count}](purple) " # ?, 
-stashed = "[ ${count}](blue) " # $, 
-modified = "[ ${count}](yellow) " # !, , 
-staged = "[ ${count}](green) " # +,✓, , , 
-renamed = "[ ${count}](purple) " # », 
-deleted = "[ ${count}](red) " # -, , 
+untracked = "[?·${count}](purple) " # ?, 
+stashed = "[󰏗 ·${count}](blue) " # $,  , 󰏗
+modified = "[ ·${count}](yellow) " # !, , 
+staged = "[ ·${count}](green) " # +,✓, , , 
+renamed = "[ ·${count}](purple) " # », 
+deleted = "[ ·${count}](red) " # -, , 
 
 [aws]
-symbol = "  "
+symbol = " "
 
 
 [conda]
@@ -115,7 +115,7 @@ style = 'green'
 #read_only = " "
 
 [docker_context]
-symbol = " "
+symbol = "  "
 format = "[|](black) [$symbol$context]($style) "
 style = "blue"
 only_with_files = true
@@ -146,7 +146,7 @@ symbol = " "
 
 [lua]
 format = "[|](black) [$symbol $version]($style)"
-symbol = '🌙'
+symbol = ' ' #   🌙
 detect_folders = ['lua']
 style = 'blue'
 
@@ -160,13 +160,13 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-format = "[|](black) [󰎙 $version](green) "
+format = "[|](black) [󰎙  $version](green) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
 [package]
 format = "[|](black) [$symbol $version]($style) "
-symbol = ""
+symbol = " "
 style = "208"
 
 [perl]
@@ -198,8 +198,8 @@ symbol = " "
 symbol = " "
 
 [swift]
-symbol = "ﯣ "
-
+symbol = " "
+ 
 [time]
 disabled = false
 format = '[ $time]($style)'
