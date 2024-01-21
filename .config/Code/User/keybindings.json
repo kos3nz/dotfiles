@@ -20,6 +20,12 @@
   /* -------------------------------------------------------------------------- */
 
   /* ---------------------------------- Editor ---------------------------------- */
+  // Save file
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "textInputFocus && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+  },
   // New untitled file
   {
     "key": "cmd+t",
@@ -428,6 +434,11 @@
   },
   {
     "key": "q",
+    "command": "workbench.action.closeSidebar",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+q",
     "command": "removeRootFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
@@ -468,7 +479,7 @@
   {
     "key": "ctrl+s",
     "command": "cursorHome",
-    "when": "textInputFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' || vim.mode == 'Insert'"
+    "when": "textInputFocus && vim.active && !inDebugRepl && vim.mode == 'Insert'"
   },
   // Jump to bracket
   {

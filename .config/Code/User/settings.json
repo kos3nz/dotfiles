@@ -1109,6 +1109,15 @@
     //   ]
     // },
 
+    /* --------------------------------- Editor --------------------------------- */
+    {
+      "command": "multiCommand.closeEditors",
+      "sequence": [
+        "workbench.action.closeEditorsInGroup",
+        "workbench.action.focusSideBar"
+      ]
+    },
+
     /* ---------------------------------- List ---------------------------------- */
     {
       "command": "multiCommand.focusUp",
@@ -1571,20 +1580,25 @@
     },
     // Close buffer
     {
-      "before": ["<leader>", "x"],
+      "before": ["<leader>", "d"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "b", "d"],
       "commands": ["workbench.action.closeActiveEditor"],
       "silent": true
     },
     // Force close buffer
     {
-      "before": ["<leader>", "X"],
+      "before": ["<leader>", "D"],
       "commands": ["workbench.action.revertAndCloseActiveEditor"],
       "silent": true
     },
     // Close all editors in group
     {
       "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeEditorsInGroup"],
+      "commands": ["multiCommand.closeEditors"],
       "silent": true
     },
     // Close all editor groups
@@ -1607,7 +1621,7 @@
     },
     // Close other buffers
     {
-      "before": ["<leader>", "b", "x"],
+      "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"],
       "silent": true
     },
