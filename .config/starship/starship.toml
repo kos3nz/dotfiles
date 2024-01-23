@@ -88,7 +88,7 @@ $stashed\
 conflicted = "[ ](red) "
 ahead = "[⇡·${count}](green)"
 behind = "[⇣·${count}](red)"
-diverged = "[⇡·${ahead_count}](green)[⇣·${behind_count}](red)"
+diverged = "[⇡·${ahead_count}](green) [⇣·${behind_count}](red)"
 untracked = "[?·${count}](purple) " # ?, 
 stashed = "[󰏗 ·${count}](blue) " # $,  , 󰏗
 modified = "[ ·${count}](yellow) " # !, , 
