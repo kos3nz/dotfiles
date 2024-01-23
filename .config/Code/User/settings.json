@@ -26,7 +26,6 @@
   "editor.guides.indentation": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.useTabStops": false,
-  "editor.insertSpaces": false,
   "editor.inlineSuggest.enabled": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLens": false,
