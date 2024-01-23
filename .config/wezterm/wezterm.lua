@@ -53,9 +53,9 @@ return {
 
 	-- SFMono Square
 	font = wezterm.font("SF Mono Square"),
-	font_size = 15.0,
+	font_size = 16.5,
 	cell_width = 1.00,
-	line_height = 1.25,
+	line_height = 1.30,
 
 	-- Window --
 	initial_cols = 141,
