@@ -175,6 +175,7 @@ return {
           ["ot"] = false, -- "order_by_type",
           ["S"] = false, -- "open_vsplit",
 
+          e = "close_window",
           l = "open",
           o = "open",
           h = "close_node",
@@ -190,6 +191,7 @@ return {
           ["-"] = "open_split",
           ["|"] = "open_vsplit",
           ["="] = "set_root",
+          [";"] = "toggle_auto_expand_width",
           -- ["<2-LeftMouse>"] = "open",
           -- ["<cr>"] = "open",
           -- ["o"] = "open",

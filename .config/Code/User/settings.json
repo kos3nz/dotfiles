@@ -1565,6 +1565,12 @@
       "commands": ["workbench.debug.action.toggleRepl"],
       "silent": true
     },
+    // Show Github Actions
+    {
+      "before": ["<leader>", "t", "a"],
+      "commands": ["github-actions.current-branch.focus"],
+      "silent": true
+    },
 
     /* --------------------------------- Buffer --------------------------------- */
     // Save file
