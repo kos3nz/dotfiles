@@ -26,7 +26,7 @@ return {
           header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = "Neotree toggle",                                           desc = " File Explorer",   icon = " ", key = "e" },
+          { action = "Neotree focus",                                           desc = " File Explorer",   icon = " ", key = "e" },
           { action = "Telescope find_files hidden=true",                         desc = " Find file",       icon = "󰍉 ", key = "f" },
           { action = "ene | startinsert",                                        desc = " New file",        icon = "󰧮 ", key = "n" },
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
