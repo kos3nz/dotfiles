@@ -47,6 +47,7 @@ brew "gnu-sed" # GNU implementation of the famous stream editor
 brew "grep" # GNU grep, egrep, and fgrep
 brew "hey" # HTTP load generator, ApacheBench (ab) replacement
 brew "hyperfine" # A command-line benchmarking tool
+brew "iproute2mac" # `ip` command for macOS
 brew "lazygit"
 brew "jq"
 brew "lf" # Terminal file manager.
