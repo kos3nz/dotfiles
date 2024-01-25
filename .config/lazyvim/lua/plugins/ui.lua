@@ -26,7 +26,7 @@ return {
           header = vim.split(logo, "\n"),
         -- stylua: ignore
         center = {
-          { action = "Neotree focus",                                           desc = " File Explorer",   icon = " ", key = "e" },
+          { action = "Neotree focus",                                            desc = " File Explorer",   icon = " ", key = "e" },
           { action = "Telescope find_files hidden=true",                         desc = " Find file",       icon = "󰍉 ", key = "f" },
           { action = "ene | startinsert",                                        desc = " New file",        icon = "󰧮 ", key = "n" },
           { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
@@ -79,16 +79,17 @@ return {
       { "<S-l>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
       { "[b", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
       { "]b", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
-      { "<leader>bt", "<Cmd>enew<CR>", desc = "New file" },
-      { "<leader>b1", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to buffer 1" },
-      { "<leader>b2", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to buffer 2" },
-      { "<leader>b3", "<Cmd>BufferLineGoToBuffer 3<CR>", desc = "Go to buffer 3" },
-      { "<leader>b4", "<Cmd>BufferLineGoToBuffer 4<CR>", desc = "Go to buffer 4" },
-      { "<leader>b5", "<Cmd>BufferLineGoToBuffer 5<CR>", desc = "Go to buffer 5" },
-      { "<leader>b6", "<Cmd>BufferLineGoToBuffer 6<CR>", desc = "Go to buffer 6" },
-      { "<leader>b7", "<Cmd>BufferLineGoToBuffer 7<CR>", desc = "Go to buffer 7" },
-      { "<leader>b8", "<Cmd>BufferLineGoToBuffer 8<CR>", desc = "Go to buffer 8" },
-      { "<leader>b9", "<Cmd>BufferLineGoToBuffer 9<CR>", desc = "Go to buffer 9" },
+      { "<leader>bt", "<C-o>", desc = "Reopen buffer" },
+      { "<leader>bn", "<Cmd>enew<CR>", desc = "New buffer" },
+      { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to buffer 1" },
+      { "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to buffer 2" },
+      { "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", desc = "Go to buffer 3" },
+      { "<leader>4", "<Cmd>BufferLineGoToBuffer 4<CR>", desc = "Go to buffer 4" },
+      { "<leader>5", "<Cmd>BufferLineGoToBuffer 5<CR>", desc = "Go to buffer 5" },
+      { "<leader>6", "<Cmd>BufferLineGoToBuffer 6<CR>", desc = "Go to buffer 6" },
+      { "<leader>7", "<Cmd>BufferLineGoToBuffer 7<CR>", desc = "Go to buffer 7" },
+      { "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", desc = "Go to buffer 8" },
+      { "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", desc = "Go to buffer 9" },
     },
     opts = {
       options = {
@@ -128,9 +129,9 @@ return {
             padding = 0.8,
           },
         },
-        separator_style = "thin",
+        separator_style = { "", "" },
         indicator = {
-          icon = "▎", -- this should be omitted if indicator style is not 'icon'
+          -- icon = "▎", -- this should be omitted if indicator style is not 'icon'
           style = "none", -- 'icon' | 'underline' | 'none',
         },
       },
