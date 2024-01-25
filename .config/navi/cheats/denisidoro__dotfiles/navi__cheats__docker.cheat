@@ -39,8 +39,8 @@ docker ps
 # Delete all running and stopped containers
 docker ps -aq | xargs -I% docker rm -f "%"
 
-# Create a new bash process inside the container and connect it to the terminal
-docker exec -it <container_id> bash
+# Create a new shell process inside the container and connect it to the terminal
+docker exec -it <container_id> sh
 
 # Print the last lines of a container's logs
 docker logs --tail 100 <container_id> | less
