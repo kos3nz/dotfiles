@@ -2060,6 +2060,7 @@
     },
 
     /* ----------------------------- Cursor & Motion ---------------------------- */
+
     // Faster up/down
     {
       "before": ["J"],
@@ -2073,6 +2074,21 @@
     {
       "before": ["M"],
       "after": ["J"]
+    },
+    // Find character forward
+    {
+      "before": ["f"],
+      "after": ["s"]
+    },
+    // Find character forward
+    {
+      "before": ["F"],
+      "after": ["S"]
+    },
+    // Search character
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s", "<char>"]
     },
     // Start of word forwards
     {
@@ -2093,11 +2109,6 @@
     {
       "before": ["<leader>", "j", "g", "e"],
       "after": ["<leader>", "<leader>", "g", "e"]
-    },
-    // Search character
-    {
-      "before": ["<leader>", "j", "s"],
-      "after": ["<leader>", "<leader>", "s", "<char>"]
     },
     // Move to start of line
     {
