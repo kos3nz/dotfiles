@@ -97,6 +97,7 @@ cask "firefox"
 cask "fliqlo" # Flip clock screensaver
 cask "google-chrome"
 cask "google-japanese-ime"
+cask "kap"
 cask "logi-options-plus"
 cask "lunar"
 cask "maccy"
