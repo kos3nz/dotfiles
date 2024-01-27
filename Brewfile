@@ -115,6 +115,7 @@ cask "stats"
 cask "visual-studio-code"
 cask "warp"
 cask "wezterm-nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
+cask "zed" # a high-performance, multiplayer code editor
 cask "zoom"
 
 # cask "alacritty"
