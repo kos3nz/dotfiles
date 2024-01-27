@@ -31,6 +31,7 @@
   "editor.codeLens": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+={}[]`?",
   "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -662,7 +663,7 @@
   ],
 
   /* -------------------------------------------------------------------------- */
-  /*                          Tailwind CSS IntelliSense                         */
+  /*                                 TailwindCSS                                */
   /* -------------------------------------------------------------------------- */
   "editor.quickSuggestions": {
     "strings": true // JSXでもCSSクラスを補完できるように
@@ -692,6 +693,7 @@
   "tailwindCSS.lint.cssConflict": "ignore",
   "tailwind-fold.foldedText": "...",
   "tailwind-fold.foldLengthThreshold": 0,
+  "tailwind-fold.autoFold": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                   Quokka                                   */
@@ -2503,6 +2505,14 @@
   ],
 
   /* -------------------------------------------------------------------------- */
+  /*                                   Codeium                                  */
+  /* -------------------------------------------------------------------------- */
+  "codeium.enableConfig": {
+    "*": true,
+    "prisma": true
+  },
+
+  /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */
   /* -------------------------------------------------------------------------- */
   // Trying to avoid VS Code using too much CPU : https://stackoverflow.com/questions/71516186/vs-code-uses-100-cpu-even-if-it-is-closed/72518926#72518926
@@ -2512,10 +2522,5 @@
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false,
-  "codeium.enableConfig": {
-    "*": true,
-    "prisma": true
-  },
-  "tailwind-fold.autoFold": false
+  "editor.minimap.enabled": false
 }
