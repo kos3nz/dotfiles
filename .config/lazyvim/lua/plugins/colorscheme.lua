@@ -35,7 +35,22 @@ return {
         operators = {},
       },
       color_overrides = {},
-      custom_highlights = {},
+      custom_highlights = function(colors)
+        return {
+          CursorLineNr = {
+            fg = colors.blue,
+          },
+          TreesitterContextBottom = {
+            fg = colors.blue,
+          },
+          TreesitterContextLineNumberBottom = {
+            fg = colors.blue,
+          },
+          MiniIndentscopeSymbol = {
+            fg = colors.blue,
+          },
+        }
+      end,
       integrations = {
         aerial = true,
         alpha = true,

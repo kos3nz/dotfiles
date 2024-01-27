@@ -1,3 +1,5 @@
+local mocha = require("catppuccin.palettes").get_palette("mocha")
+
 return {
   {
     "akinsho/toggleterm.nvim",
@@ -16,7 +18,15 @@ return {
       direction = "float",
       float_opts = {
         border = "curved",
-        highlights = { border = "Normal", background = "Normal" },
+      },
+      highlights = {
+        -- Normal = {
+        --   guibg = "<VALUE-HERE>",
+        -- },
+        FloatBorder = {
+          guifg = mocha.blue,
+          -- guibg = "<VALUE-HERE>",
+        },
       },
     },
   },
