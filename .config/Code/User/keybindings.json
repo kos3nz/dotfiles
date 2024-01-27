@@ -675,6 +675,27 @@
     "command": "search.action.remove",
     "when": "fileMatchOrMatchFocus && searchViewletVisible"
   },
+  // Replace
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.replaceInFiles",
+    "when": "hasSearchResult && searchViewletFocus && replaceActive"
+  },
+  {
+    "key": "r",
+    "command": "search.action.replace",
+    "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "r",
+    "command": "search.action.replaceAllInFile",
+    "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "r",
+    "command": "search.action.replaceAllInFolder",
+    "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+  },
 
   /* --------------------------------- Buffer --------------------------------- */
   // Navigate buffers
