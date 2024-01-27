@@ -8,7 +8,9 @@ return {
       keys[#keys + 1] = { "gr", false, mode = "n" }
       keys[#keys + 1] = { "<c-k>", false, mode = "i" }
       -- add a keymap
-      keys[#keys + 1] = { "gh", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" }
+      -- keys[#keys + 1] = { "gh", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" }
+      keys[#keys + 1] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
+      keys[#keys + 1] = { "gR", "<cmd>Telescope lsp_references<cr>", desc = "References" }
       keys[#keys + 1] = {
         "gl",
         function()
