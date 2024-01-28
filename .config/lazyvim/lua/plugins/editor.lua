@@ -174,6 +174,7 @@ return {
           ["os"] = false, -- "order_by_size",
           ["ot"] = false, -- "order_by_type",
           ["S"] = false, -- "open_vsplit",
+          ["Y"] = false, -- "copy the absolute path to clipboard",
 
           e = "close_window",
           l = "open",
@@ -190,8 +191,6 @@ return {
           ["st"] = { "order_by_type", nowait = false },
           ["-"] = "open_split",
           ["|"] = "open_vsplit",
-          ["="] = "set_root",
-          [";"] = "toggle_auto_expand_width",
           -- ["<2-LeftMouse>"] = "open",
           -- ["<cr>"] = "open",
           -- ["o"] = "open",
@@ -286,6 +285,13 @@ return {
             ["[g"] = "prev_git_modified",
             ["]g"] = "next_git_modified",
             ["I"] = "print_me",
+            ["="] = "set_root",
+            [";"] = "toggle_auto_expand_width",
+            ["Y"] = function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+              vim.fn.setreg("+", path, "c")
+            end,
           },
         },
         commands = {
