@@ -2513,6 +2513,12 @@
   },
 
   /* -------------------------------------------------------------------------- */
+  /*                              Total Typescript                              */
+  /* -------------------------------------------------------------------------- */
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
+
+  /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */
   /* -------------------------------------------------------------------------- */
   // Trying to avoid VS Code using too much CPU : https://stackoverflow.com/questions/71516186/vs-code-uses-100-cpu-even-if-it-is-closed/72518926#72518926
