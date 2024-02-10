@@ -40,7 +40,7 @@ return {
           CursorLineNr = {
             fg = colors.blue,
           },
-          TreesitterContextBottom = {
+          TreesitterContext = {
             fg = colors.blue,
           },
           TreesitterContextLineNumberBottom = {
