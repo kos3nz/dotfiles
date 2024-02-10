@@ -97,7 +97,7 @@
   /*                                    Font                                    */
   /* -------------------------------------------------------------------------- */
   "editor.fontFamily": "SF Mono Square, Menlo, Monaco, 'Courier New', monospace", // Victor Mono
-  "editor.fontSize": 16.5,
+  "editor.fontSize": 16.0,
   "editor.fontWeight": "normal",
   "editor.lineHeight": 22,
   "editor.letterSpacing": 0,
@@ -594,6 +594,9 @@
   // "deno.inlayHints.propertyDeclarationTypes.enabled": true,
   // "deno.inlayHints.variableTypes.enabled": true,
   // "deno.inlayHints.parameterNames.enabled": "literals",
+
+  /* --------------------------------- Svelte --------------------------------- */
+  "svelte.enable-ts-plugin": true,
 
   /* ---------------------------------- Rust ---------------------------------- */
   "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
@@ -2515,7 +2518,7 @@
   /* -------------------------------------------------------------------------- */
   /*                              Total Typescript                              */
   /* -------------------------------------------------------------------------- */
-  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideAllTips": true,
   "totalTypeScript.hideBasicTips": true,
 
   /* -------------------------------------------------------------------------- */

@@ -1617,6 +1617,16 @@
     "key": "shift+cmd+\\",
     "command": "-editor.action.jumpToBracket",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+cmd+m",
+    "command": "workbench.action.toggleFullScreen",
+    "when": "!isIOS"
+  },
+  {
+    "key": "ctrl+cmd+f",
+    "command": "-workbench.action.toggleFullScreen",
+    "when": "!isIOS"
   }
 ]
 
