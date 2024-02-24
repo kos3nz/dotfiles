@@ -1577,6 +1577,17 @@
     },
 
     /* --------------------------------- Buffer --------------------------------- */
+    // Navigate buffers
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"],
+      "silent": true
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"],
+      "silent": true
+    },
     // Save file
     {
       "before": ["<leader>", "w"],
