@@ -23,6 +23,7 @@ tap "shopify/shopify"
 
 brew "bat"
 brew "bun"
+brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
 brew "deno"
@@ -61,6 +62,7 @@ brew "navi"
 brew "ncdu"
 brew "neovim"
 brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
+brew "php"
 brew "procs"
 brew "ripgrep"
 brew "shopify/shopify/shopify-cli"
@@ -99,6 +101,7 @@ cask "fliqlo" # Flip clock screensaver
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "kap"
+cask "local" # Develop WordPress sites locally
 cask "logi-options-plus"
 cask "lunar"
 cask "maccy"

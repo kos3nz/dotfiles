@@ -7,8 +7,9 @@
   // "files.defaultLanguage": "javascript",
   // "files.defaultLanguage": "mdx",
   "files.associations": {
-    "*.mdx": "markdown"
     // "*.css": "tailwindcss"
+    "*.mdx": "markdown",
+    "*.module": "php"
   },
   "editor.renderWhitespace": "all",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -553,6 +554,9 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.tabSize": 4
   },
+  "[php]": {
+    "editor.tabSize": 4
+  },
   "[json]": {
     "editor.quickSuggestions": {
       "strings": true
@@ -635,7 +639,7 @@
   "prettier.semi": false,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
-  "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.documentSelectors": ["**/*.astro", "**/*.php"],
   // "prettier.prettierPath": "./node_modules/pretteir",
 
   "javascript.preferences.quoteStyle": "single",
@@ -2531,6 +2535,85 @@
   /* -------------------------------------------------------------------------- */
   "totalTypeScript.hideAllTips": true,
   "totalTypeScript.hideBasicTips": true,
+
+  /* -------------------------------------------------------------------------- */
+  /*                              PHP Intelephense                              */
+  /* -------------------------------------------------------------------------- */
+  "intelephense.stubs": [
+    "apache",
+    "bcmath",
+    "bz2",
+    "calendar",
+    "com_dotnet",
+    "Core",
+    "ctype",
+    "curl",
+    "date",
+    "dba",
+    "dom",
+    "enchant",
+    "exif",
+    "FFI",
+    "fileinfo",
+    "filter",
+    "fpm",
+    "ftp",
+    "gd",
+    "gettext",
+    "gmp",
+    "hash",
+    "iconv",
+    "imap",
+    "intl",
+    "json",
+    "ldap",
+    "libxml",
+    "mbstring",
+    "meta",
+    "mysqli",
+    "oci8",
+    "odbc",
+    "openssl",
+    "pcntl",
+    "pcre",
+    "PDO",
+    "pdo_ibm",
+    "pdo_mysql",
+    "pdo_pgsql",
+    "pdo_sqlite",
+    "pgsql",
+    "Phar",
+    "posix",
+    "pspell",
+    "random",
+    "readline",
+    "Reflection",
+    "session",
+    "shmop",
+    "SimpleXML",
+    "snmp",
+    "soap",
+    "sockets",
+    "sodium",
+    "SPL",
+    "sqlite3",
+    "standard",
+    "superglobals",
+    "sysvmsg",
+    "sysvsem",
+    "sysvshm",
+    "tidy",
+    "tokenizer",
+    "xml",
+    "xmlreader",
+    "xmlrpc",
+    "xmlwriter",
+    "xsl",
+    "Zend OPcache",
+    "zip",
+    "zlib",
+    "wordpress"
+  ],
 
   /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */
