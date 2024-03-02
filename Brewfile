@@ -63,7 +63,7 @@ brew "neovim"
 brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
 brew "procs"
 brew "ripgrep"
-# brew "shopify/shopify/shopify-cli"
+brew "shopify/shopify/shopify-cli"
 # brew "shopify/shopify/themekit"
 brew "skaffold"
 brew "sqlite"
