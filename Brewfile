@@ -91,7 +91,7 @@ brew "zsh"
 
 ##### Apps #####
 
-cask "authy"
+cask "asana"
 cask "brave-browser"
 cask "docker"
 cask "fig"
