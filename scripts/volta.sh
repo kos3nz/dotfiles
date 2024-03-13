@@ -7,8 +7,6 @@ volta install @nestjs/cli@latest
 volta install depcheck@latest
 volta install dotenv-cli@latest
 volta install npm-check-updates@latest
-volta install @shopify/cli@latest
-volta install @shopify/theme@latest
 volta install tsx@latest
 volta install ts-node@latest
 volta install vercel@latest
