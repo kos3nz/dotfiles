@@ -168,6 +168,7 @@
     "javascript": "javascriptreact",
     "mdx": "html",
     "postcss": "css",
+    "php": "html",
     "liquid": "html"
   },
   // "emmet.showExpandedAbbreviation": "never",
@@ -685,6 +686,7 @@
     "javascriptreact": "javascript",
     "typescript": "javascript",
     "typescriptreact": "javascript",
+    "php": "php",
     "liquid": "liquid"
   },
   // "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
