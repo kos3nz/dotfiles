@@ -94,8 +94,8 @@ brew "zsh"
 
 cask "asana"
 cask "brave-browser"
+cask "codewhisperer"
 cask "docker"
-cask "fig"
 cask "figma"
 cask "firefox"
 cask "fliqlo" # Flip clock screensaver
