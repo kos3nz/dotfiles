@@ -167,7 +167,8 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "mdx": "html",
-    "postcss": "css"
+    "postcss": "css",
+    "liquid": "html"
   },
   // "emmet.showExpandedAbbreviation": "never",
 
@@ -557,6 +558,9 @@
   "[php]": {
     "editor.tabSize": 4
   },
+  "[liquid]": {
+    "editor.defaultFormatter": "Shopify.theme-check-vscode"
+  },
   "[json]": {
     "editor.quickSuggestions": {
       "strings": true
@@ -639,7 +643,7 @@
   "prettier.semi": false,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
-  "prettier.documentSelectors": ["**/*.astro", "**/*.php"],
+  "prettier.documentSelectors": ["**/*.astro", "**/*.php", "**/*.liquid"],
   // "prettier.prettierPath": "./node_modules/pretteir",
 
   "javascript.preferences.quoteStyle": "single",
@@ -680,7 +684,8 @@
     "javascript": "javascript",
     "javascriptreact": "javascript",
     "typescript": "javascript",
-    "typescriptreact": "javascript"
+    "typescriptreact": "javascript",
+    "liquid": "liquid"
   },
   // "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
   "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする

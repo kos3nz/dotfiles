@@ -51,7 +51,6 @@ if type "trash" > /dev/null 2>&1; then
     alias ts="trash-restore"
 fi
 
-
 # Git && Github
 # alias g='git'
 # alias gin='git init'
@@ -133,6 +132,11 @@ alias gqtx='ghq list > repolist.txt' # ghq管理下のリポジトリ一覧を�
 alias gqtx_local='ghq get --update --parallel < repolist.txt' # ghq管理下のリポジトリ一覧をテキストファイルから一括で最新の状態に更新(別マシンへのリポジトリ移行時に使用)
 alias gqroot='git config --global ghq.root' # ghqのrootディレクトリをgit configで設定
 alias gqmv='GHQ_MIGRATOR_ACTUALLY_RUN=1 ./ghq-migrator.bash' # ghq管理下へローカルリポジトリを移動(ghq-migratorディレクトリへ移動したあと、'gqmv ~/foo'でfooリポジトリをghq管理下へ移動)
+
+# Shopify CLI
+alias shopify="npx shopify"
+alias sp="npx shopify"
+alias h2="npx shopify hydrogen"
 
 # Tmux
 alias tm='tmux'
