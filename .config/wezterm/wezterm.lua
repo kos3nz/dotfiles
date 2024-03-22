@@ -62,7 +62,7 @@ return {
 	initial_rows = 120,
 	window_background_opacity = 0.98,
 	window_decorations = "RESIZE",
-	window_padding = { left = 20, right = 12, top = 12, bottom = 20 },
+	window_padding = { left = 20, right = 12, top = "0.5cell", bottom = "0.5cell" },
 	-- launch_menu = {
 	-- 	position = { x = 0, y = 0 },
 	-- },
@@ -170,11 +170,11 @@ return {
 				end),
 			}),
 		},
+		-- { key = "f", mods = "CMD", action = action.Search({ CaseInSensitiveString = "" }) },
 		{ key = "h", mods = "CMD", action = wezterm.action.HideApplication },
 		{ key = "t", mods = "CMD", action = action({ SpawnTab = "CurrentPaneDomain" }) },
 		{ key = "w", mods = "CMD", action = action({ CloseCurrentPane = { confirm = true } }) },
-		{ key = "w", mods = "CMD|SHIFT", action = action({ CloseCurrentPane = { confirm = false } }) },
-		-- { key = "q", mods = "CMD", action = action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "w", mods = "CMD|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
 		{ key = "q", mods = "CMD", action = wezterm.action.QuitApplication },
 		{ key = "z", mods = "CMD", action = "TogglePaneZoomState" },
 		{ key = "-", mods = "CMD", action = "DecreaseFontSize" },
@@ -262,6 +262,26 @@ return {
 	},
 
 	key_tables = {
+		search_mode = {
+			{ key = "Enter", mods = "NONE", action = action.CopyMode("NextMatch") },
+			{ key = "Escape", mods = "NONE", action = action.CopyMode("Close") },
+			{ key = "g", mods = "CMD", action = action.CopyMode("NextMatch") },
+			{ key = "g", mods = "CMD|SHIFT", action = action.CopyMode("PriorMatch") },
+			{ key = "r", mods = "CTRL", action = action.CopyMode("CycleMatchType") },
+			{ key = "u", mods = "CTRL", action = action.CopyMode("ClearPattern") },
+			{
+				key = "PageUp",
+				mods = "NONE",
+				action = action.CopyMode("PriorMatchPage"),
+			},
+			{
+				key = "PageDown",
+				mods = "NONE",
+				action = action.CopyMode("NextMatchPage"),
+			},
+			{ key = "UpArrow", mods = "NONE", action = action.CopyMode("PriorMatch") },
+			{ key = "DownArrow", mods = "NONE", action = action.CopyMode("NextMatch") },
+		},
 		resize_pane = {
 			{ key = "h", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
 			{ key = "j", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
