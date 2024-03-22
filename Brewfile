@@ -64,8 +64,8 @@ brew "neovim"
 brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
 brew "php"
 brew "procs"
+brew "rbenv" # Ruby version manager
 brew "ripgrep"
-brew "ruby"
 # brew "shopify/shopify/shopify-cli"
 # brew "shopify/shopify/themekit"
 brew "skaffold"
