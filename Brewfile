@@ -101,6 +101,7 @@ cask "firefox"
 cask "fliqlo" # Flip clock screensaver
 cask "google-chrome"
 cask "google-japanese-ime"
+cask "insomnia"
 cask "kap"
 cask "local" # Develop WordPress sites locally
 cask "logi-options-plus"
