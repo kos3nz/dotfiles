@@ -14,7 +14,7 @@ tap "jesseduffield/lazygit" # for lazygit
 tap "koekeishiya/formulae"
 tap "lindell/multi-gitter"
 tap "oven-sh/bun"
-# tap "shopify/shopify"
+tap "shopify/shopify"
 
 # tap "heroku/brew"
 
@@ -66,7 +66,7 @@ brew "php"
 brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
-# brew "shopify/shopify/shopify-cli"
+brew "shopify-cli"
 # brew "shopify/shopify/themekit"
 brew "skaffold"
 brew "sqlite"

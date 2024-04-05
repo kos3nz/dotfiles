@@ -134,8 +134,7 @@ alias gqroot='git config --global ghq.root' # ghqのrootディレクトリをgit
 alias gqmv='GHQ_MIGRATOR_ACTUALLY_RUN=1 ./ghq-migrator.bash' # ghq管理下へローカルリポジトリを移動(ghq-migratorディレクトリへ移動したあと、'gqmv ~/foo'でfooリポジトリをghq管理下へ移動)
 
 # Shopify CLI
-alias shopify="npx shopify"
-alias sp="npx shopify"
+alias sp="shopify"
 alias h2="npx shopify hydrogen"
 
 # Tmux
