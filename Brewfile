@@ -94,7 +94,7 @@ brew "zsh"
 
 cask "asana"
 cask "brave-browser"
-cask "codewhisperer"
+# cask "codewhisperer"
 cask "docker"
 cask "figma"
 cask "firefox"
