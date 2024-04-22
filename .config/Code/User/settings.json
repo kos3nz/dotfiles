@@ -1943,6 +1943,7 @@
     {
       "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"],
+      // "commands": ["editor.action.goToDeclaration"],
       "silent": true
     },
     // Go to Implementation
@@ -1961,6 +1962,12 @@
     {
       "before": ["g", "R"],
       "commands": ["editor.action.goToReferences"],
+      "silent": true
+    },
+    // Open link
+    {
+      "before": ["g", "l"],
+      "commands": ["editor.action.openLink"],
       "silent": true
     },
     // Go to next problem
