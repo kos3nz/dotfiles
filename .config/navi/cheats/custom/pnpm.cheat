@@ -11,3 +11,9 @@ pnpm store add <package>
 
 # Removes unreferenced packages from the store
 pnpm store prune
+
+
+% pnpm, workspace
+
+# List all packages in a workspace
+pnpm list --recursive --depth -1
