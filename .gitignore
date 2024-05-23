@@ -48,6 +48,7 @@
 !/.config/
 !/.config/**
 /.config/**/node_modules/
+/.config/.wrangler/
 /.config/configstore/
 /.config/fish/conf.d/
 /.config/gh/hosts.yml
