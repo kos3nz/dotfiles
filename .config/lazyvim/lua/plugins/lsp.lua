@@ -49,8 +49,27 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ui = {
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
+        "emmet-ls",
+        "typescript-language-server",
+        "deno",
+        "astro-language-server",
+        -- "svelte-language-server",
+        -- "vue-language-server",
+        "css-lsp",
+        -- "cssmodules-language-server",
+        "tailwindcss-language-server",
+        "prisma-language-server",
+        "lua-language-server",
+        "json-lsp",
+        "vim-language-server",
+        "shopify-theme-check",
+        -- "rust_analyzer",
+      })
+
+      opts.ui = {
         width = 0.8,
         height = 0.8,
         border = "rounded",
@@ -83,33 +102,9 @@ return {
           -- Keymap to toggle viewing package installation log
           toggle_package_install_log = "<CR>",
           -- Keymap to toggle the help view
-          toggle_help = "g?",
+          toggle_help = "?",
         },
-      },
-    },
+      }
+    end,
   },
-  -- {
-  --   "williamboman/mason-lspconfig.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "html",
-  --       "cssls",
-  --       -- "cssmodules_ls",
-  --       "tailwindcss",
-  --       "emmet_ls",
-  --       "tsserver",
-  --       "denols",
-  --       "astro",
-  --       "prismals",
-  --       "stylelint_lsp",
-  --       "svelte",
-  --       "rust_analyzer",
-  --       "lua_ls",
-  --       -- "marksman",
-  --       "jsonls",
-  --       "vimls",
-  --     },
-  --     automatic_installation = true,
-  --   },
-  -- },
 }
