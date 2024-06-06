@@ -8,7 +8,6 @@
 .*.sw[a-z]
 *~
 .#*
-.vscode
 
 # OS files
 Thumbs.db
