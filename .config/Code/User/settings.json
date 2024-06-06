@@ -560,7 +560,7 @@
     "editor.tabSize": 4
   },
   "[liquid]": {
-    "editor.defaultFormatter": "Shopify.theme-check-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.quickSuggestions": {
