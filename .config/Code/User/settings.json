@@ -19,7 +19,6 @@
   "editor.quickSuggestionsDelay": 10,
   "editor.autoClosingQuotes": "always",
   "editor.guides.bracketPairs": true,
-  "editor.inlayHints.enabled": "on",
   "editor.accessibilitySupport": "off",
   "editor.suggest.showStatusBar": true,
   "editor.tabSize": 2,
@@ -107,8 +106,9 @@
   /* -------------------------------------------------------------------------- */
   /*                                 Inlay Hints                                */
   /* -------------------------------------------------------------------------- */
+  "editor.inlayHints.enabled": "on",
   "editor.inlayHints.fontFamily": "SF Mono Square, Menlo, Monaco, 'Courier New', monospace",
-  "editor.inlayHints.fontSize": 14.0,
+  "editor.inlayHints.fontSize": 13.0,
   "editor.inlayHints.padding": true,
 
   /* -------------------------------------------------------------------------- */
@@ -593,6 +593,8 @@
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
 
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsserver.log": "off",
@@ -602,6 +604,8 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
 
   /* ---------------------------------- Deno ---------------------------------- */
   // "deno.inlayHints.enumMemberValues.enabled": true,
@@ -709,7 +713,8 @@
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for cx
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for cn
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], // for cva
-    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"] // for tailwind-variants
+    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], // for tailwind-variants
+    "class: '([^']*)" // for liquid
   ],
   "tailwindCSS.lint.cssConflict": "ignore",
   "tailwind-fold.foldedText": "...",
