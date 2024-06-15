@@ -30,6 +30,7 @@ map("n", "<c-w>h", "<C-W>s", { desc = "Split window below" })
 map("n", "<c-w>-", "<C-W>s", { desc = "Split window below" })
 map("n", "<c-w>|", "<C-W>v", { desc = "Split window right" })
 
+map(n, "<leader>qw", "<cmd>close<cr>", { desc = "Close Window" })
 map(n, "<leader>qq", "<cmd>confirm qa<cr>", { desc = "Quit" })
 
 map(n, "<leader>ik", ":m .-2<cr>==", { desc = "Move text up", silent = true })
