@@ -117,7 +117,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorTheme": "Moonlight",
   // "workbench.preferredDarkColorTheme": "One Dark Pro",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.editor.showTabs": "multiple", // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
   "workbench.editor.wrapTabs": true,
 
