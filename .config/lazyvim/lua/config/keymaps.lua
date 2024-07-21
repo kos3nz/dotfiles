@@ -37,10 +37,6 @@ map(n, "<leader>ik", ":m .-2<cr>==", { desc = "Move text up", silent = true })
 map(n, "<leader>ij", ":m .+1<cr>==", { desc = "Move text down", silent = true })
 
 -- Disable mappings
-del("n", "<leader>ww")
-del("n", "<leader>wd")
-del("n", "<leader>w-")
-del("n", "<leader>w|")
 del("n", "<leader>ft")
 del("n", "<leader>fT")
 

@@ -71,6 +71,32 @@ return {
     },
   },
 
+  -- Surround actions
+  {
+    "echasnovski/mini.surround",
+    recommended = true,
+    keys = function(_, keys)
+      -- Populate the keys based on the user's options
+      local opts = LazyVim.opts("mini.surround")
+      local mappings = {
+        { opts.mappings.add, desc = "Add Surrounding", mode = { "n", "v" } },
+        { opts.mappings.delete, desc = "Delete Surrounding" },
+        { opts.mappings.replace, desc = "Replace Surrounding" },
+      }
+      mappings = vim.tbl_filter(function(m)
+        return m[1] and #m[1] > 0
+      end, mappings)
+      return vim.list_extend(mappings, keys)
+    end,
+    opts = {
+      mappings = {
+        add = "ys", -- Add surrounding in Normal and Visual modes
+        delete = "ds", -- Delete surrounding
+        replace = "cs", -- Replace surrounding
+      },
+    },
+  },
+
   -- file explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -569,29 +595,28 @@ return {
     event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
-      defaults = {
-        mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
-        ["gs"] = { name = "+surround" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>gh"] = { name = "+hunks" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { "<cmd>w<cr>", "Save" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+      spec = {
+        mode = { "n" },
+        { "<leader>w", "<cmd>w<cr>", desc = "Save" },
+        { "g", group = "+goto" },
+        { "gs", group = "+surround" },
+        { "]", group = "+next" },
+        { "[", group = "+prev" },
+        { "<leader><tab>", group = "+tabs" },
+        { "<leader>b", group = "+buffer" },
+        { "<leader>c", group = "+code" },
+        { "<leader>f", group = "+file/find" },
+        { "<leader>g", group = "+git" },
+        { "<leader>gh", group = "+hunks" },
+        { "<leader>q", group = "+quit/session" },
+        { "<leader>s", group = "+search" },
+        { "<leader>u", group = "+ui" },
+        { "<leader>x", group = "+diagnostics/quickfix" },
       },
     },
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)
-      wk.register(opts.defaults)
     end,
   },
 }

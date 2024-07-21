@@ -246,6 +246,10 @@ return {
   {
     "vim-scripts/ReplaceWithRegister",
     event = "LazyFile",
-    -- event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      { "<leader>r", "<Plug>ReplaceWithRegisterOperator", desc = "ReplaceWithRegisterOperator" },
+      { "<leader>rr", "<Plug>ReplaceWithRegisterLine", desc = "ReplaceWithRegisterLine" },
+      { "<leader>r", "<Plug>ReplaceWithRegisterVisual", desc = "ReplaceWithRegisterVisual", mode = "x" },
+    },
   },
 }

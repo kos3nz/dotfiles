@@ -5,7 +5,6 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- disable a keymap
       keys[#keys + 1] = { "K", false, mode = "n" }
-      keys[#keys + 1] = { "gr", false, mode = "n" }
       keys[#keys + 1] = { "<c-k>", false, mode = "i" }
       -- add a keymap
       -- keys[#keys + 1] = { "gh", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" }
