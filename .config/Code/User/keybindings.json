@@ -284,6 +284,11 @@
     "command": "workbench.action.toggleEditorWidths",
     "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
   },
+  {
+    "key": "ctrl+w d",
+    "command": "workbench.action.closeEditorsInGroup",
+    "when": "editorTextFocus && !inQuickOpen && !inKeybindingsSearch && !inSettingsSearch && !searchInputBoxFocus && !findInputFocussed && !suggestWidgetVisible && !problemsFilterFocus && !parameterHintsVisible && !isInDiffEditor && vim.mode != 'Insert' && vim.mode != 'CommandlineInProgress'"
+  },
 
   /* -------------------------------- Side Bar -------------------------------- */
   {

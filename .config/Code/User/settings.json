@@ -1745,12 +1745,6 @@
       "commands": ["workbench.action.quickOpen"],
       "silent": true
     },
-    // Find word
-    {
-      "before": ["<leader>", "f", "/"],
-      "commands": ["actions.find"],
-      "silent": true
-    },
     // Find word in all files
     {
       "before": ["<leader>", "f", "w"],
@@ -1760,18 +1754,6 @@
     {
       "before": ["<leader>", "f", "a"],
       "commands": ["workbench.action.findInFiles"],
-      "silent": true
-    },
-    // Find word to replace
-    {
-      "before": ["<leader>", "f", "r"],
-      "commands": ["editor.action.startFindReplaceAction"],
-      "silent": true
-    },
-    // Find word to replace in all files
-    {
-      "before": ["<leader>", "f", "R"],
-      "commands": ["workbench.action.replaceInFiles"],
       "silent": true
     },
     // Go to Symbol
@@ -1798,6 +1780,24 @@
     {
       "before": ["<leader>", "h"],
       "commands": [":nohl"],
+      "silent": true
+    },
+    // Search word
+    {
+      "before": ["<leader>", "s", "/"],
+      "commands": ["actions.find"],
+      "silent": true
+    },
+    // Search word to replace
+    {
+      "before": ["<leader>", "s", "r"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "silent": true
+    },
+    // Search word to replace in all files
+    {
+      "before": ["<leader>", "s", "R"],
+      "commands": ["workbench.action.replaceInFiles"],
       "silent": true
     },
     // Search text cases
@@ -1828,49 +1828,50 @@
     /* ----------------------------- Recent/session ----------------------------- */
     // Search recently used buffers
     {
-      "before": ["<leader>", "r", "b"],
+      "before": ["<leader>", "f", "r"],
       "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"],
       "silent": true
     },
     // Search recently used projects
     {
-      "before": ["<leader>", "r", "r"],
+      "before": ["<leader>", "f", "R"],
       "commands": ["workbench.action.openRecent"],
       "silent": true
     },
     // Remove root folder
-    {
-      "before": ["<leader>", "r", "x"],
-      "commands": ["workbench.action.removeRootFolder"],
-      "silent": true
-    },
+    // {
+    //   "before": ["<leader>", "r", "x"],
+    //   "commands": ["workbench.action.removeRootFolder"],
+    //   "silent": true
+    // },
 
     // Project Manager
-    {
-      "before": ["<leader>", "r", "f"],
-      "commands": ["projectManager.listProjects"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "r", "F"],
-      "commands": ["projectManager.listProjectsNewWindow"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "r", "s"],
-      "commands": ["projectManager.saveProject"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "r", "e"],
-      "commands": ["projectManager.editProjects"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "r", "a"],
-      "commands": ["projectManager.addToWorkspace"],
-      "silent": true
-    },
+    // {
+    //   "before": ["<leader>", "r", "f"],
+    //   "commands": ["projectManager.listProjects"],
+    //   "silent": true
+    // },
+    // {
+    //   "before": ["<leader>", "r", "F"],
+    //   "commands": ["projectManager.listProjectsNewWindow"],
+    //   "silent": true
+    // },
+    // {
+    //   "before": ["<leader>", "r", "s"],
+    //   "commands": ["projectManager.saveProject"],
+    //   "silent": true
+    // },
+    // {
+    //   "before": ["<leader>", "r", "e"],
+    //   "commands": ["projectManager.editProjects"],
+    //   "silent": true
+    // },
+    // {
+    //   "before": ["<leader>", "r", "a"],
+    //   "commands": ["projectManager.addToWorkspace"],
+    //   "silent": true
+    // },
+
     /* ----------------------------------- Cmp ---------------------------------- */
     // Insert Snippet
     {
@@ -1977,8 +1978,14 @@
     },
     // Go to References
     {
-      "before": ["g", "R"],
+      "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"],
+      "silent": true
+    },
+    // Find all references
+    {
+      "before": ["g", "R"],
+      "commands": ["references-view.findReferences"],
       "silent": true
     },
     // Open link
@@ -2215,7 +2222,7 @@
     /* -------------------------------- Bookmark -------------------------------- */
     // Find bookmarks
     {
-      "before": ["<leader>", "f", "m"],
+      "before": ["<leader>", "s", "m"],
       "commands": ["bookmarks.list"],
       "silent": true
     },
@@ -2226,7 +2233,7 @@
     },
     // Find bookmarks in all files
     {
-      "before": ["<leader>", "f", "M"],
+      "before": ["<leader>", "s", "M"],
       "commands": ["bookmarks.listFromAllFiles"],
       "silent": true
     },
@@ -2334,6 +2341,16 @@
       "before": ["g", "a", "."],
       "commands": ["extension.changeCase.commands"],
       "silent": true
+    },
+
+    /* --------------------------------- Replace -------------------------------- */
+    {
+      "before": ["<leader>", "r"],
+      "after": ["g", "r"]
+    },
+    {
+      "before": ["<leader>", "r", "r"],
+      "after": ["g", "r", "r"]
     },
 
     /* ------------------------------ Notification ------------------------------ */
