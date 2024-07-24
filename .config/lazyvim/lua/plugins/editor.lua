@@ -73,28 +73,14 @@ return {
 
   -- Surround actions
   {
-    "echasnovski/mini.surround",
-    recommended = true,
-    keys = function(_, keys)
-      -- Populate the keys based on the user's options
-      local opts = LazyVim.opts("mini.surround")
-      local mappings = {
-        { opts.mappings.add, desc = "Add Surrounding", mode = { "n", "v" } },
-        { opts.mappings.delete, desc = "Delete Surrounding" },
-        { opts.mappings.replace, desc = "Replace Surrounding" },
-      }
-      mappings = vim.tbl_filter(function(m)
-        return m[1] and #m[1] > 0
-      end, mappings)
-      return vim.list_extend(mappings, keys)
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end,
-    opts = {
-      mappings = {
-        add = "ys", -- Add surrounding in Normal and Visual modes
-        delete = "ds", -- Delete surrounding
-        replace = "cs", -- Replace surrounding
-      },
-    },
   },
 
   -- file explorer
