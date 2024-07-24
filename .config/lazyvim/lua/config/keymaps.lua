@@ -47,8 +47,8 @@ local i = "i"
 
 map(i, "<c-p>", "<up>")
 map(i, "<c-n>", "<down>")
-map(i, "<c-b>", "<c-o>h")
-map(i, "<c-f>", "<c-o>l")
+map(i, "<c-b>", "<left>")
+map(i, "<c-f>", "<right>")
 map(i, "<c-a>", "<c-o>I")
 map(i, "<c-e>", "<c-o>A")
 map(i, "<c-s>", "<c-o>^")
