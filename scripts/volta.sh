@@ -6,6 +6,7 @@ volta install @antfu/ni@latest
 volta install @nestjs/cli@latest
 volta install depcheck@latest
 volta install dotenv-cli@latest
+volta install live-server@latest
 volta install npm-check-updates@latest
 volta install tsx@latest
 volta install ts-node@latest
