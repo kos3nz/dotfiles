@@ -3,9 +3,7 @@
   /*                                   Editor                                   */
   /* -------------------------------------------------------------------------- */
   "window.newWindowDimensions": "inherit", // ウィンドウのズームレベル
-  "files.defaultLanguage": "typescript",
-  // "files.defaultLanguage": "javascript",
-  // "files.defaultLanguage": "mdx",
+  "files.defaultLanguage": "markdown",
   "files.associations": {
     // "*.css": "tailwindcss"
     "*.mdx": "markdown",
@@ -2415,6 +2413,10 @@
   /*                               Vim Visual Mode                              */
   /* -------------------------------------------------------------------------- */
   "vim.visualModeKeyBindings": [
+    {
+      "before": ["Backspace"],
+      "after": ["d"]
+    },
     // {
     //   "before": ["j"],
     //   "after": ["g", "j"]
