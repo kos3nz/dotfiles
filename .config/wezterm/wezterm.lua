@@ -80,7 +80,7 @@ return {
 		font = wezterm.font({ family = "Hack Nerd Font", weight = "Bold" }),
 
 		-- The size of the font in the tab bar.
-		font_size = 14.0,
+		font_size = 13.0,
 
 		-- The overall background color of the tab bar when the window is focused
 		active_titlebar_bg = "#151921",
