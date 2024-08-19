@@ -584,6 +584,7 @@ return {
       spec = {
         mode = { "n" },
         { "<leader>w", "<cmd>w<cr>", desc = "Save" },
+        { "<leader>W", "<cmd>noa w<cr>", desc = "Save Without Formatting" },
         { "g", group = "+goto" },
         { "gs", group = "+surround" },
         { "]", group = "+next" },
