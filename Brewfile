@@ -104,7 +104,7 @@ cask "google-japanese-ime"
 cask "insomnia"
 cask "kap"
 cask "local" # Develop WordPress sites locally
-cask "logi-options-plus"
+# cask "logi-options+"
 cask "lunar"
 cask "maccy"
 cask "ngrok"
@@ -146,6 +146,7 @@ mas "ScreenBrush", id: 1233965871
 # mas "Be Focused - Pomodoro Timer", id: 973134470
 # mas "Bitwarden", id: 1352778147
 # mas "Kindle", id: 405399194
+# mas "Pie Menu", id: 1631568126
 # mas "Trello", id: 1278508951
 
 
