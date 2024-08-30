@@ -2,7 +2,7 @@
 	name = kos3nz
 	email = 60677527+kos3nz@users.noreply.github.com
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = false
 	pager = delta
 [url "ssh://git@github.com/"]
