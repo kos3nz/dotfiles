@@ -781,86 +781,90 @@
   /*                                  Todo Tree                                 */
   /* -------------------------------------------------------------------------- */
   "todo-tree.general.tags": [
-    "CHANGED:",
-    "FIX:",
-    "NOTE:",
-    "REVIEW:",
-    "TODO:",
-    "WARNING:",
-
-    "@changed:",
-    "@fix:",
-    "@note:",
-    "@review:",
-    "@todo:",
-    "@warning:"
+    "CHANGED",
+    "@changed",
+    "FIX",
+    "FIXME",
+    "@fix",
+    "@fixme",
+    "NOTE",
+    "@note",
+    "REVIEW",
+    "@review",
+    "TODO",
+    "@todo",
+    "WARNING",
+    "@warning",
+    "[ ]",
+    "[x]"
   ],
+  "todo-tree.general.tagGroups": {
+    "CHANGED": ["CHANGED", "@changed"],
+    "FIX": ["FIX", "FIXME", "@fix", "@fixme"],
+    "NOTE": ["NOTE", "@note"],
+    "REVIEW": ["REVIEW", "@review"],
+    "TODO": ["TODO", "@todo"],
+    "WARNING": ["WARNING", "@warning"]
+  },
+  // https://github.com/Gruntfuggly/todo-tree/wiki/Configuration-Examples
+  "todo-tree.regex.regex": "((//|#|<!--|/\\*|^\\s*\\*)\\s*($TAGS)|^(\\s*(-|\\d+\\.)?)\\s*\\[(x| )\\])",
   "todo-tree.highlights.defaultHighlight": {
+    "type": "tag-and-subTag",
     "icon": "checklist",
-    "type": "tag",
-    "fontWeight": "regular"
+    "fontWeight": "regular",
+    "opacity": 80,
+    "gutterIcon": true,
+    "borderRadius": "0px"
   },
   "todo-tree.highlights.customHighlight": {
-    "CHANGED:": {
-      "foreground": "#fff",
+    // https://primer.style/foundations/icons
+    "CHANGED": {
+      "foreground": "#eee",
       "background": "#42b883",
+      "icon": "check-circle",
       "iconColour": "#42b883"
     },
-    "FIX:": {
-      "foreground": "#fff",
+    "FIX": {
+      "foreground": "#eee",
       "background": "#e05b7c",
+      "icon": "bug",
       "iconColour": "#e05b7c"
     },
-    "NOTE:": {
-      "foreground": "#000",
+    "NOTE": {
+      "foreground": "#111",
       "background": "#eee",
+      "icon": "comment",
       "iconColour": "#eee"
     },
-    "REVIEW:": {
-      "foreground": "#fff",
+    "REVIEW": {
+      "foreground": "#eee",
       "background": "#2C7CFF",
+      "icon": "code-review",
       "iconColour": "#2C7CFF"
     },
-    "TODO:": {
-      "foreground": "#fff",
+    "TODO": {
+      "foreground": "#eee",
       "background": "#FF5F17",
+      "icon": "checklist",
       "iconColour": "#FF5F17"
     },
-    "WARNING:": {
-      "foreground": "#fff",
-      "background": "#fe536a",
-      "iconColour": "#fe536a"
+    "WARNING": {
+      "foreground": "#111",
+      "background": "#dcc40c",
+      "icon": "alert",
+      "iconColour": "#f4ed18"
     },
-
-    "@changed:": {
-      "foreground": "#fff",
+    "[ ]": {
+      "foreground": "#eee",
+      "background": "#e05b7c",
+      "icon": "issue-draft",
+      "iconColour": "#e05b7c"
+    },
+    "[x]": {
+      "foreground": "#eee",
       "background": "#42b883",
+      "icon": "issue-closed",
       "iconColour": "#42b883"
-    },
-    "@fix:": {
-      "foreground": "#fff",
-      "background": "#e05b7c",
-      "iconColour": "#e05b7c"
-    },
-    "@note:": {
-      "foreground": "#000",
-      "background": "#eee",
-      "iconColour": "#eee"
-    },
-    "@review:": {
-      "foreground": "#fff",
-      "background": "#2C7CFF",
-      "iconColour": "#2C7CFF"
-    },
-    "@todo:": {
-      "foreground": "#fff",
-      "background": "#FF5F17",
-      "iconColour": "#FF5F17"
-    },
-    "@warning:": {
-      "foreground": "#fff",
-      "background": "#fe536a",
-      "iconColour": "#fe536a"
     }
   },
   "todo-tree.filtering.excludeGlobs": [
@@ -1560,17 +1564,6 @@
       "commands": ["workbench.view.scm"],
       "silent": true
     },
-    // Show Todo-tree
-    {
-      "before": ["<leader>", "t", "t"],
-      "commands": ["workbench.view.extension.todo-tree-container"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "f", "t"],
-      "commands": ["workbench.view.extension.todo-tree-container"],
-      "silent": true
-    },
     // Show Bookmark
     {
       "before": ["<leader>", "t", "m"],
@@ -1754,24 +1747,6 @@
       "commands": ["workbench.action.findInFiles"],
       "silent": true
     },
-    // Go to Symbol
-    {
-      "before": ["<leader>", "f", "s"],
-      "commands": ["workbench.action.gotoSymbol"],
-      "silent": true
-    },
-    // Find npm modules
-    {
-      "before": ["<leader>", "f", "n"],
-      "commands": ["extension.search"],
-      "silent": true
-    },
-    // Show Problems
-    {
-      "before": ["<leader>", "f", "d"],
-      "commands": ["workbench.actions.view.problems"],
-      "silent": true
-    },
 
     /* --------------------------------- Search --------------------------------- */
     // Clear highlight
@@ -1798,6 +1773,18 @@
       "commands": ["workbench.action.replaceInFiles"],
       "silent": true
     },
+    // Go to symbol
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"],
+      "silent": true
+    },
+    // Show all symbols
+    {
+      "before": ["<leader>", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"],
+      "silent": true
+    },
     // Search text cases
     {
       "before": ["<leader>", "s", "a"],
@@ -1820,6 +1807,18 @@
     {
       "before": ["<leader>", "s", "p"],
       "commands": ["workbench.action.quickOpenView"],
+      "silent": true
+    },
+    // Search npm modules
+    {
+      "before": ["<leader>", "s", "n"],
+      "commands": ["extension.search"],
+      "silent": true
+    },
+    // Show Problems
+    {
+      "before": ["<leader>", "s", "d"],
+      "commands": ["workbench.actions.view.problems"],
       "silent": true
     },
 
@@ -2281,6 +2280,30 @@
     {
       "before": ["m", "n"],
       "commands": ["bookmarks.jumpToNext"],
+      "silent": true
+    },
+
+    /* -------------------------------- Todo Tree ------------------------------- */
+    // Show Todo-tree
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": ["workbench.view.extension.todo-tree-container"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "s", "t"],
+      "commands": ["workbench.view.extension.todo-tree-container"],
+      "silent": true
+    },
+    // Next/Previous todo
+    {
+      "before": ["]", "t"],
+      "commands": ["todo-tree.goToNext"],
+      "silent": true
+    },
+    {
+      "before": ["[", "t"],
+      "commands": ["todo-tree.goToPrevious"],
       "silent": true
     },
 
