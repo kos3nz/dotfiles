@@ -781,30 +781,30 @@
   /*                                  Todo Tree                                 */
   /* -------------------------------------------------------------------------- */
   "todo-tree.general.tags": [
-    "CHANGED",
+    "CHANGED:",
     "@changed",
-    "FIX",
-    "FIXME",
+    "FIX:",
+    "FIXME:",
     "@fix",
     "@fixme",
-    "NOTE",
+    "NOTE:",
     "@note",
-    "REVIEW",
+    "REVIEW:",
     "@review",
-    "TODO",
+    "TODO:",
     "@todo",
-    "WARNING",
+    "WARNING:",
     "@warning",
     "[ ]",
     "[x]"
   ],
   "todo-tree.general.tagGroups": {
-    "CHANGED": ["CHANGED", "@changed"],
-    "FIX": ["FIX", "FIXME", "@fix", "@fixme"],
-    "NOTE": ["NOTE", "@note"],
-    "REVIEW": ["REVIEW", "@review"],
-    "TODO": ["TODO", "@todo"],
-    "WARNING": ["WARNING", "@warning"]
+    "CHANGED": ["CHANGED:", "@changed"],
+    "FIX": ["FIX:", "FIXME:", "@fix", "@fixme"],
+    "NOTE": ["NOTE:", "@note"],
+    "REVIEW": ["REVIEW:", "@review"],
+    "TODO": ["TODO:", "@todo"],
+    "WARNING": ["WARNING:", "@warning"]
   },
   // https://github.com/Gruntfuggly/todo-tree/wiki/Configuration-Examples
   "todo-tree.regex.regex": "((//|#|<!--|/\\*|^\\s*\\*)\\s*($TAGS)|^(\\s*(-|\\d+\\.)?)\\s*\\[(x| )\\])",
