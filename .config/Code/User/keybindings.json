@@ -454,6 +454,17 @@
   },
 
   /* --------------------------------- Cursor --------------------------------- */
+  // Up/Down
+  {
+    "key": "up",
+    "command": "cursorUp",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "down",
+    "command": "cursorDown",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
   // Navigation back/forward
   {
     "key": "ctrl+o",

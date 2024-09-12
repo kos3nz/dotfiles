@@ -1424,6 +1424,16 @@
   /* -------------------------------------------------------------------------- */
   "vim.normalModeKeyBindingsNonRecursive": [
     /* -------------------------------- Essential ------------------------------- */
+    {
+      "before": ["j"],
+      "commands": ["cursorDown"],
+      "silent": true
+    },
+    {
+      "before": ["k"],
+      "commands": ["cursorUp"],
+      "silent": true
+    },
     // Temp fix for code-folding when moving up/down the cursor
     // {
     //   "before": ["j"],
@@ -2027,6 +2037,12 @@
     {
       "before": ["<leader>", "g", "g"],
       "commands": ["workbench.view.scm"],
+      "silent": true
+    },
+    // Focus timeline view
+    {
+      "before": ["<leader>", "g", "t"],
+      "commands": ["timeline.focus"],
       "silent": true
     },
     // Git blame
