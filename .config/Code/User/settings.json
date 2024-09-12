@@ -812,7 +812,7 @@
     "WARNING": ["WARNING:", "@warning"]
   },
   // https://github.com/Gruntfuggly/todo-tree/wiki/Configuration-Examples
-  "todo-tree.regex.regex": "((//|#|<!--|/\\*|^\\s*\\*)\\s*($TAGS)|^(\\s*(-|\\d+\\.)?)\\s*\\[(x| )\\])",
+  "todo-tree.regex.regex": "((//|#|<!--|/\\*|^\\s*\\*|\\{%\\s*comment\\s*%\\})\\s*($TAGS)|^(\\s*(-|\\d+\\.)?)\\s*\\[(x| )\\])",
   "todo-tree.highlights.defaultHighlight": {
     "type": "tag-and-subTag",
     "icon": "checklist",
