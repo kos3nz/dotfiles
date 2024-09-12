@@ -1,5 +1,8 @@
 {
-  //:: =============== Express =============== :://
+  /* -------------------------------------------------------------------------- */
+  /*                                   Express                                  */
+  /* -------------------------------------------------------------------------- */
+
   "(req, res) => {}": {
     "prefix": "reqres",
     "body": ["(req, res) => {", "  $0", "}"],
@@ -24,5 +27,103 @@
       "})"
     ],
     "description": "error response json"
-  }
+  },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Comments                                  */
+  /* -------------------------------------------------------------------------- */
+
+  "/** */": {
+    "prefix": "**",
+    "body": [
+      "/**",
+      " * $0",
+      " */",
+    ],
+    "description": "JSDoc Tag"
+  },
+  "CHANGED:": {
+    "prefix": "changed",
+    "body": ["// CHANGED: $0"],
+    "description": "CHANGED Tag (Line)"
+  },
+  "@changed": {
+    "prefix": "changed",
+    "body": [
+      "@changed $1",
+    ],
+    "description": "CHANGED Tag (JSDoc)"
+  },
+  "FIX:": {
+    "prefix": "fix",
+    "body": ["// FIX: $0"],
+    "description": "FIX Tag (Line)"
+  },
+  "@fix": {
+    "prefix": "fix",
+    "body": [
+      "@fix $1",
+    ],
+    "description": "FIX Tag (JSDoc)"
+  },
+  "FIXME:": {
+    "prefix": "fixme",
+    "body": ["// FIXME: $0"],
+    "description": "FIXME Tag (Line)"
+  },
+  "@fixme": {
+    "prefix": "fixme",
+    "body": [
+      "@fixme $1",
+    ],
+    "description": "FIXME Tag (JSDoc)"
+  },
+  "NOTE:": {
+    "prefix": "note",
+    "body": ["// NOTE: $0"],
+    "description": "NOTE Tag (Line)"
+  },
+  "@note": {
+    "prefix": "note",
+    "body": [
+      "@note $1",
+    ],
+    "description": "NOTE Tag (JSDoc)"
+  },
+  "REVIEW:": {
+    "prefix": "review",
+    "body": ["// REVIEW: $0"],
+    "description": "REVIEW Tag (Line)"
+  },
+  "@review": {
+    "prefix": "review",
+    "body": [
+      "@review $1",
+    ],
+    "description": "REVIEW Tag (JSDoc)"
+  },
+  "TODO:": {
+    "prefix": "todo",
+    "body": ["// TODO: $0"],
+    "description": "TODO Tag (Line)"
+  },
+  "@todo": {
+    "prefix": "todo",
+    "body": [
+      "@todo $1",
+    ],
+    "description": "TODO Tag (JSDoc)"
+  },
+  "WARNING:": {
+    "prefix": "warning",
+    "body": ["// WARNING: $0"],
+    "description": "WARNING Tag (Line)"
+  },
+  "@warning": {
+    "prefix": "warning",
+    "body": [
+      "@warning $1",
+    ],
+    "description": "WARNING Tag (JSDoc)"
+  },
 }

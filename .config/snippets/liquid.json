@@ -1,0 +1,177 @@
+{
+  /* -------------------------------------------------------------------------- */
+  /*                                 Syntax Tags                                */
+  /* -------------------------------------------------------------------------- */
+  "{% liquid %}": {
+    "prefix": "liquid",
+    "body": [
+      "{% liquid",
+      "  $0",
+      "%}"
+    ],
+    "description": "Syntax tag: liquid"
+  },
+  "{%- liquid -%}": {
+    "prefix": "liquid-",
+    "body": [
+      "{%- liquid",
+      "  $0",
+      "-%}"
+    ],
+    "description": "Syntax tag: liquid, whitespaced"
+  },
+  /* -------------------------------------------------------------------------- */
+  /*                                  HTML Tags                                 */
+  /* -------------------------------------------------------------------------- */
+  "{% style %}": {
+    "prefix": "style",
+    "body": [
+      "{% style %}",
+      "  $0",
+      "{% endstyle %}"
+    ],
+    "description": "HTML tag: style"
+  },
+  "{%- style -%}": {
+    "prefix": "style-",
+    "body": [
+      "{%- style -%}",
+      "  $0",
+      "{%- endstyle -%}"
+    ],
+    "description": "HTML tag: style, whitespaced"
+  },
+  "{% form %}": {
+    "prefix": "form",
+    "body": [
+      "{% form ${1:form_type} %}",
+      "  ${2:form_content}",
+      "{% endform %}"
+    ],
+    "description": "HTML tag: form"
+  },
+  "{%- form -%}": {
+    "prefix": "form-",
+    "body": [
+      "{%- form ${1:form_type} -%}",
+      "  ${2:form_content}",
+      "{%- endform -%}"
+    ],
+    "description": "HTML tag: form, whitespaced"
+  },
+  /* -------------------------------------------------------------------------- */
+  /*                               Iteration Tags                               */
+  /* -------------------------------------------------------------------------- */
+  "{%- paginate -%}": {
+    "prefix": "paginate-",
+    "body": [
+      "{%- paginate ${1:collection.products} by ${2:12} -%}",
+      "  {% for ${3:product} in ${1:collection.products} %}",
+      "    $4",
+      "  {% endfor %}",
+      "{%- endpaginate -%}"
+    ],
+    "description": "Theme tag: paginate, whitespaced"
+  },
+  /* -------------------------------------------------------------------------- */
+  /*                                Closing Tags                                */
+  /* -------------------------------------------------------------------------- */
+  "{% endif %}": {
+    "prefix": "endif",
+    "body": [
+      "{% endif %}"
+    ],
+    "description": "Closing tag: if"
+  },
+  "{%- endif -%}": {
+    "prefix": "endif-",
+    "body": [
+      "{%- endif -%}"
+    ],
+    "description": "Closing tag: if, whitespaced"
+  },
+  "{% endunless %}": {
+    "prefix": "endunless",
+    "body": [
+      "{% endunless %}"
+    ],
+    "description": "Closing tag: unless"
+  },
+  "{%- endunless -%}": {
+    "prefix": "endunless-",
+    "body": [
+      "{%- endunless -%}"
+    ],
+    "description": "Closing tag: unless, whitespaced"
+  },
+  "{% endcase %}": {
+    "prefix": "endcase",
+    "body": [
+      "{% endcase %}"
+    ],
+    "description": "Closing tag: case"
+  },
+  "{%- endcase -%}": {
+    "prefix": "endcase-",
+    "body": [
+      "{%- endcase -%}"
+    ],
+    "description": "Closing tag: case, whitespaced"
+  },
+  "{% endfor %}": {
+    "prefix": "endfor",
+    "body": [
+      "{% endfor %}"
+    ],
+    "description": "Closing tag: for"
+  },
+  "{%- endfor -%}": {
+    "prefix": "endfor-",
+    "body": [
+      "{%- endfor -%}"
+    ],
+    "description": "Closing tag: for, whitespaced"
+  },
+  "{% endstyle %}": {
+    "prefix": "endstyle",
+    "body": [
+      "{% endstyle %}"
+    ],
+    "description": "Closing tag: style"
+  },
+  "{%- endstyle -%}": {
+    "prefix": "endstyle-",
+    "body": [
+      "{%- endstyle -%}"
+    ],
+    "description": "Closing tag: style, whitespaced"
+  },
+  "{% endform %}": {
+    "prefix": "endform",
+    "body": [
+      "{% endform %}"
+    ],
+    "description": "Closing tag: form"
+  },
+  "{%- endform -%}": {
+    "prefix": "endform-",
+    "body": [
+      "{%- endform -%}"
+    ],
+    "description": "Closing tag: form, whitespaced"
+  },
+  "{% endpaginate %}": {
+    "prefix": "endpaginate",
+    "body": [
+      "{% endpaginate %}"
+    ],
+    "description": "Closing tag: paginate"
+  },
+  "{%- endpaginate -%}": {
+    "prefix": "endpaginate-",
+    "body": [
+      "{%- endpaginate -%}"
+    ],
+    "description": "Closing tag: paginate, whitespaced"
+  }
+}
