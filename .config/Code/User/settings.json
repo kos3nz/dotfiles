@@ -6,6 +6,8 @@
   "files.defaultLanguage": "markdown",
   "files.associations": {
     // "*.css": "tailwindcss"
+    // "*.svg": "html",
+    // "*.xml": "html",
     "*.mdx": "markdown",
     "*.module": "php"
   },
@@ -580,6 +582,9 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
 
   /* ------------------------- Javascript & Typescript ------------------------ */
