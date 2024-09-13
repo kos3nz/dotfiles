@@ -1,0 +1,6 @@
+% vercel
+
+# Pausing a project
+curl -X POST "https://api.vercel.com/v1/projects/<PROJECT_ID>/pause?teamId=<TEAM_ID>" \
+-H "Authorization: Bearer <ACCESS_TOKEN>" \
+-H "Content-Type: application/json"
