@@ -1,0 +1,10 @@
+% ssh, tunnel
+
+# Connect to a remote web server through ssh tunnel
+ssh -N -L <local-port>:localhost:80 <remote-username>@<remote-ip>
+
+# Make an ssh proxy tunnel
+ssh -N -L <local-port>:<remote-ip>:80 <remote-username>@<proxy-ip>
+
+# Reverse ssh tunnel (allow the remote server to access the local server)
+ssh -N _R <remote-port>:<local-ip>:80 <remote-username>@<remote-ip>
