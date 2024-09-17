@@ -10,6 +10,7 @@ tap "homebrew/bundle"
 # tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit" # for lazygit
+# tap "josephpage/jetpack-io" # for dovbox
 tap "koekeishiya/formulae"
 tap "lindell/multi-gitter"
 tap "oven-sh/bun"
@@ -26,6 +27,7 @@ brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
 brew "deno"
+# brew "devbox"
 brew "dust"
 brew "eza" # A mordern, maintained replacement for ls.
 brew "emojify"
@@ -76,6 +78,7 @@ brew "tmux"
 brew "tree"
 brew "volta"
 brew "wget"
+brew "yq"
 brew "zoxide" # A smarter cd command. Supports all major shells.
 brew "zsh"
 
