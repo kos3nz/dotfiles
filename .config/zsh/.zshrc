@@ -40,7 +40,7 @@ unset conf
 ### options ###
 setopt nonomatch
 setopt auto_cd # changes current directory without typing `cd`
-cdpath=(.. ~ ~/ghq/github.com) # 親ディレクトリやホームディレクトリ，~/ghq/github.com 以下へはどこからでもディレクトリ名だけで移動できる
+# cdpath=(.. ~ ~/ghq/github.com) # 親ディレクトリやホームディレクトリ，~/ghq/github.com 以下へはどこからでもディレクトリ名だけで移動できる
 
 
 ### History ###
