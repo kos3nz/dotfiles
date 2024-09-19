@@ -1638,6 +1638,14 @@
   {
     "key": "cmd+t",
     "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-gotoNextPreviousMember.nextMember"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "-gotoNextPreviousMember.previousMember"
   }
 ]
 

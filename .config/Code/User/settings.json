@@ -2229,6 +2229,16 @@
     //   "before": ["b"],
     //   "after": ["<leader>", "b"]
     // },
+    {
+      "before": ["]", "m"],
+      "commands": ["gotoNextPreviousMember.nextMember"],
+      "silent": true
+    },
+    {
+      "before": ["[", "m"],
+      "commands": ["gotoNextPreviousMember.previousMember"],
+      "silent": true
+    },
 
     /* ---------------------------------- Emmet --------------------------------- */
     {
@@ -2284,7 +2294,7 @@
     },
     // Next/Previous bookmark
     {
-      "before": ["[", "m"],
+      "before": ["[", "'"],
       "commands": ["bookmarks.jumpToPrevious"],
       "silent": true
     },
@@ -2294,7 +2304,7 @@
       "silent": true
     },
     {
-      "before": ["]", "m"],
+      "before": ["]", "'"],
       "commands": ["bookmarks.jumpToNext"],
       "silent": true
     },
