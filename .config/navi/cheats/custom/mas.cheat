@@ -1,0 +1,20 @@
+% mac
+
+# List downloaded apps
+mac list
+
+# Search apps in Apple Store
+mac search <app_name>
+
+# Install an app
+mas install <app_id>
+
+# Show outdated apps
+mas outdated
+
+# Upgrade all apps
+mas upgrade
+
+# Upgrade a specific app
+mas upgrade <app_id>
+
