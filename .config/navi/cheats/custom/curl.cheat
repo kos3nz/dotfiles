@@ -1,0 +1,4 @@
+% curl
+
+# (HTTP FTP FILE) Fetch the headers only!
+curl -I <url>
