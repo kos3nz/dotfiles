@@ -712,6 +712,12 @@
     "command": "search.action.replaceAllInFolder",
     "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
   },
+  // Toggle search query details
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.search.toggleQueryDetails",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
 
   /* ----------------------------------- Cmp ---------------------------------- */
   // Show suggestion
