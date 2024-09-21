@@ -222,6 +222,8 @@ return {
 		{ key = "p", mods = "LEADER", action = action({ ActivateTabRelative = -1 }) },
 		{ key = "]", mods = "CMD", action = action({ ActivateTabRelative = 1 }) },
 		{ key = "[", mods = "CMD", action = action({ ActivateTabRelative = -1 }) },
+		{ key = "]", mods = "CMD|SHIFT", action = action({ MoveTabRelative = 1 }) },
+		{ key = "[", mods = "CMD|SHIFT", action = action({ MoveTabRelative = -1 }) },
 		{ key = "h", mods = "LEADER", action = action({ ActivatePaneDirection = "Left" }) },
 		{ key = "j", mods = "LEADER", action = action({ ActivatePaneDirection = "Down" }) },
 		{ key = "k", mods = "LEADER", action = action({ ActivatePaneDirection = "Up" }) },
