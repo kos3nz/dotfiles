@@ -34,10 +34,10 @@ return {
 	-- line_height = 1.15,
 
 	-- Hack
-	-- font = wezterm.font("Hack Nerd Font"),
-	-- font_size = 12.5,
-	-- cell_width = 1.05,
-	-- line_height = 1.30,
+	font = wezterm.font("Hack Nerd Font"),
+	font_size = 12.5,
+	cell_width = 1.05,
+	line_height = 1.35,
 
 	-- MesloLGS
 	-- font = wezterm.font("MesloLGS NF"),
@@ -52,10 +52,10 @@ return {
 	-- line_height = 1.15,
 
 	-- SFMono Square
-	font = wezterm.font("SF Mono Square"),
-	font_size = 16.0,
-	cell_width = 1.00,
-	line_height = 1.30,
+	-- font = wezterm.font("SF Mono Square"),
+	-- font_size = 16.0,
+	-- cell_width = 1.00,
+	-- line_height = 1.30,
 
 	-- Window --
 	initial_cols = 141,
