@@ -193,45 +193,24 @@ return {
         enabled = true, -- enables the Noice cmdline UI
         view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
         opts = {}, -- global options for the cmdline. See section on views
-        ---@type table<string, CmdlineFormat>
+        -- -@type table<string, CmdlineFormat>
         format = {
           -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
           -- view: (default is cmdline view)
           -- opts: any options passed to the view
           -- icon_hl_group: optional hl_group for the icon
           -- title: set to anything or empty string to hide
-          cmdline = { kind = "cmdline", pattern = "^:", icon = "󰧛 ", lang = "vim" },
-          search_down = { kind = "search", pattern = "^/", icon = "󰍉 ", lang = "regex" },
-          search_up = { kind = "search", pattern = "^%?", icon = "󰍉 ", lang = "regex" },
-          filter = { kind = "filter", pattern = "^:%s*!", icon = "$", lang = "bash" },
-          lua = { kind = "lu", pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-          help = { kind = "help", pattern = "^:%s*he?l?p?%s+", icon = "󱜻 " },
-          -- input = {}, -- Used by input()
+          cmdline = { pattern = "^:", icon = "󰧚 ", lang = "vim" },
+          search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+          search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+          filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+          lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
+          help = { pattern = "^:%s*he?l?p?%s+", icon = "󰘥 " },
+          input = { view = "cmdline_input", icon = "󰥻 " }, -- Used by input()
           -- lua = false, -- to disable a format, set to `false`
         },
       },
-      messages = {
-        -- NOTE: If you enable messages, then the cmdline is enabled automatically.
-        -- This is a current Neovim limitation.
-        enabled = false, -- enables the Noice messages UI
-        view = "notify", -- default view for messages
-        view_error = "notify", -- view for errors
-        view_warn = "notify", -- view for warnings
-        view_history = "messages", -- view for :messages
-        view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
-      },
-      popupmenu = {
-        enabled = true, -- enables the Noice popupmenu UI
-        ---@type 'nui'|'cmp'
-        backend = "nui", -- backend to use to show regular cmdline completions
-        ---@type NoicePopupmenuItemKind|false
-        -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
-        kind_icons = {}, -- set to `false` to disable icons
-      },
       lsp = {
-        hover = {
-          silent = true,
-        },
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
@@ -255,10 +234,10 @@ return {
         bottom_search = true,
         command_palette = true,
         long_message_to_split = true,
-        inc_rename = true,
       },
     },
     keys = {
+      { "<leader>sn", "", desc = "+noice" },
       {
         "<S-Enter>",
         function()
@@ -296,30 +275,46 @@ return {
         desc = "Dismiss All",
       },
       {
-        "<c-d>",
+        "<leader>snt",
+        function()
+          require("noice").cmd("pick")
+        end,
+        desc = "Noice Picker (Telescope/FzfLua)",
+      },
+      {
+        "<c-f>",
         function()
           if not require("noice.lsp").scroll(4) then
-            return "<c-d>"
+            return "<c-f>"
           end
         end,
         silent = true,
         expr = true,
-        desc = "Scroll forward",
+        desc = "Scroll Forward",
         mode = { "i", "n", "s" },
       },
       {
-        "<c-u>",
+        "<c-b>",
         function()
           if not require("noice.lsp").scroll(-4) then
-            return "<c-u>"
+            return "<c-b>"
           end
         end,
         silent = true,
         expr = true,
-        desc = "Scroll backward",
+        desc = "Scroll Backward",
         mode = { "i", "n", "s" },
       },
     },
+    config = function(_, opts)
+      -- HACK: noice shows messages from before it was enabled,
+      -- but this is not ideal when Lazy is installing plugins,
+      -- so clear the messages in this case.
+      if vim.o.filetype == "lazy" then
+        vim.cmd([[messages clear]])
+      end
+      require("noice").setup(opts)
+    end,
   },
 
   {
@@ -349,148 +344,92 @@ return {
 
   -- Icons
   {
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
     lazy = true,
     opts = {
-      override = {
-        deb = { icon = "", name = "Deb" },
-        lock = { icon = "", name = "Lock" },
-        mp3 = { icon = "󰸪", name = "Mp3" },
-        mp4 = { icon = "", name = "Mp4" },
-        out = { icon = "", name = "Out" },
-        ["robots.txt"] = { icon = "󱙺", name = "Robots" },
-        ttf = { icon = "󰛖", name = "TrueTypeFont" },
-        rpm = { icon = "", name = "Rpm" },
-        woff = { icon = "󰛖", name = "WebOpenFontFormat" },
-        woff2 = { icon = "󰛖", name = "WebOpenFontFormat2" },
-        xz = { icon = "", name = "Xz" },
-        zip = { icon = "", name = "Zip" },
+      file = {
+        -- Only the following set of highlight groups is used as icon highlight.
+        -- It is recommended that they all only define colored foreground:
+        -- `MiniIconsAzure`  - azure.
+        -- `MiniIconsBlue`   - blue.
+        -- `MiniIconsCyan`   - cyan.
+        -- `MiniIconsGreen`  - green.
+        -- `MiniIconsGrey`   - grey.
+        -- `MiniIconsOrange` - orange.
+        -- `MiniIconsPurple` - purple.
+        -- `MiniIconsRed`    - red.
+        -- `MiniIconsYellow` - yellow.
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+        ["Brewfile"] = { glyph = "󱌌", hl = "MiniIconsOrange" },
+        ["README.md"] = { glyph = "", hl = "MiniIconsCyan" },
+        ["package-lock.json"] = { glyph = "", hl = "MiniIconsRed" },
+        ["yarn.lock"] = { glyph = "", hl = "MiniIconsCyan" },
+        ["pnpm-lock.yaml"] = { glyph = "", hl = "MiniIconsOrange" },
+        [".env"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.example"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.local"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.development"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.development.local"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.staging"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.staging.local"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.production"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".env.production.local"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".prettierrc"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.json"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.yml"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.yaml"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.js"] = { glyph = "", hl = "MiniIconsPurple" },
+        ["prettier.config.js"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.cjs"] = { glyph = "", hl = "MiniIconsPurple" },
+        ["prettier.config.cjs"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierrc.mjs"] = { glyph = "", hl = "MiniIconsPurple" },
+        ["prettier.config.mjs"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".prettierignore"] = { glyph = "", hl = "MiniIconsPurple" },
+        [".eslintrc.json"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintrc.yml"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintrc.yaml"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        ["eslint.config.js"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintrc.cjs"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        ["eslint.config.cjs"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintrc.mjs"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        ["eslint.config.mjs"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        [".eslintignore"] = { glyph = "󰱺", hl = "MiniIconsPurple" },
+        ["tailwind.config.js"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
+        ["tailwind.config.cjs"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
+        ["tailwind.config.mjs"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
+        ["tailwind.config.ts"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
+        ["vite.config.js"] = { glyph = "󱐋", hl = "MiniIconsYellow" },
+        ["vite.config.ts"] = { glyph = "󱐋", hl = "MiniIconsYellow" },
+        [".graphqlrc.json"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".graphqlrc.yml"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".graphqlrc.yaml"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".graphqlrc.js"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.js"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.ts"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".graphqlrc.cjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.cjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.cts"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".graphqlrc.mjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.mjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        ["graphql.config.mts"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
       },
-      -- globally enable different highlight colors per icon (default to true)
-      -- if set to false all icons will have the default icon's color
-      color_icons = true,
-      -- globally enable default icons (default to false)
-      -- will get overriden by `get_icons` option
-      default = false,
-      -- globally enable "strict" selection of icons - icon will be looked up in
-      -- different tables, first by filename, and if not found by extension; this
-      -- prevents cases when file doesn't have any extension but still gets some icon
-      -- because its name happened to match some extension (default to false)
-      strict = true,
-      -- same as `override` but specifically for overrides by filename
-      -- takes effect when `strict` is true
-      override_by_filename = {
-        [".gitignore"] = {
-          icon = "󰊢",
-          color = "#6B8492", -- #6B8492, #f1502f
-          name = "Gitignore",
-        },
-        [".stylelintrc"] = {
-          icon = "",
-          color = "#f0f0f0",
-          name = "Stylelint",
-        },
-        ["tailwind.config.js"] = {
-          icon = "󱏿",
-          color = "#38bdf8",
-          name = "TailwindCSS",
-        },
-        ["tailwind.config.cjs"] = {
-          icon = "󱏿",
-          color = "#38bdf8",
-          name = "TailwindCSS",
-        },
-        ["tailwind.config.ts"] = {
-          icon = "󱏿",
-          color = "#38bdf8",
-          name = "TailwindCSS",
-        },
-        -- ["tsconfig.json"] = {
-        --   icon = "󰛦",
-        --   color = "#3b82f6",
-        --   name = "TypescriptJSON",
-        -- },
-        ["vite.config.ts"] = {
-          icon = "󱐋",
-          color = "#FAE05E",
-          name = "Vite",
-        },
-        ["vitest.config.ts"] = {
-          icon = "󱐋",
-          color = "#FAE05E",
-          name = "Vite",
-        },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
       },
-      -- same as `override` but specifically for overrides by extension
-      -- takes effect when `strict` is true
-      override_by_extension = {
-        ["astro"] = {
-          icon = "",
-          color = "#EC682C",
-          name = "Astro",
-        },
-        ["log"] = {
-          icon = "",
-          color = "#81e043",
-          name = "Log",
-        },
-        ["js"] = {
-          icon = "󰌞", --  󰌞
-          color = "#facc15",
-          name = "Javascript",
-        },
-        ["cjs"] = {
-          icon = "󰌞",
-          color = "#facc15",
-          name = "CommonJS",
-        },
-        ["mjs"] = {
-          icon = "󰌞",
-          color = "#facc15",
-          name = "ESModules",
-        },
-        ["jsx"] = {
-          icon = "", -- 󰜈,
-          color = "#82D7F7",
-          name = "JavascriptReact",
-        },
-        ["ts"] = {
-          icon = "󰛦", -- ,󰛦a
-          color = "#3b82f6",
-          name = "Typescript",
-        },
-        ["tsx"] = {
-          icon = "",
-          color = "#82D7F7",
-          name = "TypescriptReact",
-        },
-        ["d.ts"] = {
-          icon = "󰛦", -- ,󰛦
-          color = "#3baa36",
-          name = "Types",
-        },
-        ["sh"] = {
-          icon = "",
-          color = "#7dd3fc",
-          name = "Shell",
-        },
-        ["zsh"] = {
-          icon = "",
-          color = "#428850",
-          name = "Zsh",
-        },
-        ["json"] = {
-          icon = "󰘦", -- 󰘦  
-          color = "#E0C58C",
-          name = "JSON",
-        },
-
-        ["toml"] = {
-          icon = "",
-          color = "#EC6968",
-          name = "TOML",
-        },
+      extension = {
+        astro = { glyph = "", hl = "MiniIconsOrange" },
+        ["d.ts"] = { glyph = "󰛦", hl = "MiniIconsGreen" },
+        sh = { glyph = "", hl = "MiniIconsBlue" },
+        zsh = { glyph = "", hl = "MiniIconsGreen" },
       },
     },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
   },
 }
