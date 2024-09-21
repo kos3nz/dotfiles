@@ -53,7 +53,7 @@ error_symbol = "[✗](bold red)"
 
 # configure directory
 [directory]
-format = '[ ](white) [$path]($style)[$read_only]($read_only_style) ' #   
+format = '[ ](white) [$path]($style)[$read_only]($read_only_style) ' #   
 read_only = " "
 truncation_length = 10
 truncate_to_repo = true # truncates directory to root folder if in github repo
