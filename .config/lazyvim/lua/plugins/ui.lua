@@ -414,6 +414,12 @@ return {
         [".graphqlrc.mjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
         ["graphql.config.mjs"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
         ["graphql.config.mts"] = { glyph = "󰡷", hl = "MiniIconsPurple" },
+        [".shopifyignore"] = { glyph = "", hl = "MiniIconsGrey" },
+        [".theme-check.yml"] = { glyph = "", hl = "MiniIconsPurple" },
+        ["translation.yml"] = { glyph = "", hl = "MiniIconsGreen" },
+        ["shopify.app.toml"] = { glyph = "", hl = "MiniIconsGreen" },
+        ["shopify.extension.toml"] = { glyph = "", hl = "MiniIconsGreen" },
+        ["shopify.web.toml"] = { glyph = "", hl = "MiniIconsGreen" },
       },
       filetype = {
         dotenv = { glyph = "", hl = "MiniIconsYellow" },
