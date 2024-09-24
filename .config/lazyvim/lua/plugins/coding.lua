@@ -138,16 +138,15 @@ return {
         ["<C-k>"] = { c = fallback_func("select_prev_item") },
         ["<C-v>"] = { c = fallback_func("complete") },
         ["<C-e>"] = { c = fallback_func("abort") },
-        ["<CR>"] = { c = fallback_func("confirm") },
       })
 
       -- configure `cmp-cmdline` as described in their repo: https://github.com/hrsh7th/cmp-cmdline#setup
-      -- cmp.setup.cmdline("/", {
-      --   mapping = cmdline_mappings,
-      --   sources = {
-      --     { name = "buffer" },
-      --   },
-      -- })
+      cmp.setup.cmdline("/", {
+        mapping = cmdline_mappings,
+        sources = {
+          { name = "buffer" },
+        },
+      })
       -- cmp.setup.cmdline("?", {
       --   mapping = cmdline_mappings,
       --   sources = {
