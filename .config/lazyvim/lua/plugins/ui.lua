@@ -212,12 +212,21 @@ return {
       },
       lsp = {
         hover = {
-          enabled = false,
+          enabled = true,
+          silent = true, -- set to true to not show a message if hover is not available
         },
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      views = {
+        hover = {
+          border = {
+            style = "rounded",
+            padding = { 0, 1 },
+          },
         },
       },
       routes = {
@@ -234,9 +243,10 @@ return {
         },
       },
       presets = {
-        bottom_search = true,
-        command_palette = true,
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and pupupmenu together
         long_message_to_split = true,
+        lsp_doc_border = true, -- add a border to hover docs (disabled: @line 214) and signature help
       },
     },
     keys = {
