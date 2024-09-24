@@ -36,19 +36,28 @@ return {
       },
       color_overrides = {},
       custom_highlights = function(colors)
+        -- https://catppuccin.com/palette
         return {
           CursorLineNr = {
             fg = colors.blue,
           },
+          MiniIndentscopeSymbol = {
+            fg = colors.blue,
+          },
+          -- treesitter
           TreesitterContext = {
             fg = colors.blue,
           },
           TreesitterContextLineNumberBottom = {
             fg = colors.blue,
           },
-          MiniIndentscopeSymbol = {
-            fg = colors.blue,
-          },
+          -- nvim-cmp
+          CmpItemAbbr = { fg = colors.overlay2 },
+          CmpItemAbbrMatch = { fg = colors.blue },
+          CmpItemAbbrMatchFuzzy = { fg = colors.teal },
+
+          -- textDocument/hover
+          RenderMarkdownCode = { bg = colors.crust },
         }
       end,
       integrations = {
