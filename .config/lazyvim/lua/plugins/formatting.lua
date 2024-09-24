@@ -10,6 +10,7 @@ return {
       })
     end,
   },
+
   {
     "nvimtools/none-ls.nvim",
     optional = true,
@@ -19,6 +20,7 @@ return {
       table.insert(opts.sources, nls.builtins.formatting.prettierd)
     end,
   },
+
   {
     "stevearc/conform.nvim",
     optional = true,
@@ -40,6 +42,7 @@ return {
         scss = { "prettierd" },
         less = { "prettierd" },
         html = { "prettierd" },
+        liquid = { "prettierd" },
         json = { "prettierd" },
         jsonc = { "prettierd" },
         yaml = { "prettierd" },
