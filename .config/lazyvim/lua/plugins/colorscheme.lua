@@ -54,7 +54,7 @@ return {
           -- nvim-cmp
           CmpItemAbbr = { fg = colors.overlay2 },
           CmpItemAbbrMatch = { fg = colors.blue },
-          CmpItemAbbrMatchFuzzy = { fg = colors.teal },
+          CmpItemAbbrMatchFuzzy = { fg = colors.peach },
 
           -- textDocument/hover
           RenderMarkdownCode = { bg = colors.crust },
