@@ -64,7 +64,7 @@ setopt HIST_REDUCE_BLANKS    # 余分な空白は詰めて記録
 zshaddhistory() {
   # 特定のコマンドを保存しない
   local line="${1%%$'\n'}" # コマンドラインから改行文字を除去 (${name%%pattern} syntax) 
-  [[ "$line" =~ "^(buildin|cd|lg|lazygit|la|ll|eza|rm|rmdir|navi)($| )" ]] && return 1 
+  [[ "$line" =~ "^(buildin|lg|lazygit|la|ll|eza|rmdir|navi)($| )" ]] && return 1 
 
   # 失敗したコマンドを保存しない: http://www.zsh.org/mla/users//2014/msg00715.html
   whence ${${(z)1}[1]} >| /dev/null || return 1
