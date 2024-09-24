@@ -9,7 +9,7 @@ local del = vim.keymap.del
 --------------------
 local n = "n"
 
-map(n, "J", "6j")
+map(n, "J", "5j")
 map(n, "K", "5k")
 map(n, "M", "J")
 map(n, "<c-a>", "0")
