@@ -211,6 +211,9 @@ return {
         },
       },
       lsp = {
+        hover = {
+          enabled = false,
+        },
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
@@ -431,11 +434,5 @@ return {
         zsh = { glyph = "", hl = "MiniIconsGreen" },
       },
     },
-    init = function()
-      package.preload["nvim-web-devicons"] = function()
-        require("mini.icons").mock_nvim_web_devicons()
-        return package.loaded["nvim-web-devicons"]
-      end
-    end,
   },
 }
