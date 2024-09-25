@@ -2,7 +2,6 @@ return {
   -- buffer remove
   {
     "echasnovski/mini.bufremove",
-
     keys = {
       {
         "<leader>d",
@@ -397,6 +396,16 @@ return {
         end,
         desc = "Find words in all files",
       },
+      {
+        "<leader>fr",
+        function()
+          require("telescope.builtin").oldfiles({
+            cwd = vim.uv.cwd(),
+          })
+        end,
+        desc = "Recent (cwd)",
+      },
+      { "<leader>fR", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
     },
     opts = function(_, opts)
       local actions = require("telescope.actions")
