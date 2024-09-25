@@ -526,6 +526,7 @@ return {
       extension = {
         astro = { glyph = "", hl = "MiniIconsOrange" },
         ["d.ts"] = { glyph = "󰛦", hl = "MiniIconsGreen" },
+        liquid = { glyph = "", hl = "MiniIconsCyan" }, --  
         sh = { glyph = "", hl = "MiniIconsBlue" },
         zsh = { glyph = "", hl = "MiniIconsGreen" },
       },
