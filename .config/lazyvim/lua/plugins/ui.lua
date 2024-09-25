@@ -79,10 +79,12 @@ return {
       { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete buffers to the left" },
       { "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
       { "<S-l>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
-      { "[b", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev buffer" },
-      { "]b", "<Cmd>BufferLineCycleNext<CR>", desc = "Next buffer" },
-      { "<leader>bt", "<C-o>", desc = "Reopen buffer" },
-      { "<leader>bn", "<Cmd>enew<CR>", desc = "New buffer" },
+      { "<leader>bmp", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+      { "<leader>bmn", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+      { "[b", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+      { "]b", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+      { "[B", false },
+      { "]B", false },
       { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", desc = "Go to buffer 1" },
       { "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", desc = "Go to buffer 2" },
       { "<leader>3", "<Cmd>BufferLineGoToBuffer 3<CR>", desc = "Go to buffer 3" },
@@ -93,8 +95,8 @@ return {
       { "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", desc = "Go to buffer 8" },
       { "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", desc = "Go to buffer 9" },
     },
-    opts = {
-      options = {
+    opts = function(_, opts)
+      opts.options = {
         numbers = "ordinal",
         close_command = function(n)
           require("mini.bufremove").delete(n, false)
@@ -103,6 +105,8 @@ return {
           require("mini.bufremove").delete(n, false)
         end,
         diagnostics = "nvim_lsp",
+        buffer_close_icon = "",
+        modified_icon = "",
         always_show_bufferline = true,
         diagnostics_indicator = function(_, _, diag)
           -- local icons = require("lazyvim.config").icons.diagnostics
@@ -123,7 +127,7 @@ return {
         offsets = {
           {
             filetype = "neo-tree",
-            text = "File Explorer",
+            text = "Explorer",
             highlight = "Directory",
             text_align = "left",
             offset_separator = true,
@@ -136,8 +140,90 @@ return {
           -- icon = "▎", -- this should be omitted if indicator style is not 'icon'
           style = "none", -- 'icon' | 'underline' | 'none',
         },
-      },
-    },
+        truncate_names = false, -- whether or not tab names should be truncated
+      }
+
+      local mocha = require("catppuccin.palettes").get_palette("mocha")
+      opts.highlights = {
+        buffer_selected = {
+          fg = mocha.text,
+          bg = mocha.base,
+          italic = false,
+        },
+        close_button_selected = {
+          fg = mocha.text,
+          bg = mocha.base,
+        },
+        numbers_selected = {
+          fg = mocha.blue,
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        indicator_selected = {
+          bg = mocha.base,
+        },
+        modified_selected = {
+          bg = mocha.base,
+        },
+        hint_selected = {
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        hint_diagnostic_selected = {
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        info_selected = {
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        info_diagnostic_selected = {
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        warning = {
+          -- fg = mocha.yellow,
+        },
+        warning_selected = {
+          fg = mocha.yellow,
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        warning_diagnostic = {
+          fg = mocha.yellow,
+        },
+        warning_diagnostic_selected = {
+          fg = mocha.yellow,
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        error = {
+          -- fg = mocha.red,
+        },
+        error_selected = {
+          fg = mocha.red,
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+        error_diagnostic = {
+          fg = mocha.red,
+        },
+        error_diagnostic_selected = {
+          fg = mocha.red,
+          bg = mocha.base,
+          bold = true,
+          italic = false,
+        },
+      }
+    end,
     config = function(_, opts)
       require("bufferline").setup(opts)
       -- Fix bufferline when restoring a session
