@@ -1698,6 +1698,17 @@
       "commands": ["workbench.action.unpinEditor"],
       "silent": true
     },
+    // Move editor left/right
+    {
+      "before": ["]", "b"],
+      "commands": ["workbench.action.moveEditorRightInGroup"],
+      "silent": true
+    },
+    {
+      "before": ["[", "b"],
+      "commands": ["workbench.action.moveEditorLeftInGroup"],
+      "silent": true
+    },
     // Open buffer at index
     {
       "before": ["<leader>", "1"],
@@ -1768,6 +1779,11 @@
     // Clear highlight
     {
       "before": ["<leader>", "h"],
+      "commands": [":nohl"],
+      "silent": true
+    },
+    {
+      "before": ["<esc>"],
       "commands": [":nohl"],
       "silent": true
     },

@@ -943,7 +943,7 @@
   },
   // Go to matched tag
   {
-    "key": "ctrl+y m",
+    "key": "ctrl+y t",
     "command": "editor.emmet.action.matchTag",
     "when": "editorTextFocus"
   },
@@ -1652,6 +1652,10 @@
   {
     "key": "ctrl+up",
     "command": "-gotoNextPreviousMember.previousMember"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.previousEditor"
   }
 ]
 
