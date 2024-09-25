@@ -48,19 +48,18 @@ trim_at = "."
 disabled = false
 
 [character]
-success_symbol = "[>](bold green)" # ❯ >
+success_symbol = "[>](bold green)" # ❯ >  
 error_symbol = "[✗](bold red)"
 
-# configure directory
 [directory]
-format = '[ ](white) [$path]($style)[$read_only]($read_only_style) ' #   
+format = '[󰊠 ](white) [$path]($style)[$read_only]($read_only_style) ' #     󰊠  󱙝
 read_only = " "
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
+truncate_to_repo = true                                               # truncates directory to root folder if in github repo
 style = "blue bold"
 
 [cmd_duration]
-format='[|](black) [󰔛 ](yellow) [$duration]($style)' #   󰄉  󰔛
+format = '[|](black) [󰄉 ](yellow) [$duration]($style)' #   󰄉  󰔛
 min_time = 4
 show_milliseconds = false
 disabled = false
@@ -108,7 +107,14 @@ symbol = " "
 
 [deno]
 format = '[|](black) [🦕 $version]($style) '
-detect_files = ['deno.json', 'deno.jsonc', 'mod.ts', 'mod.js', 'deps.ts', 'deps.js']
+detect_files = [
+  'deno.json',
+  'deno.jsonc',
+  'mod.ts',
+  'mod.js',
+  'deps.ts',
+  'deps.js',
+]
 style = 'green'
 
 #[directory]
@@ -146,7 +152,7 @@ symbol = " "
 
 [lua]
 format = "[|](black) [$symbol $version]($style)"
-symbol = ' ' #   🌙
+symbol = ' '                                    #  
 detect_folders = ['lua']
 style = 'blue'
 
@@ -160,7 +166,7 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-format = "[|](black) [󰎙  $version](green) "
+format = "[|](black) [  $version](green) "      #  
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
 
@@ -186,25 +192,30 @@ detect_extensions = ["py"]
 version_format = "v${raw}"
 
 [ruby]
-symbol = " "
+symbol = " " #  
 
 [rust]
-symbol = " "
+symbol = " "
 
 [scala]
 symbol = " "
 
 [shlvl]
-symbol = " "
+disabled = false
+format = '[|](black) [$symbol$shlvl]($style) '
+repeat = true
+symbol = '❯'
+repeat_offset = 1
+threshold = 0
 
 [swift]
-symbol = " "
- 
+symbol = " " #   󰛥
+
 [time]
 disabled = false
-format = '[ $time]($style)'
+format = '[ $time]($style)' #       
 use_12hr = false
-time_format = '%T' # %T = 12-hour format, %r = 24-hour format
+time_format = '%T'           # %T = 12-hour format, %r = 24-hour format
 utc_time_offset = 'local'
 # style = 'magenta'
 # time_range = '10:00:00-18:00:00'
