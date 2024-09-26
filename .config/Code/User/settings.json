@@ -1782,11 +1782,11 @@
       "commands": [":nohl"],
       "silent": true
     },
-    {
-      "before": ["<esc>"],
-      "commands": [":nohl"],
-      "silent": true
-    },
+    // {
+    //   "before": ["<esc>"],
+    //   "commands": [":nohl"],
+    //   "silent": true
+    // },
     // Search word
     {
       "before": ["<leader>", "s", "/"],
