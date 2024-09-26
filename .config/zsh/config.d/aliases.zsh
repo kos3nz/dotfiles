@@ -20,11 +20,12 @@ fi
 
 # eza
 if type "eza" > /dev/null 2>&1; then
-    alias ls='eza'
-    alias l='eza -F'
-    alias la='eza -a'
-    alias ll='eza -alh'
-    alias tree='eza --tree -a'
+    alias ls='eza --icons=always'
+    alias l='eza -F --icons=always'
+    alias la='eza -a --icons=always'
+    alias ll='eza -alh --icons=always'
+    alias l1='eza -1 --icons=always'
+    alias tree='eza --tree -a --icons=always'
 fi
 
 # lf
