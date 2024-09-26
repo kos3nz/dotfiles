@@ -107,6 +107,8 @@ return {
         diagnostics = "nvim_lsp",
         buffer_close_icon = "",
         modified_icon = "",
+        left_trunc_marker = " ",
+        right_trunc_marker = " ",
         always_show_bufferline = true,
         diagnostics_indicator = function(_, _, diag)
           -- local icons = require("lazyvim.config").icons.diagnostics
@@ -145,17 +147,29 @@ return {
 
       local mocha = require("catppuccin.palettes").get_palette("mocha")
       opts.highlights = {
+        background = {
+          fg = mocha.overlay0,
+          bold = false,
+          italic = false,
+        },
         buffer_selected = {
           fg = mocha.text,
           bg = mocha.base,
+          bold = true,
           italic = false,
+        },
+        close_button = {
+          fg = mocha.overlay0,
         },
         close_button_selected = {
           fg = mocha.text,
           bg = mocha.base,
         },
+        numbers = {
+          fg = mocha.overlay0,
+        },
         numbers_selected = {
-          fg = mocha.blue,
+          fg = mocha.text,
           bg = mocha.base,
           bold = true,
           italic = false,
@@ -164,7 +178,11 @@ return {
           bg = mocha.base,
         },
         modified_selected = {
+          fg = mocha.green,
           bg = mocha.base,
+        },
+        hint = {
+          fg = mocha.overlay0,
         },
         hint_selected = {
           bg = mocha.base,
@@ -175,6 +193,9 @@ return {
           bg = mocha.base,
           bold = true,
           italic = false,
+        },
+        info = {
+          fg = mocha.overlay0,
         },
         info_selected = {
           bg = mocha.base,
@@ -187,7 +208,7 @@ return {
           italic = false,
         },
         warning = {
-          -- fg = mocha.yellow,
+          fg = mocha.overlay0,
         },
         warning_selected = {
           fg = mocha.yellow,
@@ -205,7 +226,7 @@ return {
           italic = false,
         },
         error = {
-          -- fg = mocha.red,
+          fg = mocha.overlay0,
         },
         error_selected = {
           fg = mocha.red,
