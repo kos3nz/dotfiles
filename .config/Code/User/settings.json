@@ -1404,6 +1404,7 @@
   "vim.highlightedyank.duration": 150,
   "vim.foldfix": true,
   "vim.statusBarColorControl": false,
+  "vim.visualstar": true,
   // "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?", // ハイフンを単語選択に含める
 
   // Plugins

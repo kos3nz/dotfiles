@@ -210,6 +210,12 @@ return {
     end,
   },
 
+  -- visual star search
+  {
+    "nelstrom/vim-visual-star-search",
+    event = "LazyFile",
+  },
+
   -- camel case motion
   {
     "bkad/CamelCaseMotion",
