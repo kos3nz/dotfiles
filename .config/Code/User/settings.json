@@ -1682,9 +1682,15 @@
       "commands": ["workbench.action.closeOtherEditors"],
       "silent": true
     },
+    // Close all visible buffers to the right/left of the current
     {
-      "before": ["<leader>", "b", "q"],
-      "commands": ["workbench.action.closeOtherEditors"],
+      "before": ["<leader>", "b", "h"],
+      "commands": ["workbench.action.closeEditorsToTheLeft"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "b", "l"],
+      "commands": ["workbench.action.closeEditorsToTheRight"],
       "silent": true
     },
     // Pin buffer
