@@ -53,13 +53,13 @@ return {
           neoscroll.ctrl_f({ duration = 100 })
         end,
         ["zt"] = function()
-          neoscroll.zt({ half_win_duration = 25 })
+          neoscroll.zt({ half_win_duration = 50 })
         end,
         ["zz"] = function()
-          neoscroll.zz({ half_win_duration = 25 })
+          neoscroll.zz({ half_win_duration = 50 })
         end,
         ["zb"] = function()
-          neoscroll.zb({ half_win_duration = 25 })
+          neoscroll.zb({ half_win_duration = 50 })
         end,
       }
       local modes = { "n", "v", "x" }
