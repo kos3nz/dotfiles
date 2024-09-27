@@ -62,7 +62,7 @@ return {
 	initial_rows = 120,
 	window_background_opacity = 0.98,
 	window_decorations = "RESIZE",
-	window_padding = { left = 20, right = 12, top = "0.5cell", bottom = "0.5cell" },
+	window_padding = { left = 8, right = 8, top = 8, bottom = 8 },
 	-- launch_menu = {
 	-- 	position = { x = 0, y = 0 },
 	-- },

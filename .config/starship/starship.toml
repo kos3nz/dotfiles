@@ -48,11 +48,11 @@ trim_at = "."
 disabled = false
 
 [character] # ❯ >    󱞩
-success_symbol = "[❯](bold green)"
-error_symbol = "[](bold red)"
+success_symbol = " [❯](bold green)"
+error_symbol = " [](bold red)"
 
 [directory] #     󰊠  󱙝
-format = '[󰊠 ](white) [$path]($style)[$read_only]($read_only_style) '
+format = ' [󰊠 ](white) [$path]($style)[$read_only]($read_only_style) '
 read_only = " 󰍁"
 read_only_style = "green"
 truncation_length = 10
