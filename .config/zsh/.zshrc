@@ -75,6 +75,12 @@ zshaddhistory() {
 # load starship theme
 eval "$(starship init zsh)"
 
+# load on-my-posh
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.toml)"
+# fi
+
+
 ### Ruby ###
 eval "$(rbenv init -)"
 

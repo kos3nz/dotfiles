@@ -9,6 +9,7 @@ tap "homebrew/bundle"
 # tap "homebrew/cask-versions"
 # tap "homebrew/core"
 tap "homebrew/services"
+tap "jandedobbeleer/oh-my-posh" # for oh-my-posh
 tap "jesseduffield/lazygit" # for lazygit
 # tap "josephpage/jetpack-io" # for dovbox
 tap "koekeishiya/formulae"
@@ -52,6 +53,7 @@ brew "hey" # HTTP load generator, ApacheBench (ab) replacement
 brew "hyperfine" # A command-line benchmarking tool
 brew "iproute2mac" # `ip` command for macOS
 brew "lazygit"
+brew "oh-my-posh"
 brew "jq"
 brew "lf" # Terminal file manager.
 brew "luajit"
