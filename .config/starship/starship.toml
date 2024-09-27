@@ -47,19 +47,20 @@ format = 'on [$hostname](yellow) '
 trim_at = "."
 disabled = false
 
-[character]
-success_symbol = "[>](bold green)" # ❯ >  
-error_symbol = "[✗](bold red)"
+[character] # ❯ >    󱞩
+success_symbol = "[❯](bold green)"
+error_symbol = "[](bold red)"
 
-[directory]
-format = '[󰊠 ](white) [$path]($style)[$read_only]($read_only_style) ' #     󰊠  󱙝
-read_only = " "
+[directory] #     󰊠  󱙝
+format = '[󰊠 ](white) [$path]($style)[$read_only]($read_only_style) '
+read_only = " 󰍁"
+read_only_style = "green"
 truncation_length = 10
-truncate_to_repo = true                                               # truncates directory to root folder if in github repo
+truncate_to_repo = true
 style = "blue bold"
 
-[cmd_duration]
-format = '[|](black) [󰄉 ](yellow) [$duration]($style)' #   󰄉  󰔛
+[cmd_duration] #   󰄉  󰔛
+format = '[|](black) [󰄉 ](yellow) [$duration]($style)'
 min_time = 4
 show_milliseconds = false
 disabled = false
@@ -73,7 +74,7 @@ style = "cyan"
 [git_status]
 format = """
 (\
-[|](black) \
+[|](black)\
 $conflicted\
 $staged\
 $renamed\
@@ -84,16 +85,16 @@ $stashed\
 )\
 ([|](black) $ahead_behind )\
 """
-conflicted = "[ ](red) "
-ahead = "[⇡·${count}](green)"
-behind = "[⇣·${count}](red)"
-diverged = "[⇡·${ahead_count}](green) [⇣·${behind_count}](red)"
-untracked = "[?·${count}](purple) " # ?, 
-stashed = "[󰏗 ·${count}](blue) " # $,  , 󰏗
-modified = "[ ·${count}](yellow) " # !, , 
-staged = "[ ·${count}](green) " # +,✓, , , 
-renamed = "[ ·${count}](purple) " # », 
-deleted = "[ ·${count}](red) " # -, , 
+conflicted = " [ ](red)"
+ahead = " [⇡·${count}](green)"
+behind = " [⇣·${count}](red)"
+diverged = " [⇡·${ahead_count}](green) [⇣·${behind_count}](red)"
+untracked = " [?·${count}](purple) " # ?, 
+stashed = " [󰏗 ·${count}](blue) " # $,  , 󰏗
+modified = " [ ·${count}](yellow) " # !, , 
+staged = " [ ·${count}](green) " # +,✓, , , 
+renamed = " [ ·${count}](purple) " # », 
+deleted = " [ ·${count}](red) " # -, , 
 
 [aws]
 symbol = " "
