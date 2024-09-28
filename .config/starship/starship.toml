@@ -83,7 +83,7 @@ $untracked\
 $deleted\
 $stashed\
 )\
-([|](black) $ahead_behind )\
+([|](black)$ahead_behind )\
 """
 conflicted = " [ ](red)"
 ahead = " [⇡·${count}](green)"
