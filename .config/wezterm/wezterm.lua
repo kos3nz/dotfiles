@@ -149,35 +149,37 @@ return {
 		{ key = "Enter", mods = "CMD", action = "ToggleFullScreen" },
 		{ key = "c", mods = "CMD", action = action({ CopyTo = "Clipboard" }) },
 		{ key = "v", mods = "CMD", action = action({ PasteFrom = "Clipboard" }) },
-		{ key = "h", mods = "CMD", action = wezterm.action.HideApplication },
-		{ key = "q", mods = "CMD", action = wezterm.action.QuitApplication },
+		{ key = "h", mods = "CMD", action = action.HideApplication },
+		{ key = "q", mods = "CMD", action = action.QuitApplication },
 		{ key = "-", mods = "CMD", action = "DecreaseFontSize" },
 		{ key = "=", mods = "CMD", action = "IncreaseFontSize" },
 
 		-- Neovim
-		{ key = "/", mods = "CTRL", action = wezterm.action({ SendString = "\x1f" }) }, -- Comment out: <C-/>
-		{ key = "s", mods = "CMD", action = wezterm.action({ SendString = "\x1b\x20\x77" }) }, -- Save file: etc<space>w
-		{ key = "a", mods = "CMD", action = wezterm.action({ SendString = "\x67\x67\x56\x47" }) }, -- Select all: ggVG
-		{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action({ SendString = "\x20\x69\x6b" }) }, -- Move text up: <space>ik
-		{ key = "j", mods = "CTRL|SHIFT", action = wezterm.action({ SendString = "\x20\x69\x6a" }) }, -- Move text down: <space>ij
+		{ key = "/", mods = "CTRL", action = action({ SendString = "\x1f" }) }, -- Comment out: <C-/>
+		-- { key = "s", mods = "CMD", action = action({ SendString = "\x1b\x20\x77" }) }, -- Save file: etc<space>w
+		{ key = "a", mods = "CMD", action = action({ SendString = "\x67\x67\x56\x47" }) }, -- Select all: ggVG
+		{ key = "k", mods = "CTRL|SHIFT", action = action({ SendString = "\x20\x69\x6b" }) }, -- Move text up: <space>ik
+		{ key = "j", mods = "CTRL|SHIFT", action = action({ SendString = "\x20\x69\x6a" }) }, -- Move text down: <space>ij
 
 		-- Custom events
 		{
 			key = "u",
 			mods = "CMD",
-			action = wezterm.action.EmitEvent("toggle-window-background"),
+			action = action.EmitEvent("toggle-window-background"),
 		},
-		{ key = "0", mods = "CMD", action = wezterm.action.EmitEvent("toggle-cursor-color") },
+		{ key = "0", mods = "CMD", action = action.EmitEvent("toggle-cursor-color") },
 
 		-- Enter resize_pane key table. Escape to leave
 		{
 			key = "q",
 			mods = "SHIFT|CTRL",
-			action = wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
+			action = action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		},
 
 		-- Tmux
 		-- \x11: <C-q>
+		{ key = "s", mods = "CMD", action = action({ SendString = "\x11s" }) },
+		{ key = "f", mods = "CMD", action = action({ SendString = "\x11/" }) },
 		{ key = "t", mods = "CMD", action = action({ SendString = "\x11c" }) },
 		{ key = "d", mods = "CMD", action = action({ SendString = "\x11|" }) },
 		{ key = "D", mods = "CMD", action = action({ SendString = "\x11-" }) },
@@ -187,6 +189,8 @@ return {
 		{ key = "R", mods = "CMD", action = action({ SendString = "\x11R" }) },
 		{ key = "]", mods = "CMD", action = action({ SendString = "\x11n" }) },
 		{ key = "[", mods = "CMD", action = action({ SendString = "\x11p" }) },
+		{ key = "o", mods = "CMD", action = action({ SendString = "\x11o" }) },
+		{ key = "O", mods = "CMD", action = action({ SendString = "\x11O" }) },
 		{ key = "l", mods = "ALT", action = action({ SendString = "\x11l" }) },
 		{ key = "h", mods = "ALT", action = action({ SendString = "\x11h" }) },
 		{ key = "j", mods = "ALT", action = action({ SendString = "\x11j" }) },
@@ -210,18 +214,18 @@ return {
 		--   {
 		-- 	key = "d",
 		-- 	mods = "CMD",
-		-- 	action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		-- 	action = action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 		-- },
 		-- {
 		-- 	key = "D",
 		-- 	mods = "CMD|SHIFT",
-		-- 	action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+		-- 	action = action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
 		-- },
-		-- { key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		-- { key = "-", mods = "LEADER", action = action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 		-- {
 		-- 	key = "|",
 		-- 	mods = "LEADER",
-		-- 	action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		-- 	action = action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 		-- },
 		-- { key = "z", mods = "CMD", action = "TogglePaneZoomState" },
 		-- {
@@ -229,7 +233,7 @@ return {
 		-- 	mods = "CMD",
 		-- 	action = action.PromptInputLine({
 		-- 		description = "Enter new name for tab",
-		-- 		action = wezterm.action_callback(function(window, pane, line)
+		-- 		action = action_callback(function(window, pane, line)
 		-- 			-- line will be `nil` if they hit escape without entering anything
 		-- 			-- An empty string if they just hit enter
 		-- 			-- Or the actual line of text they wrote
@@ -244,7 +248,7 @@ return {
 		-- 	mods = "LEADER",
 		-- 	action = action.PromptInputLine({
 		-- 		description = "Enter new name for tab",
-		-- 		action = wezterm.action_callback(function(window, pane, line)
+		-- 		action = action_callback(function(window, pane, line)
 		-- 			-- line will be `nil` if they hit escape without entering anything
 		-- 			-- An empty string if they just hit enter
 		-- 			-- Or the actual line of text they wrote
@@ -311,10 +315,10 @@ return {
 			{ key = "DownArrow", mods = "NONE", action = action.CopyMode("NextMatch") },
 		},
 		resize_pane = {
-			{ key = "h", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
-			{ key = "j", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
-			{ key = "k", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
-			{ key = "l", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
+			{ key = "h", action = action.AdjustPaneSize({ "Left", 5 }) },
+			{ key = "j", action = action.AdjustPaneSize({ "Down", 5 }) },
+			{ key = "k", action = action.AdjustPaneSize({ "Up", 5 }) },
+			{ key = "l", action = action.AdjustPaneSize({ "Right", 5 }) },
 			{ key = "Escape", action = "PopKeyTable" },
 		},
 	},
