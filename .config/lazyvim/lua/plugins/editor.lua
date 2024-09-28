@@ -70,6 +70,15 @@ return {
     },
   },
 
+  -- flash
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "r", mode = "o", false },
+    },
+  },
+
   -- Surround actions
   {
     "kylechui/nvim-surround",
