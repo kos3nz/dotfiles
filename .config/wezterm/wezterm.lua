@@ -141,107 +141,18 @@ return {
 	-- Key bindings --
 	send_composed_key_when_left_alt_is_pressed = false, -- use option key as meta
 	send_composed_key_when_right_alt_is_pressed = false,
-	leader = { key = "q", mods = "CTRL", timeout_milliseconds = 1000 },
+	-- leader = { key = "q", mods = "CTRL", timeout_milliseconds = 1000 },
 	disable_default_key_bindings = true,
 
 	keys = {
+		-- { key = "t", mods = "CMD", action = wezterm.action.DisableDefaultAssignment },
 		{ key = "Enter", mods = "CMD", action = "ToggleFullScreen" },
 		{ key = "c", mods = "CMD", action = action({ CopyTo = "Clipboard" }) },
 		{ key = "v", mods = "CMD", action = action({ PasteFrom = "Clipboard" }) },
-		{
-			key = "d",
-			mods = "CMD",
-			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
-		},
-		{
-			key = "D",
-			mods = "CMD|SHIFT",
-			action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
-		},
-		{
-			key = "r",
-			mods = "CMD",
-			action = action.PromptInputLine({
-				description = "Enter new name for tab",
-				action = wezterm.action_callback(function(window, pane, line)
-					-- line will be `nil` if they hit escape without entering anything
-					-- An empty string if they just hit enter
-					-- Or the actual line of text they wrote
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
-		-- { key = "f", mods = "CMD", action = action.Search({ CaseInSensitiveString = "" }) },
 		{ key = "h", mods = "CMD", action = wezterm.action.HideApplication },
-		{ key = "t", mods = "CMD", action = action({ SpawnTab = "CurrentPaneDomain" }) },
-		{ key = "w", mods = "CMD", action = action({ CloseCurrentPane = { confirm = true } }) },
-		{ key = "w", mods = "CMD|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
 		{ key = "q", mods = "CMD", action = wezterm.action.QuitApplication },
-		{ key = "z", mods = "CMD", action = "TogglePaneZoomState" },
 		{ key = "-", mods = "CMD", action = "DecreaseFontSize" },
 		{ key = "=", mods = "CMD", action = "IncreaseFontSize" },
-		{ key = "]", mods = "LEADER", action = "QuickSelect" },
-		{ key = "1", mods = "CMD", action = action({ ActivateTab = 0 }) },
-		{ key = "2", mods = "CMD", action = action({ ActivateTab = 1 }) },
-		{ key = "3", mods = "CMD", action = action({ ActivateTab = 2 }) },
-		{ key = "4", mods = "CMD", action = action({ ActivateTab = 3 }) },
-		{ key = "5", mods = "CMD", action = action({ ActivateTab = 4 }) },
-		{ key = "6", mods = "CMD", action = action({ ActivateTab = 5 }) },
-		{ key = "7", mods = "CMD", action = action({ ActivateTab = 6 }) },
-		{ key = "8", mods = "CMD", action = action({ ActivateTab = 7 }) },
-		{ key = "9", mods = "CMD", action = action({ ActivateTab = 8 }) },
-
-		-- Tmux-like key bindings
-		-- Send "CTRL-Q" to the terminal when pressing CTRL-Q, CTRL-Q
-		{ key = "q", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
-		{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-		{
-			key = "|",
-			mods = "LEADER",
-			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
-		},
-		{
-			key = "r",
-			mods = "LEADER",
-			action = action.PromptInputLine({
-				description = "Enter new name for tab",
-				action = wezterm.action_callback(function(window, pane, line)
-					-- line will be `nil` if they hit escape without entering anything
-					-- An empty string if they just hit enter
-					-- Or the actual line of text they wrote
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
-		{ key = "m", mods = "LEADER", action = "TogglePaneZoomState" },
-		{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
-		{ key = "[", mods = "LEADER", action = "ActivateCopyMode" },
-		{ key = "c", mods = "LEADER", action = action({ SpawnTab = "CurrentPaneDomain" }) },
-		{ key = "n", mods = "LEADER", action = action({ ActivateTabRelative = 1 }) },
-		{ key = "p", mods = "LEADER", action = action({ ActivateTabRelative = -1 }) },
-		{ key = "]", mods = "CMD", action = action({ ActivateTabRelative = 1 }) },
-		{ key = "[", mods = "CMD", action = action({ ActivateTabRelative = -1 }) },
-		{ key = "]", mods = "CMD|SHIFT", action = action({ MoveTabRelative = 1 }) },
-		{ key = "[", mods = "CMD|SHIFT", action = action({ MoveTabRelative = -1 }) },
-		{ key = "h", mods = "LEADER", action = action({ ActivatePaneDirection = "Left" }) },
-		{ key = "j", mods = "LEADER", action = action({ ActivatePaneDirection = "Down" }) },
-		{ key = "k", mods = "LEADER", action = action({ ActivatePaneDirection = "Up" }) },
-		{ key = "l", mods = "LEADER", action = action({ ActivatePaneDirection = "Right" }) },
-		{ key = "1", mods = "LEADER", action = action({ ActivateTab = 0 }) },
-		{ key = "2", mods = "LEADER", action = action({ ActivateTab = 1 }) },
-		{ key = "3", mods = "LEADER", action = action({ ActivateTab = 2 }) },
-		{ key = "4", mods = "LEADER", action = action({ ActivateTab = 3 }) },
-		{ key = "5", mods = "LEADER", action = action({ ActivateTab = 4 }) },
-		{ key = "6", mods = "LEADER", action = action({ ActivateTab = 5 }) },
-		{ key = "7", mods = "LEADER", action = action({ ActivateTab = 6 }) },
-		{ key = "8", mods = "LEADER", action = action({ ActivateTab = 7 }) },
-		{ key = "9", mods = "LEADER", action = action({ ActivateTab = 8 }) },
-		{ key = "X", mods = "LEADER|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "x", mods = "LEADER", action = action({ CloseCurrentPane = { confirm = true } }) },
 
 		-- Neovim
 		{ key = "/", mods = "CTRL", action = wezterm.action({ SendString = "\x1f" }) }, -- Comment out: <C-/>
@@ -264,6 +175,118 @@ return {
 			mods = "SHIFT|CTRL",
 			action = wezterm.action.ActivateKeyTable({ name = "resize_pane", one_shot = false }),
 		},
+
+		-- Tmux
+		-- \x11: <C-q>
+		{ key = "t", mods = "CMD", action = action({ SendString = "\x11c" }) },
+		{ key = "d", mods = "CMD", action = action({ SendString = "\x11|" }) },
+		{ key = "D", mods = "CMD", action = action({ SendString = "\x11-" }) },
+		{ key = "w", mods = "CMD", action = action({ SendString = "\x11d" }) },
+		{ key = "W", mods = "CMD", action = action({ SendString = "\x11D" }) },
+		{ key = "r", mods = "CMD", action = action({ SendString = "\x11r" }) },
+		{ key = "R", mods = "CMD", action = action({ SendString = "\x11R" }) },
+		{ key = "]", mods = "CMD", action = action({ SendString = "\x11n" }) },
+		{ key = "[", mods = "CMD", action = action({ SendString = "\x11p" }) },
+		{ key = "l", mods = "ALT", action = action({ SendString = "\x11l" }) },
+		{ key = "h", mods = "ALT", action = action({ SendString = "\x11h" }) },
+		{ key = "j", mods = "ALT", action = action({ SendString = "\x11j" }) },
+		{ key = "k", mods = "ALT", action = action({ SendString = "\x11k" }) },
+		{ key = "m", mods = "CMD", action = action({ SendString = "\x11m" }) },
+		{ key = "z", mods = "CMD", action = action({ SendString = "\x11z" }) },
+		{ key = "1", mods = "CMD", action = action({ SendString = "\x111" }) },
+		{ key = "2", mods = "CMD", action = action({ SendString = "\x112" }) },
+		{ key = "3", mods = "CMD", action = action({ SendString = "\x113" }) },
+		{ key = "4", mods = "CMD", action = action({ SendString = "\x114" }) },
+		{ key = "5", mods = "CMD", action = action({ SendString = "\x115" }) },
+		{ key = "6", mods = "CMD", action = action({ SendString = "\x116" }) },
+		{ key = "7", mods = "CMD", action = action({ SendString = "\x117" }) },
+		{ key = "8", mods = "CMD", action = action({ SendString = "\x118" }) },
+		{ key = "9", mods = "CMD", action = action({ SendString = "\x119" }) },
+
+		-- Tmux-like key bindings
+		-- { key = "t", mods = "CMD", action = action({ SpawnTab = "CurrentPaneDomain" }) },
+		-- { key = "w", mods = "CMD", action = action({ CloseCurrentPane = { confirm = true } }) },
+		-- { key = "w", mods = "CMD|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
+		--   {
+		-- 	key = "d",
+		-- 	mods = "CMD",
+		-- 	action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		-- },
+		-- {
+		-- 	key = "D",
+		-- 	mods = "CMD|SHIFT",
+		-- 	action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
+		-- },
+		-- { key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		-- {
+		-- 	key = "|",
+		-- 	mods = "LEADER",
+		-- 	action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
+		-- },
+		-- { key = "z", mods = "CMD", action = "TogglePaneZoomState" },
+		-- {
+		-- 	key = "r",
+		-- 	mods = "CMD",
+		-- 	action = action.PromptInputLine({
+		-- 		description = "Enter new name for tab",
+		-- 		action = wezterm.action_callback(function(window, pane, line)
+		-- 			-- line will be `nil` if they hit escape without entering anything
+		-- 			-- An empty string if they just hit enter
+		-- 			-- Or the actual line of text they wrote
+		-- 			if line then
+		-- 				window:active_tab():set_title(line)
+		-- 			end
+		-- 		end),
+		-- 	}),
+		-- },
+		-- {
+		-- 	key = "r",
+		-- 	mods = "LEADER",
+		-- 	action = action.PromptInputLine({
+		-- 		description = "Enter new name for tab",
+		-- 		action = wezterm.action_callback(function(window, pane, line)
+		-- 			-- line will be `nil` if they hit escape without entering anything
+		-- 			-- An empty string if they just hit enter
+		-- 			-- Or the actual line of text they wrote
+		-- 			if line then
+		-- 				window:active_tab():set_title(line)
+		-- 			end
+		-- 		end),
+		-- 	}),
+		-- },
+		-- { key = "m", mods = "LEADER", action = "TogglePaneZoomState" },
+		-- { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
+		-- { key = "[", mods = "LEADER", action = "ActivateCopyMode" },
+		-- { key = "c", mods = "LEADER", action = action({ SpawnTab = "CurrentPaneDomain" }) },
+		-- { key = "n", mods = "LEADER", action = action({ ActivateTabRelative = 1 }) },
+		-- { key = "p", mods = "LEADER", action = action({ ActivateTabRelative = -1 }) },
+		-- { key = "h", mods = "LEADER", action = action({ ActivatePaneDirection = "Left" }) },
+		-- { key = "j", mods = "LEADER", action = action({ ActivatePaneDirection = "Down" }) },
+		-- { key = "k", mods = "LEADER", action = action({ ActivatePaneDirection = "Up" }) },
+		-- { key = "l", mods = "LEADER", action = action({ ActivatePaneDirection = "Right" }) },
+		-- { key = "1", mods = "LEADER", action = action({ ActivateTab = 0 }) },
+		-- { key = "2", mods = "LEADER", action = action({ ActivateTab = 1 }) },
+		-- { key = "3", mods = "LEADER", action = action({ ActivateTab = 2 }) },
+		-- { key = "4", mods = "LEADER", action = action({ ActivateTab = 3 }) },
+		-- { key = "5", mods = "LEADER", action = action({ ActivateTab = 4 }) },
+		-- { key = "6", mods = "LEADER", action = action({ ActivateTab = 5 }) },
+		-- { key = "7", mods = "LEADER", action = action({ ActivateTab = 6 }) },
+		-- { key = "8", mods = "LEADER", action = action({ ActivateTab = 7 }) },
+		-- { key = "9", mods = "LEADER", action = action({ ActivateTab = 8 }) },
+		-- { key = "X", mods = "LEADER|SHIFT", action = action({ CloseCurrentTab = { confirm = true } }) },
+		-- { key = "x", mods = "LEADER", action = action({ CloseCurrentPane = { confirm = true } }) },
+		-- { key = "]", mods = "LEADER", action = "QuickSelect" },
+		-- { key = "1", mods = "CMD", action = action({ ActivateTab = 0 }) },
+		-- { key = "2", mods = "CMD", action = action({ ActivateTab = 1 }) },
+		-- { key = "3", mods = "CMD", action = action({ ActivateTab = 2 }) },
+		-- { key = "4", mods = "CMD", action = action({ ActivateTab = 3 }) },
+		-- { key = "5", mods = "CMD", action = action({ ActivateTab = 4 }) },
+		-- { key = "6", mods = "CMD", action = action({ ActivateTab = 5 }) },
+		-- { key = "7", mods = "CMD", action = action({ ActivateTab = 6 }) },
+		-- { key = "8", mods = "CMD", action = action({ ActivateTab = 7 }) },
+		-- { key = "9", mods = "CMD", action = action({ ActivateTab = 8 }) },
+		-- { key = "]", mods = "CMD", action = action({ ActivateTabRelative = 1 }) },
+		-- { key = "[", mods = "CMD", action = action({ ActivateTabRelative = -1 }) },
 	},
 
 	key_tables = {
