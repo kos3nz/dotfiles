@@ -1,12 +1,14 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
 
-wezterm.on("toggle-opacity", function(window)
+wezterm.on("toggle-window-background", function(window)
 	local overrides = window:get_config_overrides() or {}
-	if not overrides.window_background_opacity then
+	if not overrides.window_background_opacity and not overrides.macos_window_background_blur then
 		overrides.window_background_opacity = 0.75
+		overrides.macos_window_background_blur = 0
 	else
 		overrides.window_background_opacity = nil
+		overrides.macos_window_background_blur = nil
 	end
 	window:set_config_overrides(overrides)
 end)
@@ -60,7 +62,8 @@ return {
 	-- Window --
 	initial_cols = 141,
 	initial_rows = 120,
-	window_background_opacity = 0.98,
+	window_background_opacity = 0.97,
+	macos_window_background_blur = 50,
 	window_decorations = "RESIZE",
 	window_padding = { left = 8, right = 8, top = 8, bottom = 8 },
 	-- launch_menu = {
@@ -251,7 +254,7 @@ return {
 		{
 			key = "u",
 			mods = "CMD",
-			action = wezterm.action.EmitEvent("toggle-opacity"),
+			action = wezterm.action.EmitEvent("toggle-window-background"),
 		},
 		{ key = "0", mods = "CMD", action = wezterm.action.EmitEvent("toggle-cursor-color") },
 
