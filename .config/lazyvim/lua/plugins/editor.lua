@@ -598,7 +598,25 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      plugins = { spelling = true },
+      plugins = {
+        spelling = {
+          enabled = true,
+          suggestions = 5,
+        },
+      },
+      win = {
+        no_overlap = true,
+        title = false,
+        -- width = 1,
+        height = { min = 4, max = 25 },
+        border = "rounded",
+        padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+        -- zindex = 1000,
+      },
+      layout = {
+        width = { min = 10, max = 30 }, -- min and max width of the columns
+        spacing = 4, -- spacing between columns
+      },
       spec = {
         mode = { "n" },
         { "<leader>w", "<cmd>w<cr>", desc = "Save" },
@@ -617,6 +635,11 @@ return {
         { "<leader>s", group = "+search" },
         { "<leader>u", group = "+ui" },
         { "<leader>x", group = "+diagnostics/quickfix" },
+        { "<leader>*", hidden = true }, -- hide the keymap for vim-visual-star-search
+      },
+      keys = {
+        scroll_down = "<c-d>", -- binding to scroll down inside the popup
+        scroll_up = "<c-u>", -- binding to scroll up inside the popup
       },
     },
     config = function(_, opts)
