@@ -143,6 +143,7 @@ alias sp="shopify"
 alias h2="npx shopify hydrogen"
 
 # Tmux
+alias ta='tmux attach'
 alias tl='tmux ls'
 alias tn='tmux new-session -A -s $(basename "`pwd`")' # カレントディレクトリ名でセッション作成
 
