@@ -488,7 +488,7 @@ return {
         ["package-lock.json"] = { glyph = "", hl = "MiniIconsRed" },
         ["yarn.lock"] = { glyph = "", hl = "MiniIconsCyan" },
         [".yarnrc.yml"] = { glyph = "", hl = "MiniIconsCyan" },
-        ["pnpm-lock.yaml"] = { glyph = "󰋁 ", hl = "MiniIconsOrange" },
+        ["pnpm-lock.yaml"] = { glyph = "󰋁", hl = "MiniIconsOrange" },
         [".env"] = { glyph = "", hl = "MiniIconsGrey" },
         [".env.example"] = { glyph = "", hl = "MiniIconsGrey" },
         [".env.local"] = { glyph = "", hl = "MiniIconsGrey" },
