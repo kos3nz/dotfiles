@@ -104,7 +104,6 @@ typeset -U path
 # typeset -U fpath
 
 path=(
-  "$HOME/.config/alacritty/bin"(N-/)
   "$VOLTA_HOME/bin"(N-/)
   "$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin"(N-/)
   $path
