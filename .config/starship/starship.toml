@@ -73,6 +73,7 @@ style = "cyan"
 
 [git_status]
 format = """
+([|](black)$ahead_behind )\
 (\
 [|](black)\
 $conflicted\
@@ -83,7 +84,6 @@ $untracked\
 $deleted\
 $stashed\
 )\
-([|](black)$ahead_behind )\
 """
 conflicted = " [ ](red)"
 ahead = " [⇡·${count}](green)"
