@@ -62,8 +62,8 @@ return {
 	-- Window --
 	initial_cols = 141,
 	initial_rows = 120,
-	window_background_opacity = 0.97,
-	macos_window_background_blur = 50,
+	window_background_opacity = 0.94,
+	macos_window_background_blur = 100,
 	window_decorations = "RESIZE",
 	window_padding = { left = 8, right = 8, top = 8, bottom = 8 },
 	-- launch_menu = {
