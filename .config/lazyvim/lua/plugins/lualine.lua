@@ -48,7 +48,7 @@ return {
 
     local opts = {
       options = {
-        theme = theme,
+        theme = theme, -- "auto" to use the default theme, use 'theme' variable for customization
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
       },
