@@ -11,6 +11,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "jandedobbeleer/oh-my-posh" # for oh-my-posh
 tap "jesseduffield/lazygit" # for lazygit
+tap "joshmedeski/sesh" # for sesh
 # tap "josephpage/jetpack-io" # for dovbox
 tap "koekeishiya/formulae"
 tap "lindell/multi-gitter"
@@ -71,6 +72,7 @@ brew "php"
 brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
+brew "sesh" # Smart tmux session manager
 brew "shopify-cli"
 # brew "shopify/shopify/themekit"
 brew "skaffold"
