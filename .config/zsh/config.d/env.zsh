@@ -23,7 +23,6 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|),ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 "
 export FZF_ALT_C_COMMAND="fd --hidden --type d --exclude .git" # show only directories
-export FZF_TMUX_OPTS="-p 90%,75%" # width,height
 
 ### ni ###
 export NI_CONFIG_FILE="$HOME/.config/ni/nirc"

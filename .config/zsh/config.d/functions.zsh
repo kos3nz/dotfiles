@@ -28,7 +28,6 @@ zle -N fzf-process-kill
 function fzf-get-destination-from-cdr() {
   cdr -l | \
   sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
-  # fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} --
   fzf
 }
 # search a destination from cdr list and cd the destination
@@ -59,7 +58,6 @@ zle -N clean-cdr
 
 # ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。
 function fzf-ghq () {
-  # local selected_dir=$(ghq list -p | fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- )
   local selected_dir=$(ghq list | fzf )
   if [ -n "$selected_dir" ]; then
     BUFFER="cd $HOME/ghq/${selected_dir}"

@@ -158,7 +158,6 @@ return {
 
 		-- Neovim
 		{ key = "/", mods = "CTRL", action = action({ SendString = "\x1f" }) }, -- Comment out: <C-/>
-		-- { key = "s", mods = "CMD", action = action({ SendString = "\x1b\x20\x77" }) }, -- Save file: etc<space>w
 		{ key = "a", mods = "CMD", action = action({ SendString = "\x67\x67\x56\x47" }) }, -- Select all: ggVG
 		{ key = "k", mods = "CTRL|SHIFT", action = action({ SendString = "\x20\x69\x6b" }) }, -- Move text up: <space>ik
 		{ key = "j", mods = "CTRL|SHIFT", action = action({ SendString = "\x20\x69\x6a" }) }, -- Move text down: <space>ij
