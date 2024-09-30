@@ -14,14 +14,19 @@ export BAT_STYLE='numbers,changes,header,header-filesize,grid'
 
 ### fzf ###
 export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'
-export FZF_DEFAULT_OPTS='--reverse --border --height 75% --bind="ctrl-f:replace-query"'
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#cdd6f4,bg:#0e0e1e,hl:#6689c4 --color=fg+:#b6bedb,bg+:#2b2b42,hl+:#89b4fa --color=info:#f9e2af,prompt:#f38ba8,pointer:#89b3fa --color=marker:#a6e3a1,spinner:#f9e2af,header:#94E2D5'
+export FZF_DEFAULT_OPTS='--reverse --border --height 60% --tmux 50%,60% --bind="ctrl-f:replace-query"'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#6c7086,fg+:#cdd6f4,bg:#11111b,bg+:#1e1e2e,hl:#89b4fa,hl+:#89b4fa,info:#fab387,prompt:#a6e3a1,pointer:#89b4fa,marker:#89b4fa,border:#89b4fa'
+
+# fzf-file-widget
 export FZF_CTRL_T_COMMAND="fd --hidden --type f --exclude .git" # show only files
 export FZF_CTRL_T_OPTS="
+  --tmux 90%,80%
+  --preview 'bat --theme=base16 --color=always --style="numbers,header,header-filesize,grid" {}'
   --preview 'bat --theme=base16 --color=always --style="numbers,header,header-filesize,grid" {}'
   --preview-window 'right,70%'
   --bind 'ctrl-/:change-preview-window(down|hidden|),ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'
 "
+# fzf-cd-widget
 export FZF_ALT_C_COMMAND="fd --hidden --type d --exclude .git" # show only directories
 
 ### ni ###
