@@ -20,7 +20,7 @@ cmd mkfile ${{
   touch $ans
 }}
 
-# define custom 'delete' command
+# Define custom 'delete' command
 cmd delete ${{
     set -f
     printf "$fx\n"
@@ -39,6 +39,18 @@ cmd fzf_jump ${{
         exit 0
     fi
     lf -remote "send $id $cmd \"$res\""
+}}
+
+# Open files with Neovim
+# cmd nvim ${{
+#     nvim "$f"
+# }}
+cmd open ${{
+    if [ -d "$f" ]; then
+        lf -remote "send $id cd \"$f\""
+    else
+        nvim "$f" < /dev/tty
+    fi
 }}
 
 map <c-f> :fzf_jump
@@ -63,17 +75,17 @@ map '<c-j>'
 map . set hidden!
 map a mkfile
 map A mkdir
-map d delete 
-map l open 
-map o open 
+map d delete
+map l open
+map o open
 map p paste
 map q quit
 map r rename
 map R reload
-map x cut 
-map y copy 
+map x cut
+map y copy
 map <enter> shell
-map <esc> clear 
+map <esc> clear
 
 # Command Line Commands
 map <c-m> cmd-enter
