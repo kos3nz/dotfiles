@@ -152,3 +152,9 @@ lfcd () {
     cd "$(command lf -print-last-dir "$@")"
 }
 zle -N lfcd
+
+### lazygit ###
+lg () {
+  lazygit
+}
+zle -N lg

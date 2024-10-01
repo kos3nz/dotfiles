@@ -33,11 +33,6 @@ if type "lf" > /dev/null 2>&1; then
     alias lf="lfcd"
 fi
 
-# lazygit
-if type "lazygit" > /dev/null 2>&1; then
-    alias lg='lazygit'
-fi
-
 # neovim
 if type "nvim" > /dev/null 2>&1; then
     alias v='nvim'
