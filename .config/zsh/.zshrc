@@ -89,14 +89,13 @@ bindkey -e # e-macs keybindings
 
 # fzf (fzf-history-widget: ^R, fzf-cd-widget: ^[c, fzf-file-widget: ^T )
 bindkey -r '^[c'
-bindkey '^g' fzf-cd-widget
-
-bindkey "^j" jump_middle
 bindkey '^o' fzf-cdr
 bindkey '^v' navi_widget
 bindkey '^]' fzf-ghq
 bindkey '^[c' code-ghq-r # escape + c
 bindkey '^[n' code-ghq-n # escape + n
+bindkey '^g' lg
+bindkey '^j' lfcd
 
 
 ### Paths ###
