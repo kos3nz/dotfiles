@@ -524,6 +524,7 @@ return {
         ["tailwind.config.mjs"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
         ["tailwind.config.ts"] = { glyph = "󱏿", hl = "MiniIconsCyan" },
         ["tsconfig.json"] = { glyph = "", hl = "MiniIconsAzure" },
+        ["tsconfig.base.json"] = { glyph = "", hl = "MiniIconsAzure" },
         ["tsconfig.build.json"] = { glyph = "", hl = "MiniIconsAzure" },
         ["vite.config.js"] = { glyph = "󱐋", hl = "MiniIconsYellow" },
         ["vite.config.ts"] = { glyph = "󱐋", hl = "MiniIconsYellow" },
@@ -544,6 +545,7 @@ return {
         ["translation.yml"] = { glyph = "", hl = "MiniIconsGreen" },
         ["shopify.app.toml"] = { glyph = "", hl = "MiniIconsGreen" },
         ["shopify.extension.toml"] = { glyph = "", hl = "MiniIconsGreen" },
+        ["shopify.theme.toml"] = { glyph = "", hl = "MiniIconsGreen" },
         ["shopify.web.toml"] = { glyph = "", hl = "MiniIconsGreen" },
       },
       filetype = {
