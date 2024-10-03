@@ -4,7 +4,7 @@
 set hidden true
 set ignorecase true
 set icons true
-set shell sh
+set shell zsh
 set previewer ~/.config/lf/previewer.sh
 
 ### Custom Functions
