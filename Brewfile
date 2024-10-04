@@ -114,7 +114,7 @@ cask "kap"
 cask "local" # Develop WordPress sites locally
 # cask "logi-options+"
 cask "lunar"
-cask "maccy"
+# cask "maccy"
 cask "ngrok"
 cask "obsidian"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
