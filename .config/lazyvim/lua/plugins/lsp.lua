@@ -126,7 +126,7 @@ return {
       -- Add a border to ":LspInfo"
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
-      -- NOTE: Switching to noice.nvim (ui.lua: @line 214 )
+      -- NOTE: Switching to noice.nvim (ui.lua: @line 214)
       --
       -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(function(_, result, ctx, config)
       --   config = config or {}
