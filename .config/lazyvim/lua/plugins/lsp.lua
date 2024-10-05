@@ -47,7 +47,7 @@ return {
       ensure_installed = {
         "emmet_ls",
         "vtsls",
-        "denols",
+        -- "denols",
         "astro",
         -- "svelte-language-server",
         -- "vuels",
@@ -100,6 +100,19 @@ return {
         end,
         desc = "Next diagnostic",
       }
+
+      -- opts.servers = {
+      --   vtsls = {
+      --     settings = {
+      --       typescript = {
+      --         inlayHints = {
+      --           enumMemberValues = { enabled = false },
+      --           parameterNames = { enabled = false },
+      --         },
+      --       },
+      --     },
+      --   },
+      -- }
 
       opts.diagnostics = {
         float = {
