@@ -136,8 +136,13 @@ return {
         },
       }
 
-      -- Add a border to ":LspInfo"
+      -- Add a border for ":LspInfo"
       require("lspconfig.ui.windows").default_options.border = "rounded"
+
+      -- Add a border for LSP diagnostic popup
+      vim.diagnostic.config({
+        float = { border = "rounded" },
+      })
 
       -- NOTE: Switching to noice.nvim (ui.lua: @line 214)
       --
