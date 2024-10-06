@@ -46,6 +46,15 @@ git config core.sparseCheckout true
 git config core.sparseCheckout false
 
 
+% git, subtree
+
+# Pull and merge changes in the subtree branch into the main branch
+git subtree merge --prefix=<directory> --squash <commit>
+
+# Split and create a subtree branch / Update changes from the main branch to the subtree branch
+git subtree split --prefix=<directory> --branch <branch> --annotate="(subtree) " --rejoin --squash
+
+
 % git, ghq
 
 # Update all local repositories
