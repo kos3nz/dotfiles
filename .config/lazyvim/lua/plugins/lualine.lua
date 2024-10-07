@@ -111,7 +111,7 @@ return {
               return LazyVim.ui.fg("Special")
             end,
           },
-          LazyVim.lualine.cmp_source("codeium"),
+          -- LazyVim.lualine.cmp_source("codeium"),
           {
             "diff",
             symbols = {
