@@ -95,6 +95,7 @@ bindkey '^]' fzf-ghq
 bindkey '^[c' code-ghq-r # escape + c
 bindkey '^[n' code-ghq-n # escape + n
 bindkey '^g' lg
+bindkey '^j' jump_middle
 
 
 ### Paths ###
