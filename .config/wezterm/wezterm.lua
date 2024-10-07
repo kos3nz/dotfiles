@@ -184,6 +184,7 @@ return {
 		{ key = "t", mods = "CMD", action = action({ SendString = "\x11c" }) },
 		{ key = "d", mods = "CMD", action = action({ SendString = "\x11|" }) },
 		{ key = "D", mods = "CMD", action = action({ SendString = "\x11-" }) },
+		{ key = "l", mods = "CMD", action = action({ SendString = "\x11#" }) },
 		{ key = "w", mods = "CMD", action = action({ SendString = "\x11d" }) },
 		{ key = "W", mods = "CMD", action = action({ SendString = "\x11D" }) },
 		{ key = "r", mods = "CMD", action = action({ SendString = "\x11r" }) },
