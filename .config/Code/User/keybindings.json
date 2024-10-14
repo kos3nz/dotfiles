@@ -157,15 +157,6 @@
   },
   // Move editor left/right
   {
-    "key": "cmd+shift+]",
-    "command": "workbench.action.moveEditorRightInGroup"
-  },
-  {
-    "key": "cmd+shift+[",
-    "command": "workbench.action.moveEditorLeftInGroup"
-  },
-  // Switch window
-  {
     "key": "ctrl+]",
     "command": "workbench.action.quickSwitchWindow"
   },

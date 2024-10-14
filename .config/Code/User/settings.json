@@ -1979,7 +1979,7 @@
     // Wrap with html tag
     {
       "before": ["<leader>", "l", "t"],
-      "commands": ["editor.emmet.action.wrapWithAbbreviation"],
+      "commands": ["orta.vscode-twoslash-queries.insert-twoslash-query"],
       "silent": true
     },
     // Hover Definition
@@ -2748,6 +2748,11 @@
     "zlib",
     "wordpress"
   ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                Console Ninja                               */
+  /* -------------------------------------------------------------------------- */
+  "console-ninja.featureSet": "Community",
 
   /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */
