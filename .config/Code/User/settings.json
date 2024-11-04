@@ -32,7 +32,7 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+={}[]`?",
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": true,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -1071,13 +1071,16 @@
   /*                               Indent Rainbow                               */
   /* -------------------------------------------------------------------------- */
   "indentRainbow.colors": [
-    "rgba(3, 4, 94,0.15)",
-    "rgba(2, 62, 138,0.15)",
+    "rgba(3, 4, 94, 0.15)",
+    "rgba(2, 62, 138, 0.15)",
     "rgba(0, 119, 182, 0.15)",
-    "rgba(0, 150, 199,0.15)",
-    "rgba(0, 180, 216,0.15)",
-    "rgba(72, 202, 228,0.15)",
-    "rgba(144, 224, 239,0.15)"
+    "rgba(0, 150, 199, 0.15)",
+    "rgba(0, 180, 216, 0.15)",
+    "rgba(72, 202, 228, 0.15)",
+    "rgba(144, 224, 239, 0.15)",
+    "rgba(144, 224, 239, 0.1)",
+    "rgba(144, 224, 239, 0.05)",
+    "rgba(144, 224, 239, 0.025)"
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -1779,6 +1782,12 @@
     {
       "before": ["<leader>", "f", "a"],
       "commands": ["workbench.action.findInFiles"],
+      "silent": true
+    },
+    // Fine symbols
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.showAllSymbols"],
       "silent": true
     },
 
@@ -2753,6 +2762,39 @@
   /*                                Console Ninja                               */
   /* -------------------------------------------------------------------------- */
   "console-ninja.featureSet": "Community",
+
+  /* -------------------------------------------------------------------------- */
+  /*                               CSS Navigation                               */
+  /* -------------------------------------------------------------------------- */
+  "CSSNavigation.activeHTMLFileExtensions": [
+    "html",
+    "ejs",
+    "erb",
+    "php",
+    "hbs",
+    "js",
+    "ts",
+    "jsx",
+    "tsx",
+    "vue",
+    "twig",
+    "svelte",
+    "liquid"
+  ],
+  "CSSNavigation.activeCSSFileExtensions": ["css", "scss", "sass", "less"],
+  "CSSNavigation.excludeGlobPatterns": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/coverage/**",
+    "**/shopify-email/**",
+    "**/*.min.*"
+  ],
+  "CSSNavigation.alsoSearchDefinitionsInStyleTag": true,
+  "CSSNavigation.searchAcrossWorkspaceFolders": false,
+  "CSSNavigation.ignoreSameNameCSSFile": true,
+  "CSSNavigation.ignoreFilesBy": [".gitignore"],
+  "CSSNavigation.ignoreCustomElement": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */

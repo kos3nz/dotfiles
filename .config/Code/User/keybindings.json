@@ -1629,14 +1629,6 @@
     "when": "!isIOS"
   },
   {
-    "key": "shift+cmd+i",
-    "command": "workbench.action.showAllSymbols"
-  },
-  {
-    "key": "cmd+t",
-    "command": "-workbench.action.showAllSymbols"
-  },
-  {
     "key": "ctrl+down",
     "command": "-gotoNextPreviousMember.nextMember"
   },
