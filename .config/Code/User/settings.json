@@ -602,6 +602,7 @@
 
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsserver.log": "off",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.parameterTypes.enabled": true,
