@@ -116,9 +116,6 @@ map(t, "<c-b>", "<left>")
 map(t, "<c-f>", "<right>")
 map(t, "<c-h>", "<bs>")
 
-del(t, "<c-k>")
-del(t, "<c-l>")
-
 --------------------
 -- Operator pending mode
 --------------------
