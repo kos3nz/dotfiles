@@ -25,6 +25,10 @@ return {
           if status and not bufs[2] then
             vim.cmd("Dashboard")
           end
+          -- local status = pcall(require, "snacks")
+          -- if status and not bufs[2] then
+          --   vim.cmd("lua Snacks.dashboard.open()")
+          -- end
         end,
         desc = "Delete Buffer",
       },
@@ -56,14 +60,28 @@ return {
       {
         "<leader>D",
         function()
+          local bufs = vim.fn.getbufinfo({ buflisted = true })
+
           require("mini.bufremove").delete(0, true)
+
+          local status = pcall(require, "dashboard")
+          if status and not bufs[2] then
+            vim.cmd("Dashboard")
+          end
         end,
         desc = "Delete Buffer (Force)",
       },
       {
         "<leader>bD",
         function()
+          local bufs = vim.fn.getbufinfo({ buflisted = true })
+
           require("mini.bufremove").delete(0, true)
+
+          local status = pcall(require, "dashboard")
+          if status and not bufs[2] then
+            vim.cmd("Dashboard")
+          end
         end,
         desc = "Delete Buffer (Force)",
       },
