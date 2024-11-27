@@ -5,11 +5,11 @@
   "window.newWindowDimensions": "inherit", // ウィンドウのズームレベル
   "files.defaultLanguage": "markdown",
   "files.associations": {
-    // "*.css": "tailwindcss"
-    // "*.svg": "html",
-    // "*.xml": "html",
+    "*.css": "tailwindcss",
     "*.mdx": "markdown",
     "*.module": "php"
+    // "*.svg": "html",
+    // "*.xml": "html",
   },
   "editor.renderWhitespace": "all",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -672,11 +672,15 @@
   /* -------------------------------------------------------------------------- */
   /*                                  Stylelint                                 */
   /* -------------------------------------------------------------------------- */
-  "stylelint.enable": false,
-  // Disable vscode built-in linters for css, less, scss
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
+  // "stylelint.enable": true,
+  // When stylelint is enabled, disable vscode built-in linters for css, less, scss
+  // "css.validate": false,
+  // "less.validate": false,
+  // "scss.validate": false,
+
+  "css.validate": true,
+  "less.validate": true,
+  "scss.validate": true,
 
   // "stylelint.configFile": "./.stylelintrc",
   "stylelint.validate": [
@@ -2671,7 +2675,8 @@
   "codeium.enableConfig": {
     "*": true,
     "prisma": true,
-    "liquid": true
+    "liquid": true,
+    "tailwindcss": true
   },
 
   /* -------------------------------------------------------------------------- */
