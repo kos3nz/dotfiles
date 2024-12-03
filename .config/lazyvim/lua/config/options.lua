@@ -24,7 +24,7 @@ opt.writebackup = false -- if a file is being edited by another program (or was 
 -- line numbers
 opt.number = true -- who line numbers
 opt.numberwidth = 4 -- set number column width (default 4)
-opt.relativenumber = true -- set relative numbered lines
+opt.relativenumber = false -- set relative numbered lines
 
 -- tabs & indentation
 opt.tabstop = 2 -- insert 2 spaces for a tab
