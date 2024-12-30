@@ -1065,10 +1065,11 @@
   /*                               Github Copilot                               */
   /* -------------------------------------------------------------------------- */
   "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
+    "*": false,
     "plaintext": false,
     "markdown": false,
+    "scminput": false,
+    "yaml": false,
     "mdx": false
   },
 
@@ -1775,6 +1776,11 @@
     // Find files
     {
       "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "<leader>"],
       "commands": ["workbench.action.quickOpen"],
       "silent": true
     },
