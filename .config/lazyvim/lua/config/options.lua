@@ -93,3 +93,6 @@ opt.undofile = true -- enable persistent undo
 
 -- mapping
 opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+
+-- keyword
+opt.iskeyword:append("-") -- allows Neovim to recognize the hyphen ('-') as part of a word.
