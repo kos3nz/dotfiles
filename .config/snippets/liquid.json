@@ -4,41 +4,36 @@
   /* -------------------------------------------------------------------------- */
   "{% liquid %}": {
     "prefix": "liquid",
-    "body": [
-      "{% liquid",
-      "  $0",
-      "%}"
-    ],
+    "body": ["{% liquid", "  $0", "%}"],
     "description": "Syntax tag: liquid"
   },
   "{%- liquid -%}": {
     "prefix": "liquid-",
-    "body": [
-      "{%- liquid",
-      "  $0",
-      "-%}"
-    ],
+    "body": ["{%- liquid", "  $0", "-%}"],
     "description": "Syntax tag: liquid, whitespaced"
   },
+  "{% comment %}": {
+    "prefix": "comment",
+    "body": ["{% comment %}", "$0", "{% endcomment %}"],
+    "description": "Syntax tag: comment"
+  },
+  "{%- comment -%}": {
+    "prefix": "comment",
+    "body": ["{%- comment -%}", "$0", "{%- endcomment -%}"],
+    "description": "Syntax tag: comment, whitespaced"
+  },
+
   /* -------------------------------------------------------------------------- */
   /*                                  HTML Tags                                 */
   /* -------------------------------------------------------------------------- */
   "{% style %}": {
     "prefix": "style",
-    "body": [
-      "{% style %}",
-      "  $0",
-      "{% endstyle %}"
-    ],
+    "body": ["{% style %}", "  $0", "{% endstyle %}"],
     "description": "HTML tag: style"
   },
   "{%- style -%}": {
     "prefix": "style-",
-    "body": [
-      "{%- style -%}",
-      "  $0",
-      "{%- endstyle -%}"
-    ],
+    "body": ["{%- style -%}", "  $0", "{%- endstyle -%}"],
     "description": "HTML tag: style, whitespaced"
   },
   "{% form %}": {
@@ -76,102 +71,84 @@
   /* -------------------------------------------------------------------------- */
   /*                                Closing Tags                                */
   /* -------------------------------------------------------------------------- */
+  "{% endcomment %}": {
+    "prefix": "endcomment",
+    "body": ["{% endcomment %}"],
+    "description": "Closing tag: comment"
+  },
+  "{%- endcomment -%}": {
+    "prefix": "endcomment-",
+    "body": ["{%- endcomment -%}"],
+    "description": "Closing tag: comment, whitespaced"
+  },
   "{% endif %}": {
     "prefix": "endif",
-    "body": [
-      "{% endif %}"
-    ],
+    "body": ["{% endif %}"],
     "description": "Closing tag: if"
   },
   "{%- endif -%}": {
     "prefix": "endif-",
-    "body": [
-      "{%- endif -%}"
-    ],
+    "body": ["{%- endif -%}"],
     "description": "Closing tag: if, whitespaced"
   },
   "{% endunless %}": {
     "prefix": "endunless",
-    "body": [
-      "{% endunless %}"
-    ],
+    "body": ["{% endunless %}"],
     "description": "Closing tag: unless"
   },
   "{%- endunless -%}": {
     "prefix": "endunless-",
-    "body": [
-      "{%- endunless -%}"
-    ],
+    "body": ["{%- endunless -%}"],
     "description": "Closing tag: unless, whitespaced"
   },
   "{% endcase %}": {
     "prefix": "endcase",
-    "body": [
-      "{% endcase %}"
-    ],
+    "body": ["{% endcase %}"],
     "description": "Closing tag: case"
   },
   "{%- endcase -%}": {
     "prefix": "endcase-",
-    "body": [
-      "{%- endcase -%}"
-    ],
+    "body": ["{%- endcase -%}"],
     "description": "Closing tag: case, whitespaced"
   },
   "{% endfor %}": {
     "prefix": "endfor",
-    "body": [
-      "{% endfor %}"
-    ],
+    "body": ["{% endfor %}"],
     "description": "Closing tag: for"
   },
   "{%- endfor -%}": {
     "prefix": "endfor-",
-    "body": [
-      "{%- endfor -%}"
-    ],
+    "body": ["{%- endfor -%}"],
     "description": "Closing tag: for, whitespaced"
   },
   "{% endstyle %}": {
     "prefix": "endstyle",
-    "body": [
-      "{% endstyle %}"
-    ],
+    "body": ["{% endstyle %}"],
     "description": "Closing tag: style"
   },
   "{%- endstyle -%}": {
     "prefix": "endstyle-",
-    "body": [
-      "{%- endstyle -%}"
-    ],
+    "body": ["{%- endstyle -%}"],
     "description": "Closing tag: style, whitespaced"
   },
   "{% endform %}": {
     "prefix": "endform",
-    "body": [
-      "{% endform %}"
-    ],
+    "body": ["{% endform %}"],
     "description": "Closing tag: form"
   },
   "{%- endform -%}": {
     "prefix": "endform-",
-    "body": [
-      "{%- endform -%}"
-    ],
+    "body": ["{%- endform -%}"],
     "description": "Closing tag: form, whitespaced"
   },
   "{% endpaginate %}": {
     "prefix": "endpaginate",
-    "body": [
-      "{% endpaginate %}"
-    ],
+    "body": ["{% endpaginate %}"],
     "description": "Closing tag: paginate"
   },
   "{%- endpaginate -%}": {
     "prefix": "endpaginate-",
-    "body": [
-      "{%- endpaginate -%}"
-    ],
+    "body": ["{%- endpaginate -%}"],
     "description": "Closing tag: paginate, whitespaced"
   }
 }
