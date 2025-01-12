@@ -44,11 +44,6 @@ fi
 # rm/trash
 if type "trash" > /dev/null 2>&1; then
     alias rm="trash"
-    alias rm-p="trash-put"
-    alias rm-e="trash-empty"
-    alias rm-l="trash-list"
-    alias rm-s="trash-restore"
-    alias rm-d="trash-rm"
 fi
 
 # Git && Github

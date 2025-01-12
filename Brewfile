@@ -59,7 +59,6 @@ brew "oh-my-posh"
 brew "jq"
 brew "lf" # Terminal file manager.
 brew "luajit"
-brew "trash-cli" # Command line interface to the freedesktop.org trashcan.
 brew "mas" # Mac App Store command-line interface
 brew "mmv" # Rename multiple files with editor
 brew "multi-gitter" # Update multiple repositories in with one command
