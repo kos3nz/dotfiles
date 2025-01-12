@@ -2801,12 +2801,31 @@
     "**/coverage/**",
     "**/shopify-email/**",
     "**/*.min.*"
+    // "**/styles/variables/*.css"
   ],
-  "CSSNavigation.alsoSearchDefinitionsInStyleTag": true,
   "CSSNavigation.searchAcrossWorkspaceFolders": false,
-  "CSSNavigation.ignoreSameNameCSSFile": true,
   "CSSNavigation.ignoreFilesBy": [".gitignore"],
-  "CSSNavigation.ignoreCustomElement": false,
+  "CSSNavigation.ignoreCustomAndComponentTagDefinition": false,
+
+  /* -------------------------------------------------------------------------- */
+  /*                              Css Var Complete                              */
+  /* -------------------------------------------------------------------------- */
+  // "cssvar.files": ["src/styles/variables/*.css", "tailwindcss/base/variables/*.css"],
+  "cssvar.extensions": [
+    "css",
+    "scss",
+    "sass",
+    "less",
+    "postcss",
+    "vue",
+    "svelte",
+    "astro",
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "tailwindcss"
+  ],
 
   /* -------------------------------------------------------------------------- */
   /*                                 Performance                                */
