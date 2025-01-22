@@ -77,6 +77,7 @@ brew "shopify-cli"
 brew "skaffold"
 brew "sqlite"
 brew "starship"
+brew "superfile" # Pretty fancy and modern terminal file manager
 brew "tealdeer" # Very fast implementation of tldr in Rust
 brew "tmux"
 brew "tree"
