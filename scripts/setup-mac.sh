@@ -10,7 +10,9 @@ defaults write com.apple.finder NewWindowTarget -string PfHm
 # Tap as click
 defaults write -g com.apple.mouse.tapBehavior -int 1
 # Increase mouse speed
-defaults write -g com.apple.mouse.scaling 1
+defaults write -g com.apple.mouse.scaling 4
+defaults write -g com.apple.mouse.scrolling 100
+defaults write -g com.apple.scrollwheel.scaling 4
 # Increase trackpad speed
 defaults write -g com.apple.trackpad.scaling 1
 defaults write -g com.apple.trackpad.scrolling 1
