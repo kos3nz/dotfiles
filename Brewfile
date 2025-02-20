@@ -118,6 +118,7 @@ cask "ngrok"
 cask "obsidian"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
 cask "postman"
+cask "raindropio"
 cask "raycast"
 cask "rectangle"
 # cask "replay"
