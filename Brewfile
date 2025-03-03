@@ -101,6 +101,7 @@ brew "zsh"
 
 cask "asana"
 cask "brave-browser"
+cask "chatgpt"
 # cask "codewhisperer"
 cask "docker"
 cask "figma"
