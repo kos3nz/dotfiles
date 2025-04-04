@@ -1065,7 +1065,7 @@
   /*                               Github Copilot                               */
   /* -------------------------------------------------------------------------- */
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
@@ -1129,7 +1129,6 @@
   /*                                   Drawio                                   */
   /* -------------------------------------------------------------------------- */
   "hediet.vscode-drawio.codeLinkActivated": false,
-  "hediet.vscode-drawio.theme": "dark",
 
   /* -------------------------------------------------------------------------- */
   /*                                 Svg Preview                                */
