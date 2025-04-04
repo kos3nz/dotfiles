@@ -117,6 +117,7 @@ cask "local" # Develop WordPress sites locally
 cask "lunar"
 # cask "maccy"
 cask "ngrok"
+cask "notion"
 cask "obsidian"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
 cask "postman"
@@ -133,6 +134,7 @@ cask "warp"
 cask "wezterm@nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
 cask "windsurf"
 # cask "zed" # a high-performance, multiplayer code editor
+cask "zen-browser"
 cask "zoom"
 
 # cask "alacritty"
