@@ -405,8 +405,8 @@ return {
         "<leader>fw",
         function()
           require("telescope.builtin").live_grep({
-            additional_args = function(args)
-              return vim.list_extend(args, { "--hidden" })
+            additional_args = function(opts)
+              return { "--hidden", "--no-ignore" }
             end,
           })
         end,
@@ -416,8 +416,8 @@ return {
         "<leader>fW",
         function()
           require("telescope.builtin").live_grep({
-            additional_args = function(args)
-              return vim.list_extend(args, { "--hidden", "--no-ignore" })
+            additional_args = function(opts)
+              return { "--hidden", "--no-ignore" }
             end,
           })
         end,
