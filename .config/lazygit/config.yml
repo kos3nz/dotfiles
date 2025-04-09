@@ -299,3 +299,15 @@ customCommands:
     description: "Git Now"
     context: "files"
     command: "git add -A && git now"
+
+  - key: "N"
+    description: "add a new remote"
+    context: "localBranches"
+    prompts:
+      - type: "input"
+        title: "Remote Name"
+        initialValue: "upstream"
+      - type: "input"
+        title: "Remote Url"
+        initialValue: ""
+    command: "git remote add {{index .PromptResponses 0}} {{index .PromptResponses 1}}"
