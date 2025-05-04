@@ -1659,6 +1659,16 @@
   {
     "key": "cmd+e",
     "command": "composerMode.edit"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "editor.action.inlineDiffs.rejectAll",
+    "when": "editorTextFocus && @inlineDiffs.rejectAllEdits.isActiveEditorWithDiffs"
+  },
+  {
+    "key": "shift+cmd+backspace",
+    "command": "-editor.action.inlineDiffs.rejectAll",
+    "when": "editorTextFocus && @inlineDiffs.rejectAllEdits.isActiveEditorWithDiffs"
   }
 ]
 
