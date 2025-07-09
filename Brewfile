@@ -99,19 +99,22 @@ brew "zsh"
 
 
 ##### Apps #####
-
 cask "asana"
 cask "brave-browser"
 cask "chatgpt"
+cask "clop"
 cask "cursor"
 # cask "codewhisperer"
 cask "docker"
+cask "flowvision"
 cask "figma"
 cask "firefox"
 cask "fliqlo" # Flip clock screensaver
+# cask "folder peek" # No fomulae on homebrew (installed via app store)
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "insomnia"
+cask "jordanbaird-ice"
 cask "kap"
 cask "linearmouse"
 cask "local" # Develop WordPress sites locally
@@ -121,13 +124,16 @@ cask "lunar"
 cask "ngrok"
 cask "notion"
 cask "obsidian"
+cask "omnidisksweeper"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
+cask "pearcleaner"
 cask "postman"
 cask "raindropio"
 cask "raycast"
 cask "rectangle"
 # cask "replay"
 cask "runjs"
+cask "shottr"
 cask "slack"
 cask "spline"
 cask "spotify"
