@@ -113,6 +113,7 @@ cask "google-chrome"
 cask "google-japanese-ime"
 cask "insomnia"
 cask "kap"
+cask "linearmouse"
 cask "local" # Develop WordPress sites locally
 # cask "logi-options+"
 cask "lunar"
