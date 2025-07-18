@@ -18,8 +18,6 @@ tap "lindell/multi-gitter"
 tap "oven-sh/bun"
 tap "shopify/shopify"
 
-# tap "heroku/brew"
-
 
 ##### Formulae #####
 
@@ -128,6 +126,7 @@ cask "omnidisksweeper"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
 cask "pearcleaner"
 cask "postman"
+cask "lihaoyun6/tap/quickrecorder"
 cask "raindropio"
 cask "raycast"
 cask "rectangle"
