@@ -48,6 +48,7 @@
 !/.config/
 !/.config/**
 /.config/**/node_modules/
+/.config/aichat/config.yaml
 /.config/.wrangler/
 /.config/configstore/
 /.config/fish/conf.d/
