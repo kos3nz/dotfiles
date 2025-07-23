@@ -21,6 +21,7 @@ tap "shopify/shopify"
 
 ##### Formulae #####
 
+brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
 brew "bun"
 brew "composer" # Package Manager for php
