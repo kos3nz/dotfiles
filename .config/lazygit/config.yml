@@ -300,81 +300,45 @@ customCommands:
     command: "git remote add {{index .PromptResponses 0}} {{index .PromptResponses 1}}"
 
   - key: <c-a>
-    description: Pick AI commit
     context: files
+    description: "AIコミットメッセージを生成、編集、コミット"
     command: |
-      aichat "Please suggest 10 commit messages, given the following diff:
+      aichat "Please suggest 5 commit messages based on the following diff.
 
-        \`\`\`diff
+        Diff:
+        \`\`\`
         $(git diff --cached)
         \`\`\`
 
-        **Criteria:**
-
-        1. **Format:** Each commit message must follow the conventional commits format,
-        which is \`<type>(<scope>): <description>\`.
-        2. **Relevance:** Avoid mentioning a module name unless it's directly relevant
-        to the change.
-        3. **Enumeration:** List the commit messages from 1 to 10.
-        4. **Clarity and Conciseness:** Each message should clearly and concisely convey
-        the change made.
-
-        **Commit Message Examples:**
-
-        - fix(app): add password regex pattern
-        - test(unit): add new test cases
-        - style: remove unused imports
-        - refactor(pages): extract common code to \`utils/wait.ts\`
-
-        **Recent Commits on Repo for Reference:**
-
+        Recent Commits for Reference:
         \`\`\`
-        $(git log -n 10 --pretty=format:'%h %s')
+        $(git log -n 10 --pretty=format:"%s")
         \`\`\`
-
-        **Output Template**
-
-        Follow this output template and ONLY output raw commit messages without spacing,
-        numbers or other decorations.
-
-        fix(app): add password regex pattern
-        test(unit): add new test cases
-        style: remove unused imports
-        refactor(pages): extract common code to \`utils/wait.ts\`
 
         **Instructions:**
 
-        - Take a moment to understand the changes made in the diff.
+        1.  **Primary Goal:** Generate 5 distinct commit message suggestions based on the provided diff.
+        2.  **Style Priority:** Your highest priority is to analyze and strictly match the style and format of the recent commits for reference.
+        3.  **Fallback Format:** If the recent commits lack a clear or consistent style, fall back to the Conventional Commits format: `<type>(<scope>): <description>`.
+        4.  **Content Requirement:** Each message must accurately and concisely summarize the changes.
+        5.  **Output Format:** Output ONLY the raw commit messages, each on a new line. Do not include numbers, bullet points, or any other decorations." \
+      | xargs -I {} bash -c '
+          # 1. 一時ファイルを作成
+          COMMIT_MSG_FILE=$(mktemp)
 
-        - Think about the impact of these changes on the project (e.g., bug fixes, new
-        features, performance improvements, code refactoring, documentation updates).
-        It's critical to my career you abstract the changes to a higher level and not
-        just describe the code changes.
+          # 2. スクリプト終了時に一時ファイルを確実に削除する
+          trap "rm -f $COMMIT_MSG_FILE" EXIT
 
-        - Generate commit messages that accurately describe these changes, ensuring they
-        are helpful to someone reading the project's history.
+          # 2. パイプから渡されたaichatの全出力を一時ファイルに書き込む
+          echo "{}" > "$COMMIT_MSG_FILE"
 
-        - Remember, a well-crafted commit message can significantly aid in the maintenance
-        and understanding of the project over time.
+          # 3. エディタで一時ファイルを開いて編集する
+          ${EDITOR:-nvim} "$COMMIT_MSG_FILE"
 
-        - If multiple changes are present, make sure you capture them all in each commit
-        message.
-
-        Keep in mind you will suggest 10 commit messages. Only 1 will be used. It's
-        better to push yourself (esp to synthesize to a higher level) and maybe wrong
-        about some of the 10 commits because only one needs to be good. I'm looking
-        for your best commit, not the best average commit. It's better to cover more
-        scenarios than include a lot of overlap.
-
-        Write your 10 commit messages below in the format shown in Output Template section above." \
-          | fzf --height 40% --border --ansi --preview "echo {}" --preview-window=up:wrap \
-          | xargs -I {} bash -c '
-              COMMIT_MSG_FILE=$(mktemp)
-              echo "{}" > "$COMMIT_MSG_FILE"
-              ${EDITOR:-vim} "$COMMIT_MSG_FILE"
-              if [ -s "$COMMIT_MSG_FILE" ]; then
-                  git commit -F "$COMMIT_MSG_FILE"
-              else
-                  echo "Commit message is empty, commit aborted."
-              fi
-              rm -f "$COMMIT_MSG_FILE"'
+          # 4. エディタ終了後、ファイルが空でなければコミットを実行する
+          if [ -s "$COMMIT_MSG_FILE" ]; then
+            git commit -F "$COMMIT_MSG_FILE"
+          else
+            echo "Commit message is empty, commit aborted."
+          fi
+        '
