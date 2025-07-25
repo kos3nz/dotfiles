@@ -366,7 +366,8 @@ customCommands:
 
           Only return the commit message(s) in your response. Do not include any additional meta-commentary.
 
-          Generate $COMMITS_TO_SUGGEST distinct commit suggestions.
+          Generate only as many distinct $COMMITS_TO_SUGGEST commit message suggestions as are necessary to clearly describe the changes.
+          Avoid including messages that are irrelevant to the actual modifications.
 
           IMPORTANT:
           - Do not wrap your response in markdown code blocks
