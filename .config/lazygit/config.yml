@@ -375,7 +375,7 @@ customCommands:
 
           Here is an example of previous commit messages in this repository:
 
-          \$(git log -n 10 --pretty=format:\"%s\")
+          \$(git log -n 30 --pretty=format:\"%s\")
 
           Here is the diff:
 
