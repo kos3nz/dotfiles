@@ -163,6 +163,7 @@ cask "zoom"
 
 ##### Mac App Store #####
 
+# mas "DaVinci Resolve", id: 571213070
 mas "Line", id: 539883307
 mas "ScreenBrush", id: 1233965871
 
