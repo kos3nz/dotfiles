@@ -3,8 +3,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias d-='cd -'
 alias d+='cd $_'
-alias c='code' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
-alias c.='code .'
 alias sz='source ~/.config/zsh/.zshrc'
 alias szsh='source ~/.config/zsh/.zshrc'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
@@ -131,6 +129,13 @@ alias gqmv='GHQ_MIGRATOR_ACTUALLY_RUN=1 ./ghq-migrator.bash' # ghq管理下へ�
 # Shopify CLI
 alias sp="shopify"
 alias h2="npx shopify hydrogen"
+
+# Cursor CLI
+if type "cursor-agent" > /dev/null 2>&1; then
+  alias c='cursor'
+  alias c.='cursor .'
+  alias ca="cursor-agent"
+fi
 
 # Tmux
 alias ta='tmux attach'
