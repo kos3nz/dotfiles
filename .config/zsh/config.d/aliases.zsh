@@ -2,7 +2,7 @@
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias d-='cd -'
-alias d_='cd $_'
+alias d+='cd $_'
 alias c='code' # Vscodeを開く(usage: c <file | dir> でファイル(ディレクトリ)を開く)
 alias c.='code .'
 alias sz='source ~/.config/zsh/.zshrc'
