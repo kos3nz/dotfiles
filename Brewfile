@@ -1,22 +1,11 @@
 ##### Taps #####
 
-tap "arl/arl" # for gitmux
 tap "daipeihust/tap" # for im-select
 tap "delphinus/sfmono-square" # for sfmono-square font
 tap "epk/epk" # for font-sf-mono-nerd-font
-tap "homebrew/bundle"
-# tap "homebrew/cask"
-# tap "homebrew/cask-versions"
-# tap "homebrew/core"
-tap "homebrew/services"
-tap "jandedobbeleer/oh-my-posh" # for oh-my-posh
 tap "jesseduffield/lazygit" # for lazygit
-tap "joshmedeski/sesh" # for sesh
-# tap "josephpage/jetpack-io" # for dovbox
-tap "koekeishiya/formulae"
 tap "lindell/multi-gitter"
 tap "oven-sh/bun"
-tap "shopify/shopify"
 
 
 ##### Formulae #####
