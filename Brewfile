@@ -90,6 +90,7 @@ brew "zsh"
 ##### Apps #####
 cask "asana"
 cask "brave-browser"
+# cask "builder-io" # Installed via browser
 cask "chatgpt"
 # cask "clop"
 cask "cursor"
@@ -100,6 +101,7 @@ cask "flowvision"
 cask "figma"
 cask "firefox"
 cask "fliqlo" # Flip clock screensaver
+cask "framer"
 # cask "folder peek" # No fomulae on homebrew (installed via app store)
 cask "google-chrome"
 cask "google-japanese-ime"
