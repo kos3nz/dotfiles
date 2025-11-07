@@ -88,6 +88,7 @@ brew "zsh"
 
 
 ##### Apps #####
+cask "adobe-creative-cloud"
 cask "asana"
 cask "brave-browser"
 # cask "builder-io" # Installed via browser
