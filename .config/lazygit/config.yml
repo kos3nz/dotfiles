@@ -66,9 +66,9 @@ gui:
   commandLogSize: 14
   splitDiff: "auto" # one of 'auto' | 'always'
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
   commit:
     signOff: false
   merging:
@@ -207,7 +207,7 @@ keybinding:
     viewResetOptions: D
     fetch: f
     toggleTreeView: "`"
-    openMergeTool: M
+    openMergeOptions: M
     openStatusFilter: <c-b>
     copyFileInfoToClipboard: "y"
   branches:
@@ -281,12 +281,10 @@ customCommands:
     context: "commits"
     command: 'git commit --allow-empty -m "empty commit"'
     loadingText: "Committing empty commit..."
-
   - key: "N"
     description: "Git Now"
     context: "files"
     command: "git add -A && git now"
-
   - key: "N"
     description: "add a new remote"
     context: "localBranches"
@@ -298,7 +296,6 @@ customCommands:
         title: "Remote Url"
         initialValue: ""
     command: "git remote add {{index .PromptResponses 0}} {{index .PromptResponses 1}}"
-
   - key: <c-a>
     context: files
     description: "AIコミットメッセージを生成、編集、コミット"
