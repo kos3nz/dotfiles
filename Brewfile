@@ -27,6 +27,7 @@ brew "findutils" # Collection of GNU find, xargs, and locate
 brew "thefuck" # Magnificent app which corrects your previous console command.
 brew "fzf" # To install useful key bindings and fuzzy completion, run `$(brew --prefix)/opt/fzf/install`
 brew "gawk" # GNU awk utility
+brew "gemini-cli"
 brew "gh"
 brew "ghq"
 brew "gibo"
@@ -93,6 +94,7 @@ cask "asana"
 cask "brave-browser"
 # cask "builder-io" # Installed via browser
 cask "chatgpt"
+cask "claude-code"
 cask "clop"
 cask "cursor"
 # cask "cursor-cli"
