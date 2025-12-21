@@ -78,4 +78,25 @@ gh repo rename <new-repository-name> -R <owner>/<repository-name>
 # Delete remote repository
 gh repo delete <repository-name>
 
+% git, worktree
 
+# List worktree
+git worktree list
+
+# Add a new worktree for an existing branch (e.g. git worktree add ../develop develop)
+git worktree add <path> <branch>
+
+# Add a new worktree and create a new branch from current (e.g. git worktree add -b feature-alpha ../alpha-work)
+git worktree add -b <new-branch-name> <path>
+
+# Add a new worktree starting from a specific branch (e.g. git worktree add -b hotfix-v1 ../hotfix-work main)
+git worktree add -b <new-branch-name> <path> <start-point-branch>
+
+# Remove a worktree directory and its metadata (e.g. git worktree remove ../alpha-work)
+git worktree remove <path>
+
+# Clean up metadata for manually deleted worktrees
+git worktree prune
+
+# Move or rename an existing worktree to a new location (e.g. git worktree move ../alpha-work ../feature-alpha-work)
+git worktree move <old-path> <new-path>
