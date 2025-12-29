@@ -94,6 +94,7 @@ cask "asana"
 cask "brave-browser"
 # cask "builder-io" # Installed via browser
 cask "chatgpt"
+cask "claude"
 cask "claude-code"
 cask "clop"
 cask "cursor"
