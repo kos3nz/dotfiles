@@ -1,6 +1,3 @@
-#### Default apps ###
-export TERMINAL="alacritty"
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -11,6 +8,9 @@ fi
 ### bat ###
 export BAT_THEME="base16"
 export BAT_STYLE='numbers,changes,header,header-filesize,grid'
+
+### claude ###
+export CLAUDE_CONFIG_DIR="$HOME/.claude"
 
 ### fzf ###
 export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git'

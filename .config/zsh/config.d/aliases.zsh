@@ -131,11 +131,33 @@ alias sp="shopify"
 alias h2="npx shopify hydrogen"
 
 # Cursor CLI
-if type "cursor-agent" > /dev/null 2>&1; then
-  alias c='cursor'
-  alias c.='cursor .'
-  alias ca="cursor-agent"
+# if type "cursor-agent" > /dev/null 2>&1; then
+#   alias c='cursor'
+#   alias c.='cursor .'
+#   alias ca="cursor-agent"
+# fi
+
+# Claude Code
+if type "claude" > /dev/null 2>&1; then
+  alias c='claude'
+  alias cc='claude --continue'
+  alias cda='claude --dangerously-skip-permissions'
 fi
+
+# Opencode
+if type "opencode" > /dev/null 2>&1; then
+  alias oc='opencode'
+  alias occ='opencode --continue'
+fi
+
+# LLM 
+if type "llm" > /dev/null 2>&1; then
+  alias llmm="llm models"
+  alias llmkl="llm keys list"
+  alias llmkp="llm keys path"
+  alias pplx="llm -m sonar-pro"
+fi
+
 
 # Tmux
 alias ta='tmux attach'
