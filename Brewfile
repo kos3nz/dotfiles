@@ -45,7 +45,10 @@ brew "htop" # an interactive process viewer
 brew "hyperfine" # A command-line benchmarking tool
 brew "iproute2mac" # `ip` command for macOS
 brew "lazygit"
+brew "llm" # LLM accessing tool for CLI
+brew "lua-language-server"
 brew "oh-my-posh"
+brew "opencode"
 brew "jq"
 brew "lf" # Terminal file manager.
 brew "luajit"
@@ -90,6 +93,8 @@ brew "zsh"
 
 ##### Apps #####
 # cask "adobe-creative-cloud" # Installed via browser
+cask "antigravity"
+cask "aqua-voice"
 cask "asana"
 cask "brave-browser"
 # cask "builder-io" # Installed via browser
@@ -100,7 +105,7 @@ cask "clop"
 cask "cursor"
 # cask "cursor-cli"
 # cask "codewhisperer"
-cask "docker"
+cask "docker-desktop"
 cask "flowvision"
 cask "figma"
 cask "firefox"
@@ -141,8 +146,8 @@ cask "visual-studio-code"
 cask "warp"
 cask "wezterm@nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
 cask "windsurf"
-# cask "zed" # a high-performance, multiplayer code editor
-cask "zen-browser"
+cask "zed" # a high-performance, multiplayer code editor
+cask "zen"
 cask "zoom"
 
 # cask "alacritty"
