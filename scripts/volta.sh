@@ -4,6 +4,7 @@ volta install yarn@latest
 volta install pnpm@latest
 volta install @antfu/ni@latest
 volta install @nestjs/cli@latest
+volta install ccstatusline@latest
 volta install depcheck@latest
 volta install dotenv-cli@latest
 volta install live-server@latest

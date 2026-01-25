@@ -1,0 +1,76 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "3f3647f5-f212-4ea2-b8eb-586ccb93797c",
+        "type": "version",
+        "color": "ansi256:5",
+        "rawValue": false
+      },
+      {
+        "id": "6f27294a-ba47-427e-a008-4cb822acce51",
+        "type": "separator"
+      },
+      {
+        "id": "9b9c8159-04be-45d8-93db-4b269246e06e",
+        "type": "model",
+        "color": "ansi256:3",
+        "rawValue": true
+      },
+      {
+        "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
+        "type": "separator"
+      },
+      {
+        "id": "0ff3cca4-6d02-46ee-bd19-971f3ed568cb",
+        "type": "context-percentage",
+        "color": "ansi256:4",
+        "rawValue": true
+      }
+    ],
+    [
+      {
+        "id": "56714c30-b200-4e0a-827e-0107e5bfcb78",
+        "type": "custom-command",
+        "color": "ansi256:4",
+        "commandPath": "git rev-parse --show-toplevel 2>/dev/null | xargs basename || pwd | xargs basename"
+      },
+      {
+        "id": "31dbd772-726f-45af-a515-af83c587a3b1",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "163b3a34-a09c-40f4-9f36-c882671e7935",
+        "type": "git-branch",
+        "color": "ansi256:6"
+      },
+      {
+        "id": "330f8891-b1d6-4eeb-a8ee-71bd28852399",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "86bac339-5767-4075-9214-c3fa58427a4a",
+        "type": "custom-command",
+        "commandPath": "$HOME/.config/ccstatusline/git-status.sh",
+        "preserveColors": true
+      }
+    ],
+    []
+  ],
+  "flexMode": "full",
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [""],
+    "separatorInvertBackground": [false],
+    "startCaps": [],
+    "endCaps": [],
+    "autoAlign": false
+  }
+}

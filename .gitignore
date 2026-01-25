@@ -64,7 +64,14 @@
 /.config/tmux/plugins/
 /.config/zsh/.zsh_sessions/
 /.config/**/*.log
+/.config/**/logs/
 !/Library/
+/.config/claude/*
+!/.config/claude/CLAUDE.md
+!/.config/claude/settings.json
+!/.config/claude/agents/
+!/.config/claude/commands/
+!/.config/claude/hooks/
 
 *.secret.*
 
