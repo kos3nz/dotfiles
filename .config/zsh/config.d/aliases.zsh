@@ -3,8 +3,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias d-='cd -'
 alias d+='cd $_'
-alias sz='source ~/.config/zsh/.zshrc'
-alias szsh='source ~/.config/zsh/.zshrc'
+alias sz='source "$HOME/.config/zsh/.zshrc"'
+alias szsh='source "$HOME/.config/zsh/.zshrc"'
 alias port='lsof -i' # ポートのプロセスを調べる -> lsof -i :3000
 alias pkill='kill -9' # プロセスをkill (-9 = 強制終了) -> kill -9 [PIDの数字]
 alias restart='sudo fdesetup authrestart'

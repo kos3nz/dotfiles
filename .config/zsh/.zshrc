@@ -90,13 +90,12 @@ bindkey -e # e-macs keybindings
 # fzf (fzf-history-widget: ^R, fzf-cd-widget: ^[c, fzf-file-widget: ^T )
 bindkey -r '^[c'
 bindkey '^o' fzf-cdr
-bindkey '^v' navi_widget
+bindkey '^v' navi-widget
 bindkey '^]' fzf-ghq
 bindkey '^[c' code-ghq-r # escape + c
 bindkey '^[n' code-ghq-n # escape + n
 bindkey '^g' lg
-bindkey '^j' jump_middle
-
+bindkey '^j' insert-newline
 
 ### Paths ###
 typeset -U path

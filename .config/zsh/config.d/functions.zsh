@@ -91,12 +91,18 @@ zle -N code-ghq-r
 
 
 # ターミナルコマンドの真ん中に移動
-function jump_middle() {
+function jump-middle() {
     CURSOR=$((${#BUFFER} / 2))
     zle redisplay
 }
-zle -N jump_middle
+zle -N jump-middle
 
+# Insert newline
+function insert-newline() {
+  LBUFFER="${LBUFFER}
+"
+}
+zle -N insert-newline
 
 # Node Scriptを参照
 function nsc() {
@@ -114,11 +120,11 @@ function help() {
 zle -N help 
 
 ### navi ###
-_navi_call() {
+function _navi_call() {
    local result="$(navi "$@" </dev/tty)"
    printf "%s" "$result"
 }
-navi_widget() {
+function navi-widget() {
    local -r input="${LBUFFER}"
    local -r last_command="$(echo "${input}" | navi fn widget::last_command)"
    local replacement="$last_command"
@@ -144,7 +150,7 @@ navi_widget() {
    region_highlight=("P0 100 bold")
    zle redisplay
 }
-zle -N navi_widget
+zle -N navi-widget
 
 ### lf ###
 lfcd () {
