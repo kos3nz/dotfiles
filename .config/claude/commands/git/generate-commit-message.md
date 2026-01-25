@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git log:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*)
+allowed-tools: Bash(git log:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(cat:*), Read
 description: Generate commit message with staged changes
 model: haiku
 ---
@@ -19,8 +19,16 @@ Create a git commit with an auto-generated message that matches the style and to
 2. **Understand staged changes:**
 
    - Run `git status` (never use -uall flag) to check for staged changes
-   - If no staged changes:
-     - Run `git diff` and analyze modified/untracked files
+
+   <if-staged-changes-exist>
+     - Run `git diff --staged` to analyze the staged changes
+     - Run `git diff --staged --stat` to count lines/files changed
+     - Understand what files changed and what the changes accomplish
+     - Proceed directly to step 3 (skip file selection)
+   </if-staged-changes-exist>
+   <if-no-staged-changes>
+     - Run `git diff` for modified tracked files
+     - Use Read tool or `cat` for untracked files to see contents
      - Intelligently group files by logical change/feature:
        - Read actual changes, not just file paths
        - Identify which files belong to same logical change
@@ -30,8 +38,7 @@ Create a git commit with an auto-generated message that matches the style and to
      - User selects which logical change to commit
      - Stage all files for selected logical change with `git add`
      - If user cancels, exit without creating commit
-   - Run `git diff --staged` to analyze the staged changes
-   - Understand what files changed and what the changes accomplish
+   </if-no-staged-changes>
 
 3. **Generate commit message:**
 
@@ -62,6 +69,8 @@ Create a git commit with an auto-generated message that matches the style and to
    - Show which files will be committed
    - Use AskUserQuestion to get confirmation before proceeding
    - Options: "Proceed with commit", "Edit message", "Cancel"
+   - If "Edit message": ask user for corrected message, then confirm again
+   - If "Cancel": exit without committing
 
 5. **Create commit:**
    - If confirmed, run `git commit -m "$(cat <<'EOF'
