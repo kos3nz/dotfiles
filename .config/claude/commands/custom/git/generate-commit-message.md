@@ -1,7 +1,7 @@
 ---
 allowed-tools: Bash(git log:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(cat:*), Read
 description: Generate commit message with staged changes
-model: haiku
+model: sonnet
 ---
 
 ## Your task
@@ -48,22 +48,25 @@ Create a git commit with an auto-generated message that matches the style and to
    **Guiding Principles (in priority order):**
 
    a. **STYLE CONSISTENCY (HIGHEST PRIORITY)**
-      - Match the analyzed historical style exactly
-      - Mimic format pattern (prefix style, casing, punctuation)
-      - Match level of detail and tone
-      - Follow project-specific conventions
+
+   - Match the analyzed historical style exactly
+   - Mimic format pattern (prefix style, casing, punctuation)
+   - Match level of detail and tone
+   - Follow project-specific conventions
 
    b. **FALLBACK FORMAT (if no clear pattern exists)**
-      - Use Conventional Commits: `<type>(<scope>): <description>`
-      - Common types: feat, fix, chore, docs, style, refactor, test, perf, ci, build
-      - Breaking changes: add ! after scope → feat(api)!: description
+
+   - Use Conventional Commits: `<type>(<scope>): <description>`
+   - Common types: feat, fix, chore, docs, style, refactor, test, perf, ci, build
+   - Breaking changes: add ! after scope → feat(api)!: description
 
    c. **GENERAL BEST PRACTICES**
-      - Use imperative mood ("add" not "added" or "adds")
-      - Keep subject ≤50 chars when possible
-      - No period at end of subject
-      - Capitalize only proper nouns/acronyms
-      - Each message must accurately reflect actual changes
+
+   - Use imperative mood ("add" not "added" or "adds")
+   - Keep subject ≤50 chars when possible
+   - No period at end of subject
+   - Capitalize only proper nouns/acronyms
+   - Each message must accurately reflect actual changes
 
    **Format Structure:**
 
