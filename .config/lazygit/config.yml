@@ -305,79 +305,64 @@ customCommands:
         key: CommitMsg
         command: |
           bash -c "
+
           # Check for staged changes
-          diff=\$(git diff --cached)
+          diff=\$(git diff --staged --cached)
+
           if [ -z \"\$diff\" ]; then
             echo \"No changes in staging. Add changes first.\"
             exit 1
           fi
 
-          # Required quantity per final example
-          COMMITS_TO_SUGGEST=10
+          COMMITS_TO_SUGGEST=5
 
           aichat \"
-          You are an expert at writing Git commits. Your job is to write a short, clear commit message that summarizes the changes.
 
-          Follow these guidelines for commit messages:
-          - Your highest priority is to analyze and strictly match the style and format of the recent commits for reference
-          - Use lowercase for the description (unless it includes proper nouns like \"React\" or \"GitHub\")
-          - Do not end the subject line with a period
-          - Use the imperative mood (e.g., \"add\", not \"added\" or \"adds\")
-          - Limit the subject line to 50 characters when possible
-          - If the recent commits lack a clear or consistent style, fall back to the Conventional Commits format: '<type>(<scope>): <description>'.
-          - Always use one of these types:
-            feat, fix, docs, style, refactor, perf, test, build, ci, chore
-            Examples:
-            chore(config): update ESLint rules
-            fix(login): prevent crash on empty password
-            docs(readme): add installation instructions
-            style(css): fix button alignment on mobile
-            feat(ui): add dark mode toggle
-            refactor(settings): simplify theme loading logic
-            test(home): add unit tests for sidebar
-            build(deps): upgrade to React 18
-            ci(github): fix broken deployment workflow
-            perf(api): optimize response time for profile endpoint
-          - Scope is optional but encouraged (put the affected component or area)
-          - Each message must accurately and concisely summarize the changes
-          - Output ONLY the raw commit messages, each on a new line. Do not include numbers, bullet points, or any other decorations
-          - Use an exclamation mark (!) after type/scope for breaking changes:
-            Example:
-            feat(api)!: change API response format
+          # TASK
+          Generate exactly $COMMITS_TO_SUGGEST distinct commit message suggestions for the staged changes.
 
-          For the commit message body:
-          - Add a body only if the change is complex or needs explanation
-          - Always add a body for breaking changes, with a 'BREAKING CHANGE:' section
-          - Do not separate the body from the subject line with a blank line
-          - In the body, explain **what** and **why**, not **how**
+          # INPUT CONTEXT
 
-          Example with body:
-          feat(theme): add system dark mode support | This change adds automatic detection of system dark/light theme. It falls back to manual theme setting if system preference is unavailable.
+          ## Recent commit messages (last 30):
+          \$(git log -n 30 --pretty=format:\"%s\" --no-merges)
 
-          Example with breaking change:
-          refactor(routes)!: update router structure for nested layouts | BREAKING CHANGE: All route definitions must now include layout wrappers.
+          ## Staged changes:
+          \$(git diff --staged --cached)
 
-          General Git style notes:
-          - Capitalize only proper nouns and acronyms in the description
-          - Commas are allowed; periods at the end of the subject are discouraged
+          # COMMIT MESSAGE RULES (in priority order)
 
-          Only return the commit message(s) in your response. Do not include any additional meta-commentary.
+          ## 1. STYLE CONSISTENCY (HIGHEST PRIORITY)
+          Analyze the recent commits above and match their style exactly:
+          - Mimic the format pattern (prefix style, casing, punctuation)
+          - Match the level of detail and tone
+          - Follow any project-specific conventions visible in the history
 
-          Generate only as many distinct $COMMITS_TO_SUGGEST commit message suggestions as are necessary to clearly describe the changes.
-          Avoid including messages that are irrelevant to the actual modifications.
+          ## 2. FALLBACK FORMAT (if no clear pattern exists)
+          Use Conventional Commits: <type>(<scope>): <description>
+          Common types: feat, fix, chore, docs, style, refactor, test, perf, ci, build
+          Breaking changes: add ! after scope → feat(api)!: description
 
-          IMPORTANT:
-          - Do not wrap your response in markdown code blocks
-          - Do not use \\\`\\\`\\\` or any other formatting
-          - Just list each commit message directly, one per line
+          ## 3. GENERAL BEST PRACTICES
+          - Use imperative mood (\"add\" not \"added\" or \"adds\")
+          - Keep subject ≤50 chars when possible
+          - No period at end of subject
+          - Capitalize only proper nouns/acronyms in description
+          - Each message must accurately reflect the actual changes
 
-          Here is an example of previous commit messages in this repository:
+          # OUTPUT FORMAT
 
-          \$(git log -n 30 --pretty=format:\"%s\")
+          CRITICAL: Return ONLY raw commit messages, one per line.
+          - NO markdown code blocks (\\\`\\\`\\\`)
+          - NO numbers or bullet points
+          - NO explanatory text
+          - Each line is a complete, standalone commit message
+          - For multi-line commits: separate subject and body with ONE blank line
 
-          Here is the diff:
+          Example output:
+          feat(auth): add JWT token validation
+          fix: resolve memory leak in event listeners
+          chore(deps): update react to v18.3.0
 
-          \$(git diff --cached)
           \""
     command: "# Create a temporary file for the commit message\ncommit_msg_file=$(mktemp)\n\n# Make sure to clean temp files\ntrap 'rm -f \"$commit_msg_file\"' EXIT\n\n# Clean the suggestions and save them to the file\ncommit_suggestions=$(echo \"{{.Form.CommitMsg}}\" | \\\n  sed 's/```[a-zA-Z]*//g' | \\\n  sed 's/```//g' | \\\n  sed 's/^[ \\t]*//g' | \\\n  sed 's/[ \\t]*$//g')\n\n# Write the suggestions to the temporary file\necho \"$commit_suggestions\" > \"$commit_msg_file\"\n\n# Saves the initial modification timestamp of the file\ninitial_timestamp=$(stat -c %Y \"$commit_msg_file\" 2>/dev/null || stat -f %m \"$commit_msg_file\")\n\n# Opens the commit message editor and captures the exit code\n${EDITOR:-vim} \"$commit_msg_file\"\neditor_exit=$?\n\n# Gets the new modification timestamp\nnew_timestamp=$(stat -c %Y \"$commit_msg_file\" 2>/dev/null || stat -f %m \"$commit_msg_file\")\n\n# Checks if the editor exited normally and if the file was saved\nif [ $editor_exit -ne 0 ]; then\n    echo \"Editor exited abnormally, commit aborted.\"\nelif [ \"$initial_timestamp\" != \"$new_timestamp\" ]; then\n    # The file was saved (timestamp has changed)\n    # Check if the file is not empty\nif [ -s \"$commit_msg_file\" ]; then\n        echo \"Creating commit with message: $selected_msg\"\n        git commit -F \"$commit_msg_file\"\n    else\n        echo \"No commit message selected, commit aborted.\"\n    fi\nelse\n    echo \"File was not saved, commit aborted.\"\nfi\n"
     output: terminal
