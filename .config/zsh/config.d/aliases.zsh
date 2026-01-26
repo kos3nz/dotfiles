@@ -141,7 +141,7 @@ alias h2="npx shopify hydrogen"
 if type "claude" > /dev/null 2>&1; then
   alias c='claude'
   alias cc='claude --continue'
-  alias cda='claude --dangerously-skip-permissions'
+  alias cyolo='claude --dangerously-skip-permissions'
 fi
 
 # Opencode
@@ -156,6 +156,7 @@ if type "llm" > /dev/null 2>&1; then
   alias llmkl="llm keys list"
   alias llmkp="llm keys path"
   alias pplx="llm -m sonar-pro"
+  alias gmn="llm -m gemini-3-flash-preview"
 fi
 
 
