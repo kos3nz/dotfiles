@@ -12,9 +12,12 @@ Create a git commit with an auto-generated message that matches the style and to
 
 1. **Analyze commit history:**
 
-   - Run `git log -30 --pretty=format:"%s%n%b" --no-merges` to get last 30 commit messages
-   - Study the tone, structure, length, and patterns (e.g., imperative mood, conventional commits, emoji usage, capitalization)
-   - Identify common patterns in message format
+   - Run `git log -n 30 --pretty=format:\"%s\" --no-merges` to get last 30 commit messages
+   - Study the style and identify patterns:
+     - Format pattern (prefix style, casing, punctuation)
+     - Level of detail and tone
+     - Project-specific conventions (emoji usage, scope usage, etc.)
+     - Breaking change indicators (! or BREAKING CHANGE:)
 
 2. **Understand staged changes:**
 
@@ -42,26 +45,57 @@ Create a git commit with an auto-generated message that matches the style and to
 
 3. **Generate commit message:**
 
-   - Create a commit message that mimics the analyzed style
-   - Message should be concise, clear, and easy to understand
+   **Guiding Principles (in priority order):**
+
+   a. **STYLE CONSISTENCY (HIGHEST PRIORITY)**
+      - Match the analyzed historical style exactly
+      - Mimic format pattern (prefix style, casing, punctuation)
+      - Match level of detail and tone
+      - Follow project-specific conventions
+
+   b. **FALLBACK FORMAT (if no clear pattern exists)**
+      - Use Conventional Commits: `<type>(<scope>): <description>`
+      - Common types: feat, fix, chore, docs, style, refactor, test, perf, ci, build
+      - Breaking changes: add ! after scope → feat(api)!: description
+
+   c. **GENERAL BEST PRACTICES**
+      - Use imperative mood ("add" not "added" or "adds")
+      - Keep subject ≤50 chars when possible
+      - No period at end of subject
+      - Capitalize only proper nouns/acronyms
+      - Each message must accurately reflect actual changes
+
+   **Format Structure:**
+
    - Determine if changes are large (>50 lines changed OR >3 files modified)
-   - Format depends on change size:
+   - Determine if changes are breaking (incompatible API changes, behavior changes)
 
-     **Small changes (≤50 lines, ≤3 files):**
+   **Small changes (≤50 lines, ≤3 files):**
 
-     ```
-     Subject line only (matches historical style)
-     ```
+   ```
+   Subject line only (matches historical style)
+   ```
 
-     **Large changes (>50 lines OR >3 files):**
+   **Large changes (>50 lines OR >3 files):**
 
-     ```
-     Subject line (matches historical style)
+   ```
+   Subject line (matches historical style)
 
-     - Bullet point 1
-     - Bullet point 2
-     - Bullet point 3 (if needed)
-     ```
+   - Bullet point 1 (what and why, not how)
+   - Bullet point 2
+   - Bullet point 3 (if needed)
+   ```
+
+   **Breaking changes:**
+
+   ```
+   Subject line with ! indicator (e.g., feat(api)!: change response format)
+
+   - Key changes explained
+   - Migration notes if significant
+
+   BREAKING CHANGE: Explanation of what breaks and why
+   ```
 
 4. **Confirm with user:**
 
@@ -82,11 +116,15 @@ EOF
 
 **Important notes:**
 
-- If changes already staged, use them; if not, intelligently group unstaged changes by logical feature/change and let user select which to commit
-- Focus on matching the user's historical commit style, not generic best practices
-- Keep subject line concise
-- Only add bullet point description for large changes (>50 lines OR >3 files)
+- **PRIORITY 1**: Match user's historical commit style above all else
+- If changes staged, use them; if not, group by logical feature/change and let user select
+- Keep subject line concise (≤50 chars when possible)
+- Add bullet point description ONLY for large changes (>50 lines OR >3 files)
 - For small changes, use single-line commit message only
-- Bullet points should highlight key changes, not implementation details
-- When presenting logical changes, clearly show which files belong to each change with their status (modified/untracked)
+- Bullet points should explain what/why, not how
+- When presenting logical changes, show which files belong to each with status (modified/untracked)
+- For breaking changes:
+  - Add "!" after type/scope in subject line
+  - Add `BREAKING CHANGE:` section in body explaining what breaks
+  - Include migration notes if significant
 - Never use `--no-verify` or skip hooks unless explicitly requested
