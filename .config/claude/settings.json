@@ -188,7 +188,9 @@
     "command": "bunx ccstatusline@latest"
   },
   "enabledPlugins": {
-    "context7-plugin@context7-marketplace": true
+    "context7-plugin@context7-marketplace": true,
+    "lua-language-server@claude-code-lsps": false,
+    "vtsls@claude-code-lsps": true
   },
   "outputStyle": "Explanatory"
 }
