@@ -10,7 +10,7 @@ if ! command -v jq &>/dev/null; then
 fi
 
 # Check if notifications are enabled
-if [[ "${SLACK_NOTIFICATION}" == "false" ]]; then
+if [[ "${SLACK_NOTIFICATION}" != "true" ]]; then
   echo "Slack notifications disabled" >&2
   exit 0
 fi
