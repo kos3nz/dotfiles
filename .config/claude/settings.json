@@ -144,7 +144,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.config/claude/hooks/log-bash-command.sh"
+            "command": "( source ~/.config/claude/.env.sh && ~/.config/claude/hooks/log-bash-command.sh )"
           }
         ]
       },
