@@ -137,7 +137,6 @@
       "Write(**/*.jks)"
     ]
   },
-  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -145,7 +144,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "GITROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd) && RELPATH=$(git rev-parse --show-prefix 2>/dev/null) && REPO_CWD=\"$(basename \"$GITROOT\")/${RELPATH%/}\" && mkdir -p \"$GITROOT/.claude/logs\" && jq --arg cwd_rel \"$REPO_CWD\" '{timestamp: (now | strftime(\"%Y-%m-%dT%H:%M:%S%z\")), session_id: .session_id, command: .tool_input.command, description: (.tool_input.description // null), cwd_rel: $cwd_rel }' >> \"$GITROOT/.claude/logs/bash-command-log.jsonl\""
+            "command": "~/.config/claude/hooks/log-bash-command.sh"
           }
         ]
       },
@@ -154,7 +153,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import json, sys; data=json.load(sys.stdin); path=data.get('tool_input',{}).get('file_path',''); dangerous = ['.env.*', '.*-lock\\.(json|yaml|yml)|\\.lock$', '.git/', 'node_modules/', 'dist/', 'build/', '.next/', 'coverage/']; sys.exit(2 if any(p in path for p in dangerous) else 0)\""
+            "command": "~/.config/claude/hooks/check-dangerous-paths.py"
           }
         ]
       }
@@ -191,5 +190,6 @@
     "lua-language-server@claude-code-lsps": false,
     "vtsls@claude-code-lsps": true
   },
-  "outputStyle": "Explanatory"
+  "outputStyle": "Explanatory",
+  "model": "sonnet"
 }
