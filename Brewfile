@@ -48,6 +48,7 @@ brew "lazygit"
 brew "llm" # LLM accessing tool for CLI
 brew "lua-language-server"
 brew "oh-my-posh"
+brew "ollama"
 brew "opencode"
 brew "jq"
 brew "lf" # Terminal file manager.
