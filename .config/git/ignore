@@ -1,5 +1,6 @@
 # Git
 .git
+worktrees
 
 # Debug logs (npm, yarn)
 *.log
