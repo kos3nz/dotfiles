@@ -18,6 +18,7 @@ brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
 brew "deno"
 brew "devbox"
+brew "direnv"
 brew "dust"
 brew "eza" # A mordern, maintained replacement for ls.
 brew "emojify"

@@ -84,6 +84,9 @@ eval "$(starship init zsh)"
 ### Ruby ###
 eval "$(rbenv init -)"
 
+### direnv ###
+eval "$(direnv hook zsh)"
+
 ### Key Bindings ###
 bindkey -e # e-macs keybindings
 

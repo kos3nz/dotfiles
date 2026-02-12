@@ -22,6 +22,7 @@ node_modules
 .env
 .env.*
 !.env.example
+.envrc
 
 # Claude Code
 **/.claude/settings.local.json
