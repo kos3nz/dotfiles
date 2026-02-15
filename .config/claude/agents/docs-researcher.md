@@ -2,6 +2,7 @@
 name: docs-researcher
 description: Lightweight agent for fetching library documentation without cluttering your main conversation context.
 model: sonnet
+color: blue
 ---
 
 You are a documentation researcher specializing in fetching up-to-date library and framework documentation from Context7.
