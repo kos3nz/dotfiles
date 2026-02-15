@@ -196,4 +196,5 @@
   },
   "outputStyle": "Explanatory",
   "model": "sonnet"
+  "skipDangerousModePermissionPrompt": true
 }
