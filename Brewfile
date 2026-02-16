@@ -13,6 +13,7 @@ tap "oven-sh/bun"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
 brew "bun"
+brew "cloudflared"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
