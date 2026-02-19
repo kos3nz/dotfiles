@@ -1,0 +1,7 @@
+% bun, patch
+
+# Start patching a package (opens a temporary directory for editing)
+bun patch <package>
+
+# Commit the changes to create a .patch file and update dependencies
+bun patch --commit <temp_dir_path>

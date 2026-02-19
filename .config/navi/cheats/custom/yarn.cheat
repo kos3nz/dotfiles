@@ -1,0 +1,7 @@
+% yarn, patch
+
+# Prepare a package for patching (provides a temporary directory path)
+yarn patch <package>
+
+# Commit the changes and update package.json with the 'patch:' protocol
+yarn patch-commit -s <temp_dir_path>

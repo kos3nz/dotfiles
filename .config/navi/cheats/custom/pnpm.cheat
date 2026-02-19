@@ -17,3 +17,11 @@ pnpm store prune
 
 # List all packages in a workspace
 pnpm list --recursive --depth -1
+
+% pnpm, patch
+
+# Start patching a package (extracts files to a temporary directory)
+pnpm patch <package@version>
+
+# Commit changes to generate a .patch file and update package.json
+pnpm patch-commit <temp_dir_path>

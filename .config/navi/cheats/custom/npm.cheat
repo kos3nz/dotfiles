@@ -1,0 +1,9 @@
+% npm, patch
+
+# After editing files directly in node_modules/<package> inside your project, create a patch:
+npx patch-package <package_name>
+
+# Note: Requires 'patch-package' to be installed as a devDependency.
+# Ensure 'postinstall' script in package.json includes: "postinstall": "patch-package"
+
+
