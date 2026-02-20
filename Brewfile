@@ -1,3 +1,6 @@
+require "socket"
+HOSTNAME = Socket.gethostname.downcase
+
 ##### Taps #####
 
 tap "daipeihust/tap" # for im-select
@@ -157,7 +160,6 @@ cask "zoom"
 # cask "alacritty"
 # cask "alfred"
 # cask "bitwarden"
-# cask "blender"
 # cask "hyper"
 # cask "iconset"
 # cask "iterm2"
@@ -197,3 +199,14 @@ brew "sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmo
 # cask "font-ubuntu-nerd-font"
 # cask "font-victor-mono-nerd-font"
 # "operator-mono-lig" # needs to install manually: https://github.com/kiliman/operator-mono-lig 
+
+
+##### Conditional installation #####
+
+if HOSTNAME =~ /mini/i
+  # Mac Mini M2 Pro (Apple Silicon)
+  cask "blender"
+elsif HOSTNAME =~ /mbp|macbook/i
+  # MacBook Pro 2019 (Intel)
+end
+
