@@ -192,7 +192,8 @@
     "customer-support@knowledge-work-plugins": false,
     "product-management@knowledge-work-plugins": false,
     "marketing@knowledge-work-plugins": false,
-    "legal@knowledge-work-plugins": false
+    "legal@knowledge-work-plugins": false,
+    "superpowers@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
   "model": "sonnet"
