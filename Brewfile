@@ -13,6 +13,7 @@ tap "oven-sh/bun"
 
 ##### Formulae #####
 
+brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
 brew "bun"
