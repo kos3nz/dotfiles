@@ -66,6 +66,9 @@ ghq list | ghq get --update --parallel
 # Create a new private repository on Github, and git clone with ghq
 gh repo create <repo-name> --private && ghq get <repo-name>
 
+# Create a new private repository on GitHub and set it as the remote origin
+gh repo create <repo-name> --private --source=. --remote=origin --push
+
 # Show a list of remote repositories
 gh repo list
 
