@@ -119,6 +119,7 @@ cask "firefox"
 cask "fliqlo" # Flip clock screensaver
 cask "framer"
 # cask "folder peek" # No fomulae on homebrew (installed via app store)
+cask "gcloud-cli"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "insomnia"

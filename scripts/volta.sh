@@ -4,6 +4,7 @@ volta install yarn@latest
 volta install pnpm@latest
 volta install @antfu/ni@latest
 volta install @google/clasp@latest
+volta install @googleworkspace/cli@latest
 volta install @nestjs/cli@latest
 volta install ccstatusline@latest
 volta install depcheck@latest

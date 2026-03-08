@@ -55,6 +55,7 @@
 /.config/.wrangler/
 /.config/configstore/
 /.config/fish/conf.d/
+/.config/gcloud/
 /.config/gh/hosts.yml
 /.config/htop/
 /.config/karabiner/automatic_backups
