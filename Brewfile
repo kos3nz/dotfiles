@@ -71,6 +71,7 @@ brew "php"
 brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
+brew "rustup"
 brew "sesh" # Smart tmux session manager
 brew "shopify-cli"
 # brew "shopify/shopify/themekit"
@@ -92,7 +93,6 @@ brew "zsh"
 # brew "peco"
 # brew "rename"
 # brew "rust"
-# brew "rustup-init"
 # brew "safe-rm"
 # brew "skhd" # Simple hotkey daemon for macOS.
 # brew "yabai" # A tiling window manager for macOS based on binary space partitioning.
