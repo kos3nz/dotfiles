@@ -187,15 +187,20 @@
     "command": "bunx ccstatusline@latest"
   },
   "enabledPlugins": {
-    "lua-language-server@claude-code-lsps": false,
-    "vtsls@claude-code-lsps": true,
     "sales@knowledge-work-plugins": false,
     "customer-support@knowledge-work-plugins": false,
     "product-management@knowledge-work-plugins": false,
     "marketing@knowledge-work-plugins": false,
     "legal@knowledge-work-plugins": false,
     "superpowers@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+    "code-simplifier@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": false,
+    "sentry@claude-plugins-official": false,
+    "lua-lsp@claude-plugins-official": false,
+    "rust-analyzer@claude-code-lsps": true,
+    "vtsls@claude-code-lsps": true,
+    "lua-language-server@claude-code-lsps": false
   },
   "outputStyle": "Explanatory",
   "model": "sonnet"
