@@ -6,10 +6,6 @@
 
 PR TODO comments use checkbox format: `- [ ] description`
 
-## Git
-
-When creating branches, prefix them with kos3nz/ to indicate they came from me.
-
 ## Plan Mode
 
 - Structure as phases/steps with checkboxes; mark when completed

@@ -9,7 +9,7 @@ data = json.load(sys.stdin)
 path = data.get('tool_input', {}).get('file_path', '')
 
 dangerous = [
-    r'\.env(\.|$)',  # .env or .env.local, .env.production, etc
+    r'\.env(?!\.example(\.|$))(\.|$)',  # Deny .env and .env.* files, but exclude .env.example
     r'.*-lock\.(json|yaml|yml)$',  # package-lock.json, yarn-lock.yaml, etc
     r'\.lock$',  # Gemfile.lock, poetry.lock, etc
     r'(^|/)\.git/',  # .git directory
