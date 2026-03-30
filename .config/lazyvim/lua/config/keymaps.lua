@@ -44,6 +44,14 @@ map(n, "<leader>ij", ":m .+1<cr>==", { desc = "Move text down", silent = true })
 del("n", "<leader>ft")
 del("n", "<leader>fT")
 
+-- Disable Neovim 0.10+ built-in lsp key mappings to avoid delay on 'gr'
+del("n", "gra")
+del("n", "gri")
+del("n", "grn")
+del("n", "grr")
+del("n", "grt")
+del("n", "grx")
+
 --------------------
 -- Insert mode
 --------------------

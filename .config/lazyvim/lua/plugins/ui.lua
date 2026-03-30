@@ -1,72 +1,4 @@
 return {
-  -- dashboard
-  {
-    "nvimdev/dashboard-nvim",
-    lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
-    opts = function()
-      local logo = [[
-       ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
-       ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
-       ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
-       ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
-       ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
-       ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
-]]
-
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-
-      local opts = {
-        theme = "doom",
-        hide = {
-          -- this is taken care of by lualine
-          -- enabling this messes up the actual laststatus setting after loading a file
-          statusline = false,
-        },
-        config = {
-          header = vim.split(logo, "\n"),
-        -- stylua: ignore
-        center = {
-          { action = "Neotree focus",                                  desc = " File Explorer",   icon = " ", key = "e" },
-          { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },
-          { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = " ", key = "r" },
-          { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = " ", key = "w" },
-          { action = "Telescope git_status",                           desc = " Git status",      icon = "󰊢 ", key = "g" },
-          { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = " ", key = "c" },
-          { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = "󰑓 ", key = "s" },
-          { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = "󰆧 ", key = "x" },
-          { action = "Lazy",                                           desc = " Lazy",            icon = "󰒲 ", key = "l" },
-          { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = " ", key = "q" },
-        },
-          footer = function()
-            local stats = require("lazy").stats()
-            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-            return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
-          end,
-        },
-      }
-
-      for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
-        button.key_format = "  %s"
-      end
-
-      -- open dashboard after closing lazy
-      if vim.o.filetype == "lazy" then
-        vim.api.nvim_create_autocmd("WinClosed", {
-          pattern = tostring(vim.api.nvim_get_current_win()),
-          once = true,
-          callback = function()
-            vim.schedule(function()
-              vim.api.nvim_exec_autocmds("UIEnter", { group = "dashboard" })
-            end)
-          end,
-        })
-      end
-
-      return opts
-    end,
-  },
-
   {
     "folke/snacks.nvim",
     opts = {
@@ -80,22 +12,135 @@ return {
        ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
        ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
 ]],
-       -- stylua: ignore
-       ---@type snacks.dashboard.Item[]
-       keys = {
-         { icon = " ", key = "e", desc = "File Explorer",   action = ":Neotree focus" },
-         { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
-         { icon = " ", key = "r", desc = "Recent Files",    action = ":lua Snacks.dashboard.pick('oldfiles')" },
-         { icon = " ", key = "w", desc = "Find Text",       action = ":lua Snacks.dashboard.pick('live_grep')" },
-         { icon = "󰊢 ", key = "g", desc = "Git status",      action = ":Telescope git_status" },
-         { icon = " ", key = "c", desc = "Config",          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-         { icon = " ", key = "s", desc = "Restore Session", action = ':lua require("persistence").load()' },
-         { icon = " ", key = "x", desc = "Lazy Extras",     action = ":LazyExtras" },
-         { icon = "󰒲 ", key = "l", desc = "Lazy",            action = ":Lazy" },
-         { icon = " ", key = "q", desc = "Quit",            action = ":qa" },
-       },
+          -- stylua: ignore
+          ---@type snacks.dashboard.Item[]
+          keys = {
+            { icon = " ", key = "e", desc = "File Explorer",   action = ":Neotree focus" },
+            { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "r", desc = "Recent Files",    action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = " ", key = "w", desc = "Find Text",       action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = "󰊢 ", key = "g", desc = "Git status",      action = ":lua Snacks.picker.git_status()" },
+            { icon = " ", key = "c", desc = "Config",          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            { icon = " ", key = "s", desc = "Restore Session", action = ':lua require("persistence").load()' },
+            { icon = " ", key = "x", desc = "Lazy Extras",     action = ":LazyExtras" },
+            { icon = "󰒲 ", key = "l", desc = "Lazy",            action = ":Lazy" },
+            { icon = " ", key = "q", desc = "Quit",            action = ":qa" },
+          },
         },
       },
+      bufdelete = { enabled = true },
+      rename = { enabled = true },
+      input = { enabled = true },
+      notifier = {
+        enabled = true,
+        timeout = 3000,
+      },
+      indent = { enabled = true },
+      scroll = { enabled = true },
+      picker = {
+        enabled = true,
+        ui_select = true, -- replace vim.ui.select
+        formatters = {
+          file = {
+            filename_first = true, -- display filename before the directory
+          },
+        },
+      },
+    },
+    keys = {
+      -- Picker
+      { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+      { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
+      { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+      -- find
+      { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+      { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+      { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+      { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true } }) end, desc = "Recent (cwd)" },
+      -- git
+      { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+      { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
+      { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
+      { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
+      { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
+      { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+      { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
+      -- gh
+      { "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+      { "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end, desc = "GitHub Issues (all)" },
+      { "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
+      { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
+      -- grep
+      { "<leader>fw", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
+      { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual Selection or Word", mode = { "n", "x" } },
+      -- search
+      { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
+      { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
+      { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
+      { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
+      { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+      { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Workspace Diagnostics" },
+      { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
+      { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
+      { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
+      { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
+      { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+      { "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
+      { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
+      { "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
+      { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
+      { "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
+      { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+      -- session
+      { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+      { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+      { "<leader>qd", function() require("persistence").stop() end, desc = "Stop Session" },
+      -- buffers
+      {
+        "<leader>bd",
+        function()
+          local bufs = vim.fn.getbufinfo({buflisted = true})
+
+          if vim.bo.modified then
+            local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
+            if choice == 1 then -- Yes
+              vim.cmd.write()
+              Snacks.bufdelete()
+            elseif choice == 2 then -- No
+              Snacks.bufdelete({force = true})
+            else
+              return
+            end
+          else
+            Snacks.bufdelete()
+          end
+
+          if not bufs[2] then
+            Snacks.dashboard.open()
+          end
+        end,
+        desc = "Delete Buffer"
+      },
+      {
+        "<leader>bD",
+        function()
+          local bufs = vim.fn.getbufinfo({ buflisted = true })
+          Snacks.bufdelete({force = true})
+          if not bufs[2] then
+            Snacks.dashboard.open()
+          end
+        end,
+        desc = "Delete Buffer (Force)"
+      },
+      -- Other
+  { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications", },
+
     },
   },
 
@@ -131,10 +176,10 @@ return {
       opts.options = {
         numbers = "ordinal",
         close_command = function(n)
-          require("mini.bufremove").delete(n, false)
+          Snacks.bufdelete(n)
         end,
         right_mouse_command = function(n)
-          require("mini.bufremove").delete(n, false)
+          Snacks.bufdelete(n)
         end,
         diagnostics = "nvim_lsp",
         buffer_close_icon = "",
@@ -177,105 +222,10 @@ return {
         truncate_names = false, -- whether or not tab names should be truncated
       }
 
-      local mocha = require("catppuccin.palettes").get_palette("mocha")
-      opts.highlights = {
-        background = {
-          fg = mocha.overlay0,
-          bold = false,
-          italic = false,
-        },
-        buffer_selected = {
-          fg = mocha.text,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        close_button = {
-          fg = mocha.overlay0,
-        },
-        close_button_selected = {
-          fg = mocha.text,
-          bg = mocha.base,
-        },
-        numbers = {
-          fg = mocha.overlay0,
-        },
-        numbers_selected = {
-          fg = mocha.text,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        indicator_selected = {
-          bg = mocha.base,
-        },
-        modified_selected = {
-          fg = mocha.green,
-          bg = mocha.base,
-        },
-        hint = {
-          fg = mocha.overlay0,
-        },
-        hint_selected = {
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        hint_diagnostic_selected = {
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        info = {
-          fg = mocha.overlay0,
-        },
-        info_selected = {
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        info_diagnostic_selected = {
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        warning = {
-          fg = mocha.overlay0,
-        },
-        warning_selected = {
-          fg = mocha.yellow,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        warning_diagnostic = {
-          fg = mocha.yellow,
-        },
-        warning_diagnostic_selected = {
-          fg = mocha.yellow,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        error = {
-          fg = mocha.overlay0,
-        },
-        error_selected = {
-          fg = mocha.red,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-        error_diagnostic = {
-          fg = mocha.red,
-        },
-        error_diagnostic_selected = {
-          fg = mocha.red,
-          bg = mocha.base,
-          bold = true,
-          italic = false,
-        },
-      }
+      local ok, bufferline_theme = pcall(require, "catppuccin.groups.integrations.bufferline")
+      if ok then
+        opts.highlights = bufferline_theme.get() or bufferline_theme.get_theme()
+      end
     end,
     config = function(_, opts)
       require("bufferline").setup(opts)
@@ -285,39 +235,6 @@ return {
           vim.schedule(function()
             pcall(nvim_bufferline)
           end)
-        end,
-      })
-    end,
-  },
-
-  -- Active indent guide and indent text objects. When you're browsing
-  -- code, this highlights the current level of indentation, and animates
-  -- the highlighting.
-  {
-    "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
-    event = "LazyFile",
-    opts = {
-      symbol = "│",
-      options = { try_as_border = true },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "help",
-          "alpha",
-          "dashboard",
-          "neo-tree",
-          "Trouble",
-          "trouble",
-          "lazy",
-          "mason",
-          "notify",
-          "toggleterm",
-          "lazyterm",
-        },
-        callback = function()
-          vim.b.miniindentscope_disable = true
         end,
       })
     end,
@@ -431,7 +348,7 @@ return {
         function()
           require("noice").cmd("pick")
         end,
-        desc = "Noice Picker (Telescope/FzfLua)",
+        desc = "Noice Picker",
       },
       {
         "<c-f>",
@@ -469,34 +386,9 @@ return {
     end,
   },
 
-  {
-    "rcarriga/nvim-notify",
-    keys = {
-      {
-        "<leader>un",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
-        desc = "Dismiss all Notifications",
-      },
-    },
-    opts = {
-      timeout = 3000,
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
-      on_open = function(win)
-        vim.api.nvim_win_set_config(win, { zindex = 100 })
-      end,
-    },
-  },
-
   -- Icons
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     lazy = true,
     opts = {
       file = {

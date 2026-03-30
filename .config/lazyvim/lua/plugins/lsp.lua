@@ -1,6 +1,6 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ui = {
         width = 0.8,
@@ -42,7 +42,7 @@ return {
   },
 
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
         "emmet_ls",
@@ -68,39 +68,25 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    keys = {
+      { "K", false },
+      { "<c-k>", false, mode = "i" },
+      { "gh", function() vim.lsp.buf.hover() end, desc = "Hover" },
+      { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Definition" },
+      { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Declaration" },
+      { "gr", function() Snacks.picker.lsp_references() end, desc = "References" },
+      { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Implementation" },
+      { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Type Definition" },
+      { "gn", function() vim.lsp.buf.rename() end, desc = "Rename" },
+      { "gl", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+      { "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
+      { "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
+      { "<leader>rn", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+    },
     opts = function(_, opts)
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- disable a keymap
-      keys[#keys + 1] = { "K", false }
-      keys[#keys + 1] = { "<c-k>", false, mode = "i" }
-
-      -- add a keymap
-      -- keys[#keys + 1] = { "gh", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" }
-      keys[#keys + 1] = { "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Hover" }
-      keys[#keys + 1] = { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" }
-
-      keys[#keys + 1] = {
-        "gl",
-        function()
-          vim.diagnostic.open_float()
-        end,
-        desc = "Hover diagnostics",
-      }
-      keys[#keys + 1] = {
-        "[d",
-        function()
-          vim.diagnostic.goto_prev()
-        end,
-        desc = "Previous diagnostic",
-      }
-      keys[#keys + 1] = {
-        "]d",
-        function()
-          vim.diagnostic.goto_next()
-        end,
-        desc = "Next diagnostic",
-      }
-
       opts.servers = {
         --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
         --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically

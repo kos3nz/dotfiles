@@ -1,10 +1,14 @@
 return {
+  -- Disable tokyonight
+  { "folke/tokyonight.nvim", enabled = false },
+
   {
     "catppuccin/nvim",
-    lazy = true,
     name = "catppuccin",
+    lazy = false,
+    priority = 1000,
     opts = {
-      flavour = "mocha",
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
       background = { -- :h background
         light = "latte",
         dark = "mocha",
@@ -20,7 +24,7 @@ return {
       no_italic = false, -- Force no italic
       no_bold = false, -- Force no bold
       no_underline = false, -- Force no underline
-      styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+      styles = { -- General code styles
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = {},
@@ -33,36 +37,33 @@ return {
         properties = {},
         types = {},
         operators = {},
+        -- miscs = {},
       },
       color_overrides = {},
       custom_highlights = function(colors)
-        -- https://catppuccin.com/palette
         return {
-          CursorLineNr = {
-            fg = colors.blue,
-          },
-          MiniIndentscopeSymbol = {
-            fg = colors.blue,
-          },
-          -- treesitter
-          TreesitterContext = {
-            fg = colors.blue,
-          },
-          TreesitterContextLineNumberBottom = {
-            fg = colors.blue,
-          },
-          -- nvim-cmp
+          Normal = { bg = "none" },
+          NormalNC = { bg = "none" },
+          LineNr = { fg = colors.overlay1, bg = "none" },
+          SignColumn = { bg = "none" },
+          FoldColumn = { bg = "none" },
+          CursorLineNr = { fg = colors.blue },
+          MiniIndentscopeSymbol = { fg = colors.blue },
+          TreesitterContext = { bg = "none" },
+          TreesitterContextLineNumberBottom = { fg = colors.blue, bg = "none" },
           CmpItemAbbr = { fg = colors.overlay2 },
           CmpItemAbbrMatch = { fg = colors.blue },
           CmpItemAbbrMatchFuzzy = { fg = colors.peach },
-
-          -- textDocument/hover
-          RenderMarkdownCode = { bg = colors.crust },
+          SnacksPickerNormal = { bg = "none" },
+          SnacksPickerBorder = { bg = "none" },
+          NeoTreeNormal = { bg = "none" },
+          NeoTreeNormalNC = { bg = "none" },
         }
       end,
       integrations = {
         aerial = true,
         alpha = true,
+        blink_cmp = true,
         cmp = true,
         dashboard = true,
         flash = true,
@@ -85,17 +86,30 @@ return {
           },
         },
         navic = { enabled = true, custom_bg = "lualine" },
-        neotest = true,
         neotree = true,
         noice = true,
         notify = true,
+        neorg = true,
+        overseer = true,
+        render_markdown = true,
+        rainbow_delimiters = true,
         semantic_tokens = true,
-        telescope = true,
+        symbols_outline = true,
+        snacks = true,
+        telescope = {
+          enabled = false,
+        },
         treesitter = true,
         treesitter_context = true,
+        ts_結 = true,
+        window_picker = true,
         which_key = true,
       },
     },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin")
+    end,
   },
 
   -- {

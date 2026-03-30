@@ -92,7 +92,10 @@ opt.fileencoding = "utf-8" -- the encoding written to a file
 opt.undofile = true -- enable persistent undo
 
 -- mapping
-opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
+opt.timeoutlen = 300 -- time to wait for a mapped sequence to complete (in milliseconds)
 
 -- keyword
 opt.iskeyword:append("-") -- allows Neovim to recognize the hyphen ('-') as part of a word.
+
+-- LazyVim
+vim.g.lazyvim_picker = "snacks" -- make sure LazyVim to use Snacks as the default picker
