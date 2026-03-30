@@ -72,6 +72,7 @@ brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
 brew "rustup"
+brew "schpet/tap/linear"
 brew "sesh" # Smart tmux session manager
 brew "shopify-cli"
 # brew "shopify/shopify/themekit"
