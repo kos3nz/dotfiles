@@ -209,6 +209,6 @@
     "lua-language-server@claude-code-lsps": false
   },
   "outputStyle": "Explanatory",
-  "model": "sonnet"
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "medium"
 }
