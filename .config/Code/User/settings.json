@@ -7,7 +7,7 @@
   "files.associations": {
     "*.css": "tailwindcss",
     "*.mdx": "markdown",
-    "*.module": "php"
+    "*.module": "php",
     // "*.svg": "html",
     // "*.xml": "html",
   },
@@ -58,14 +58,14 @@
     // Custom Setting
     "**/GoogleDrive/**": true,
     "**/Library/**": true,
-    "**/Pictures/**": true
+    "**/Pictures/**": true,
   },
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
     "**/.hg": true,
     "**/.svn": true,
-    "**/tmp": true
+    "**/tmp": true,
     // "**/node_modules": true,
     // "**/.next": true
   },
@@ -81,7 +81,7 @@
     // Bundle files
     "**/bundle.*": true,
     // Cache Directories or files
-    "**/.cache": true
+    "**/.cache": true,
   },
   "search.followSymlinks": false,
   "search.searchOnType": true,
@@ -159,7 +159,7 @@
   //   }
   // },
   "terminal.integrated.env.osx": {
-    "CW_NEW_SESSION": "1"
+    "CW_NEW_SESSION": "1",
   },
 
   /* -------------------------------------------------------------------------- */
@@ -177,7 +177,7 @@
     "mdx": "html",
     "postcss": "css",
     "php": "html",
-    "liquid": "html"
+    "liquid": "html",
   },
   // "emmet.showExpandedAbbreviation": "never",
 
@@ -190,26 +190,26 @@
       "variable.defaultLibrary": "#E4F3FA",
       "*.readonly": "#ff94a1e3",
       "*.static": "#D19A66",
-      "function": "#73bdfa"
-    }
+      "function": "#73bdfa",
+    },
   },
   "editor.tokenColorCustomizations": {
     "comments": {
       "foreground": "#8199b8d0", // #8199b8d0
-      "fontStyle": "italic"
+      "fontStyle": "italic",
     },
     "[Moonlight]": {
       "textMateRules": [
         {
           "scope": [
             // typescript
-            "support.type.primitive"
+            "support.type.primitive",
           ],
           "settings": {
-            "foreground": "#61ccda"
-          }
-        }
-      ]
+            "foreground": "#61ccda",
+          },
+        },
+      ],
     },
     "[One Dark Pro]": {
       "textMateRules": [
@@ -229,12 +229,12 @@
             "support.type.builtin.tsx",
             "storage.modifier.ts",
             // pug
-            "constant.name.attribute.tag.pug"
+            "constant.name.attribute.tag.pug",
           ], // セレクタ
           "settings": {
-            "foreground": "#56B6C2" // #56B6C2, #31a2aa
+            "foreground": "#56B6C2", // #56B6C2, #31a2aa
             // "fontStyle": "そのスコープのスタイル"
-          }
+          },
         },
         {
           "scope": [
@@ -257,11 +257,11 @@
             // markdown
             "entity.name.section.markdown",
             "punctuation.definition.heading.markdown",
-            "punctuation.definition.list.begin.markdown"
+            "punctuation.definition.list.begin.markdown",
           ],
           "settings": {
-            "foreground": "#D19A66" // #d17f66 #D19A66 #F28F77
-          }
+            "foreground": "#D19A66", // #d17f66 #D19A66 #F28F77
+          },
         },
         {
           "scope": [
@@ -270,11 +270,11 @@
             // markdown
             "string.other.link.title.markdown",
             // env
-            "constant.language.env"
+            "constant.language.env",
           ], // function
           "settings": {
-            "foreground": "#73bdfa" // #61AFEF
-          }
+            "foreground": "#73bdfa", // #61AFEF
+          },
         },
         {
           "scope": [
@@ -298,11 +298,11 @@
             "meta.template.expression.ts punctuation.definition",
             "meta.template.expression.tsx punctuation.definition",
             // markdown
-            "markup.underline.link.markdown"
+            "markup.underline.link.markdown",
           ],
           "settings": {
-            "foreground": "#7fd8a8" // #8FBCBB #8bc4a5
-          }
+            "foreground": "#7fd8a8", // #8FBCBB #8bc4a5
+          },
         },
         {
           "scope": [
@@ -327,24 +327,24 @@
             "source.ts keyword.operator",
             // env
             "keyword.other.template.begin.env",
-            "keyword.other.template.end.env"
+            "keyword.other.template.end.env",
           ],
           "settings": {
-            "foreground": "#d091e9" // #C678DD, #ca8ddd #d18ce6
-          }
+            "foreground": "#d091e9", // #C678DD, #ca8ddd #d18ce6
+          },
         },
         {
           "scope": [
             // css
             "constant.numeric.css",
             "support.constant.property-value.css",
-            "meta.identifier.css"
+            "meta.identifier.css",
             // javascript
             // typescript
           ],
           "settings": {
-            "foreground": "#bc99da" // 	"#E5C07B", "#bc99da"
-          }
+            "foreground": "#bc99da", // 	"#E5C07B", "#bc99da"
+          },
         },
         {
           "scope": [
@@ -361,11 +361,11 @@
             "entity.name.type.module.ts",
             "entity.name.type.module.tsx",
             "variable.language.this.ts",
-            "variable.language.this.tsx"
+            "variable.language.this.tsx",
           ],
           "settings": {
-            "foreground": "#e5c97b" // 	"#E5C07B", "#bc99da"
-          }
+            "foreground": "#e5c97b", // 	"#E5C07B", "#bc99da"
+          },
         },
         {
           "scope": [
@@ -389,11 +389,11 @@
             "variable.other.constant.object.tsx",
             // json
             "support.type.property-name.json",
-            "support.type.property-name.json punctuation"
+            "support.type.property-name.json punctuation",
           ],
           "settings": {
-            "foreground": "#fc819ee3" // "#fd7887e3"
-          }
+            "foreground": "#fc819ee3", // "#fd7887e3"
+          },
         },
         {
           "scope": [
@@ -464,15 +464,15 @@
             // markdown
             "meta.paragraph.markdown",
             // env
-            "source.env"
+            "source.env",
           ],
           "settings": {
             "foreground": "#E4F3FA", // #ABB2BF, #d3d3d3 #D8DEE9 #d8dcd6e8
-            "fontStyle": ""
-          }
-        }
-      ]
-    }
+            "fontStyle": "",
+          },
+        },
+      ],
+    },
   },
   "workbench.colorCustomizations": {
     "editor.background": "#101010",
@@ -544,7 +544,7 @@
     "terminal.ansiRed": "#e05b7c",
     "terminal.ansiYellow": "#c7c42d",
     "sash.hoverBorder": "#047ea2",
-    "editor.lineHighlightBorder": "#9fced11f"
+    "editor.lineHighlightBorder": "#9fced11f",
   },
 
   /* -------------------------------------------------------------------------- */
@@ -562,30 +562,27 @@
   "[astro]": {},
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "[php]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "[liquid]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
     "editor.quickSuggestions": {
-      "strings": true
+      "strings": true,
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"]
+    "gitlens.codeLens.scopes": ["document"],
   },
   "[jsonc]": {},
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "Prisma.prisma",
   },
   "[snippets]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
 
   /* ------------------------- Javascript & Typescript ------------------------ */
@@ -620,28 +617,22 @@
   // "deno.inlayHints.variableTypes.enabled": true,
   // "deno.inlayHints.parameterNames.enabled": "literals",
 
-  /* --------------------------------- Svelte --------------------------------- */
-  "svelte.enable-ts-plugin": true,
-
-  /* ---------------------------------- Rust ---------------------------------- */
-  "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
-
   /* -------------------------------------------------------------------------- */
   /*                                    Lint                                    */
   /* -------------------------------------------------------------------------- */
   "eslint.run": "onType",
   "eslint.codeAction.showDocumentation": {
-    "enable": true
+    "enable": true,
   },
   "eslint.options": {
-    "extensions": [".js", ".jsx", ".ts", ".tsx", ".astro"]
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".astro"],
   },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "astro"
+    "astro",
   ],
   // "eslint.packageManager": "pnpm",
   "stylelint.packageManager": "pnpm",
@@ -653,7 +644,7 @@
   "editor.formatOnSave": true, // ファイル保存時にデフォルトフォーマッターでファイルをフォーマットする
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "never",
-    "source.fixAll.stylelint": "never"
+    "source.fixAll.stylelint": "never",
   },
 
   "prettier.singleQuote": false,
@@ -689,7 +680,7 @@
     "less",
     "tailwindcss",
     "astro",
-    "postcss"
+    "postcss",
     // "vue",
     // "svelte"
   ],
@@ -698,7 +689,7 @@
   /*                                 TailwindCSS                                */
   /* -------------------------------------------------------------------------- */
   "editor.quickSuggestions": {
-    "strings": true // JSXでもCSSクラスを補完できるように
+    "strings": true, // JSXでもCSSクラスを補完できるように
   },
   "tailwindCSS.includeLanguages": {
     "html": "HTML",
@@ -707,7 +698,7 @@
     "typescript": "javascript",
     "typescriptreact": "javascript",
     "php": "php",
-    "liquid": "liquid"
+    "liquid": "liquid",
   },
   // "tailwindCSS.emmetCompletions": true, // emmetでTailwind CSSのクラスを使えるように
   "tailwindCSS.validate": true, // Tailwind CSSのDirectivesをLintする
@@ -723,23 +714,12 @@
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"], // for cn
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], // for cva
     ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"], // for tailwind-variants
-    "class: '([^']*)" // for liquid
+    "class: '([^']*)", // for liquid
   ],
   "tailwindCSS.lint.cssConflict": "ignore",
   "tailwind-fold.foldedText": "...",
   "tailwind-fold.foldLengthThreshold": 0,
   "tailwind-fold.autoFold": false,
-
-  /* -------------------------------------------------------------------------- */
-  /*                                   Quokka                                   */
-  /* -------------------------------------------------------------------------- */
-  "quokka.colors": {
-    "covered": "#62b455",
-    "errorPath": "#ffa0a0",
-    "errorSource": "#fe536a",
-    "notCovered": "#cccccc",
-    "partiallyCovered": "#d2a032"
-  },
 
   /* -------------------------------------------------------------------------- */
   /*                                   Peacock                                  */
@@ -748,44 +728,44 @@
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
-      "value": "#dd0531"
+      "value": "#dd0531",
     },
     {
       "name": "Azure Blue",
-      "value": "#007fff"
+      "value": "#007fff",
     },
     {
       "name": "JavaScript Yellow",
-      "value": "#f9e64f"
+      "value": "#f9e64f",
     },
     {
       "name": "Mandalorian Blue",
-      "value": "#1857a4"
+      "value": "#1857a4",
     },
     {
       "name": "Node Green",
-      "value": "#215732"
+      "value": "#215732",
     },
     {
       "name": "React Blue",
-      "value": "#61dafb"
+      "value": "#61dafb",
     },
     {
       "name": "Something Different",
-      "value": "#832561"
+      "value": "#832561",
     },
     {
       "name": "Svelte Orange",
-      "value": "#ff3d00"
+      "value": "#ff3d00",
     },
     {
       "name": "Vue Green",
-      "value": "#42b883"
+      "value": "#42b883",
     },
     {
       "name": "My Fav 1",
-      "value": "#035770"
-    }
+      "value": "#035770",
+    },
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -807,7 +787,7 @@
     "WARNING:",
     "@warning",
     "[ ]",
-    "[x]"
+    "[x]",
   ],
   "todo-tree.general.tagGroups": {
     "CHANGED": ["CHANGED:", "@changed"],
@@ -815,7 +795,7 @@
     "NOTE": ["NOTE:", "@note"],
     "REVIEW": ["REVIEW:", "@review"],
     "TODO": ["TODO:", "@todo"],
-    "WARNING": ["WARNING:", "@warning"]
+    "WARNING": ["WARNING:", "@warning"],
   },
   // https://github.com/Gruntfuggly/todo-tree/wiki/Configuration-Examples
   "todo-tree.regex.regex": "((//|#|<!--|/\\*|^\\s*\\*|\\{%\\s*comment\\s*%\\})\\s*($TAGS)|^(\\s*(-|\\d+\\.)?)\\s*\\[(x| )\\])",
@@ -825,7 +805,7 @@
     "fontWeight": "regular",
     "opacity": 80,
     "gutterIcon": true,
-    "borderRadius": "0px"
+    "borderRadius": "0px",
   },
   "todo-tree.highlights.customHighlight": {
     // https://primer.style/foundations/icons
@@ -833,50 +813,50 @@
       "foreground": "#eee",
       "background": "#42b883",
       "icon": "check-circle",
-      "iconColour": "#42b883"
+      "iconColour": "#42b883",
     },
     "FIX": {
       "foreground": "#eee",
       "background": "#e05b7c",
       "icon": "bug",
-      "iconColour": "#e05b7c"
+      "iconColour": "#e05b7c",
     },
     "NOTE": {
       "foreground": "#111",
       "background": "#eee",
       "icon": "comment",
-      "iconColour": "#eee"
+      "iconColour": "#eee",
     },
     "REVIEW": {
       "foreground": "#eee",
       "background": "#2C7CFF",
       "icon": "code-review",
-      "iconColour": "#2C7CFF"
+      "iconColour": "#2C7CFF",
     },
     "TODO": {
       "foreground": "#eee",
       "background": "#FF5F17",
       "icon": "checklist",
-      "iconColour": "#FF5F17"
+      "iconColour": "#FF5F17",
     },
     "WARNING": {
       "foreground": "#111",
       "background": "#dcc40c",
       "icon": "alert",
-      "iconColour": "#f4ed18"
+      "iconColour": "#f4ed18",
     },
     "[ ]": {
       "foreground": "#eee",
       "background": "#e05b7c",
       "icon": "issue-draft",
-      "iconColour": "#e05b7c"
+      "iconColour": "#e05b7c",
     },
     "[x]": {
       "foreground": "#eee",
       "background": "#42b883",
       "icon": "issue-closed",
-      "iconColour": "#42b883"
-    }
+      "iconColour": "#42b883",
+    },
   },
   "todo-tree.filtering.excludeGlobs": [
     "**/build/**",
@@ -890,7 +870,7 @@
     "**/.next/**",
     "**/node_modules/**",
     "**/_output/**",
-    "**/.vscode/**"
+    "**/.vscode/**",
   ],
   "todo-tree.tree.disableCompactFolders": true,
   "todo-tree.tree.expanded": true,
@@ -905,173 +885,70 @@
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#42b883"
+      "color": "#42b883",
     },
     {
       "tag": "FIXME",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#e05b7c"
+      "color": "#e05b7c",
     },
     {
       "tag": "NOTE",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#C0C0C0"
+      "color": "#C0C0C0",
     },
     {
       "tag": "REVIEW",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#2C7CFF"
+      "color": "#2C7CFF",
     },
     {
       "tag": "TODO",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#FF5F17"
+      "color": "#FF5F17",
     },
     {
       "tag": "WARNING",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#fe536a"
+      "color": "#fe536a",
     },
     {
       "tag": "--",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#C0C0C0"
+      "color": "#C0C0C0",
     },
     {
       "tag": "::",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#C0C0C0"
+      "color": "#C0C0C0",
     },
     {
       "tag": "##",
       "strikethrough": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "color": "#709de0"
-    }
+      "color": "#709de0",
+    },
   ],
 
   /* -------------------------------------------------------------------------- */
   /*                                  Bookmarks                                 */
   /* -------------------------------------------------------------------------- */
   "bookmarks.sideBar.expanded": true,
-
-  /* -------------------------------------------------------------------------- */
-  /*                             Code Spell Checker                             */
-  /* -------------------------------------------------------------------------- */
-  "cSpell.enabled": true,
-  "cSpell.spellCheckDelayMs": 100,
-  "cSpell.userWords": [
-    "astro",
-    "astrojs",
-    "bootcamp",
-    "chakra",
-    "Clarifai",
-    "clsx",
-    "colour",
-    "consts",
-    "contentlayer",
-    "daisyui",
-    "esbuild",
-    "fieldname",
-    "firestore",
-    "Flexbox",
-    "frameloop",
-    "geospatial",
-    "glsl",
-    "glslify",
-    "headlessui",
-    "heroicons",
-    "Hotmail",
-    "kubectl",
-    "kubernetes",
-    "Lato",
-    "Listify",
-    "Mailgun",
-    "mantine",
-    "mapbox",
-    "mapboxgl",
-    "MICROTASKS",
-    "middlewares",
-    "minmax",
-    "nanostores",
-    "nextjs",
-    "nextui",
-    "nodebrew",
-    "noopener",
-    "noreferrer",
-    "orangered",
-    "originalname",
-    "outdent",
-    "overscroll",
-    "persistor",
-    "pnpm",
-    "popmotion",
-    "portafilter",
-    "POSTGRES",
-    "Preact",
-    "prettierrc",
-    "psql",
-    "radash",
-    "rarr",
-    "reduxjs",
-    "rehype",
-    "roboto",
-    "semibold",
-    "SENDGRID",
-    "settimer",
-    "settimers",
-    "signin",
-    "signout",
-    "signup",
-    "skaffold",
-    "sslify",
-    "stylelint",
-    "supabase",
-    "svgr",
-    "swiper",
-    "tailwindcss",
-    "tanstack",
-    "THREADPOOL",
-    "TMDB",
-    "toolbelt",
-    "turborepo",
-    "twind",
-    "upsert",
-    "urql",
-    "Vercel",
-    "viewbox",
-    "virtuals",
-    "VITE",
-    "youtube",
-    "zustand"
-  ],
-
-  /* -------------------------------------------------------------------------- */
-  /*                               Github Copilot                               */
-  /* -------------------------------------------------------------------------- */
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "yaml": false,
-    "mdx": false
-  },
 
   /* -------------------------------------------------------------------------- */
   /*                               Indent Rainbow                               */
@@ -1086,7 +963,7 @@
     "rgba(144, 224, 239, 0.15)",
     "rgba(144, 224, 239, 0.1)",
     "rgba(144, 224, 239, 0.05)",
-    "rgba(144, 224, 239, 0.025)"
+    "rgba(144, 224, 239, 0.025)",
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -1162,8 +1039,8 @@
       "command": "multiCommand.closeEditors",
       "sequence": [
         "workbench.action.closeEditorsInGroup",
-        "workbench.action.focusSideBar"
-      ]
+        "workbench.action.focusSideBar",
+      ],
     },
 
     /* ---------------------------------- List ---------------------------------- */
@@ -1177,8 +1054,8 @@
         "list.focusUp",
         "list.focusUp",
         "list.focusUp",
-        "list.focusUp"
-      ]
+        "list.focusUp",
+      ],
     },
     {
       "command": "multiCommand.focusDown",
@@ -1190,8 +1067,8 @@
         "list.focusDown",
         "list.focusDown",
         "list.focusDown",
-        "list.focusDown"
-      ]
+        "list.focusDown",
+      ],
     },
 
     /* ----------------------------- Cursor & Motion ---------------------------- */
@@ -1202,10 +1079,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>", "a"]
-          }
-        }
-      ]
+            "after": ["<Esc>", "a"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.deleteCursorWord",
@@ -1215,10 +1092,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.deleteCursorWordAndInsert",
@@ -1228,10 +1105,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["i"]
-          }
-        }
-      ]
+            "after": ["i"],
+          },
+        },
+      ],
     },
 
     /* ------------------------------- Change Case ------------------------------ */
@@ -1242,10 +1119,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.upperFirst",
@@ -1254,10 +1131,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.lower",
@@ -1266,10 +1143,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.camel",
@@ -1278,10 +1155,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.constant",
@@ -1290,10 +1167,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.dot",
@@ -1302,10 +1179,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.path",
@@ -1314,10 +1191,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.pascal",
@@ -1326,10 +1203,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.snake",
@@ -1338,10 +1215,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
     {
       "command": "multiCommand.changeCase.title",
@@ -1350,16 +1227,16 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
 
     /* -------------------------------- Problems -------------------------------- */
     {
       "command": "multiCommand.problems.open",
-      "sequence": ["problems.action.open", "workbench.action.togglePanel"]
+      "sequence": ["problems.action.open", "workbench.action.togglePanel"],
     },
 
     /* --------------------------------- Search --------------------------------- */
@@ -1370,10 +1247,10 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
+            "after": ["<Esc>"],
+          },
+        },
+      ],
     },
 
     /* ----------------------------------- Cmp ---------------------------------- */
@@ -1384,11 +1261,11 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": ["<Esc>"]
-          }
-        }
-      ]
-    }
+            "after": ["<Esc>"],
+          },
+        },
+      ],
+    },
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -1397,7 +1274,7 @@
   // Fix poor performance when inserting on vim extention?  https://github.com/microsoft/vscode/issues/75627#issuecomment-1078827311
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
 
   "vim.leader": "<space>",
@@ -1432,7 +1309,7 @@
     "<C-k>": false,
     "<C-y>": false,
     "<C-i>": false,
-    "<C-o>": false
+    "<C-o>": false,
   },
   /* -------------------------------------------------------------------------- */
   /*                               Vim Normal Mode                              */
@@ -1442,12 +1319,12 @@
     {
       "before": ["j"],
       "commands": ["cursorDown"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["k"],
       "commands": ["cursorUp"],
-      "silent": true
+      "silent": true,
     },
     // Temp fix for code-folding when moving up/down the cursor
     // {
@@ -1462,12 +1339,12 @@
     {
       "before": ["u"],
       "commands": ["undo"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<C-r>"],
       "commands": ["redo"],
-      "silent": true
+      "silent": true,
     },
 
     // Fold/Unfold
@@ -1509,47 +1386,47 @@
     {
       "before": ["z", "p"],
       "commands": ["editor.gotoParentFold"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["z", "j"],
       "commands": ["editor.gotoNextFold"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["z", "k"],
       "commands": ["editor.gotoPreviousFold"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["z", "T"],
       "commands": ["tailwind-fold.toggleAutoFold"],
-      "silent": true
+      "silent": true,
     },
 
     // Show commands
     {
       "before": ["<leader>", "p"],
       "commands": ["workbench.action.showCommands"],
-      "silent": true
+      "silent": true,
     },
     // Maximize editor size
     {
       "before": ["<leader>", "m"],
       "commands": ["workbench.action.toggleEditorWidths"],
-      "silent": true
+      "silent": true,
     },
     // Open Settings
     {
       "before": ["<leader>", "-"],
       "commands": ["workbench.action.openApplicationSettingsJson"],
-      "silent": true
+      "silent": true,
     },
     // Open Keybindings
     {
       "before": ["<leader>", "y"],
       "commands": ["workbench.action.openGlobalKeybindingsFile"],
-      "silent": true
+      "silent": true,
     },
 
     /* --------------------------------- Sidebar -------------------------------- */
@@ -1557,67 +1434,67 @@
     {
       "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"],
-      "silent": true
+      "silent": true,
     },
     // Toggle activity bar
     {
       "before": ["<leader>", "E"],
       "commands": ["workbench.action.toggleActivityBarVisibility"],
-      "silent": true
+      "silent": true,
     },
     // Focus on Explorer
     {
       "before": ["<leader>", "o"],
       "commands": ["workbench.explorer.fileView.focus"],
-      "silent": true
+      "silent": true,
     },
     // Show Explorer
     {
       "before": ["<leader>", "t", "e"],
       "commands": ["workbench.view.explorer"],
-      "silent": true
+      "silent": true,
     },
     // Show Extension
     {
       "before": ["<leader>", "t", "x"],
       "commands": ["workbench.view.extensions"],
-      "silent": true
+      "silent": true,
     },
     // Show Git/Source Control
     {
       "before": ["<leader>", "t", "g"],
       "commands": ["workbench.view.scm"],
-      "silent": true
+      "silent": true,
     },
     // Show Bookmark
     {
       "before": ["<leader>", "t", "m"],
       "commands": ["workbench.view.extension.bookmarks"],
-      "silent": true
+      "silent": true,
     },
     // Show Problems
     {
       "before": ["<leader>", "t", "p"],
       "commands": ["workbench.actions.view.problems"],
-      "silent": true
+      "silent": true,
     },
     // Show Output
     {
       "before": ["<leader>", "t", "o"],
       "commands": ["workbench.action.output.toggleOutput"],
-      "silent": true
+      "silent": true,
     },
     // Show Debug console
     {
       "before": ["<leader>", "t", "d"],
       "commands": ["workbench.debug.action.toggleRepl"],
-      "silent": true
+      "silent": true,
     },
     // Show Github Actions
     {
       "before": ["<leader>", "t", "a"],
       "commands": ["github-actions.current-branch.focus"],
-      "silent": true
+      "silent": true,
     },
 
     /* --------------------------------- Buffer --------------------------------- */
@@ -1625,150 +1502,150 @@
     {
       "before": ["H"],
       "commands": ["workbench.action.previousEditor"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["L"],
       "commands": ["workbench.action.nextEditor"],
-      "silent": true
+      "silent": true,
     },
     // Save file
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "W"],
       "commands": ["workbench.action.files.saveWithoutFormatting"],
-      "silent": true
+      "silent": true,
     },
     // Close buffer
     {
       "before": ["<leader>", "d"],
       "commands": ["workbench.action.closeActiveEditor"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "b", "d"],
       "commands": ["workbench.action.closeActiveEditor"],
-      "silent": true
+      "silent": true,
     },
     // Force close buffer
     {
       "before": ["<leader>", "D"],
       "commands": ["workbench.action.revertAndCloseActiveEditor"],
-      "silent": true
+      "silent": true,
     },
     // Close all editors in group
     {
       "before": ["<leader>", "q"],
       "commands": ["multiCommand.closeEditors"],
-      "silent": true
+      "silent": true,
     },
     // Close all editor groups
     {
       "before": ["<leader>", "Q"],
       "commands": ["workbench.action.closeAllGroups"],
-      "silent": true
+      "silent": true,
     },
     // Reopen closed buffer
     {
       "before": ["<leader>", "b", "t"],
       "commands": ["workbench.action.reopenClosedEditor"],
-      "silent": true
+      "silent": true,
     },
     // Create new file
     {
       "before": ["<leader>", "b", "n"],
       "commands": ["workbench.action.files.newUntitledFile"],
-      "silent": true
+      "silent": true,
     },
     // Close other buffers
     {
       "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"],
-      "silent": true
+      "silent": true,
     },
     // Close all visible buffers to the right/left of the current
     {
       "before": ["<leader>", "b", "h"],
       "commands": ["workbench.action.closeEditorsToTheLeft"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "b", "l"],
       "commands": ["workbench.action.closeEditorsToTheRight"],
-      "silent": true
+      "silent": true,
     },
     // Pin buffer
     {
       "before": ["<leader>", "b", "p"],
       "commands": ["workbench.action.pinEditor"],
-      "silent": true
+      "silent": true,
     },
     // Unpin buffer
     {
       "before": ["<leader>", "b", "P"],
       "commands": ["workbench.action.unpinEditor"],
-      "silent": true
+      "silent": true,
     },
     // Move editor left/right
     {
       "before": ["]", "b"],
       "commands": ["workbench.action.moveEditorRightInGroup"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "b"],
       "commands": ["workbench.action.moveEditorLeftInGroup"],
-      "silent": true
+      "silent": true,
     },
     // Open buffer at index
     {
       "before": ["<leader>", "1"],
       "commands": ["workbench.action.openEditorAtIndex1"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "2"],
       "commands": ["workbench.action.openEditorAtIndex2"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "3"],
       "commands": ["workbench.action.openEditorAtIndex3"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "4"],
       "commands": ["workbench.action.openEditorAtIndex4"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "5"],
       "commands": ["workbench.action.openEditorAtIndex5"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "6"],
       "commands": ["workbench.action.openEditorAtIndex6"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "7"],
       "commands": ["workbench.action.openEditorAtIndex7"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "8"],
       "commands": ["workbench.action.openEditorAtIndex8"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "9"],
       "commands": ["workbench.action.openEditorAtIndex9"],
-      "silent": true
+      "silent": true,
     },
 
     /* ---------------------------------- File ---------------------------------- */
@@ -1776,29 +1653,29 @@
     {
       "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "<leader>"],
       "commands": ["workbench.action.quickOpen"],
-      "silent": true
+      "silent": true,
     },
     // Find word in all files
     {
       "before": ["<leader>", "f", "w"],
       "commands": ["workbench.action.findInFiles"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "f", "a"],
       "commands": ["workbench.action.findInFiles"],
-      "silent": true
+      "silent": true,
     },
     // Fine symbols
     {
       "before": ["<leader>", "f", "s"],
       "commands": ["workbench.action.showAllSymbols"],
-      "silent": true
+      "silent": true,
     },
 
     /* --------------------------------- Search --------------------------------- */
@@ -1806,7 +1683,7 @@
     {
       "before": ["<leader>", "h"],
       "commands": [":nohl"],
-      "silent": true
+      "silent": true,
     },
     // {
     //   "before": ["<esc>"],
@@ -1817,67 +1694,67 @@
     {
       "before": ["<leader>", "s", "/"],
       "commands": ["actions.find"],
-      "silent": true
+      "silent": true,
     },
     // Search word to replace
     {
       "before": ["<leader>", "s", "r"],
       "commands": ["editor.action.startFindReplaceAction"],
-      "silent": true
+      "silent": true,
     },
     // Search word to replace in all files
     {
       "before": ["<leader>", "s", "R"],
       "commands": ["workbench.action.replaceInFiles"],
-      "silent": true
+      "silent": true,
     },
     // Go to symbol
     {
       "before": ["<leader>", "s", "s"],
       "commands": ["workbench.action.gotoSymbol"],
-      "silent": true
+      "silent": true,
     },
     // Show all symbols
     {
       "before": ["<leader>", "s", "S"],
       "commands": ["workbench.action.showAllSymbols"],
-      "silent": true
+      "silent": true,
     },
     // Search text cases
     {
       "before": ["<leader>", "s", "a"],
       "commands": ["extension.changeCase.commands"],
-      "silent": true
+      "silent": true,
     },
     // Search emmet commands
     {
       "before": ["<leader>", "s", "e"],
       "commands": ["workbench.action.showEmmetCommands"],
-      "silent": true
+      "silent": true,
     },
     // Search commands
     {
       "before": ["<leader>", "s", "k"],
       "commands": ["workbench.action.showCommands"],
-      "silent": true
+      "silent": true,
     },
     // Search panel view
     {
       "before": ["<leader>", "s", "p"],
       "commands": ["workbench.action.quickOpenView"],
-      "silent": true
+      "silent": true,
     },
     // Search npm modules
     {
       "before": ["<leader>", "s", "n"],
       "commands": ["extension.search"],
-      "silent": true
+      "silent": true,
     },
     // Show Problems
     {
       "before": ["<leader>", "s", "d"],
       "commands": ["workbench.actions.view.problems"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------- Recent/session ----------------------------- */
@@ -1885,13 +1762,13 @@
     {
       "before": ["<leader>", "f", "r"],
       "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"],
-      "silent": true
+      "silent": true,
     },
     // Search recently used projects
     {
       "before": ["<leader>", "f", "R"],
       "commands": ["workbench.action.openRecent"],
-      "silent": true
+      "silent": true,
     },
     // Remove root folder
     // {
@@ -1932,13 +1809,13 @@
     {
       "before": ["<leader>", "i", "s"],
       "commands": ["editor.action.insertSnippet"],
-      "silent": true
+      "silent": true,
     },
     // Insert npm module
     {
       "before": ["<leader>", "i", "n"],
       "commands": ["npm-intellisense.import"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------------- Lsp ---------------------------------- */
@@ -1946,18 +1823,18 @@
     {
       "before": ["<leader>", "l", "a"],
       "commands": ["editor.action.quickFix"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "l", "A"],
       "commands": ["editor.action.fixAll"],
-      "silent": true
+      "silent": true,
     },
     // Format
     {
       "before": ["<leader>", "l", "f"],
       "commands": ["editor.action.formatDocument"],
-      "silent": true
+      "silent": true,
     },
     // Refactor
     // {
@@ -1969,13 +1846,13 @@
     {
       "before": ["<leader>", "l", "o"],
       "commands": ["editor.action.organizeImports"],
-      "silent": true
+      "silent": true,
     },
     // Change Language Mode
     {
       "before": ["<leader>", "l", "i"],
       "commands": ["workbench.action.editor.changeLanguageMode"],
-      "silent": true
+      "silent": true,
     },
     // Open preview.js
     // {
@@ -1985,99 +1862,99 @@
     // },
     // Rename symbol
     {
-      "before": ["<leader>", "l", "r"],
+      "before": ["g", "n"],
       "commands": ["editor.action.rename"],
-      "silent": true
+      "silent": true,
     },
     // Go to symbol
     {
       "before": ["<leader>", "l", "s"],
       "commands": ["workbench.action.gotoSymbol"],
-      "silent": true
+      "silent": true,
     },
     // Wrap with html tag
     {
       "before": ["<leader>", "l", "t"],
       "commands": ["orta.vscode-twoslash-queries.insert-twoslash-query"],
-      "silent": true
+      "silent": true,
     },
     // Hover Definition
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showHover"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "l"],
       "commands": ["editor.action.showDefinitionPreviewHover"],
-      "silent": true
+      "silent": true,
     },
     // Go to Definition
     {
       "before": ["g", "d"],
       "commands": ["editor.action.revealDefinition"],
       // "commands": ["editor.action.goToDeclaration"],
-      "silent": true
+      "silent": true,
     },
     // Go to Implementation
     {
       "before": ["g", "I"],
       "commands": ["editor.action.goToImplementation"],
-      "silent": true
+      "silent": true,
     },
     // Go to Type Definition
     {
       "before": ["g", "t"],
       "commands": ["editor.action.goToTypeDefinition"],
-      "silent": true
+      "silent": true,
     },
     // Go to References
     {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"],
-      "silent": true
+      "silent": true,
     },
     // Find all references
     {
       "before": ["g", "R"],
       "commands": ["references-view.findReferences"],
-      "silent": true
+      "silent": true,
     },
     // Open link
     {
       "before": ["g", "x"],
       "commands": ["editor.action.openLink"],
-      "silent": true
+      "silent": true,
     },
     // Go to next problem
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"],
-      "silent": true
+      "silent": true,
     },
     // Go to previous problem
     {
       "before": ["[", "d"],
       "commands": ["editor.action.marker.prev"],
-      "silent": true
+      "silent": true,
     },
     // Copy problem message
     {
       "before": ["y", "d"],
       "commands": ["errorLens.copyProblemMessage"],
-      "silent": true
+      "silent": true,
     },
     // Copy file path
     {
       "before": ["y", "P"],
       "commands": ["copyFilePath"],
-      "silent": true
+      "silent": true,
     },
     // Copy relative file path
     {
       "before": ["y", "p"],
       "commands": ["copyRelativeFilePath"],
-      "silent": true
+      "silent": true,
     },
 
     /* --------------------------- Git/Source Control --------------------------- */
@@ -2085,97 +1962,97 @@
     {
       "before": ["<leader>", "g", "g"],
       "commands": ["workbench.view.scm"],
-      "silent": true
+      "silent": true,
     },
     // Focus timeline view
     {
       "before": ["<leader>", "g", "t"],
       "commands": ["timeline.focus"],
-      "silent": true
+      "silent": true,
     },
     // Git blame
     {
       "before": ["<leader>", "g", "l"],
       "commands": ["gitlens.toggleFileBlame"],
-      "silent": true
+      "silent": true,
     },
     // Reset git hunk
     {
       "before": ["<leader>", "g", "h"],
       "commands": ["git.revertSelectedRanges"],
-      "silent": true
+      "silent": true,
     },
     // Reset git buffer
     {
       "before": ["<leader>", "g", "r"],
       "commands": ["git.clean"],
-      "silent": true
+      "silent": true,
     },
     // Preview changes
     {
       "before": ["<leader>", "g", "p"],
       "commands": ["gitlens.diffLineWithWorking"],
       // "commands": ["git.openChange"],
-      "silent": true
+      "silent": true,
     },
     // Next/Previous hunk
     {
       "before": ["]", "g"],
       "commands": ["workbench.action.editor.nextChange"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "g"],
       "commands": ["workbench.action.editor.previousChange"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------- Merge Conflict ----------------------------- */
     // Choose both
     {
       "before": ["<leader>", "c", "b"],
-      "commands": ["merge-conflict.accept.both"]
+      "commands": ["merge-conflict.accept.both"],
     },
     // Choose all both
     {
       "before": ["<leader>", "c", "B"],
-      "commands": ["merge-conflict.accept.all-both"]
+      "commands": ["merge-conflict.accept.all-both"],
     },
     // Choose current
     {
       "before": ["<leader>", "c", "c"],
-      "commands": ["merge-conflict.accept.current"]
+      "commands": ["merge-conflict.accept.current"],
     },
     // Choose all current
     {
       "before": ["<leader>", "c", "C"],
-      "commands": ["merge-conflict.accept.all-current"]
+      "commands": ["merge-conflict.accept.all-current"],
     },
     // Choose incoming
     {
       "before": ["<leader>", "c", "i"],
-      "commands": ["merge-conflict.accept.incoming"]
+      "commands": ["merge-conflict.accept.incoming"],
     },
     // Choose all incoming
     {
       "before": ["<leader>", "c", "I"],
-      "commands": ["merge-conflict.accept.all-incoming"]
+      "commands": ["merge-conflict.accept.all-incoming"],
     },
     // Compare current conflict
     {
       "before": ["<leader>", "c", "p"],
-      "commands": ["merge-conflict.compare"]
+      "commands": ["merge-conflict.compare"],
     },
     // Next/Previous conflict
     {
       "before": ["]", "c"],
       "commands": ["merge-conflict.next"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "c"],
       "commands": ["merge-conflict.previous"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------- Cursor & Motion ---------------------------- */
@@ -2183,82 +2060,82 @@
     // Faster up/down
     {
       "before": ["J"],
-      "after": ["5", "g", "j"]
+      "after": ["5", "g", "j"],
     },
     {
       "before": ["K"],
-      "after": ["5", "g", "k"]
+      "after": ["5", "g", "k"],
     },
     // Join lines
     {
       "before": ["M"],
-      "after": ["J"]
+      "after": ["J"],
     },
     // Find character forward
     {
       "before": ["f"],
-      "after": ["s"]
+      "after": ["s"],
     },
     // Find character forward
     {
       "before": ["F"],
-      "after": ["S"]
+      "after": ["S"],
     },
     // Search character
     {
       "before": ["s"],
-      "after": ["<leader>", "<leader>", "s", "<char>"]
+      "after": ["<leader>", "<leader>", "s", "<char>"],
     },
     // Start of word forwards
     {
       "before": ["<leader>", "j", "f"],
-      "after": ["<leader>", "<leader>", "w"]
+      "after": ["<leader>", "<leader>", "w"],
     },
     // Start of word backward
     {
       "before": ["<leader>", "j", "F"],
-      "after": ["<leader>", "<leader>", "b"]
+      "after": ["<leader>", "<leader>", "b"],
     },
     // End of word forwards
     {
       "before": ["<leader>", "j", "e"],
-      "after": ["<leader>", "<leader>", "e"]
+      "after": ["<leader>", "<leader>", "e"],
     },
     // End of word backward
     {
       "before": ["<leader>", "j", "g", "e"],
-      "after": ["<leader>", "<leader>", "g", "e"]
+      "after": ["<leader>", "<leader>", "g", "e"],
     },
     // Move to start of line
     {
       "before": ["<leader>", "j", "l"],
-      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"]
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "j", "k"],
     },
     // Camel Case Motion
     {
       "before": ["w"],
       "commands": ["cursorWordPartRight"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["e"],
       "commands": ["cursorWordPartRight"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["b"],
       "commands": ["cursorWordPartLeft"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["d", "m"],
       "commands": ["multiCommand.deleteCursorWord"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["c", "m"],
       "commands": ["multiCommand.deleteCursorWordAndInsert"],
-      "silent": true
+      "silent": true,
     },
     // {
     //   "before": ["w"],
@@ -2275,19 +2152,19 @@
     {
       "before": ["]", "m"],
       "commands": ["gotoNextPreviousMember.nextMember"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "m"],
       "commands": ["gotoNextPreviousMember.previousMember"],
-      "silent": true
+      "silent": true,
     },
 
     /* ---------------------------------- Emmet --------------------------------- */
     {
       "before": ["c", "s", "t"],
       "commands": ["editor.emmet.action.updateTag"],
-      "silent": true
+      "silent": true,
     },
 
     /* -------------------------------- Bookmark -------------------------------- */
@@ -2295,66 +2172,66 @@
     {
       "before": ["<leader>", "s", "m"],
       "commands": ["bookmarks.list"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["m", "a"],
       "commands": ["bookmarks.list"],
-      "silent": true
+      "silent": true,
     },
     // Find bookmarks in all files
     {
       "before": ["<leader>", "s", "M"],
       "commands": ["bookmarks.listFromAllFiles"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["m", "A"],
       "commands": ["bookmarks.listFromAllFiles"],
-      "silent": true
+      "silent": true,
     },
     // Toggle bookmark
     {
       "before": ["m", "m"],
       "commands": ["bookmarks.toggle"],
-      "silent": true
+      "silent": true,
     },
     // Annotate bookmark
     {
       "before": ["m", "i"],
       "commands": ["bookmarks.toggleLabeled"],
-      "silent": true
+      "silent": true,
     },
     // Clear bookmarks
     {
       "before": ["m", "c"],
-      "commands": ["bookmarks.clear"]
+      "commands": ["bookmarks.clear"],
     },
     // Clear bookmarks in all files
     {
       "before": ["m", "x"],
-      "commands": ["bookmarks.clearFromAllFiles"]
+      "commands": ["bookmarks.clearFromAllFiles"],
     },
     // Next/Previous bookmark
     {
       "before": ["[", "'"],
       "commands": ["bookmarks.jumpToPrevious"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["m", "p"],
       "commands": ["bookmarks.jumpToPrevious"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["]", "'"],
       "commands": ["bookmarks.jumpToNext"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["m", "n"],
       "commands": ["bookmarks.jumpToNext"],
-      "silent": true
+      "silent": true,
     },
 
     /* -------------------------------- Todo Tree ------------------------------- */
@@ -2362,90 +2239,90 @@
     {
       "before": ["<leader>", "t", "t"],
       "commands": ["workbench.view.extension.todo-tree-container"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<leader>", "s", "t"],
       "commands": ["workbench.view.extension.todo-tree-container"],
-      "silent": true
+      "silent": true,
     },
     // Next/Previous todo
     {
       "before": ["]", "t"],
       "commands": ["todo-tree.goToNext"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "t"],
       "commands": ["todo-tree.goToPrevious"],
-      "silent": true
+      "silent": true,
     },
 
     /* ------------------------------- Change Case ------------------------------ */
     {
       "before": ["g", "a", "u"],
       "commands": ["multiCommand.changeCase.upper"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "a"],
       "commands": ["multiCommand.changeCase.upperFirst"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "l"],
       "commands": ["multiCommand.changeCase.lower"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "c"],
       "commands": ["multiCommand.changeCase.camel"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "n"],
       "commands": ["multiCommand.changeCase.constant"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "d"],
       "commands": ["multiCommand.changeCase.dot"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "f"],
       "commands": ["multiCommand.changeCase.path"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "p"],
       "commands": ["multiCommand.changeCase.pascal"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "s"],
       "commands": ["multiCommand.changeCase.snake"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "t"],
       "commands": ["multiCommand.changeCase.title"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "."],
       "commands": ["extension.changeCase.commands"],
-      "silent": true
+      "silent": true,
     },
 
     /* --------------------------------- Replace -------------------------------- */
     {
       "before": ["<leader>", "r"],
-      "after": ["g", "r"]
+      "after": ["g", "r"],
     },
     {
       "before": ["<leader>", "r", "r"],
-      "after": ["g", "r", "r"]
+      "after": ["g", "r", "r"],
     },
 
     /* ------------------------------ Notification ------------------------------ */
@@ -2453,7 +2330,7 @@
     {
       "before": ["<leader>", "z"],
       "commands": ["notifications.clearAll"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------------- Ui ----------------------------------- */
@@ -2461,33 +2338,33 @@
     {
       "before": ["<leader>", "u", "d"],
       "commands": ["errorLens.toggle"],
-      "silent": true
+      "silent": true,
     },
     // Toggle minimap
     {
       "before": ["<leader>", "u", "m"],
       "commands": ["editor.action.toggleMinimap"],
-      "silent": true
+      "silent": true,
     },
     // Toggle word wrap
     {
       "before": ["<leader>", "u", "w"],
       "commands": ["editor.action.toggleWordWrap"],
-      "silent": true
+      "silent": true,
     },
     // Toggle tailwindcss fold
     {
       "before": ["<leader>", "u", "t"],
       "commands": ["tailwind-fold.toggleAutoFold"],
-      "silent": true
+      "silent": true,
     },
 
     /* ----------------------------------- AI ----------------------------------- */
     {
       "before": ["<leader>", "a"],
       "commands": ["codeium.openChatInPane"],
-      "silent": true
-    }
+      "silent": true,
+    },
   ],
   /* -------------------------------------------------------------------------- */
   /*                               Vim Insert Mode                              */
@@ -2495,16 +2372,16 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["<C-p>"],
-      "commands": ["cursorUp"]
+      "commands": ["cursorUp"],
     },
     {
       "before": ["<C-n>"],
-      "commands": ["cursorDown"]
+      "commands": ["cursorDown"],
     },
     {
       "before": ["<C-m>"],
-      "after": ["<Cr>"]
-    }
+      "after": ["<Cr>"],
+    },
   ],
   /* -------------------------------------------------------------------------- */
   /*                               Vim Visual Mode                              */
@@ -2512,7 +2389,7 @@
   "vim.visualModeKeyBindings": [
     {
       "before": ["Backspace"],
-      "after": ["d"]
+      "after": ["d"],
     },
     // {
     //   "before": ["j"],
@@ -2524,38 +2401,38 @@
     // },
     {
       "before": ["J"],
-      "after": ["5", "g", "j"]
+      "after": ["5", "g", "j"],
     },
     {
       "before": ["K"],
-      "after": ["5", "g", "k"]
+      "after": ["5", "g", "k"],
     },
     {
       "before": ["<C-d>"],
-      "after": ["2", "5", "g", "j"]
+      "after": ["2", "5", "g", "j"],
     },
     {
       "before": ["<C-u>"],
-      "after": ["2", "5", "g", "k"]
+      "after": ["2", "5", "g", "k"],
     },
     {
       "before": ["<C-f>"],
-      "after": ["5", "0", "g", "j"]
+      "after": ["5", "0", "g", "j"],
     },
     {
       "before": ["<C-b>"],
-      "after": ["5", "0", "g", "k"]
+      "after": ["5", "0", "g", "k"],
     },
     // Stay indent/outdent mode
     {
       "before": [">"],
       "commands": ["editor.action.indentLines"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["<"],
       "commands": ["editor.action.outdentLines"],
-      "silent": true
+      "silent": true,
     },
     // Merge conflict: accept selection
     // {
@@ -2567,86 +2444,86 @@
     {
       "before": ["g", "a", "u"],
       "commands": ["extension.changeCase.upper"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "a"],
       "commands": ["extension.changeCase.upperFirst"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "l"],
       "commands": ["extension.changeCase.lower"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "c"],
       "commands": ["extension.changeCase.camel"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "n"],
       "commands": ["extension.changeCase.constant"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "d"],
       "commands": ["extension.changeCase.dot"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "f"],
       "commands": ["extension.changeCase.path"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "p"],
       "commands": ["extension.changeCase.pascal"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "s"],
       "commands": ["extension.changeCase.snake"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["g", "a", "t"],
       "commands": ["extension.changeCase.title"],
-      "silent": true
+      "silent": true,
     },
     // Add cursors to selected line ends
     {
       "before": ["D"],
       "commands": ["multiCommand.addCursorsLineEnds"],
-      "silent": true
+      "silent": true,
     },
     // Join lines
     {
       "before": ["M"],
       "commands": ["editor.action.joinLines"],
-      "silent": true
+      "silent": true,
     },
     // Sort ascending/descending
     {
       "before": ["s", "a"],
       "commands": ["editor.action.sortLinesAscending"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["s", "d"],
       "commands": ["editor.action.sortLinesDescending"],
-      "silent": true
+      "silent": true,
     },
     // change motion for word
     {
       "before": ["w"],
-      "after": ["a", "w"]
+      "after": ["a", "w"],
     },
     // change motion for Camel case motion
     {
       "before": ["m"],
-      "after": ["i", "<leader>", "w"]
-    }
+      "after": ["i", "<leader>", "w"],
+    },
   ],
   /* -------------------------------------------------------------------------- */
   /*                          Vim Operator Pending Mode                         */
@@ -2655,8 +2532,8 @@
     // change motion for word
     {
       "before": ["w"],
-      "after": ["a", "w"]
-    }
+      "after": ["a", "w"],
+    },
     // change motion for Camel case motion
     // {
     //   "before": ["m"],
@@ -2668,111 +2545,6 @@
     //   "after": ["i", "<leader>", "w"]
     // }
   ],
-
-  /* -------------------------------------------------------------------------- */
-  /*                                   Codeium                                  */
-  /* -------------------------------------------------------------------------- */
-  "grammarly.files.include": ["**/README.md", "**/readme.md", "**/*.txt"],
-
-  /* -------------------------------------------------------------------------- */
-  /*                                   Codeium                                  */
-  /* -------------------------------------------------------------------------- */
-  "codeium.enableConfig": {
-    "*": true,
-    "prisma": true,
-    "liquid": true,
-    "tailwindcss": true
-  },
-
-  /* -------------------------------------------------------------------------- */
-  /*                              Total Typescript                              */
-  /* -------------------------------------------------------------------------- */
-  "totalTypeScript.hideAllTips": true,
-  "totalTypeScript.hideBasicTips": true,
-
-  /* -------------------------------------------------------------------------- */
-  /*                              PHP Intelephense                              */
-  /* -------------------------------------------------------------------------- */
-  "intelephense.stubs": [
-    "apache",
-    "bcmath",
-    "bz2",
-    "calendar",
-    "com_dotnet",
-    "Core",
-    "ctype",
-    "curl",
-    "date",
-    "dba",
-    "dom",
-    "enchant",
-    "exif",
-    "FFI",
-    "fileinfo",
-    "filter",
-    "fpm",
-    "ftp",
-    "gd",
-    "gettext",
-    "gmp",
-    "hash",
-    "iconv",
-    "imap",
-    "intl",
-    "json",
-    "ldap",
-    "libxml",
-    "mbstring",
-    "meta",
-    "mysqli",
-    "oci8",
-    "odbc",
-    "openssl",
-    "pcntl",
-    "pcre",
-    "PDO",
-    "pdo_ibm",
-    "pdo_mysql",
-    "pdo_pgsql",
-    "pdo_sqlite",
-    "pgsql",
-    "Phar",
-    "posix",
-    "pspell",
-    "random",
-    "readline",
-    "Reflection",
-    "session",
-    "shmop",
-    "SimpleXML",
-    "snmp",
-    "soap",
-    "sockets",
-    "sodium",
-    "SPL",
-    "sqlite3",
-    "standard",
-    "superglobals",
-    "sysvmsg",
-    "sysvsem",
-    "sysvshm",
-    "tidy",
-    "tokenizer",
-    "xml",
-    "xmlreader",
-    "xmlrpc",
-    "xmlwriter",
-    "xsl",
-    "Zend OPcache",
-    "zip",
-    "zlib",
-    "wordpress"
-  ],
-
-  /* -------------------------------------------------------------------------- */
-  /*                                Console Ninja                               */
-  /* -------------------------------------------------------------------------- */
-  "console-ninja.featureSet": "Community",
 
   /* -------------------------------------------------------------------------- */
   /*                               CSS Navigation                               */
@@ -2790,7 +2562,7 @@
     "vue",
     "twig",
     "svelte",
-    "liquid"
+    "liquid",
   ],
   "CSSNavigation.activeCSSFileExtensions": ["css", "scss", "sass", "less"],
   "CSSNavigation.excludeGlobPatterns": [
@@ -2799,7 +2571,7 @@
     "**/vendor/**",
     "**/coverage/**",
     "**/shopify-email/**",
-    "**/*.min.*"
+    "**/*.min.*",
     // "**/styles/variables/*.css"
   ],
   "CSSNavigation.searchAcrossWorkspaceFolders": false,
@@ -2823,18 +2595,12 @@
     "tsx",
     "js",
     "jsx",
-    "tailwindcss"
+    "tailwindcss",
   ],
-
-  /* -------------------------------------------------------------------------- */
-  /*                                 Performance                                */
-  /* -------------------------------------------------------------------------- */
-  // Trying to avoid VS Code using too much CPU : https://stackoverflow.com/questions/71516186/vs-code-uses-100-cpu-even-if-it-is-closed/72518926#72518926
-  "settingsSync.keybindingsPerPlatform": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
   "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
 }
