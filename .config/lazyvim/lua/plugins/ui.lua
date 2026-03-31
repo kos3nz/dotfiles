@@ -36,7 +36,7 @@ return {
         timeout = 3000,
       },
       indent = { enabled = true },
-      scroll = { enabled = true },
+      scroll = { enabled = false },
       picker = {
         enabled = true,
         ui_select = true, -- replace vim.ui.select
