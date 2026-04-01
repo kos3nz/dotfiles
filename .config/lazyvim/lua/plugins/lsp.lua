@@ -52,7 +52,7 @@ return {
         "emmet_ls",
         -- "glslls",
         -- "gopls",
-        "graphql-language-service-cli",
+        "graphql",
         "jsonls",
         "lua_ls",
         "prismals",
