@@ -10,7 +10,8 @@
       },
       {
         "id": "6f27294a-ba47-427e-a008-4cb822acce51",
-        "type": "separator"
+        "type": "separator",
+        "color": "brightBlack"
       },
       {
         "id": "9b9c8159-04be-45d8-93db-4b269246e06e",
@@ -20,7 +21,8 @@
       },
       {
         "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
-        "type": "separator"
+        "type": "separator",
+        "color": "brightBlack"
       },
       {
         "id": "0ff3cca4-6d02-46ee-bd19-971f3ed568cb",
@@ -74,3 +76,4 @@
     "autoAlign": false
   }
 }
+
