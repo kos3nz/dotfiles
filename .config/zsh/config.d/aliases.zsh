@@ -155,7 +155,7 @@ if type "opencode" > /dev/null 2>&1; then
   alias occ='opencode --continue'
 fi
 
-# LLM 
+# LLM
 if type "llm" > /dev/null 2>&1; then
   alias llmm="llm models"
   alias llmkl="llm keys list"
@@ -163,7 +163,6 @@ if type "llm" > /dev/null 2>&1; then
   alias pplx="llm -m sonar-pro"
   alias gmn="llm -m gemini-3-flash-preview"
 fi
-
 
 # Tmux
 alias ta='tmux attach'
