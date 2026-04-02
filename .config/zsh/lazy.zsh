@@ -1,4 +1,6 @@
-### OS settings ###
+# =============================================================================
+# OS-Specific Aliases
+# =============================================================================
 case "$OSTYPE" in
     darwin*)
         # replacing BSD CLI tools to GNU
@@ -21,8 +23,10 @@ case "$OSTYPE" in
 esac
 
 
-### cdr settings ###
-autoload -Uz add-zsh-hook cdr chpwd_recent_dirs 
+# =============================================================================
+# Autoloads & Directory History (CDR)
+# =============================================================================
+autoload -Uz add-zsh-hook cdr chpwd_recent_dirs
 add-zsh-hook chpwd chpwd_recent_dirs # register hook function with add-zsh-hook when current directory is changed (=chpwd), call chpwd_recent-dirs
 zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-default true
@@ -30,12 +34,16 @@ zstyle ':chpwd:*' recent-dirs-max 200
 zstyle ':chpwd:*' recent-dirs-file "$XDG_STATE_HOME/zsh/chpwd-recent-dirs"
 
 
-### completion styles ###
+# =============================================================================
+# Completion Styles
+# =============================================================================
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' list-colors '=*=90'
 
 
-### zsh_plugins ### 
+# =============================================================================
+# Zinit Plugins (Turbo Mode / Async)
+# =============================================================================
 zinit wait lucid light-mode for \
     atinit"zicompinit; zicdreplay" \
         'zdharma-continuum/fast-syntax-highlighting' \
@@ -55,17 +63,11 @@ zinit wait'1' lucid light-mode for \
     'wfxr/forgit'
 
 
-### zoxide ###
-[[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
-if [[ ! -f "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]] || [[ $(command -v zoxide) -nt "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]]; then
-    zoxide init zsh >! "$XDG_CACHE_HOME/zsh/zoxide.zsh"
-fi
-source "$XDG_CACHE_HOME/zsh/zoxide.zsh"
-
-
 autoload -Uz _zinit
 
-### Notes ###
+# =============================================================================
+# Zsh Concepts & Notes
+# =============================================================================
 #
 ### autoload : define shell function in $FPATH, $fpath
 #

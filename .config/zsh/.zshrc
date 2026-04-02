@@ -1,8 +1,6 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-# [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
-
-
-### zinit ###
+# =============================================================================
+# Plugin Manager (Zinit) Bootstrap
+# =============================================================================
 typeset -gAH ZINIT
 ZINIT[HOME_DIR]="$XDG_DATA_HOME/zinit"
 ZINIT[ZCOMPDUMP_PATH]="$XDG_STATE_HOME/zsh/zcompdump"
@@ -30,34 +28,40 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 
-### Load seperated config files ###
+# =============================================================================
+# Configuration Files Loader
+# =============================================================================
 for conf in "$XDG_CONFIG_HOME/zsh/config.d/"*.zsh; do
   source "${conf}"
 done
 unset conf
 
 
-### options ###
+# =============================================================================
+# General Options
+# =============================================================================
 setopt nonomatch
 setopt auto_cd # changes current directory without typing `cd`
 # cdpath=(.. ~ ~/ghq/github.com) # 親ディレクトリやホームディレクトリ，~/ghq/github.com 以下へはどこからでもディレクトリ名だけで移動できる
 
 
-### History ###
-HISTFILE="$XDG_STATE_HOME/zsh/zsh_history"      # ヒストリファイルを指定
-HISTSIZE=10000               # ヒストリに保存するコマンド数
-SAVEHIST=10000               # ヒストリファイルに保存するコマンド数
-setopt HIST_IGNORE_ALL_DUPS  # 重複するコマンド行は古い方を削除
-setopt HIST_IGNORE_DUPS      # 直前と同じコマンドラインはヒストリに追加しない
+# =============================================================================
+# History Configuration
+# =============================================================================
+HISTFILE="$XDG_STATE_HOME/zsh/zsh_history"  # ヒストリファイルを指定
+HISTSIZE=10000                              # ヒストリに保存するコマンド数
+SAVEHIST=10000                              # ヒストリファイルに保存するコマンド数
+setopt HIST_IGNORE_ALL_DUPS                 # 重複するコマンド行は古い方を削除
+setopt HIST_IGNORE_DUPS                     # 直前と同じコマンドラインはヒストリに追加しない
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
-setopt SHARE_HISTORY         # コマンド履歴ファイルを共有する
-setopt APPEND_HISTORY        # 履歴を追加 (毎回 .zsh_history を作るのではなく)
-setopt INC_APPEND_HISTORY    # 履歴をインクリメンタルに追加
-# setopt HIST_NO_STORE         # historyコマンドは履歴に登録しない
-setopt HIST_REDUCE_BLANKS    # 余分な空白は詰めて記録
+setopt SHARE_HISTORY                        # コマンド履歴ファイルを共有する
+setopt APPEND_HISTORY                       # 履歴を追加 (毎回 .zsh_history を作るのではなく)
+setopt INC_APPEND_HISTORY                   # 履歴をインクリメンタルに追加
+# setopt HIST_NO_STORE                        # historyコマンドは履歴に登録しない
+setopt HIST_REDUCE_BLANKS                   # 余分な空白は詰めて記録
 
 # 不要なコマンドをhistoryから除外する
 # 返り値が`0`の場合はhistoryに保存され、`0`以外は除外される。
@@ -71,35 +75,43 @@ zshaddhistory() {
 }
 
 
+# =============================================================================
+# CLI Tool Initializations (Cached)
+# =============================================================================
+# Instead of running `eval "$(command)"` on every startup (which spawns a slow subshell),
+# we cache the output to a file and source it. If the binary is updated (-nt checks "newer than"),
+# the cache is automatically regenerated.
+
 # Create cache directory if it doesn't exist
 [[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
 
-### Shell prompt ###
-# load starship theme
+# Starship (Shell prompt)
 if [[ ! -f $XDG_CACHE_HOME/zsh/starship.zsh ]] || [[ $(command -v starship) -nt $XDG_CACHE_HOME/zsh/starship.zsh ]]; then
   starship init zsh >! $XDG_CACHE_HOME/zsh/starship.zsh
 fi
 source $XDG_CACHE_HOME/zsh/starship.zsh
 
-# load on-my-posh
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/theme.toml)"
-# fi
-
-
-### Ruby ###
+# rbenv (Ruby)
 if [[ ! -f $XDG_CACHE_HOME/zsh/rbenv.zsh ]] || [[ $(command -v rbenv) -nt $XDG_CACHE_HOME/zsh/rbenv.zsh ]]; then
   rbenv init - >! $XDG_CACHE_HOME/zsh/rbenv.zsh
 fi
 source $XDG_CACHE_HOME/zsh/rbenv.zsh
 
-### direnv ###
+# direnv
 if [[ ! -f $XDG_CACHE_HOME/zsh/direnv.zsh ]] || [[ $(command -v direnv) -nt $XDG_CACHE_HOME/zsh/direnv.zsh ]]; then
   direnv hook zsh >! $XDG_CACHE_HOME/zsh/direnv.zsh
 fi
 source $XDG_CACHE_HOME/zsh/direnv.zsh
 
-### Key Bindings ###
+# zoxide
+if [[ ! -f "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]] || [[ $(command -v zoxide) -nt "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]]; then
+  zoxide init zsh >! "$XDG_CACHE_HOME/zsh/zoxide.zsh"
+fi
+source "$XDG_CACHE_HOME/zsh/zoxide.zsh"
+
+# =============================================================================
+# ZLE & Key Bindings
+# =============================================================================
 bindkey -e # e-macs keybindings
 
 # fzf (fzf-history-widget: ^R, fzf-cd-widget: ^[c, fzf-file-widget: ^T )
@@ -112,7 +124,9 @@ bindkey '^[n' code-ghq-n # escape + n
 bindkey '^g' lg
 bindkey '^j' insert-newline
 
-### Paths ###
+# =============================================================================
+# Custom Paths (Local Bins)
+# =============================================================================
 typeset -U path
 # typeset -U fpath
 
@@ -128,10 +142,11 @@ path=(
 # fpath=()
 
 
-### Load Lazy Config ###
+# =============================================================================
+# Asynchronous Plugins (Lazy Load)
+# =============================================================================
 source "$ZDOTDIR/lazy.zsh"
 
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
-

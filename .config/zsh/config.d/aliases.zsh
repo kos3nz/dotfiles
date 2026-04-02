@@ -1,4 +1,6 @@
-### Aliases ###
+# =============================================================================
+# Navigation & System Aliases
+# =============================================================================
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias d-='cd -'
@@ -11,6 +13,9 @@ alias restart='sudo fdesetup authrestart'
 alias delcache='sudo rm -rf /System/Library/Caches/* /Library/Caches/* ~/Library/Caches/*' # Macのキャッシュを削除
 
 
+# =============================================================================
+# Modern CLI Replacements
+# =============================================================================
 # bat
 if type "bat" > /dev/null 2>&1; then
     alias cat="bat"
@@ -44,7 +49,9 @@ if type "trash" > /dev/null 2>&1; then
     alias rm="trash"
 fi
 
-# Git && Github
+# =============================================================================
+# Version Control (Git & GitHub)
+# =============================================================================
 # alias g='git'
 # alias gin='git init'
 # alias gs='git status'
@@ -102,7 +109,9 @@ alias bsls='brew services list'
 alias bss='brew services start'
 alias bst='brew services stop'
 
-# Docker
+# =============================================================================
+# Containers & Orchestration
+# =============================================================================
 alias d='docker'
 alias dc='docker compose'
 alias dcu='docker compose up'
@@ -126,7 +135,9 @@ alias gqtx_local='ghq get --update --parallel < repolist.txt' # ghq管理下の�
 alias gqroot='git config --global ghq.root' # ghqのrootディレクトリをgit configで設定
 alias gqmv='GHQ_MIGRATOR_ACTUALLY_RUN=1 ./ghq-migrator.bash' # ghq管理下へローカルリポジトリを移動(ghq-migratorディレクトリへ移動したあと、'gqmv ~/foo'でfooリポジトリをghq管理下へ移動)
 
-# Shopify CLI
+# =============================================================================
+# Development Tools & LLMs
+# =============================================================================
 alias sp="shopify"
 alias h2="npx shopify hydrogen"
 

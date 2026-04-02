@@ -1,3 +1,8 @@
+# =============================================================================
+# Homebrew Setup (Optimized for macOS)
+# =============================================================================
+# Avoids the extremely slow `brew shellenv` which calls macOS `path_helper` under the hood.
+# Hardcoding the Homebrew paths based on CPU architecture makes startup instantaneous.
 if [[ `uname -m` == arm64 ]]; then
   export HOMEBREW_PREFIX="/opt/homebrew"
 else
@@ -11,6 +16,8 @@ export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
 path=("${HOMEBREW_PREFIX}/bin" "${HOMEBREW_PREFIX}/sbin" $path)
 fpath=("${HOMEBREW_PREFIX}/share/zsh/site-functions" $fpath)
 
+# =============================================================================
+# OrbStack Integration
+# =============================================================================
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-

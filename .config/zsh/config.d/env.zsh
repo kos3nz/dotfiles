@@ -1,10 +1,15 @@
-# Preferred editor for local and remote sessions
+# =============================================================================
+# Editor Preferences
+# =============================================================================
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
 
+# =============================================================================
+# Tool Configurations
+# =============================================================================
 ### bat ###
 export BAT_THEME="base16"
 export BAT_STYLE='numbers,changes,header,header-filesize,grid'
@@ -54,7 +59,9 @@ export DISABLE_TELEMETRY=true
 export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 
-#### lf ###
+# =============================================================================
+# Icons (LF)
+# =============================================================================
 export LF_ICONS="\
 tw=:\
 st=:\

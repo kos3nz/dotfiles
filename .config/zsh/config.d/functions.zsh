@@ -1,4 +1,6 @@
-### Functions ###
+# =============================================================================
+# Custom Zsh Functions & Widgets
+# =============================================================================
 #
 # BUFFER : コマンドラインとして編集している文字列が格納される変数
 #          この変数に任意の文字列を入れると、実際にコマンドラインの文字列も置き換わる
@@ -56,7 +58,9 @@ function clean-cdr() {
 zle -N clean-cdr
 
 
-# ghqとの連携。ghqの管理化にあるリポジトリを一覧表示する。
+# =============================================================================
+# GHQ Integrations
+# =============================================================================
 function fzf-ghq () {
   local selected_dir=$(ghq list | fzf )
   if [ -n "$selected_dir" ]; then
@@ -90,65 +94,38 @@ function code-ghq-r () {
 zle -N code-ghq-r
 
 
-# ターミナルコマンドの真ん中に移動
-function jump-middle() {
-    CURSOR=$((${#BUFFER} / 2))
-    zle redisplay
-}
-zle -N jump-middle
-
-# Insert newline
-function insert-newline() {
-  LBUFFER="${LBUFFER}
-"
-}
-zle -N insert-newline
-
-# Node Scriptを参照
-function nsc() {
-    if [[ -f package.json ]]; then
-        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
-        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
-    fi
-}
-zle -N nsc 
-
-# Highlighting `--help` message (ex: $help gh, help git commit)
-function help() {
-    "$@" --help 2>&1 | bat --plain --language=help
-}
-zle -N help 
-
-### navi ###
+# =============================================================================
+# Tool Wrappers (Navi, LF, Lazygit)
+# =============================================================================
 function _navi_call() {
-   local result="$(navi "$@" </dev/tty)"
-   printf "%s" "$result"
+    local result="$(navi "$@" </dev/tty)"
+    printf "%s" "$result"
 }
 function navi-widget() {
-   local -r input="${LBUFFER}"
-   local -r last_command="$(echo "${input}" | navi fn widget::last_command)"
-   local replacement="$last_command"
+    local -r input="${LBUFFER}"
+    local -r last_command="$(echo "${input}" | navi fn widget::last_command)"
+    local replacement="$last_command"
 
-   if [ -z "$last_command" ]; then
-      replacement="$(_navi_call --print)"
-   elif [ "$LASTWIDGET" = "navi_widget" ] && [ "$input" = "$previous_output" ]; then
-      replacement="$(_navi_call --print --query "$last_command")"
-   else
-      replacement="$(_navi_call --print --best-match --query "$last_command")"
-   fi
+    if [ -z "$last_command" ]; then
+        replacement="$(_navi_call --print)"
+    elif [ "$LASTWIDGET" = "navi_widget" ] && [ "$input" = "$previous_output" ]; then
+        replacement="$(_navi_call --print --query "$last_command")"
+    else
+        replacement="$(_navi_call --print --best-match --query "$last_command")"
+    fi
 
-   if [ -n "$replacement" ]; then
-      local -r find="${last_command}_NAVIEND"
-      previous_output="${input}_NAVIEND"
-      previous_output="${previous_output//$find/$replacement}"
-   else
-      previous_output="$input"
-   fi
+    if [ -n "$replacement" ]; then
+        local -r find="${last_command}_NAVIEND"
+        previous_output="${input}_NAVIEND"
+        previous_output="${previous_output//$find/$replacement}"
+    else
+        previous_output="$input"
+    fi
 
-   zle kill-whole-line
-   LBUFFER="${previous_output}"
-   region_highlight=("P0 100 bold")
-   zle redisplay
+    zle kill-whole-line
+    LBUFFER="${previous_output}"
+    region_highlight=("P0 100 bold")
+    zle redisplay
 }
 zle -N navi-widget
 
@@ -164,3 +141,34 @@ lg () {
   lazygit
 }
 zle -N lg
+
+
+# =============================================================================
+# Utility Functions
+# =============================================================================
+function jump-middle() {
+    CURSOR=$((${#BUFFER} / 2))
+    zle redisplay
+}
+zle -N jump-middle
+
+function insert-newline() {
+  LBUFFER="${LBUFFER}
+"
+}
+zle -N insert-newline
+
+# Node Scriptを参照
+function nsc() {
+    if [[ -f package.json ]]; then
+        printf "\033[36m%-44s\033[0m %-20s\n" "[Command]" "[Description]"
+        cat package.json | jq ".scripts" | grep : | sed -e 's/,//g' |  awk -F "\": \"" '{printf "(npm run|yarn)\033[36m%-30s\033[0m %-20s\n", $1, $2}' | sed -e 's/\"//g'
+    fi
+}
+zle -N nsc
+
+# Highlighting `--help` message (ex: $help gh, help git commit)
+function help() {
+    "$@" --help 2>&1 | bat --plain --language=help
+}
+zle -N help
