@@ -206,7 +206,16 @@
     "lua-lsp@claude-plugins-official": false,
     "rust-analyzer@claude-code-lsps": true,
     "vtsls@claude-code-lsps": true,
-    "lua-language-server@claude-code-lsps": false
+    "lua-language-server@claude-code-lsps": false,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "outputStyle": "Explanatory",
   "skipDangerousModePermissionPrompt": true,

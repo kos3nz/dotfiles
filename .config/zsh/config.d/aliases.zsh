@@ -144,6 +144,11 @@ if type "claude" > /dev/null 2>&1; then
   alias cyolo='claude --dangerously-skip-permissions'
 fi
 
+# Codex
+if type "codex" > /dev/null 2>&1; then
+  alias cdx='codex'
+fi
+
 # Opencode
 if type "opencode" > /dev/null 2>&1; then
   alias oc='opencode'
