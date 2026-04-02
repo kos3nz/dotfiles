@@ -64,16 +64,22 @@ setopt HIST_REDUCE_BLANKS    # 余分な空白は詰めて記録
 zshaddhistory() {
   # 特定のコマンドを保存しない
   local line="${1%%$'\n'}" # コマンドラインから改行文字を除去 (${name%%pattern} syntax) 
-  [[ "$line" =~ "^(buildin|lg|lazygit|la|ll|eza|rmdir|navi)($| )" ]] && return 1 
+  [[ "$line" =~ "^(builtin|lg|lazygit|la|ll|eza|rmdir|navi)($| )" ]] && return 1 
 
   # 失敗したコマンドを保存しない: http://www.zsh.org/mla/users//2014/msg00715.html
   whence ${${(z)1}[1]} >| /dev/null || return 1
 }
 
 
+# Create cache directory if it doesn't exist
+[[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
+
 ### Shell prompt ###
 # load starship theme
-eval "$(starship init zsh)"
+if [[ ! -f $XDG_CACHE_HOME/zsh/starship.zsh ]] || [[ $(command -v starship) -nt $XDG_CACHE_HOME/zsh/starship.zsh ]]; then
+  starship init zsh >! $XDG_CACHE_HOME/zsh/starship.zsh
+fi
+source $XDG_CACHE_HOME/zsh/starship.zsh
 
 # load on-my-posh
 # if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
@@ -82,10 +88,16 @@ eval "$(starship init zsh)"
 
 
 ### Ruby ###
-eval "$(rbenv init -)"
+if [[ ! -f $XDG_CACHE_HOME/zsh/rbenv.zsh ]] || [[ $(command -v rbenv) -nt $XDG_CACHE_HOME/zsh/rbenv.zsh ]]; then
+  rbenv init - >! $XDG_CACHE_HOME/zsh/rbenv.zsh
+fi
+source $XDG_CACHE_HOME/zsh/rbenv.zsh
 
 ### direnv ###
-eval "$(direnv hook zsh)"
+if [[ ! -f $XDG_CACHE_HOME/zsh/direnv.zsh ]] || [[ $(command -v direnv) -nt $XDG_CACHE_HOME/zsh/direnv.zsh ]]; then
+  direnv hook zsh >! $XDG_CACHE_HOME/zsh/direnv.zsh
+fi
+source $XDG_CACHE_HOME/zsh/direnv.zsh
 
 ### Key Bindings ###
 bindkey -e # e-macs keybindings
