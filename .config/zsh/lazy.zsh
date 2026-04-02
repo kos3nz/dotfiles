@@ -58,7 +58,7 @@ zinit wait'1' lucid light-mode for \
 ### zoxide ###
 [[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
 if [[ ! -f "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]] || [[ $(command -v zoxide) -nt "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]]; then
-  zoxide init zsh >! "$XDG_CACHE_HOME/zsh/zoxide.zsh"
+    zoxide init zsh >! "$XDG_CACHE_HOME/zsh/zoxide.zsh"
 fi
 source "$XDG_CACHE_HOME/zsh/zoxide.zsh"
 

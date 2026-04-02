@@ -128,10 +128,8 @@ path=(
 # fpath=()
 
 
-### Async Loading ###
-zinit wait lucid light-mode as'null' \
-    atinit'source "$ZDOTDIR/.zshrc.lazy"' \
-    for 'zdharma-continuum/null'
+### Load Lazy Config ###
+source "$ZDOTDIR/lazy.zsh"
 
 
 # CodeWhisperer post block. Keep at the bottom of this file.
