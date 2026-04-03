@@ -86,25 +86,25 @@ zshaddhistory() {
 [[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir -p "$XDG_CACHE_HOME/zsh"
 
 # Starship (Shell prompt)
-if [[ ! -f $XDG_CACHE_HOME/zsh/starship.zsh ]] || [[ $(command -v starship) -nt $XDG_CACHE_HOME/zsh/starship.zsh ]]; then
-  starship init zsh >! $XDG_CACHE_HOME/zsh/starship.zsh
+if [[ ! -f "$XDG_CACHE_HOME/zsh/starship.zsh" ]] || [[ "$HOMEBREW_PREFIX/bin/starship" -nt "$XDG_CACHE_HOME/zsh/starship.zsh" ]]; then
+  starship init zsh >! "$XDG_CACHE_HOME/zsh/starship.zsh"
 fi
-source $XDG_CACHE_HOME/zsh/starship.zsh
+source "$XDG_CACHE_HOME/zsh/starship.zsh"
 
 # rbenv (Ruby)
-if [[ ! -f $XDG_CACHE_HOME/zsh/rbenv.zsh ]] || [[ $(command -v rbenv) -nt $XDG_CACHE_HOME/zsh/rbenv.zsh ]]; then
-  rbenv init - >! $XDG_CACHE_HOME/zsh/rbenv.zsh
+if [[ ! -f "$XDG_CACHE_HOME/zsh/rbenv.zsh" ]] || [[ "$HOMEBREW_PREFIX/bin/rbenv" -nt "$XDG_CACHE_HOME/zsh/rbenv.zsh" ]]; then
+  rbenv init - >! "$XDG_CACHE_HOME/zsh/rbenv.zsh"
 fi
-source $XDG_CACHE_HOME/zsh/rbenv.zsh
+source "$XDG_CACHE_HOME/zsh/rbenv.zsh"
 
 # direnv
-if [[ ! -f $XDG_CACHE_HOME/zsh/direnv.zsh ]] || [[ $(command -v direnv) -nt $XDG_CACHE_HOME/zsh/direnv.zsh ]]; then
-  direnv hook zsh >! $XDG_CACHE_HOME/zsh/direnv.zsh
+if [[ ! -f "$XDG_CACHE_HOME/zsh/direnv.zsh" ]] || [[ "$HOMEBREW_PREFIX/bin/direnv" -nt "$XDG_CACHE_HOME/zsh/direnv.zsh" ]]; then
+  direnv hook zsh >! "$XDG_CACHE_HOME/zsh/direnv.zsh"
 fi
-source $XDG_CACHE_HOME/zsh/direnv.zsh
+source "$XDG_CACHE_HOME/zsh/direnv.zsh"
 
 # zoxide
-if [[ ! -f "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]] || [[ $(command -v zoxide) -nt "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]]; then
+if [[ ! -f "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]] || [[ "$HOMEBREW_PREFIX/bin/zoxide" -nt "$XDG_CACHE_HOME/zsh/zoxide.zsh" ]]; then
   zoxide init zsh >! "$XDG_CACHE_HOME/zsh/zoxide.zsh"
 fi
 source "$XDG_CACHE_HOME/zsh/zoxide.zsh"
