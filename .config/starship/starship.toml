@@ -2,34 +2,28 @@
 
 add_newline = true
 
-# format = """
-# $directory\
-# $git_branch\
-# $git_status\
-# $deno\
-# $nodejs\
-# $lua\
-# $package\
-# $rust\
-# $docker_context\
-# $kubernetes\
-# $fill\
-# $cmd_duration\
-# $time
-# $character
-# """
+# Performance tuning
+# scan_timeout: max ms to scan files before giving up (default: 30ms)
+# command_timeout: max ms a module command can run (default: 500ms)
+scan_timeout = 30
+command_timeout = 500
 
 format = """
 $directory\
 $git_branch\
 $git_status\
+$package\
 $deno\
+$golang\
 $nodejs\
 $lua\
-$package\
+$php\
+$ruby\
 $rust\
+$swift\
 $docker_context\
 $kubernetes\
+$aws\
 $cmd_duration
 $character
 """
@@ -95,128 +89,105 @@ modified = " [ ·${count}](yellow) " # !, , 
 staged = " [ ·${count}](green) " # +,✓, , , 
 renamed = " [ ·${count}](purple) " # », 
 deleted = " [ ·${count}](red) " # -, , 
+# Skips scanning submodules — speeds up git_status significantly in large repos
+ignore_submodules = true
 
 [aws]
-symbol = " "
-
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
+symbol = ""
+format = '[|](black) [$symbol ($profile )(\($region\) )(\[$duration\] )]($style)'
 
 [deno]
+symbol = "🦕"
 format = '[|](black) [🦕 $version]($style) '
-detect_files = [
-  'deno.json',
-  'deno.jsonc',
-  'mod.ts',
-  'mod.js',
-  'deps.ts',
-  'deps.js',
-]
+detect_files = ['deno.json', 'deno.jsonc']
 style = 'green'
 
-#[directory]
-#read_only = " "
+# [directory]
+# read_only = " "
 
 [docker_context]
-symbol = "  "
-format = "[|](black) [$symbol$context]($style) "
+symbol = ""
+format = "[|](black) [$symbol  $context]($style) "
 style = "blue"
 only_with_files = true
 detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
 detect_folders = []
 disabled = false
 
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
 [fill]
 symbol = ' '
 
 [golang]
-symbol = " "
+symbol = ""
+format = "[|](black) [$symbol $version]($style) "
 
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
+[kubernetes]
+symbol = "☸"
+format = '[$symbol $context( \($namespace\))]($style) in '
+style = "cyan"
+disabled = true
 
 [lua]
-format = "[|](black) [$symbol $version]($style)"
-symbol = ' '                                    #  
+format = "[|](black) [$symbol $version]($style) "
+symbol = ''                                      #  
 detect_folders = ['lua']
 style = 'blue'
 
-[memory_usage]
-symbol = "󰍛 "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
 [nodejs]
-format = "[|](black) [  $version](green) "      #  
+symbol = "󰎙"
+format = "[|](black) [$symbol $version]($style) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
+style = "green"
 
 [package]
+symbol = ""
 format = "[|](black) [$symbol $version]($style) "
-symbol = " "
 style = "208"
-
-[perl]
-symbol = " "
+disabled = true
 
 [php]
-symbol = " "
+symbol = ""
+format = "[|](black) [$symbol $version]($style) "
+disabled = true
 
 [python]
-symbol = " "
-#pyenv_version_name = true
+symbol = ""
 format = '[|](black) [${symbol}python (${version} )(\($virtualenv\) )]($style) '
+#pyenv_version_name = true
 style = "yellow"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
 version_format = "v${raw}"
+disabled = true
 
 [ruby]
-symbol = " " #  
+symbol = ""                                      #  
+format = "[|](black) [$symbol $version]($style) "
+disabled = true
 
 [rust]
-symbol = " "
-
-[scala]
-symbol = " "
+symbol = ""
+format = "[|](black) [$symbol $version]($style) "
 
 [shlvl]
-disabled = false
 format = '[|](black) [$symbol$shlvl]($style) '
 repeat = true
 symbol = '❯'
 repeat_offset = 1
 threshold = 0
+disabled = true
 
 [swift]
-symbol = " " #   󰛥
+symbol = " "   #   󰛥
+disabled = true
 
 [time]
-disabled = false
 format = '[ $time]($style)' #       
 use_12hr = false
 time_format = '%T'           # %T = 12-hour format, %r = 24-hour format
 utc_time_offset = 'local'
 # style = 'magenta'
 # time_range = '10:00:00-18:00:00'
+disabled = true
