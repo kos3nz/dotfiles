@@ -80,8 +80,8 @@ return {
       { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Type Definition" },
       { "gn", function() vim.lsp.buf.rename() end, desc = "Rename" },
       { "gl", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-      { "[d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-      { "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
+      { "[d", function() vim.diagnostic.jump({ count = -1 }) end, desc = "Prev Diagnostic" },
+      { "]d", function() vim.diagnostic.jump({ count = 1 }) end, desc = "Next Diagnostic" },
       { "<leader>rn", function() Snacks.rename.rename_file() end, desc = "Rename File" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
@@ -139,7 +139,8 @@ return {
             {
               "gD",
               function()
-                local params = vim.lsp.util.make_position_params()
+                local win = vim.api.nvim_get_current_win()
+                local params = vim.lsp.util.make_position_params(win, "utf-16")
                 LazyVim.lsp.execute({
                   command = "typescript.goToSourceDefinition",
                   arguments = { params.textDocument.uri, params.position },

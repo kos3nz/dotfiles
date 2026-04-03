@@ -105,7 +105,7 @@ return {
       {
         "<leader>bd",
         function()
-          local bufs = vim.fn.getbufinfo({buflisted = true})
+          local bufs = vim.fn.getbufinfo({ buflisted = 1 })
 
           if vim.bo.modified then
             local choice = vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
@@ -130,7 +130,7 @@ return {
       {
         "<leader>bD",
         function()
-          local bufs = vim.fn.getbufinfo({ buflisted = true })
+          local bufs = vim.fn.getbufinfo({ buflisted = 1 })
           Snacks.bufdelete({force = true})
           if not bufs[2] then
             Snacks.dashboard.open()
