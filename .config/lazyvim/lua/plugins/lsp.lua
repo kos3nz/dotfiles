@@ -56,7 +56,7 @@ return {
         "jsonls",
         "lua_ls",
         "prismals",
-        "rust_analyzer",
+        -- "rust_analyzer", -- setup via lazyvim extras
         "shopify_theme_ls",
         -- "svelte-language-server",
         "tailwindcss",
