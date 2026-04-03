@@ -51,7 +51,7 @@ return {
         -- "denols",
         "emmet_ls",
         -- "glslls",
-        -- "gopls",
+        -- "gopls", -- setup via lazyvim extras
         "graphql",
         "jsonls",
         "lua_ls",

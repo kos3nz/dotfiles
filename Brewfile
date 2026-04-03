@@ -45,6 +45,7 @@ brew "git-open"
 brew "git-recent"
 brew "gitmux"
 brew "gnu-sed" # GNU implementation of the famous stream editor
+brew "go"
 brew "grep" # GNU grep, egrep, and fgrep
 brew "handbrake"
 brew "htop" # an interactive process viewer

@@ -134,6 +134,7 @@ path=(
   "$VOLTA_HOME/bin"(N-/)
   "$HOME/.local/bin"(N-/)
   "$HOME/.local/share/cargo/bin"(N-/)
+  "$GOPATH/bin"(N-/)
   "$HOME/.cache/.bun/bin"(N-/)
   "$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin"(N-/)
   $path

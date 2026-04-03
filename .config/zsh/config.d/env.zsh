@@ -36,6 +36,9 @@ export FZF_CTRL_T_OPTS="
 # fzf-cd-widget
 export FZF_ALT_C_COMMAND="fd --hidden --type d --exclude .git" # show only directories
 
+### go ###
+export GOPATH="$HOME/.local/share/go"
+
 ### ni ###
 export NI_CONFIG_FILE="$HOME/.config/ni/nirc"
 
