@@ -29,6 +29,16 @@
         "type": "context-percentage",
         "color": "ansi256:4",
         "rawValue": true
+      },
+      {
+        "id": "e09c0ef0-671e-4ebd-aa6b-9fd861223d02",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "6b2caba0-ebcd-4535-abf2-b249e6c86107",
+        "type": "vim-mode",
+        "color": "ansi256:2"
       }
     ],
     [
@@ -69,11 +79,14 @@
   "globalBold": false,
   "powerline": {
     "enabled": false,
-    "separators": [""],
-    "separatorInvertBackground": [false],
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
     "startCaps": [],
     "endCaps": [],
     "autoAlign": false
   }
 }
-
