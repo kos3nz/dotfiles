@@ -1,3 +1,6 @@
+# Enable startup profiling (ZPROFS=1 zsh)
+[[ -n "$ZPROFS" ]] && zmodload zsh/zprof
+
 # =============================================================================
 # Plugin Manager (Zinit) Bootstrap
 # =============================================================================
@@ -128,7 +131,6 @@ bindkey '^j' insert-newline
 # Custom Paths (Local Bins)
 # =============================================================================
 typeset -U path
-# typeset -U fpath
 
 path=(
   "$VOLTA_HOME/bin"(N-/)
@@ -149,5 +151,5 @@ path=(
 source "$ZDOTDIR/lazy.zsh"
 
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Show profiling results
+[[ -n "$ZPROFS" ]] && zprof | head -n 20

@@ -1,6 +1,3 @@
-# Skip macOS system-wide path_helper for high-speed startup
-export __ETC_ZPROFILE_SOURCED=1
-
 # =============================================================================
 # XDG Base Directory Specification
 # =============================================================================

@@ -13,15 +13,11 @@ export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}"
 export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="${HOMEBREW_PREFIX}/share/info:${INFOPATH:-}"
 
-# Standard system paths (Explicitly defined for safety when skipping path_helper)
+typeset -U path
+
 path=(
-  "${HOMEBREW_PREFIX}/bin"
-  "${HOMEBREW_PREFIX}/sbin"
-  "/usr/local/bin"
-  "/usr/bin"
-  "/bin"
-  "/usr/sbin"
-  "/sbin"
+  "${HOMEBREW_PREFIX}/bin"(N-/)
+  "${HOMEBREW_PREFIX}/sbin"(N-/)
   $path
 )
 export PATH
