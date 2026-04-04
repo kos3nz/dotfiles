@@ -13,36 +13,37 @@ return {
     local mocha = require("catppuccin.palettes").get_palette("mocha")
     local theme = {
       normal = {
-        a = { fg = mocha.blue, gui = "bold" },
-        b = { fg = mocha.teal },
-        c = { fg = mocha.text },
-        y = { fg = mocha.blue },
-        z = { fg = mocha.blue },
+        a = { fg = mocha.blue, bg = mocha.surface0, gui = "bold" },
+        b = { fg = mocha.teal, bg = mocha.mantle },
+        c = { fg = mocha.text, bg = mocha.crust },
+        x = { fg = mocha.text, bg = mocha.crust },
+        y = { fg = mocha.blue, bg = mocha.mantle },
+        z = { fg = mocha.blue, bg = mocha.surface0 },
       },
       insert = {
-        a = { fg = mocha.green, gui = "bold" },
-        y = { fg = mocha.green },
-        z = { fg = mocha.green },
+        a = { fg = mocha.green, bg = mocha.surface0, gui = "bold" },
+        y = { fg = mocha.green, bg = mocha.mantle },
+        z = { fg = mocha.green, bg = mocha.surface0 },
       },
       visual = {
-        a = { fg = mocha.mauve, gui = "bold" },
-        y = { fg = mocha.mauve },
-        z = { fg = mocha.mauve },
+        a = { fg = mocha.mauve, bg = mocha.surface0, gui = "bold" },
+        y = { fg = mocha.mauve, bg = mocha.mantle },
+        z = { fg = mocha.mauve, bg = mocha.surface0 },
       },
       replace = {
-        a = { fg = mocha.maroon, gui = "bold" },
-        y = { fg = mocha.maroon },
-        z = { fg = mocha.maroon },
+        a = { fg = mocha.maroon, bg = mocha.surface0, gui = "bold" },
+        y = { fg = mocha.maroon, bg = mocha.mantle },
+        z = { fg = mocha.maroon, bg = mocha.surface0 },
       },
       command = {
-        a = { fg = mocha.yellow, gui = "bold" },
-        y = { fg = mocha.yellow },
-        z = { fg = mocha.yellow },
+        a = { fg = mocha.yellow, bg = mocha.surface0, gui = "bold" },
+        y = { fg = mocha.yellow, bg = mocha.mantle },
+        z = { fg = mocha.yellow, bg = mocha.surface0 },
       },
       inactive = {
-        a = { fg = mocha.overlay0, gui = "bold" },
-        y = { fg = mocha.overlay0 },
-        z = { fg = mocha.overlay0 },
+        a = { fg = mocha.overlay0, bg = mocha.surface0, gui = "bold" },
+        y = { fg = mocha.overlay0, bg = mocha.mantle },
+        z = { fg = mocha.overlay0, bg = mocha.surface0 },
       },
     }
 
