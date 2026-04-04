@@ -545,6 +545,10 @@
     "terminal.ansiYellow": "#c7c42d",
     "sash.hoverBorder": "#047ea2",
     "editor.lineHighlightBorder": "#9fced11f",
+    "diffEditor.insertedTextBackground": "#33a5684b",
+    "diffEditor.removedTextBackground": "#e244694b",
+    "diffEditor.insertedLineBackground": "#33a5684b",
+    "diffEditor.removedLineBackground": "#e244694b",
   },
 
   /* -------------------------------------------------------------------------- */
