@@ -97,7 +97,7 @@ alias cc='claude --continue'
 alias cyolo='claude --dangerously-skip-permissions'
 
 # Codex
-alias cdx='codex'
+alias cx='codex'
 
 # Opencode
 alias oc='opencode'
