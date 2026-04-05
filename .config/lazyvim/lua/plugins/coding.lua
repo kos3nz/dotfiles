@@ -12,6 +12,7 @@ return {
         ["<C-k>"] = { "select_prev", "fallback" },
         ["<C-d>"] = { "scroll_documentation_down", "fallback" },
         ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-v>"] = { "show", "show_documentation", "hide_documentation" },
       },
       completion = {
         menu = {
@@ -31,12 +32,10 @@ return {
           enabled = true,
         },
       },
-      sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-      },
       appearance = {
         nerd_font_variant = "mono",
       },
+      signature = { enabled = true },
     },
   },
 
