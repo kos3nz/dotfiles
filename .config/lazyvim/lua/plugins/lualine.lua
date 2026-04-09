@@ -134,6 +134,28 @@ return {
               end
             end,
           },
+          {
+            function()
+              local clients = vim.lsp.get_clients({ bufnr = 0 })
+              if #clients == 0 then
+                return "No LSP"
+              end
+
+              local client_names = {}
+              for _, client in ipairs(clients) do
+                table.insert(client_names, client.name)
+              end
+
+              if #client_names == 0 then
+                return "No LSP"
+              end
+
+              return table.concat(client_names, ", ")
+            end,
+            color = function()
+              return { fg = Snacks.util.color("Statement") }
+            end,
+          },
         },
         lualine_y = {
           { "progress", padding = { left = 2, right = 1 } },
