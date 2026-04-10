@@ -7,6 +7,7 @@ volta install @google/clasp@latest
 volta install @googleworkspace/cli@latest
 volta install @nestjs/cli@latest
 volta install ccstatusline@latest
+volta install defuddle-cli@latest
 volta install depcheck@latest
 volta install dotenv-cli@latest
 volta install live-server@latest
