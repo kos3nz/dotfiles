@@ -12,7 +12,6 @@ volta install depcheck@latest
 volta install dotenv-cli@latest
 volta install live-server@latest
 volta install npm-check-updates@latest
-volta install opensrc@latest
 volta install portless@latest
 volta install tsx@latest
 volta install ts-node@latest
