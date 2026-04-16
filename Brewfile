@@ -1,22 +1,12 @@
 require "socket"
 HOSTNAME = Socket.gethostname.downcase
 
-##### Taps #####
-
-tap "daipeihust/tap" # for im-select
-tap "delphinus/sfmono-square" # for sfmono-square font
-tap "epk/epk" # for font-sf-mono-nerd-font
-tap "jesseduffield/lazygit" # for lazygit
-tap "lindell/multi-gitter"
-tap "oven-sh/bun"
-
-
 ##### Formulae #####
 
 brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
-brew "bun"
+brew "oven-sh/bun/bun"
 brew "cloudflared"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
@@ -51,7 +41,7 @@ brew "handbrake"
 brew "htop" # an interactive process viewer
 brew "hyperfine" # A command-line benchmarking tool
 brew "iproute2mac" # `ip` command for macOS
-brew "lazygit"
+brew "jesseduffield/lazygit/lazygit"
 brew "llm" # LLM accessing tool for CLI
 brew "lua-language-server"
 brew "oh-my-posh"
@@ -62,7 +52,7 @@ brew "lf" # Terminal file manager.
 brew "luajit"
 brew "mas" # Mac App Store command-line interface
 brew "mmv" # Rename multiple files with editor
-brew "multi-gitter" # Update multiple repositories in with one command
+brew "lindell/multi-gitter/multi-gitter" # Update multiple repositories in with one command
 brew "nano"
 brew "navi"
 brew "ncdu"
@@ -195,8 +185,8 @@ cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-hackgen-nerd"
-cask "font-sf-mono-nerd-font"
-brew "sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
+cask "epk/epk/font-sf-mono-nerd-font"
+brew "delphinus/sfmono-square/sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
 
 # cask "font-fira-code"
 # cask "font-meslo-lg-nerd-font"
