@@ -590,28 +590,16 @@
   },
 
   /* ------------------------- Javascript & Typescript ------------------------ */
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "literals",
-  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
-  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
-
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.tsserver.log": "off",
-  "typescript.preferences.importModuleSpecifierEnding": "auto",
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "literals",
-  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
-  "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.format.insertSpaceAfterSemicolonInForStatements": false,
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.parameterTypes.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
+  "js/ts.inlayHints.parameterNames.enabled": "literals",
+  "js/ts.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "js/ts.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
 
   /* ---------------------------------- Deno ---------------------------------- */
   // "deno.inlayHints.enumMemberValues.enabled": true,
@@ -658,8 +646,7 @@
   "prettier.documentSelectors": ["**/*.astro", "**/*.php", "**/*.liquid"],
   // "prettier.prettierPath": "./node_modules/pretteir",
 
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single",
+  "js/ts.preferences.quoteStyle": "single",
 
   "rome.formatter.quoteStyle": "Single",
   "rome.formatter.indentStyle": "Spaces",
@@ -2601,6 +2588,13 @@
     "jsx",
     "tailwindcss",
   ],
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Windsurf                                  */
+  /* -------------------------------------------------------------------------- */
+  "windsurf.acp.enabledAgents": {
+    "devin-cloud": false,
+  },
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
