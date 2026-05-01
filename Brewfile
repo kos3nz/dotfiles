@@ -8,6 +8,7 @@ brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
 brew "oven-sh/bun/bun"
 brew "cloudflared"
+brew "cmake"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
 brew "daipeihust/tap/im-select"
@@ -200,6 +201,7 @@ brew "delphinus/sfmono-square/sfmono-square" # SFMono Square: https://github.com
 if HOSTNAME =~ /mini/i
   # Mac Mini M2 Pro (Apple Silicon)
   cask "blender"
+  cask "xcodes-app"
 elsif HOSTNAME =~ /mbp|macbook/i
   # MacBook Pro 2019 (Intel)
 end
