@@ -9,6 +9,7 @@ volta install @nestjs/cli@latest
 volta install ccstatusline@latest
 volta install defuddle-cli@latest
 volta install depcheck@latest
+volta install designlang@latest
 volta install dotenv-cli@latest
 volta install live-server@latest
 volta install npm-check-updates@latest

@@ -25,6 +25,7 @@ brew "thefuck" # Magnificent app which corrects your previous console command.
 brew "fzf" # To install useful key bindings and fuzzy completion, run `$(brew --prefix)/opt/fzf/install`
 brew "gawk" # GNU awk utility
 brew "gemini-cli"
+brew "getagentseal/codeburn/codeburn"
 brew "gh"
 brew "ghq"
 brew "gibo"
