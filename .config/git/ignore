@@ -32,3 +32,6 @@ opensrc
 
 # Images
 **/screenshots
+
+# graphify
+graph.json
