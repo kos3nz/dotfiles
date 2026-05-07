@@ -20,6 +20,17 @@
         "rawValue": true
       },
       {
+        "id": "a4bc3a67-d435-40a8-b64a-2e970646b56f",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "d0b685cb-58cf-4d0e-b7c6-36645630b5cc",
+        "type": "thinking-effort",
+        "rawValue": true,
+        "color": "ansi256:1"
+      },
+      {
         "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
         "type": "separator",
         "color": "brightBlack"
@@ -77,6 +88,7 @@
   "colorLevel": 2,
   "inheritSeparatorColors": false,
   "globalBold": false,
+  "minimalistMode": false,
   "powerline": {
     "enabled": false,
     "separators": [
@@ -87,6 +99,7 @@
     ],
     "startCaps": [],
     "endCaps": [],
-    "autoAlign": false
+    "autoAlign": false,
+    "continueThemeAcrossLines": false
   }
 }
