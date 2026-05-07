@@ -4,7 +4,8 @@
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_AUTOUPDATER": "1"
+    "DISABLE_AUTOUPDATER": "1",
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
   },
   "permissions": {
     "allow": [
@@ -186,6 +187,16 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/kos3nz/.claude/hooks/context-mode-cache-heal.mjs\""
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -207,13 +218,21 @@
     "rust-analyzer@claude-code-lsps": true,
     "vtsls@claude-code-lsps": true,
     "lua-language-server@claude-code-lsps": false,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "context-mode@context-mode": true,
+    "claude-mem@thedotmack": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "context-mode": {
+      "source": {
+        "source": "github",
+        "repo": "mksglu/context-mode"
       }
     }
   },
