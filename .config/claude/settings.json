@@ -237,6 +237,7 @@
     }
   },
   "outputStyle": "Explanatory",
+  "language": "Japanese",
   "skipDangerousModePermissionPrompt": true,
   "effortLevel": "medium"
 }
