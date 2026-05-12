@@ -188,16 +188,7 @@
         ]
       }
     ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"/Users/kos3nz/.claude/hooks/context-mode-cache-heal.mjs\""
-          }
-        ]
-      }
-    ]
+    "SessionStart": []
   },
   "statusLine": {
     "type": "command",
@@ -219,7 +210,6 @@
     "vtsls@claude-code-lsps": true,
     "lua-language-server@claude-code-lsps": false,
     "codex@openai-codex": true,
-    "context-mode@context-mode": true,
     "claude-mem@thedotmack": false
   },
   "extraKnownMarketplaces": {
@@ -227,12 +217,6 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      }
-    },
-    "context-mode": {
-      "source": {
-        "source": "github",
-        "repo": "mksglu/context-mode"
       }
     }
   },
