@@ -4,6 +4,9 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
+      enabled = function()
+        return not vim.tbl_contains({ "markdown" }, vim.bo.filetype)
+      end,
       keymap = {
         preset = "enter",
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
