@@ -61,6 +61,7 @@ brew "ncdu"
 brew "neovim"
 brew "oha" # HTTP load generator, inspired by rakyll/hey with tui animation.
 brew "php"
+brew "pi-coding-agent"
 brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
