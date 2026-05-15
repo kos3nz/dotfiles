@@ -3,6 +3,7 @@ HOSTNAME = Socket.gethostname.downcase
 
 ##### Formulae #####
 
+brew "actionlint"
 brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
