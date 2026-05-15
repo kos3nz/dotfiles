@@ -222,6 +222,8 @@
   },
   "outputStyle": "Explanatory",
   "language": "Japanese",
+  "effortLevel": "medium",
+  "awaySummaryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "medium"
+  "model": "opus"
 }
