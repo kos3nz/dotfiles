@@ -173,8 +173,8 @@ cask "zoom"
 ##### Mac App Store #####
 
 # mas "DaVinci Resolve", id: 571213070
-mas "Line", id: 539883307
-mas "ScreenBrush", id: 1233965871
+# mas "Line", id: 539883307
+# mas "ScreenBrush", id: 1233965871
 
 # mas "Be Focused - Pomodoro Timer", id: 973134470
 # mas "Bitwarden", id: 1352778147
