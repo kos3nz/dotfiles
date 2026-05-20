@@ -33,6 +33,7 @@
   "editor.linkedEditing": true,
   "editor.stickyScroll.enabled": true,
   "editor.lineNumbers": "on",
+  "editor.minimap.enabled": false,
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -116,9 +117,6 @@
   /*                                  Workbench                                 */
   /* -------------------------------------------------------------------------- */
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "Moonlight",
-  // "workbench.preferredDarkColorTheme": "One Dark Pro",
-  "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.editor.showTabs": "multiple", // ファイルをクリックしたときに同一のタブで切り替わらない(false: プレビューモード無効)
   "workbench.editor.wrapTabs": true,
 
@@ -184,6 +182,8 @@
   /* -------------------------------------------------------------------------- */
   /*                             THEME Customization                            */
   /* -------------------------------------------------------------------------- */
+  "workbench.colorTheme": "Moonlight",
+  "workbench.productIconTheme": "fluent-icons",
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
@@ -2594,11 +2594,25 @@
   /* -------------------------------------------------------------------------- */
   "windsurf.acp.enabledAgents": {
     "devin-cloud": false,
+    "devin-cli": false,
   },
+
+  /* -------------------------------------------------------------------------- */
+  /*                                 Antigravity                                */
+  /* -------------------------------------------------------------------------- */
+  "antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+  "antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
+
+  /* -------------------------------------------------------------------------- */
+  /*                                  Telemetry                                 */
+  /* -------------------------------------------------------------------------- */
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+  "gitlens.telemetry.enabled": false,
+  "partialDiff.enableTelemetry": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
   /* -------------------------------------------------------------------------- */
-  "redhat.telemetry.enabled": false,
-  "editor.minimap.enabled": false,
 }
