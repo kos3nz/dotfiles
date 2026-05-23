@@ -48,6 +48,7 @@ export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 ### rust ###
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export RUSTUP_PATH="${HOMEBREW_PREFIX}/opt/rustup"
 
 ### starship ###
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
