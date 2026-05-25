@@ -5,7 +5,7 @@
       {
         "id": "3f3647f5-f212-4ea2-b8eb-586ccb93797c",
         "type": "version",
-        "color": "ansi256:5",
+        "color": "ansi256:6",
         "rawValue": false
       },
       {
@@ -27,11 +27,22 @@
       {
         "id": "d0b685cb-58cf-4d0e-b7c6-36645630b5cc",
         "type": "thinking-effort",
-        "rawValue": true,
-        "color": "ansi256:1"
+        "color": "ansi256:1",
+        "rawValue": true
       },
       {
         "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "23894089-823f-420a-9185-c2074af54bfe",
+        "type": "tokens-input",
+        "color": "ansi256:5",
+        "rawValue": true
+      },
+      {
+        "id": "e09c0ef0-671e-4ebd-aa6b-9fd861223d02",
         "type": "separator",
         "color": "brightBlack"
       },
@@ -42,7 +53,7 @@
         "rawValue": true
       },
       {
-        "id": "e09c0ef0-671e-4ebd-aa6b-9fd861223d02",
+        "id": "05662d98-cc2c-45cc-a477-9b4508403920",
         "type": "separator",
         "color": "brightBlack"
       },
