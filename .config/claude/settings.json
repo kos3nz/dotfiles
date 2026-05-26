@@ -210,13 +210,20 @@
     "vtsls@claude-code-lsps": true,
     "lua-language-server@claude-code-lsps": false,
     "codex@openai-codex": true,
-    "claude-mem@thedotmack": false
+    "claude-mem@thedotmack": false,
+    "warp@claude-code-warp": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
       }
     }
   },
