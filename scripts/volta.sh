@@ -6,6 +6,7 @@ volta install @antfu/ni@latest
 volta install @google/clasp@latest
 volta install @googleworkspace/cli@latest
 volta install @nestjs/cli@latest
+volta install @shopify/ucp-cli@latest
 volta install ccstatusline@latest
 volta install context-mode@latest
 volta install defuddle-cli@latest
