@@ -125,7 +125,7 @@ bindkey '^]' fzf-ghq
 bindkey '^[c' code-ghq-r # escape + c
 bindkey '^[n' code-ghq-n # escape + n
 bindkey '^g' lg
-bindkey '^j' insert-newline
+# bindkey '^j' insert-newline
 
 # =============================================================================
 # Custom Paths (Local Bins)
