@@ -37,9 +37,9 @@ return {
 
 	-- Hack
 	font = wezterm.font("Hack Nerd Font"),
-	font_size = 12.5,
-	cell_width = 1.05,
-	line_height = 1.35,
+	font_size = 13.0,
+	cell_width = 1.00,
+	line_height = 1.30,
 
 	-- MesloLGS
 	-- font = wezterm.font("MesloLGS NF"),
