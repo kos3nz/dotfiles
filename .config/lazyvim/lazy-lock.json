@@ -1,7 +1,7 @@
 {
   "CamelCaseMotion": { "branch": "master", "commit": "e69b0024f8f63db10c5d0df26d4920760755d454" },
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "LazyVim": { "branch": "main", "commit": "83d90f339defdb109a6ede333865a66ffc7ef6aa" },
+  "LazyVim": { "branch": "main", "commit": "c10948c50b18fae7f256433afdef09e432410480" },
   "ReplaceWithRegister": { "branch": "master", "commit": "832efc23111d19591d495dc72286de2fb0b09345" },
   "SchemaStore.nvim": { "branch": "main", "commit": "19936230448bfb3dfd4314070e8bc499ceb55928" },
   "aerial.nvim": { "branch": "master", "commit": "28fe6e822ae344544c379d60fcb13c9519a1f08a" },
