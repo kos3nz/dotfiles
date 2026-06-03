@@ -28,6 +28,7 @@ brew "gawk" # GNU awk utility
 brew "gemini-cli"
 brew "getagentseal/codeburn/codeburn"
 brew "gh"
+brew "ghostscript" # Displaying PDF in Neovim
 brew "ghq"
 brew "gibo"
 brew "git"
@@ -43,6 +44,7 @@ brew "grep" # GNU grep, egrep, and fgrep
 brew "handbrake"
 brew "htop" # an interactive process viewer
 brew "hyperfine" # A command-line benchmarking tool
+brew "imagemagick" # Displaying image in Neovim
 brew "iproute2mac" # `ip` command for macOS
 brew "jesseduffield/lazygit/lazygit"
 brew "llm" # LLM accessing tool for CLI
