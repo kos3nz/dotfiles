@@ -4,6 +4,8 @@ Use this when Phase 3 decides to split into multiple commits and you need to sta
 
 ## Workflow per commit
 
+Default to `git apply --cached --recount` so git recomputes `@@` line numbers from context. This eliminates the line-number arithmetic that breaks down when the same file appears across multiple commits.
+
 ```bash
 cat > /tmp/commit-1.patch << 'PATCH'
 diff --git a/src/foo.ts b/src/foo.ts
@@ -18,32 +20,29 @@ index a1b2c3d..e4f5g6h 100644
  }
 PATCH
 
-git apply --cached /tmp/commit-1.patch
-git diff --staged   # verify
+git apply --cached --recount /tmp/commit-1.patch
+git diff --staged -- src/foo.ts   # verify content landed in the right place
+git diff -- src/foo.ts            # verify remaining hunks for later commits are intact
 git commit -m "..."
 ```
+
+The scoped (`-- <path>`) verify is important: `--recount` is fail-loud on missing context but **fail-silent** if context lines accidentally match another spot in the file. Reading the per-file staged diff after each apply catches that.
 
 ## Patch construction rules
 
 1. **File header verbatim**: `diff --git a/X b/X`, `index ...`, `--- a/X`, `+++ b/X`.
-2. **Hunk header**: `@@ -old_start,old_count +new_start,new_count @@`.
-3. **3 lines of context** (` ` prefix) around each hunk.
-4. **Copy from `git diff` output** — don't reconstruct line numbers from memory.
+2. **Hunk header**: `@@ -old_start,old_count +new_start,new_count @@` — with `--recount`, the numbers can be approximate; the context lines must still be correct.
+3. **3 lines of context** (` ` prefix) around each hunk. Context is what `--recount` uses to locate the hunk, so don't trim it.
+4. **Copy from `git diff` output** — don't reconstruct context from memory.
 
 ## Same file, hunks across different commits
 
-If `foo.ts` has hunk A (commit 1) and hunk B (commit 2):
+With `--recount` you do **not** need to adjust `new_start` between commits. Just:
 
-- Commit 1: hunk A with original `@@` numbers.
-- Commit 2: adjust hunk B's `new_start`:
-  `new_start_adjusted = original_new_start + (lines_added_in_A − lines_removed_in_A)`.
-  `old_start` is unchanged.
+- Apply in source-file order (earliest hunk first) so the working tree shrinks predictably.
+- After each apply, run the two scoped verifies above before committing.
 
-If line numbers are uncertain, let git recompute:
-
-```bash
-git apply --cached --recount /tmp/commit-N.patch
-```
+Manual `new_start` arithmetic (`original_new_start + (lines_added_in_A − lines_removed_in_A)`) is only needed in the rare case `--recount` is unavailable or the context appears multiple times in the file.
 
 ## New (untracked) files
 

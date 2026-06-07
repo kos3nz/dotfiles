@@ -15,7 +15,7 @@ git diff --stat
 git log --oneline -10
 ```
 
-Scan the user's instruction for an issue reference (`refs|closes|fixes|resolves #N`, case-insensitive). Capture the keyword and number — they apply to every commit produced this run.
+Scan the user's instruction for an issue reference (`refs|closes|fixes|resolves #N`, case-insensitive). Capture the keyword and number. They are available for use as a trailer on commits produced in this run, but attach the trailer only to commits whose changes actually address the referenced issue — not to incidental refactors or docs touched alongside.
 
 Pick exactly one case:
 
@@ -74,9 +74,11 @@ EOF
 
 ## Phase 4b: Multi-Commit
 
-Use `git apply --cached` to stage exact hunks per commit. Full mechanics (patch header rules, line-number adjustment when the same file appears in multiple commits, recovery from failures) live in `references/partial-patch.md` — read it before constructing patches.
+Use `git apply --cached` to stage exact hunks per commit. Full mechanics (patch header rules, `--recount` usage, recovery from failures) live in `references/partial-patch.md` — read it before constructing patches.
 
-Always `git diff --staged` before each commit to verify.
+### Non-destructive ordering
+
+Plan all commits from a single `git diff` snapshot taken once at the start. Apply patches in source-file order (earliest hunk first) so the working tree shrinks predictably. After each `git apply --cached`, verify with `git diff --staged -- <path>` that the staged content matches intent, **and** with `git diff -- <path>` that the remaining intended hunks are still present in the working tree — never discard or overwrite state between commits.
 
 ## Commit Message Format
 
@@ -84,8 +86,8 @@ Always `git diff --staged` before each commit to verify.
 
 1. **English only.** Even if history is Japanese or another language, write subject and body in English. Detect *structural* style from history, not language.
 2. **Body is required, bullets only.** Every body line starts with `- `. One concern per bullet, short imperative phrase. No prose paragraphs.
-3. **Issue reference**: append ` (#N)` to the subject, then after the bullets a single blank line and a trailer `<keyword> #<number>` (lowercase keyword). Apply to every commit in the run.
-4. No `Co-Authored-By` lines. Subject under 72 chars (including ` (#N)`).
+3. **Issue reference (when provided)**: if the user's instruction includes an issue reference (`closes #N`, `fixes #N`, `refs #N`, etc.), add a trailer `<keyword> #<number>` (lowercase keyword) after the bullets, separated by one blank line — but only on commits whose changes actually address that issue. Omit the trailer on unrelated commits and when no reference is provided.
+4. No `Co-Authored-By` lines. Subject under 72 chars.
 
 ### Structural style detection
 
@@ -111,7 +113,7 @@ Match the structure, but always rewrite into English bullet-body form.
 Input: `closes #32`, body bullets: add login form, wire up validation.
 
 ```
-feat(auth): add login form with validation (#32)
+feat(auth): add login form with validation
 
 - add login form component
 - wire up client-side validation
