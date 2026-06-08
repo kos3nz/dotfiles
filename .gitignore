@@ -50,7 +50,6 @@
 /.config/**/node_modules/
 /.config/**/skills
 !/.config/agents/skills/
-/.config/agents/.skill-lock.json
 /.config/aichat/config.yaml
 /.config/.wrangler/
 /.config/configstore/
