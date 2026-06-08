@@ -1,5 +1,5 @@
 ---
-name: git-commit-user
+name: git-commit
 description: Commit changes with the right granularity — one cohesive commit by default, or split into multiple commits via hunk-level staging when changes clearly span unrelated concerns. Triggers on "commit", "organize commits", "split/break up changes", "decompose commit <ref>", "split the last N commits", or `/git-commit`. If staged changes exist with no commit reference, commit them as-is. If a past commit reference is given, soft-reset first.
 allowed-tools: Bash
 ---
@@ -49,7 +49,7 @@ For each hunk: what concern does it address (feature / fix / refactor / docs / t
 
 ## Phase 3: Single Commit or Split?
 
-**Default to one commit.** Splitting is only worth it when *all* of these hold:
+**Default to one commit.** Splitting is only worth it when _all_ of these hold:
 
 - 2+ clearly distinct logical concerns with no dependency between them
 - Each group would warrant a different commit type (`feat` vs `fix` vs `refactor`)
@@ -84,7 +84,7 @@ Plan all commits from a single `git diff` snapshot taken once at the start. Appl
 
 ### Hard rules (override repo style)
 
-1. **English only.** Even if history is Japanese or another language, write subject and body in English. Detect *structural* style from history, not language.
+1. **English only.** Even if history is Japanese or another language, write subject and body in English. Detect _structural_ style from history, not language.
 2. **Body is required, bullets only.** Every body line starts with `- `. One concern per bullet, short imperative phrase. No prose paragraphs.
 3. **Issue reference (when provided)**: if the user's instruction includes an issue reference (`closes #N`, `fixes #N`, `refs #N`, etc.), add a trailer `<keyword> #<number>` (lowercase keyword) after the bullets, separated by one blank line — but only on commits whose changes actually address that issue. Omit the trailer on unrelated commits and when no reference is provided.
 4. No `Co-Authored-By` lines. Subject under 72 chars.
@@ -95,12 +95,12 @@ Plan all commits from a single `git diff` snapshot taken once at the start. Appl
 git log --format="%s" -20
 ```
 
-| Signal | Structure |
-| --- | --- |
-| `feat:`, `fix:`, `docs(x):` prefixes | Conventional Commits |
-| Consistent `feat(scope):` usage | Conventional Commits + scope |
-| Emoji prefixes (✨ 🐛 📝) | Gitmoji |
-| Empty / mixed history | Fall back to Conventional Commits |
+| Signal                               | Structure                         |
+| ------------------------------------ | --------------------------------- |
+| `feat:`, `fix:`, `docs(x):` prefixes | Conventional Commits              |
+| Consistent `feat(scope):` usage      | Conventional Commits + scope      |
+| Emoji prefixes (✨ 🐛 📝)            | Gitmoji                           |
+| Empty / mixed history                | Fall back to Conventional Commits |
 
 Match the structure, but always rewrite into English bullet-body form.
 
