@@ -6,7 +6,7 @@ allowed-tools: Bash
 
 # Git Commit
 
-## Phase 1: Determine Scope
+## 1. Determine scope
 
 ```bash
 git status --porcelain
@@ -15,39 +15,26 @@ git diff --stat
 git log --oneline -10
 ```
 
-Scan the user's instruction for an issue reference (`refs|closes|fixes|resolves #N`, case-insensitive). Capture the keyword and number. They are available for use as a trailer on commits produced in this run, but attach the trailer only to commits whose changes actually address the referenced issue — not to incidental refactors or docs touched alongside.
+Scan the user's instruction for an issue reference (`refs|closes|fixes|resolves #N`, case-insensitive). Capture the keyword and number — they may become a trailer on commits in this run, attached only to commits whose changes actually address the referenced issue (not incidental refactors or docs touched alongside).
 
-Pick exactly one case:
+The scope is the set of hunks under consideration for this run. Anything outside scope is left untouched.
 
-### CASE A — Staged changes exist (no commit reference)
+| Situation                                  | Scope                                                                                                                   |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Staged changes exist (no commit reference) | **Staged hunks only.** The user already chose what to commit by staging — respect that. Ignore untracked/unstaged.       |
+| Commit reference in instruction            | Resolve the reference and soft-reset to bring those changes into the working tree, then scope = resulting working tree. See `references/commit-references.md`. Confirm with `git log --oneline` before resetting anything beyond `HEAD~1`. |
+| Only unstaged changes                      | **Working tree.**                                                                                                       |
 
-The user already chose what to commit. Commit staged as one commit and **finish** — ignore untracked/unstaged files. Do not proceed to Phase 2.
-
-```bash
-git diff --staged
-git commit -m "type(scope): description ..."
-git log --oneline -3
-```
-
-### CASE B — Commit reference in instruction
-
-The user wants to decompose past commits. Resolve the reference and soft-reset to bring the changes back into the working tree, then go to Phase 2. See `references/commit-references.md` for hash / relative / natural-language / range resolution.
-
-Confirm the target with `git log --oneline` before resetting anything beyond `HEAD~1`.
-
-### CASE C — Only unstaged changes
-
-Analyze the working tree diff. Go to Phase 2.
-
-## Phase 2: Analyze the Diff
+## 2. Analyze the diff
 
 ```bash
-git diff --staged   # or: git diff
+git diff --staged   # if scope is staged
+git diff            # otherwise
 ```
 
-For each hunk: what concern does it address (feature / fix / refactor / docs / test), is it tightly coupled to other hunks, and what commit type fits.
+For each hunk: what concern it addresses (feature / fix / refactor / docs / test), whether it is tightly coupled to other hunks, and what commit type fits.
 
-## Phase 3: Single Commit or Split?
+## 3. Single commit or split?
 
 **Default to one commit.** Splitting is only worth it when _all_ of these hold:
 
@@ -58,34 +45,47 @@ For each hunk: what concern does it address (feature / fix / refactor / docs / t
 
 If in doubt, don't split. A focused single commit beats over-fragmented history.
 
-## Phase 4a: Single Commit
+When splitting from a **staged scope**, first `git reset` to unstage (working tree is preserved), then re-stage per-commit hunks in step 4b. Never pull untracked/unstaged hunks into the run.
+
+## 4. Execute
+
+### 4a. Single commit
 
 ```bash
-git add -A   # or specific paths
+git add -A   # or specific paths; for staged scope, staging is already done
 git diff --staged
+```
+
+Subject-only (preferred when the subject is self-explanatory):
+
+```bash
+git commit -m "type(scope): description"
+```
+
+With body (only when bullets add information the subject doesn't):
+
+```bash
 git commit -m "$(cat <<'EOF'
 type(scope): description
 
-- bullet describing the main change
-- bullet describing supporting change
+- bullet describing a distinct sub-change or the why
+- bullet describing another distinct sub-change
 EOF
 )"
 ```
 
-## Phase 4b: Multi-Commit
+### 4b. Multi-commit
 
 Use `git apply --cached` to stage exact hunks per commit. Full mechanics (patch header rules, `--recount` usage, recovery from failures) live in `references/partial-patch.md` — read it before constructing patches.
 
-### Non-destructive ordering
+**Non-destructive ordering.** Plan all commits from a single `git diff` snapshot taken once at the start. Apply patches in source-file order (earliest hunk first) so the working tree shrinks predictably. After each `git apply --cached`, verify with `git diff --staged -- <path>` that the staged content matches intent, **and** with `git diff -- <path>` that the remaining intended hunks are still present in the working tree — never discard or overwrite state between commits.
 
-Plan all commits from a single `git diff` snapshot taken once at the start. Apply patches in source-file order (earliest hunk first) so the working tree shrinks predictably. After each `git apply --cached`, verify with `git diff --staged -- <path>` that the staged content matches intent, **and** with `git diff -- <path>` that the remaining intended hunks are still present in the working tree — never discard or overwrite state between commits.
-
-## Commit Message Format
+## Commit message format
 
 ### Hard rules (override repo style)
 
 1. **English only.** Even if history is Japanese or another language, write subject and body in English. Detect _structural_ style from history, not language.
-2. **Body is required, bullets only.** Every body line starts with `- `. One concern per bullet, short imperative phrase. No prose paragraphs.
+2. **Body only when it adds information.** Omit the body when the subject already says everything (typo fixes, single-file renames, dependency bumps, one-line config tweaks). Write a body only to convey what the subject can't: multiple distinct sub-changes worth listing, the *why* behind a non-obvious choice, side effects a reader should know about, or context (issue links, related PRs). When you write a body, every line starts with `- `, one concern per bullet, short imperative phrase — no prose paragraphs. Restating the subject as a bullet is worse than no body.
 3. **Issue reference (when provided)**: if the user's instruction includes an issue reference (`closes #N`, `fixes #N`, `refs #N`, etc.), add a trailer `<keyword> #<number>` (lowercase keyword) after the bullets, separated by one blank line — but only on commits whose changes actually address that issue. Omit the trailer on unrelated commits and when no reference is provided.
 4. No `Co-Authored-By` lines. Subject under 72 chars.
 
