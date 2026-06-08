@@ -5,8 +5,6 @@ description: Open a GitHub pull request — synthesizes the title and body from 
 
 > **User-question protocol:** Whenever this skill needs the user to pick between options, confirm an action, or answer a multiple-choice prompt, you MUST call the `AskUserQuestion` tool to render a proper interactive picker. Do NOT print numbered options as plain text and wait for the user to type a number — that produces a degraded UX. Free-form questions (open-ended typing) may be asked in prose, but any time you would write "1) … 2) … 3) …", use `AskUserQuestion` instead.
 
-# pr
-
 Phased workflow. Do not skip the confirmation gate — a published PR notifies reviewers and is hard to un-publish.
 
 ---
@@ -15,7 +13,10 @@ Phased workflow. Do not skip the confirmation gate — a published PR notifies r
 
 - `mode=fast|balanced|production` — pre-publish gate depth. Default `production`.
 - `lang=en|ja` — force language for the PR **body prose**. Headings are always English (see Phase 2). Default: auto-detect from the branch's commit messages (majority wins; tie → en). Passed through to `/pr-release-risk`.
+- `base=<branch>` — target branch for the PR. Overrides the repo's default branch. Use for staged release flows (e.g., `base=staging` when merging to staging before main). Validated against `origin` before use.
 - `draft=true` — force draft PR regardless of commit subjects.
+- `closes=<n>[,<m>...]` — issue numbers to close. Emitted as `Closes #N`. Merged with auto-detection; conflicts trigger an `AskUserQuestion` confirm.
+- `refs=<n>[,<m>...]` — issue numbers to reference (no close). Emitted as `Refs #N`. Same merge rule.
 
 ---
 
@@ -37,10 +38,26 @@ Phased workflow. Do not skip the confirmation gate — a published PR notifies r
 
 Run the reflexive checks (`git status`, current branch) plus these non-obvious ones in parallel:
 
-- `gh repo view --json defaultBranchRef -q .defaultBranchRef.name` — base branch (do NOT assume `main`)
+- Resolve base branch — precedence: explicit `base=<branch>` arg → else `gh repo view --json defaultBranchRef -q .defaultBranchRef.name`. Do NOT assume `main`.
 - `git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null` — does upstream exist?
 - `git log <base>..HEAD --pretty=format:'%h %s'` — every commit on the branch
 - `git diff <base>...HEAD --stat` and `git diff <base>...HEAD` — cumulative diff (note the **three dots** — diff from merge-base, not two)
+
+### Validating an explicit `base=`
+
+When the user passed `base=<branch>`, verify it exists on `origin` before using it — `gh pr create --base` returns an opaque GraphQL error otherwise.
+
+```bash
+git ls-remote --heads origin <base> | grep -q "refs/heads/<base>$"
+```
+
+If absent:
+
+1. Run `git ls-remote --heads origin | awk '{print $2}' | sed 's|refs/heads/||'` to get candidate branches.
+2. If a close match exists (Levenshtein ≤ 2, or one is a prefix of the other), use `AskUserQuestion` to confirm the intended branch — present the typo'd input and the closest match as options, plus "Cancel".
+3. If no close match, stop and tell the user the branch doesn't exist on `origin`, listing 3-5 nearby candidates.
+
+Skip this validation when `base` came from `gh repo view` — the default branch is guaranteed to exist.
 
 Stop conditions:
 
@@ -100,7 +117,7 @@ There is no fixed template. Build the body from the sections below, **including 
 
 If the branch resolves a tracker issue, append the closing keyword as a **plain trailer at the bottom of the body** — no heading, separated from the last section by a blank line (or a `---` rule when other trailers also exist). GitHub's auto-link works regardless of position, so the trailer style keeps the visual focus on Summary/Test plan.
 
-Detection: scan commit messages and branch name for `#NNN`, `fixes #NNN`, `closes #NNN`, or a leading `<n>-` in the branch name.
+Detection sources: explicit `closes=` / `refs=` args **plus** commit messages and branch name (`#NNN`, `fixes #NNN`, `closes #NNN`, leading `<n>-` in branch). Dedupe across sources. If the arg-supplied Closes set and the auto-detected Closes set differ (different numbers, not just a subset), use `AskUserQuestion` to pick the final set — present "args only / auto only / union / cancel".
 
 Trailer form:
 
@@ -160,6 +177,7 @@ Show the user:
 Base: <base-branch>
 Branch: <current-branch>     [will push with -u]   ← only if no upstream
 Draft: yes/no
+Issues: Closes #123 (arg), Refs #98 (commit)   ← only when any issue resolved; annotate source
 Title: <title>
 
 Body:
