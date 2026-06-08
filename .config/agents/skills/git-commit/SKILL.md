@@ -95,14 +95,7 @@ Use `git apply --cached` to stage exact hunks per commit. Full mechanics (patch 
 git log --format="%s" -20
 ```
 
-| Signal                               | Structure                         |
-| ------------------------------------ | --------------------------------- |
-| `feat:`, `fix:`, `docs(x):` prefixes | Conventional Commits              |
-| Consistent `feat(scope):` usage      | Conventional Commits + scope      |
-| Emoji prefixes (✨ 🐛 📝)            | Gitmoji                           |
-| Empty / mixed history                | Fall back to Conventional Commits |
-
-Match the structure, but always rewrite into English bullet-body form.
+Mimic the dominant subject shape in the log — type prefix, scope marker, separator, emoji — whatever the repo actually uses. Reproduce it exactly, even if it doesn't match any named convention. Only fall back to Conventional Commits (`type(scope): description`) when the history is truly mixed or too short to read a pattern.
 
 ### Conventional Commits types (fallback)
 
