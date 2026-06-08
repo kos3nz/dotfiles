@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: Commit changes with the right granularity — one cohesive commit by default, or split into multiple commits via hunk-level staging when changes clearly span unrelated concerns. Triggers on "commit", "organize commits", "split/break up changes", "decompose commit <ref>", "split the last N commits", or `/git-commit`. If staged changes exist with no commit reference, commit them as-is. If a past commit reference is given, soft-reset first.
+description: Create git commits — one cohesive commit, or split across multiple commits via hunk-level staging when concerns are unrelated. Triggers on "commit", "split/decompose commit(s)", or `/git-commit`.
 allowed-tools: Bash
 ---
 

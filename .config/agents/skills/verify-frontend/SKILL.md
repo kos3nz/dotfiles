@@ -1,6 +1,6 @@
 ---
 name: verify-frontend
-description: Verify frontend changes in a real browser using Chrome DevTools MCP. Boot the dev server, drive the UI, watch console/network/performance, capture screenshots, and feed observations back into the implementation loop. Also reproduces user-reported bugs from a description and drives them to a fix. Use whenever the user is iterating on UI code and wants to see it working, says "check it in the browser", "open the page and see if it works", "the dropdown isn't opening", "there's a layout shift", "console is throwing", "this looks broken", reports a frontend bug to reproduce, or asks to verify a frontend change before committing. Works on any web app (React, Vue, Remix, Next.js, etc.) and handles embedded / iframe contexts (Shopify admin, Stripe, etc.) with cross-origin-safe fallbacks.
+description: Verify frontend changes in a real browser using Chrome DevTools MCP, or reproduce a user-reported UI bug end-to-end. Use when iterating on UI code, when the user says "check it in the browser" / "open the page and see if it works" / "this looks broken", or reports a frontend bug to reproduce. Handles iframe / cross-origin contexts.
 ---
 
 # Verify Frontend
