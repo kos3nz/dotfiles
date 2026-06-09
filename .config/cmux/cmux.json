@@ -50,23 +50,23 @@
   //       "idleSeconds" : 5
   //     },
   //     "resumeCommands" : [
-  // 
+  //
   //     ]
   //   },
 
-  //   "notifications" : {
-  //     "hooksMode" : "append",
-  //     "paneFlash" : true,
-  //     "customSoundFilePath" : "",
-  //     "showInMenuBar" : true,
-  //     "dockBadge" : true,
-  //     "sound" : "default",
-  //     "command" : "",
-  //     "unreadPaneRing" : true,
-  //     "hooks" : [
-  // 
-  //     ]
-  //   },
+  "notifications": {
+    //     "hooksMode" : "append",
+    "paneFlash": false
+    //     "customSoundFilePath" : "",
+    //     "showInMenuBar" : true,
+    //     "dockBadge" : true,
+    //     "sound" : "default",
+    //     "command" : "",
+    //     "unreadPaneRing" : true,
+    //     "hooks" : [
+    //
+    //     ]
+  }
 
   //   "sidebar" : {
   //     "showWorkspaceDescription" : true,
@@ -142,7 +142,7 @@
   //     "openTerminalLinksInCmuxBrowser" : true,
   //     "showSearchSuggestions" : true,
   //     "hostsToOpenInEmbeddedBrowser" : [
-  // 
+  //
   //     ],
   //     "showImportHintOnBlankTabs" : true,
   //     "discardHiddenWebViews" : true,
@@ -161,7 +161,7 @@
   //     "defaultSearchEngine" : "google",
   //     "interceptTerminalOpenCommandInCmuxBrowser" : true,
   //     "urlsToAlwaysOpenExternally" : [
-  // 
+  //
   //     ]
   //   },
 
