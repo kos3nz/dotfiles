@@ -107,7 +107,7 @@ cask "brave-browser"
 # cask "builder-io" # Installed via browser
 cask "chatgpt"
 cask "claude"
-cask "claude-code"
+cask "claude-code@latest"
 cask "clop"
 cask "cmux"
 cask "codex"
