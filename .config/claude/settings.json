@@ -210,7 +210,7 @@
     "lua-language-server@claude-code-lsps": false,
     "codex@openai-codex": true,
     "claude-mem@thedotmack": false,
-    "warp@claude-code-warp": true
+    "warp@claude-code-warp": false
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
