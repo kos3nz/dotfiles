@@ -10,51 +10,6 @@
       "installedAt": "2026-04-06T14:17:56.036Z",
       "updatedAt": "2026-04-06T14:17:56.036Z"
     },
-    "defuddle": {
-      "source": "git@github.com:kepano/obsidian-skills.git",
-      "sourceType": "git",
-      "sourceUrl": "git@github.com:kepano/obsidian-skills.git",
-      "skillPath": "skills/defuddle/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-10T04:32:34.123Z",
-      "updatedAt": "2026-04-10T04:32:34.123Z"
-    },
-    "json-canvas": {
-      "source": "git@github.com:kepano/obsidian-skills.git",
-      "sourceType": "git",
-      "sourceUrl": "git@github.com:kepano/obsidian-skills.git",
-      "skillPath": "skills/json-canvas/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-10T04:32:34.127Z",
-      "updatedAt": "2026-04-10T04:32:34.127Z"
-    },
-    "obsidian-bases": {
-      "source": "git@github.com:kepano/obsidian-skills.git",
-      "sourceType": "git",
-      "sourceUrl": "git@github.com:kepano/obsidian-skills.git",
-      "skillPath": "skills/obsidian-bases/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-10T04:32:34.128Z",
-      "updatedAt": "2026-04-10T04:32:34.128Z"
-    },
-    "obsidian-cli": {
-      "source": "git@github.com:kepano/obsidian-skills.git",
-      "sourceType": "git",
-      "sourceUrl": "git@github.com:kepano/obsidian-skills.git",
-      "skillPath": "skills/obsidian-cli/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-10T04:32:34.131Z",
-      "updatedAt": "2026-04-10T04:32:34.131Z"
-    },
-    "obsidian-markdown": {
-      "source": "git@github.com:kepano/obsidian-skills.git",
-      "sourceType": "git",
-      "sourceUrl": "git@github.com:kepano/obsidian-skills.git",
-      "skillPath": "skills/obsidian-markdown/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-10T04:32:34.133Z",
-      "updatedAt": "2026-04-10T04:32:34.133Z"
-    },
     "shopify-admin": {
       "source": "Shopify/shopify-ai-toolkit",
       "sourceType": "github",
@@ -483,10 +438,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/teach/SKILL.md",
-      "skillFolderHash": "fdc61615b4d56a04d88a69a135337f0cad9df235",
-      "pluginName": "mattpocock-skills",
+      "skillFolderHash": "975430f7801bac2258ed18f4d80860024443b4f7",
       "installedAt": "2026-06-09T07:42:28.924Z",
-      "updatedAt": "2026-06-09T07:42:28.924Z"
+      "updatedAt": "2026-06-11T01:03:15.813Z"
+    },
+    "caveman-compress": {
+      "source": "juliusbrussee/caveman",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
+      "skillPath": "skills/caveman-compress/SKILL.md",
+      "skillFolderHash": "405938e27e3c90858bc7ed88ff07d6aa0d3cbd2c",
+      "installedAt": "2026-06-11T01:04:23.483Z",
+      "updatedAt": "2026-06-11T01:04:23.483Z"
     }
   },
   "dismissed": {
