@@ -59,8 +59,8 @@ zinit wait'1' lucid light-mode for \
 
 
 ### forgit ###
-zinit wait'1' lucid light-mode for \
-    'wfxr/forgit'
+# zinit wait'1' lucid light-mode for \
+#     'wfxr/forgit'
 
 
 autoload -Uz _zinit

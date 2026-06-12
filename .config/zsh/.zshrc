@@ -153,4 +153,6 @@ source "$ZDOTDIR/lazy.zsh"
 
 
 # Show profiling results
-[[ -n "$ZPROFS" ]] && zprof | head -n 20
+if [[ -n "$ZPROFS" ]]; then
+  zprof | head -n 20
+fi
