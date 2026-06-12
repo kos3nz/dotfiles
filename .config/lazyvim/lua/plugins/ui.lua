@@ -16,9 +16,9 @@ return {
           ---@type snacks.dashboard.Item[]
           keys = {
             { icon = " ", key = "e", desc = "File Explorer",   action = ":Neotree focus" },
-            { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.getcwd() })" },
             { icon = " ", key = "r", desc = "Recent Files",    action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            { icon = " ", key = "w", desc = "Find Text",       action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "w", desc = "Find Text",       action = ":lua Snacks.dashboard.pick('live_grep', { cwd = vim.fn.getcwd() })" },
             { icon = "󰊢 ", key = "g", desc = "Git status",      action = ":lua Snacks.picker.git_status()" },
             { icon = " ", key = "c", desc = "Config",          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
             { icon = " ", key = "s", desc = "Restore Session", action = ':lua require("persistence").load()' },
@@ -59,6 +59,7 @@ return {
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
       { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+      { "<leader>fF", function() Snacks.picker.files({ hidden = true, ignored = true }) end, desc = "Find Files (hidden)" },
       { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
       { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true } }) end, desc = "Recent (cwd)" },
@@ -77,6 +78,7 @@ return {
       { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
       -- grep
       { "<leader>fw", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>fW", function() Snacks.picker.grep({ hidden = true, ignored = true }) end, desc = "Grep (hidden)" },
       { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>sb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
       { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual Selection or Word", mode = { "n", "x" } },
