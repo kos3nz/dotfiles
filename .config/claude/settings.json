@@ -162,6 +162,15 @@
             "command": "~/.config/claude/hooks/check-dangerous-paths.py"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
       }
     ],
     "PostToolUse": [],

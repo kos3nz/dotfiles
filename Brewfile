@@ -13,7 +13,6 @@ brew "cloudflared"
 brew "cmake"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
-brew "daipeihust/tap/im-select"
 brew "deno"
 brew "devbox"
 brew "direnv"
@@ -69,6 +68,7 @@ brew "pi-coding-agent"
 brew "procs"
 brew "rbenv" # Ruby version manager
 brew "ripgrep"
+brew "rtk"
 brew "rustup"
 brew "schpet/tap/linear"
 brew "sentry-cli"
