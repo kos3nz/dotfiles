@@ -56,6 +56,8 @@
 /.config/fish/conf.d/
 /.config/gcloud/
 /.config/gh/hosts.yml
+/.config/homebrew/trust.json
+/.config/homebrew/trust.json.lock
 /.config/htop/
 /.config/karabiner/automatic_backups
 /.config/lazygit/state.yml
