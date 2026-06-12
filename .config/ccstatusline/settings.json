@@ -3,68 +3,6 @@
   "lines": [
     [
       {
-        "id": "3f3647f5-f212-4ea2-b8eb-586ccb93797c",
-        "type": "version",
-        "color": "ansi256:6",
-        "rawValue": false
-      },
-      {
-        "id": "6f27294a-ba47-427e-a008-4cb822acce51",
-        "type": "separator",
-        "color": "brightBlack"
-      },
-      {
-        "id": "9b9c8159-04be-45d8-93db-4b269246e06e",
-        "type": "model",
-        "color": "ansi256:3",
-        "rawValue": true
-      },
-      {
-        "id": "a4bc3a67-d435-40a8-b64a-2e970646b56f",
-        "type": "separator",
-        "color": "brightBlack"
-      },
-      {
-        "id": "d0b685cb-58cf-4d0e-b7c6-36645630b5cc",
-        "type": "thinking-effort",
-        "color": "ansi256:1",
-        "rawValue": true
-      },
-      {
-        "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
-        "type": "separator",
-        "color": "brightBlack"
-      },
-      {
-        "id": "23894089-823f-420a-9185-c2074af54bfe",
-        "type": "tokens-input",
-        "color": "ansi256:5",
-        "rawValue": true
-      },
-      {
-        "id": "e09c0ef0-671e-4ebd-aa6b-9fd861223d02",
-        "type": "separator",
-        "color": "brightBlack"
-      },
-      {
-        "id": "0ff3cca4-6d02-46ee-bd19-971f3ed568cb",
-        "type": "context-percentage",
-        "color": "ansi256:4",
-        "rawValue": true
-      },
-      {
-        "id": "05662d98-cc2c-45cc-a477-9b4508403920",
-        "type": "separator",
-        "color": "brightBlack"
-      },
-      {
-        "id": "6b2caba0-ebcd-4535-abf2-b249e6c86107",
-        "type": "vim-mode",
-        "color": "ansi256:2"
-      }
-    ],
-    [
-      {
         "id": "56714c30-b200-4e0a-827e-0107e5bfcb78",
         "type": "custom-command",
         "color": "ansi256:4",
@@ -92,7 +30,52 @@
         "preserveColors": true
       }
     ],
-    []
+    [
+      {
+        "id": "9b9c8159-04be-45d8-93db-4b269246e06e",
+        "type": "model",
+        "color": "ansi256:3",
+        "rawValue": true
+      },
+      {
+        "id": "a4bc3a67-d435-40a8-b64a-2e970646b56f",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "d0b685cb-58cf-4d0e-b7c6-36645630b5cc",
+        "type": "thinking-effort",
+        "color": "ansi256:5",
+        "rawValue": true
+      },
+      {
+        "id": "3f7878ef-e77d-4c0c-94ba-6d4fc732119e",
+        "type": "separator",
+        "color": "brightBlack"
+      },
+      {
+        "id": "0ff3cca4-6d02-46ee-bd19-971f3ed568cb",
+        "type": "context-percentage",
+        "color": "ansi256:2",
+        "rawValue": true
+      }
+    ],
+    [
+      {
+        "id": "usage-5h",
+        "type": "custom-command",
+        "commandPath": "$HOME/.config/ccstatusline/claude-usage.sh five_hour",
+        "preserveColors": true
+      }
+    ],
+    [
+      {
+        "id": "usage-weekly",
+        "type": "custom-command",
+        "commandPath": "$HOME/.config/ccstatusline/claude-usage.sh seven_day",
+        "preserveColors": true
+      }
+    ]
   ],
   "flexMode": "full",
   "compactThreshold": 60,
@@ -102,12 +85,8 @@
   "minimalistMode": false,
   "powerline": {
     "enabled": false,
-    "separators": [
-      ""
-    ],
-    "separatorInvertBackground": [
-      false
-    ],
+    "separators": [""],
+    "separatorInvertBackground": [false],
     "startCaps": [],
     "endCaps": [],
     "autoAlign": false,
