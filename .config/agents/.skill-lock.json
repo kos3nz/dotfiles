@@ -257,16 +257,6 @@
       "installedAt": "2026-05-09T07:36:33.633Z",
       "updatedAt": "2026-05-09T07:36:33.633Z"
     },
-    "tdd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/tdd/SKILL.md",
-      "skillFolderHash": "75beb3030b4c979205dd771ff85ac600baeb68f4",
-      "pluginName": "mattpocock-skills",
-      "installedAt": "2026-05-09T07:36:33.637Z",
-      "updatedAt": "2026-05-09T07:36:33.637Z"
-    },
     "to-issues": {
       "source": "mattpocock/skills",
       "sourceType": "github",
@@ -447,9 +437,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "skills/caveman-compress/SKILL.md",
-      "skillFolderHash": "405938e27e3c90858bc7ed88ff07d6aa0d3cbd2c",
+      "skillFolderHash": "ed28315c564230ce691623a01cd367f222b769e5",
       "installedAt": "2026-06-11T01:04:23.483Z",
-      "updatedAt": "2026-06-11T01:04:23.483Z"
+      "updatedAt": "2026-06-13T05:11:29.162Z"
     }
   },
   "dismissed": {
