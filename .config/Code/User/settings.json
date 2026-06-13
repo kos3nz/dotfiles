@@ -34,6 +34,7 @@
   "editor.stickyScroll.enabled": true,
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
+  "workbench.activityBar.compact": true,
 
   /* -------------------------------------------------------------------------- */
   /*                               Files & Search                               */
@@ -865,6 +866,7 @@
   ],
   "todo-tree.tree.disableCompactFolders": true,
   "todo-tree.tree.expanded": true,
+  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
 
   /* -------------------------------------------------------------------------- */
   /*                               Better Comments                              */
@@ -2590,6 +2592,11 @@
   ],
 
   /* -------------------------------------------------------------------------- */
+  /*                                   Claude                                   */
+  /* -------------------------------------------------------------------------- */
+  "claudeCode.preferredLocation": "panel",
+
+  /* -------------------------------------------------------------------------- */
   /*                                  Windsurf                                  */
   /* -------------------------------------------------------------------------- */
   "windsurf.acp.enabledAgents": {
@@ -2611,6 +2618,7 @@
   "redhat.telemetry.enabled": false,
   "gitlens.telemetry.enabled": false,
   "partialDiff.enableTelemetry": false,
+  "telemetry.editStats.enabled": false,
 
   /* -------------------------------------------------------------------------- */
   /*                                    Other                                   */
