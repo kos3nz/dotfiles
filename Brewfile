@@ -8,6 +8,7 @@ brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
 brew "oven-sh/bun/bun"
+brew "can1357/tap/omp"
 brew "ccusage"
 brew "cloudflared"
 brew "cmake"
