@@ -61,8 +61,18 @@ that and discard the suggested name. Minting a new file from the prose is how
 parallel, redundant test files get born. Delegate the search to a subagent when one
 is available, to keep the main session's context small.
 
-- **Interactive:** present the list — each behavior paired with its seam — and wait
-  for approval before touching code.
+- **Interactive:** present the list as a table — one row per behavior, paired with
+  its seam — and wait for approval before touching code. A table is the right shape
+  here because every row carries the same few attributes and the reader is scanning
+  for coverage and seam reuse; a flat prose list hides both. Use this format:
+
+  | # | Behavior (observable, public-interface) | Seam (file + module to extend) | Story |
+  |---|------------------------------------------|--------------------------------|-------|
+  | 1 | ...                                      | `path/to/x.test.ts` → `X`      | US-3  |
+
+  Drop the **Story** column when the scope has no user stories — don't invent one to
+  fill it. Keep cells terse; the behavior phrasing _is_ the test name you'll scaffold
+  in step 2, so write it as one.
 - **Auto:** self-check against the criteria (every case traces to scope, none
   speculative, each seam found by searching) and continue.
 
