@@ -185,6 +185,7 @@
   /* -------------------------------------------------------------------------- */
   "workbench.colorTheme": "Moonlight",
   "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
