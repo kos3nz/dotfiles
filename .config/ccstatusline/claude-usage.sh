@@ -48,9 +48,9 @@ empty=$((WIDTH - filled))
 DIM=$'\033[90m'
 RESET=$'\033[0m'
 WHITE=$'\033[97m'
-if ((rem < 10)); then
+if ((rem <= 10)); then
   C=$'\033[31m' # red    — almost out
-elif ((rem < 30)); then
+elif ((rem <= 30)); then
   C=$'\033[33m' # yellow — running low
 else
   C=$'\033[32m' # green  — healthy
