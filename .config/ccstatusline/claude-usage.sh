@@ -36,11 +36,11 @@ fi
 IFS=$'\t' read -r percentage resets <<<"$vals"
 percentage=${percentage%.*} # floor used % to an integer
 [ -z "$percentage" ] && exit 0
-rem=$((100 - percentage)) # show REMAINING quota
-((rem < 0)) && rem=0
+remaining=$((100 - percentage)) # show REMAINING quota
+((remaining < 0)) && remaining=0
 
 WIDTH=10
-filled=$(((rem * WIDTH + 99) / 100)) # ceil for filled usage dots
+filled=$(((remaining * WIDTH + 99) / 100)) # ceil for filled usage dots
 ((filled > WIDTH)) && filled=$WIDTH
 ((filled < 0)) && filled=0
 empty=$((WIDTH - filled))
@@ -48,9 +48,9 @@ empty=$((WIDTH - filled))
 DIM=$'\033[90m'
 RESET=$'\033[0m'
 WHITE=$'\033[97m'
-if ((rem <= 10)); then
+if ((remaining <= 10)); then
   C=$'\033[31m' # red    — almost out
-elif ((rem <= 30)); then
+elif ((remaining <= 30)); then
   C=$'\033[33m' # yellow — running low
 else
   C=$'\033[32m' # green  — healthy
@@ -79,4 +79,4 @@ reset_seg=""
 [ -n "$rs" ] && [ "$resets" != "0" ] && reset_seg=" ${DIM}󰑓 ${WHITE}${rs}${RESET}"
 
 printf '%s%-2s%s %s%s%s%s %s%d%%%s%s' \
-  "$DIM" "$label" "$RESET" "$C" "$dots" "$DIM" "$empty_dots" "$WHITE" "$rem" "$RESET" "$reset_seg"
+  "$DIM" "$label" "$RESET" "$C" "$dots" "$DIM" "$empty_dots" "$WHITE" "$remaining" "$RESET" "$reset_seg"
