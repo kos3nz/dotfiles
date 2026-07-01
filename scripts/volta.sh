@@ -12,6 +12,7 @@ volta install defuddle-cli@latest
 volta install depcheck@latest
 volta install designlang@latest
 volta install dotenv-cli@latest
+volta install firecrawl-cli@latest
 volta install live-server@latest
 volta install npm-check-updates@latest
 volta install portless@latest
