@@ -40,7 +40,7 @@ rem=$((100 - percentage)) # show REMAINING quota
 ((rem < 0)) && rem=0
 
 WIDTH=10
-filled=$(((rem * WIDTH + 50) / 100)) # rounded to nearest dot
+filled=$(((rem * WIDTH + 99) / 100)) # ceil for filled usage dots
 ((filled > WIDTH)) && filled=$WIDTH
 ((filled < 0)) && filled=0
 empty=$((WIDTH - filled))
