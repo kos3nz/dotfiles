@@ -104,7 +104,6 @@ brew "zsh"
 # cask "adobe-creative-cloud" # Installed via browser
 cask "antigravity"
 cask "aqua-voice"
-cask "asana"
 cask "brave-browser"
 # cask "builder-io" # Installed via browser
 cask "chatgpt"
@@ -159,7 +158,6 @@ cask "stats"
 cask "visual-studio-code"
 cask "warp"
 cask "wezterm@nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
-cask "wispr-flow"
 cask "zed" # a high-performance, multiplayer code editor
 cask "zen"
 cask "zoom"
