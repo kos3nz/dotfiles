@@ -493,6 +493,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-06-29T00:05:23.711Z",
       "updatedAt": "2026-06-29T00:05:23.711Z"
+    },
+    "visual-plan": {
+      "source": "builderio/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/builderio/skills.git",
+      "skillPath": "skills/visual-plan/SKILL.md",
+      "skillFolderHash": "a6933954503d0256c02b17d252aa5de6a1a4ab1c",
+      "installedAt": "2026-06-29T08:19:59.849Z",
+      "updatedAt": "2026-06-29T08:19:59.849Z"
     }
   },
   "dismissed": {
