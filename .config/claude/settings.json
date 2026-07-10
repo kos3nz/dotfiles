@@ -1,7 +1,6 @@
 {
   "cleanupPeriodDays": 30,
   "env": {
-    "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
     "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1",
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
