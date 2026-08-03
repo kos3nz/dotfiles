@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "9b31e495b887e4ca123960415eca69fc7e1bba28",
+      "skillFolderHash": "037e8078db4b20b4aa25c04f21c6de7d335ec449",
       "installedAt": "2026-05-09T07:32:00.509Z",
-      "updatedAt": "2026-06-23T08:44:34.101Z"
+      "updatedAt": "2026-08-03T03:01:40.464Z"
     },
     "github-actions-docs": {
       "source": "xixu-me/skills",
@@ -24,9 +24,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/sickn33/antigravity-awesome-skills.git",
       "skillPath": "skills/docker-expert/SKILL.md",
-      "skillFolderHash": "4de306f28c3b66e8bb0419b574930bbce43ae47d",
+      "skillFolderHash": "ac8fbe7507377c5dc8ae7eb56a790ae36edf44ff",
       "installedAt": "2026-05-12T06:14:31.734Z",
-      "updatedAt": "2026-05-12T06:14:31.734Z"
+      "updatedAt": "2026-08-03T03:01:53.896Z"
     },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
@@ -60,9 +60,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/fallow-rs/fallow-skills.git",
       "skillPath": "fallow/skills/fallow/SKILL.md",
-      "skillFolderHash": "4bcf394a9902325db36017c6073793793a0eb87c",
+      "skillFolderHash": "eb5fcf9c9d37bdbbabe63cbdca6d2f4da86e612f",
       "installedAt": "2026-06-13T07:21:47.413Z",
-      "updatedAt": "2026-07-15T03:15:41.454Z"
+      "updatedAt": "2026-08-03T03:01:59.374Z"
     },
     "defuddle": {
       "source": "git@github.com:kepano/obsidian-skills.git",
@@ -87,9 +87,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/builderio/skills.git",
       "skillPath": "skills/visual-plan/SKILL.md",
-      "skillFolderHash": "50e09bb59da9f492dfbff7aa52b856f17f5b3068",
+      "skillFolderHash": "60142b90f2bd409e6e9fa9a1f373b89ccf513b9e",
       "installedAt": "2026-06-29T08:19:59.849Z",
-      "updatedAt": "2026-07-15T03:15:46.865Z"
+      "updatedAt": "2026-08-03T03:02:03.663Z"
     },
     "ask-matt": {
       "source": "mattpocock/skills",
@@ -276,10 +276,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/to-tickets/SKILL.md",
-      "skillFolderHash": "5467d7a37ef365ed43ebe6eb466d6e952be881b8",
-      "pluginName": "mattpocock-skills",
+      "skillFolderHash": "80c1bedbdaa72a4abd524055013accb4fe0ea8c4",
       "installedAt": "2026-07-14T07:14:41.623Z",
-      "updatedAt": "2026-07-14T07:14:41.623Z"
+      "updatedAt": "2026-08-03T03:02:07.711Z"
     },
     "triage": {
       "source": "mattpocock/skills",
