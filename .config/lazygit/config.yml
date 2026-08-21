@@ -55,15 +55,13 @@ gui:
   commandLogSize: 14
   splitDiff: "auto" # one of 'auto' | 'always'
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
   log:
     showGraph: "when-maximised"
-
 os:
   editPreset: "nvim" # see 'Configuring File Editing' section
-
 # Custom Commands
 customCommands:
   # Add custom commands
