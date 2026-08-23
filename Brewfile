@@ -84,6 +84,7 @@ brew "superfile" # Pretty fancy and modern terminal file manager
 brew "tealdeer" # Very fast implementation of tldr in Rust
 brew "tmux"
 brew "tree"
+brew "tree-sitter-cli"
 brew "uv"
 brew "volta"
 brew "wget"
