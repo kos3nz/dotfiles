@@ -7,10 +7,6 @@ gui:
   mainPanelSplitMode: "horizontal" # one of 'horizontal' | 'flexible' | 'vertical'
   language: "en" # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
   timeFormat: "02 Jan 06 15:04 MST" # https://pkg.go.dev/time#Time.Format
-  # Config relating to colors and styles.
-  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
-  authorColors:
-    "kos3nz": "blue"
   theme:
     # Border color of focused window
     activeBorderColor:
@@ -51,6 +47,10 @@ gui:
     # Default text color
     defaultFgColor:
       - white
+    # Config relating to colors and styles.
+    # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
+    authorColors:
+      "kos3nz": "blue"
   nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
   commandLogSize: 14
   splitDiff: "auto" # one of 'auto' | 'always'
