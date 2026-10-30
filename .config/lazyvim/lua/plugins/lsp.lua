@@ -88,7 +88,7 @@ return {
 
     },
     opts = function(_, opts)
-      opts.servers = {
+      opts.servers = vim.tbl_deep_extend("force", opts.servers or {}, {
         --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
         --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
         tsserver = {
@@ -209,7 +209,7 @@ return {
             "liquid",
           },
         },
-      }
+      })
 
       -- opts.servers = {
       --   vtsls = {
