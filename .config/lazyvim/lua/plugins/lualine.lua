@@ -109,12 +109,6 @@ return {
               return { fg = Snacks.util.color("Debug") }
             end,
           },
-          {
-            require("lazy.status").updates,
-            color = function()
-              return { fg = Snacks.util.color("Special") }
-            end,
-          },
           -- LazyVim.lualine.cmp_source("codeium"),
           {
             "diff",
