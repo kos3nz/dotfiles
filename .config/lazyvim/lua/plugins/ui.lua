@@ -37,7 +37,10 @@ return {
       },
       indent = { enabled = true },
       scroll = { enabled = false },
-      image = { enabled = true },
+      image = {
+        enabled = true,
+        doc = { enabled = false },
+      },
       picker = {
         enabled = true,
         ui_select = true, -- replace vim.ui.select
