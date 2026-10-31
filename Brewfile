@@ -47,7 +47,7 @@ brew "htop" # an interactive process viewer
 brew "hyperfine" # A command-line benchmarking tool
 brew "imagemagick" # Displaying image in Neovim
 brew "iproute2mac" # `ip` command for macOS
-brew "jesseduffield/lazygit/lazygit"
+brew "lazygit"
 brew "llm" # LLM accessing tool for CLI
 brew "lua-language-server"
 brew "oh-my-posh"
