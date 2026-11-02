@@ -7,13 +7,12 @@ brew "actionlint"
 brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
-brew "can1357/tap/omp"
+brew "can1357/tap/omp", trusted: true
 brew "ccusage"
 brew "cloudflared"
 brew "cmake"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
-brew "devbox"
 brew "direnv"
 brew "dust"
 brew "eza" # A mordern, maintained replacement for ls.
@@ -24,7 +23,6 @@ brew "findutils" # Collection of GNU find, xargs, and locate
 brew "thefuck" # Magnificent app which corrects your previous console command.
 brew "fzf" # To install useful key bindings and fuzzy completion, run `$(brew --prefix)/opt/fzf/install`
 brew "gawk" # GNU awk utility
-brew "getagentseal/codeburn/codeburn"
 brew "gh"
 brew "ghostscript" # Displaying PDF in Neovim
 brew "ghq"
@@ -55,7 +53,6 @@ brew "lf" # Terminal file manager.
 brew "luajit"
 brew "mas" # Mac App Store command-line interface
 brew "mmv" # Rename multiple files with editor
-brew "lindell/multi-gitter/multi-gitter" # Update multiple repositories in with one command
 brew "nano"
 brew "navi"
 brew "ncdu"
@@ -69,9 +66,8 @@ brew "rbenv" # Ruby version manager
 brew "ripgrep"
 brew "rtk"
 brew "rustup"
-brew "schpet/tap/linear"
 brew "sentry-cli"
-brew "sesh" # Smart tmux session manager
+brew "joshmedeski/sesh/sesh", trusted: true # Smart tmux session manager
 # brew "shopify/shopify/themekit"
 brew "skaffold"
 brew "sqlite"
@@ -140,7 +136,7 @@ cask "omnidisksweeper"
 cask "orbstack" # A fast, light, and simple way to run containers and Linux machines on macOS. It's a supercharged alternative to Docker Desktop.
 cask "pearcleaner"
 cask "postman"
-cask "lihaoyun6/tap/quickrecorder"
+cask "lihaoyun6/tap/quickrecorder", trusted: true
 cask "raindropio"
 cask "raycast"
 cask "rectangle"
@@ -192,8 +188,8 @@ cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-hackgen-nerd"
-cask "epk/epk/font-sf-mono-nerd-font"
-brew "delphinus/sfmono-square/sfmono-square" # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
+cask "epk/epk/font-sf-mono-nerd-font", trusted: true
+brew "delphinus/sfmono-square/sfmono-square", trusted: true # SFMono Square: https://github.com/delphinus/homebrew-sfmono-square
 
 # cask "font-fira-code"
 # cask "font-meslo-lg-nerd-font"
