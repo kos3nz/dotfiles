@@ -59,10 +59,6 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 #### tmux plugin: t-smart-tmux-session-manager ###
 # export PATH="$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH"
 
-#### volta ###
-export VOLTA_HOME="$HOME/.volta"
-# export PATH="$VOLTA_HOME/bin:$PATH"
-
 # =============================================================================
 # Icons (LF)
 # =============================================================================

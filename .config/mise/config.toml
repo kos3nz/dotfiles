@@ -1,0 +1,30 @@
+[settings]
+upgrade.auto_prune = true
+upgrade.prune_after = "24h"
+
+[tools]
+node = "latest"
+npm = "latest"
+yarn = "latest"
+pnpm = "latest"
+
+"npm:@antfu/ni" = "latest"
+"npm:@google/clasp" = "latest"
+"npm:@googleworkspace/cli" = "latest"
+"npm:@nestjs/cli" = "latest"
+"npm:@shopify/ucp-cli" = "latest"
+"npm:@vtsls/language-server" = "latest"
+"npm:ccstatusline" = "latest"
+"npm:defuddle" = "latest"
+"npm:depcheck" = "latest"
+"npm:designlang" = "latest"
+"npm:dotenv-cli" = "latest"
+"npm:firecrawl-cli" = "latest"
+"npm:live-server" = "latest"
+"npm:npm-check-updates" = "latest"
+"npm:portless" = "latest"
+"npm:ts-node" = "latest"
+"npm:tsx" = "latest"
+"npm:typescript" = "latest"
+"npm:vercel" = "latest"
+"npm:wrangler" = "latest"

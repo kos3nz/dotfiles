@@ -86,7 +86,6 @@ brew "tmux"
 brew "tree"
 brew "tree-sitter-cli"
 brew "uv"
-brew "volta"
 brew "wget"
 brew "yq"
 brew "zoxide" # A smarter cd command. Supports all major shells.

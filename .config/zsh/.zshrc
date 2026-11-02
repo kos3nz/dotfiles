@@ -133,7 +133,6 @@ bindkey '^g' lg
 typeset -U path
 
 path=(
-  "$VOLTA_HOME/bin"(N-/)
   "$HOME/.local/bin"(N-/)
   "$RUSTUP_PATH/bin"(N-/)
   "$CARGO_HOME/bin"(N-/)
@@ -150,6 +149,12 @@ path=(
 # Asynchronous Plugins (Lazy Load)
 # =============================================================================
 source "$ZDOTDIR/lazy.zsh"
+
+
+# Activate mise after PATH setup and plugins so its tools take precedence.
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+  eval "$("$HOME/.local/bin/mise" activate zsh)"
+fi
 
 
 # Show profiling results
