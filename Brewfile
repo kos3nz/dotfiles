@@ -7,14 +7,12 @@ brew "actionlint"
 brew "agent-browser"
 brew "aichat" # All-in-one LLM CLI Tool
 brew "bat"
-brew "oven-sh/bun/bun"
 brew "can1357/tap/omp"
 brew "ccusage"
 brew "cloudflared"
 brew "cmake"
 brew "composer" # Package Manager for php
 brew "coreutils" # GNU File, Shell, and Text utilities
-brew "deno"
 brew "devbox"
 brew "direnv"
 brew "dust"
@@ -26,7 +24,6 @@ brew "findutils" # Collection of GNU find, xargs, and locate
 brew "thefuck" # Magnificent app which corrects your previous console command.
 brew "fzf" # To install useful key bindings and fuzzy completion, run `$(brew --prefix)/opt/fzf/install`
 brew "gawk" # GNU awk utility
-brew "gemini-cli"
 brew "getagentseal/codeburn/codeburn"
 brew "gh"
 brew "ghostscript" # Displaying PDF in Neovim
@@ -75,7 +72,6 @@ brew "rustup"
 brew "schpet/tap/linear"
 brew "sentry-cli"
 brew "sesh" # Smart tmux session manager
-brew "shopify-cli"
 # brew "shopify/shopify/themekit"
 brew "skaffold"
 brew "sqlite"

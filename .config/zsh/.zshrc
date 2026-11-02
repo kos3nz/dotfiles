@@ -137,7 +137,6 @@ path=(
   "$RUSTUP_PATH/bin"(N-/)
   "$CARGO_HOME/bin"(N-/)
   "$GOPATH/bin"(N-/)
-  "$HOME/.cache/.bun/bin"(N-/)
   "$XDG_CONFIG_HOME/tmux/plugins/t-smart-tmux-session-manager/bin"(N-/)
   $path
 )
