@@ -65,7 +65,8 @@
 /.config/nvim/plugin/
 # Remove the line below if /.config/nvim is not a symlink
 /.config/nvim
-/.config/raycast/
+/.config/raycast/*
+!/.config/raycast/scripts/
 /.config/tmux/plugins/
 /.config/zsh/.zsh_sessions/
 /.config/**/*.log
