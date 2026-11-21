@@ -66,7 +66,6 @@ brew "rbenv" # Ruby version manager
 brew "ripgrep"
 brew "rtk"
 brew "rustup"
-brew "sentry-cli"
 brew "joshmedeski/sesh/sesh", trusted: true # Smart tmux session manager
 # brew "shopify/shopify/themekit"
 brew "skaffold"
