@@ -147,6 +147,7 @@ cask "slack"
 cask "spline"
 cask "spotify"
 cask "stats"
+cask "thebrowsercompany-dia"
 cask "visual-studio-code"
 cask "warp"
 cask "wezterm@nightly" # 'brew install --cask wezterm-nightly' to use a nightly build, 'brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest' to upgrade
